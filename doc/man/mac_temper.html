@@ -1,0 +1,35 @@
+<HEAD>
+<TITLE>temper.mac</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+# Set color of selected atoms and bonds based on B-factor,
+# using a blue - red - yellow scale for values from 0 to 50.
+
+# store current selection
+DefPropAtom 'prev_sel' 'selected'
+DefPropBond 'prev_sel' 'selected'
+
+# select atoms and bonds in first half or range (0 to 25)
+SelectAtom 'bfactor < 0.5 * 50'
+SelectBond 'atom2.selected'
+
+# set their color based on B-factor, interpolating
+# between blue and red
+ColorAtom ((2.0 / 50) * bfactor) 0 (1 - (2.0 / 50) * bfactor)
+ColorBond ((2.0 / 50) * atom2.bfactor) 0 (1 - (2.0 / 50) * atom2.bfactor)
+
+# select atoms and bonds in second half or range (25 to 50)
+SelectAtom 'bfactor >= 0.5 * 50'
+SelectBond 'atom2.selected'
+
+# set their color based on B-factor, interpolating
+# between red and yellow
+ColorAtom 1 ((2.0 / 50) * (bfactor - 0.5 * 50)) 0
+ColorBond 1 ((2.0 / 50) * (atom2.bfactor - 0.5 * 50)) 0
+
+# restore previous selection
+SelectAtom 'prev_sel'
+SelectBond 'prev_sel'
+</PRE>
+</BODY>

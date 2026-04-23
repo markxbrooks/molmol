@@ -1,0 +1,37 @@
+# Draw bonds between heavy atoms of side chains of well
+# defined residues as cones, using the B-factor of atoms
+# as radius, draw other other side chains as sticks.
+
+# store current selection
+DefPropAtom 'prev_sel' 'selected'
+DefPropBond 'prev_sel' 'selected'
+
+# set property for well defined residues (defined as
+# residues that do not have a heavy atom with a B-factor
+# of more than 1.0)
+DefPropRes 'well_def' '! exists atom(heavy & bfactor > 1.0)'
+
+# select CA and heavy side chain atoms of well defined
+# residues
+SelectAtom 'res.selected & res.well_def & (ca | heavysc)'
+
+# set radius of atoms to B-factor
+RadiusAtom bfactor
+
+# select heavy side chain bonds of well defined residues
+SelectBond 'res.selected & res.well_def & heavysc'
+
+# make selected bonds yellow, set display style to cone
+ColorBond 1 1 0
+StyleBond cone
+
+# select heavy side chain bonds of not well defined residues
+SelectBond 'res.selected & ! res.well_def & heavysc'
+
+# make selected bonds cyan, set display style to neon
+ColorBond 0 1 1
+StyleBond neon
+
+# restore previous selection
+SelectAtom 'prev_sel'
+SelectBond 'prev_sel'

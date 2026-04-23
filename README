@@ -1,0 +1,175 @@
+                               MOLMOL 2K.2
+                          Important Information
+
+
+Date: January 12, 2003
+
+
+DESCRIPTION
+
+MOLMOL is a molecular graphics program for displaying, analyzing, and
+manipulating the three-dimensional structure of biological macromolecules,
+with special emphasis on the study of protein or DNA structures determined
+by NMR.
+
+
+LEGAL INFORMATION
+
+Legal information is contained in the file COPYING, you are required to
+read this file and agree with its contents before using the program.
+
+MOLMOL 2K.2 is an custom version derived from MOLMOL 2.6 by Reto Koradi
+after his employment with the copyright holders ended.
+
+Users are encouraged to register, please check the section about
+registration towards the end of this document.
+
+
+OBTAINING MOLMOL
+
+The master ftp server is:
+
+    ftp://ftp.mol.biol.ethz.ch/pub/software/MOLMOL
+
+A link to all available ftp sites can be found on the MOLMOL
+web page:
+
+    http://www.mol.biol.ethz.ch/wuthrich/software/molmol/
+
+Please read the platform specific README file (README.UNIX or README.WIN)
+for downloading instructions.
+
+
+INSTALLATION
+
+Please read the platform specific README file (README.UNIX or README.WIN)
+for installation instructions.
+
+
+COMPILATION
+
+Note that there are binaries for the most common systems, you should
+only compile the source code if you have a good reason to do so.
+
+Please read the platform specific README file (README.UNIX or README.WIN)
+for compilation instructions.
+
+
+PORTING TO DIFFERENT WINDOW SYSTEMS
+
+The program runs under UNIX, using Motif and supporting various graphics
+libraries (GL, OpenGL, XGL, X11), and under Windows, using Win32 and
+OpenGL. Support for other platforms is not planned. If you would like to
+port the program to a different window system (e. g. Mac) or graphics
+system (e. g. Direct3D under Windows), please contact the authors. The
+program has been structured so that this is possible within reasonable
+time, but it is still a non-trivial task.
+
+
+DOCUMENTATION
+
+The man subdirectory contains the following files:
+
+    manual.html:   users guide in HTML format (in one piece)
+    index.html:    users guide in HTML format (in linked parts)
+    ref.ps:        reference manual in PostScript format
+
+The reference manual is just a copy of all online help pages, you
+will normally not print that out.
+
+
+ADDITONAL SOFTWARE
+
+Note: Some of the following software may not be available for all
+platforms (UNIX and Windows). Check the information at the given
+sources.
+
+The auxil subdirectory of the distribution contains some "goodies"
+that can be useful in conjunction with MOLMOL. See the README file
+in that directory for details.
+
+If you your molecules have file formats different from the ones
+that can be read by MOLMOL, you should check out the conversion
+program Babel, written by Pat Walters and Matt Stahl. It is
+available from ftp://joplin.biosci.arizona.edu/pub/Babel/.
+
+MOLMOL can generate files for the public domain raytracing
+program POV-Ray. You can obtain this program from ftp.povray.org,
+check http://www.povray.org for more information. Note that you
+have to make the font.inc file from the auxil directory accessible
+to POV-Ray when rendering files created by MOLMOL.
+
+When dealing with images (like the ones created by POV-Ray),
+the netpbm tools for manipulating and converting images are
+invaluable. They are available from many ftp sites, e. g.
+wuarchive.wustl.edu.
+
+Most systems have an image viewer, but xv, which is also available
+from many ftp sites (e. g. ftp.cis.upenn.edu), is often the better
+choice.
+
+You will need a web browser for looking at the manual and the
+hypertext version of the online help pages. Any web browser should
+be capable of displaying these files, a popular one is Netscape
+(ftp.netscape.com).
+
+MOLMOL shares file formats with various other programs developed
+in the group of Prof. Wuthrich. For information about some of
+these, check:
+
+    http://www.mol.biol.ethz.ch/wuthrich/software/
+
+
+REGISTRATION AND MAILING LIST
+
+There is a mailing list for discussing items related to MOLMOL.
+All users are recommended to subscribe to this list, by sending
+an e-mail message with "subscribe molmol-forum" in the body
+(no subject) to majordomo@mol.biol.ethz.ch.
+
+If you do not wish to be on the mailing list, you should at least get
+registered as MOLMOL user by sending mail to molmol@mol.biol.ethz.ch,
+the easiest way for doing this is by using the Register command from
+the Help menu of the program (not supported in the Windows version).
+Registered users will only receive very minimal information, like
+notifications about new releases, everything else is dealt with on the
+mailing list.
+
+
+CONTRIBUTIONS
+
+We maintain a web page with contributions by users. If you write
+something that you think could be of use to others, you are very
+welcome to send it to us, and we will make it generally available.
+This could include:
+
+    - macros (preferrably command definitons)
+    - alternate menu or button definitons
+    - non-standard entries for the residue library
+    - additonal examples for the tutorial
+    - shell scripts
+
+We also maintain a web page with contributed images. Please notify us
+if you have nice examples (do not send them by E-mail without our
+agreement, please, only pointers to web pages or ftp sites).
+
+
+OBTAINING MORE INFORMATION
+
+Current information about MOLMOL is available from:
+
+    http://www.mol.biol.ethz.ch/wuthrich/software/molmol/
+
+An introduction for people with an account for the BRUKER web server
+is also available at:
+
+    http://bart.bruker.de/wwwdeka/nmrsoftw/packages/molmol/molmol.htm
+
+Because the above is not generally accessible, it is mirrored at:
+
+    http://www.mol.biol.ethz.ch/wuthrich/software/molmol/bruker/
+
+Problems that you cannot solve should normally be addressed to the
+mailing list (see above). In exceptional cases you can reach us at
+molmol@mol.biol.ethz.ch. We do not guarantee that mail will be
+answered, but it normally will.

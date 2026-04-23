@@ -1,0 +1,23 @@
+NAME
+     WriteLol - write file with lower limits
+
+SYNOPSIS
+     WriteLol fileName
+
+DESCRIPTION
+     Write a file with lower distance limits. The format is
+     the same that DIANA/DYANA uses. All selected lower
+     distance limits are written. When a constraint between
+     two atoms appears in more than one molecule, the
+     largest constraint value is written.
+
+     This command supports groups.
+
+EXAMPLE
+     WriteLol /home/joe/struct/my_prot.lol
+
+SEE ALSO
+     SelectMol, Group, ReadLol, AddLol, CheckLol, WriteUpl
+
+DATE
+     980326

@@ -1,0 +1,302 @@
+release 2.1.0, January 22, 1996
+
+  - fixed problem with fill style in MIF plot
+  - fixed potential (very unlikely) crash in many calculation commands
+  - added calculation of ring current shifts (CalcShift command)
+  - output total surface in CalcSurf
+  - set/restore for DrawSize
+  - use Mesa for OpenGL support on Solaris, AIX and Digital Unix
+  - user-defined commands
+  - added Attr* commands (list attribute values)
+  - added ListProp* commands (list set properties)
+  - avoid output of very small numbers in plot files (problem on some
+    PostScript printers)
+  - avoid shading of distance labels when distance is drawn as
+    cylinder (OpenGL problem only)
+  - fixed crash when reading molecule if residue library was not found
+  - fixed non-working PlotTiff command
+  - fixed wrong history entry for interactive distance selection
+  - size of POV-Ray plots not fixed to 4:3
+  - supplied shell scripts for running POV-Ray
+  - smooth shading for PostScript plot
+  - fixed and extended fog
+  - new possibility for ribbon orientation (spacing), better for DNA
+  - set standard properties in MeanMol
+  - check for groups with only one member in CalcRmsd
+  - read SYBYL Mol2 files
+  - fixed problems with unknown atom coordinates in various
+    commands (e. g. FlipAtom)
+  - set property "mean" for calculated mean structures
+  - calculate displacements relative to reference (e. g. mean) structure
+  - define groups of molecules (e. g. for calculations)
+  - support gamma correction for plotting
+  - calculate best matching structure parts (CalcMatch)
+  - treat name 0 as empty file for names of setup files (PathNames)
+  - added option to keep atom coordinates in ChangeRes
+  - take radius as argument of AddSurface
+  - replaced pot by heavycharge and avgcharge
+  - calculation of electrostatic potential (CalcPot)
+  - isosurfaces of electrostatic potential (AddIsosurface)
+  - ignore lines after END in PDB files
+  - adapt scaling of interactive move to viewing parameters
+  - use new version of residue library (amber94.lib) by default
+  - fixed bug in CalcVdw (uninitialized variable, potential crash)
+  - properly clean up old properties in CalcSecondary
+  - check for no selected residues and atoms in CalcSurface
+  - added System command
+  - startup script: make -t switch override setting of MOLMOLDEV
+  - fixed numerous memory leaks
+  - more flexible syntax for residue range in CalcRmsd
+  - use new version of libtiff (v3.4)
+  - fixed problem in CalcCluster (potentially wrong result)
+  - fixed memory overwrite problem in CalcBond/CheckBond (Linux crash)
+
+release 2.2.0, May 14, 1996
+
+  - added entry U to residue library
+  - new backgrounds for Ramachandran plot
+  - fixed crash for files with too many values in ReadPot
+  - give warning if more than one molecule selected for CalcPot
+  - superimpose different molecules using different order
+    of fragments
+  - fixed crash with no atoms selected in CalcMatch
+  - improved setting of slider resources
+  - improved setting of background color in output of PlotPov
+  - display bonds and distances as cones
+  - fixed wrong coordinates of HD2 of ASP and HE2 of GLU in amber94.lib
+  - ReadPdb/WritePdb: replace blanks in atom names with underscores
+  - make startup script recognize Sybyl Mol2 files
+  - fixed crash with ribbons if arrow head and variable radius
+    specified at the same time
+  - better choice of graphics device in startup script
+  - add residue at start or end
+  - remove residues
+  - do not output very small polygons in PostScript (Apple printer problem)
+  - create JPEG images (PlotJpeg)
+  - create PNG images (PlotPng)
+  - additional parameter for PlotPar (JPEG quality)
+  - added drawing of contact maps (FigContact)
+  - logarithms in expressions
+  - improved schem_dna.mac to support PDB naming conventions
+  - optimized output of small shaded polygons in PostScript, makes files
+    around 20% smaller, avoids problem on Apple printers
+  - added PlotVrml
+  - allow more than 32768 molecules, performance improvement for large
+    numbers of molecules
+  - check for IRIX64 in startup script
+  - fixed problem with DNA pseudo atoms
+  - allow quoting of $ in command definitions
+  - start up web broser with help pages
+  - fixed occasional crash when typing on command line
+  - fixed ordering of output of CalcHBond, ...
+  - fixed potential problem in CalcMatch
+  - introduced history on command line
+  - put commands that generated errors as comment into log window
+    and history
+  - calculate angles between helix axes (CalcHelix)
+  - added drawing of maps of distance constraints (FigLimit)
+  - eliminated PlotCps (now called PlotPs)
+  - adapt library format to DYANA, use new libraries
+  - show type of message in title of message boxes
+  - make use of new features of POV-Ray 3.0
+    (text, mesh, orthogonal projection, gamma correction)
+  - warning for unknown atoms in known residues (ReadDg, ReadPdb)
+  - add pseudo atom (AddPseudo)
+  - WriteLib: fixed output of angles in case where atoms are not ordered
+  - check residue library for errors (ReadLib)
+  - fixed possible memory corruption in SetUndo
+  - combined options "set" and "save" in DrawSize
+  - print RMSD to mean in Fit
+  - fixed visibility calculation of dots (e. g. for plotting)
+  - changed argument defaults of AddSurface, eliminated "fast" option
+  - checked all help pages, made many improvements
+  - introduced startup macro (startup.mac) in setup directory
+  - check for empty grid in GridInsertInit()
+  - fullscreen stereo support for OpenGL
+
+release 2.3, January 21, 1997
+
+  - fixed uninitialized variable in DialMol
+  - fixed Fit with second argument different from 'selected'
+  - minimal line width for MIF plot
+  - increased minimal radius for ribbons (problems with POV rendering)
+  - link Solaris version with newer Motif library
+  - read unknown atoms in ReadPdb and ReadDg
+  - change bond length for drawing (LengthBond)
+  - added HelpAbout
+  - fixed entries of cancelled commands in log window
+  - fixed possible crash with command input in TTY mode
+  - ported to Windows NT/95
+  - plot to Windows bitmap format (PlotBmp)
+  - plot to Windows enhanced metafile (PlotMeta)
+  - fixed error in connectivities of RADE in dyana.lib
+  - renamed "aux" directory to "auxil"
+  - read XYZ file (ReadXyz)
+  - put # in front of "declare" in POV-Ray files
+  - made some fields in Mol2 format, like charges, optional (ReadSybyl)
+  - optionally list contributions of atoms in CalcSurface
+  - maintain atom and angle properties/attributes in ChangeRes
+  - test modified residue definitions for identical structure, share them
+  - support multiple selected molecules for AddRes
+  - measure bond lengths, bond angles, etc. (DialMeasure)
+  - give warning if MOLMOLHOME is not set correctly
+  - fixed testing of OS release in startup script
+  - allow multiple selected atoms for Center
+
+release 2.4, April 22, 1997
+
+  - make startup script recognize XYZ files
+  - read multiple molecules from one XYZ file
+  - new standard macro for CA traces (ca_trace.mac)
+  - use last answer as default argument of Quit
+  - CalcDist: different properties for first and second atom
+  - option to list surface areas and volumes in AddSurface
+  - fixed problem with limited length in output to text windows in
+    Windows version
+  - fixed problem with atoms named "P*" that are not in residue library
+  - fixed possible hangup of AddPseudo
+  - MeanMol: new option avg_disp for calculating B-factor
+  - use avg_disp instead of rms_disp in sausage.mac
+  - Fit: display simple RMSD for only 2 molecules
+  - avoid possible display artifacts with two beta strands directly
+    following each other
+  - avoid possible display artifacts with two beta strands being
+    parallel to one other
+  - automatically update list in molecule dialog
+  - trim surfaces (TrimSurface)
+  - local clipping plane for primitives (NearPrim)
+  - use VdW radius in PaintSurface (instead of the one set with RadiusAtom)
+  - command line history in Windows version
+  - improved command line editing (allow insert and replace)
+  - history for selection dialog
+  - change order of molecules in molecule list (FirstMol)
+  - display cylinder as arrow (StyleCylinder)
+  - show dipolar moment as arrow (AddDipole)
+  - set specific property when creating primitives
+    (circle, cylinder, dipole, drawobj, isosurface, plate, sheet, solid,
+    surface, dotsurface, title, text, trajec)
+  - support directories with startup macros
+  - fixed one-line help for commands defined with macros
+  - automatically create Opt menu containing commands defined with macros
+  - drag and drop support for Windows version
+  - fixed crash with OMEGA angles in FigAngles
+  - fixed crash in selection when using predicates on empty sets
+  - keep coordinates of pseudo atoms that are not defined by real atoms
+  - fixed wrong connectivity in CYT5 of amber94.lib
+  - allow different number of atoms for to_axes option of Fit
+  - display help files in web browser in Windows version
+  - fixed problem with POV output of surfaces
+  - handle multiple selected molecules for AddCylinder, AddText and AddDrawobj
+  - introduced option -n (no shadow) for povrun, povmol and povmolstereo
+  - added HelpViewer command, eliminated WEBBROWSER environment variable
+
+release 2.5, October 7, 1997
+
+  - fixed possible hangup in beta strand display
+  - fixed wrong direction of RotateY
+  - make Windows help file display work with Netscape
+  - always keep Help menu rightmost in Windows version
+  - implemented sending of E-mail (Register) in Windows version
+
+release 2.5.1, November 19, 1997
+
+  - fixed bug with 'intermol' option of CalcDist, CalcHbond and CalcVdw
+  - fixed crash when adding already existing atom with AddPseudo
+  - correctly handle names with leading digits in short selection syntax
+  - change name of molecule (NameMol)
+  - added options 'dist', 'center' and 'access' in PaintSurface
+  - fixed wrong results of CalcAxis
+  - output absolute values in CalcAxis
+  - correctly handle absolute Windows path names in ReadList*
+  - strip leading and trailing blanks in ReadList*
+  - added style 'ellipsoid' for trajectories (StyleTrajec)
+  - write upper and lower limit files (WriteUpl, WriteLol)
+  - ignore molecules without selected atoms in Fit
+  - convenience dialog for fit and RMSD calculations (DialRmsd)
+  - added Help button to dialogs, extended their help files
+
+release 2.6, May 22, 1998
+
+  - allow "H" as name of amide proton for CalcSecondary
+  - added some heavy atom types (F, Mg, Al, Fe) to residue library
+  - added "Tip of the Day" (HelpTip)
+  - improved layout of macro recorder (RecordMac)
+  - fixed potential problems in ReadSybyl
+  - execute $MOLMOLHOME/startup/newmol.mac and $HOME/molmol/newmol.mac
+    for newly loaded molecules
+  - renamed "OK" buttons in dialogs to "Close"
+  - set properties (cluster1,.., clusterN) in CalcCluster
+  - introduced separate drawing precision for interactive
+    manipulations (DrawPrec)
+  - fixed possible crash in case of missing atoms for AddPlates
+    and several calculation commands
+  - fixed VRML output of cylinders
+  - "Tip of the Day" (HelpTip)
+  - modify initial attribues (ColorInit, TintInit, StyleInit,
+    LabelInit, LineInit, MaterialInit, TextureInit RadiusInit,
+    AttrInit)
+  - reset translation of molecules (MoveInit)
+  - automatic scaling to window size (AutoScale)
+  - plot RenderMan format (PlotRib)
+  - value "len" to access bond length in expressions
+  - changed default extension of dump files to "mml"
+  - new shell script "povmolmovie" for rendering series of
+    images with POV-Ray
+  - lower picking priority for transparent objects
+  - fixed hangup for CalcDist (and similar commands) when very
+    small maximum distances are given
+  - fixed output propblems for CalcHelix
+  - display of electron density maps from O (ReadOmap, StyleMap)
+  - support groups in animation (StartAnim)
+  - ignore molecules with no atoms selected for AddTrajec
+  - fixed problem with image output under Windows
+  - fixed problem with main window layout under Windows (Windows 98)
+  - eliminated need to set MOLMOLHOME in Windows installation
+  - fixed help display using Netscape under Windows
+  - fixed problem with unknown atom types in ReadXyz
+  - better determination of home (profile) directory for Windows
+  - improved web browser integration (HelpViewer)
+  - additonal help commands (HelpManual, HelpTutorial, HelpIndex)
+  - list selected items (ListSelected*)
+  - renamed PlotVrml to PlotVrml1
+  - VRML 2.0 plot (PlotVrml2)
+  - display of principal axes (CalcAxis)
+  - revised buttons
+  - use VdW radii from http://www.webelements.com in amber94.lib
+  - added new library with PDB naming conventions (pdb.lib)
+  - automatically calculate H/HN coordinates on ribbon button
+  - MegaPov plot (PlotMpov)
+
+release 2K.1, March 18, 2000
+
+  - fixed problem with drawing axis-aligned cylinders
+  - fixed drawing of box primitive with POV-Ray
+  - added "povpdb" script to "auxil" directory
+  - fixed problem with molecules not being displayed when exiting
+    without loading a molecule when no dump file is present
+  - fixed resizing problems of molecule dialog
+  - fixed DrawSize command under Windows
+  - fixed problem with transformations when dragging mouse outside
+    of window under Windows
+  - fixed AutoScale command for molecules completely outside of
+    drawing area
+  - avoid lighting labels when drawing atoms as spheres
+  - fixed crash with text labels in PlotVrml1 and PlotVrml2
+  - eliminated countless compiler warnings
+  - fixed problem with negative scrollbar values (e. g. for the
+    RotateAngle command) under Windows
+  - ignore molecules without selected atoms in CalcAxis, improve
+    error handling (fewer than 3 selected atoms, no selected bonds)
+  - fixed refresh problems while manipulating text labels
+  - fixed bitmap output problem on some SGI machines (Octane)
+  - replaced WriteRotation with extended WriteTransform command
+  - support console (TTY) mode in Windows version
+  - fixed crash when removing atoms (changing residues) while
+    ribbons are present
+  - fixed possible crash of AddPlates when rings with unusual
+    geometry were detected
+  - fixed crash of AddSheet when molecules with no selected atoms
+    were selected
+  - use transformed coordinates for CalcHelix
+
+release 2K.2, January 20, 2003

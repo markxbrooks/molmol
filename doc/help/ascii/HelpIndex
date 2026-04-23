@@ -1,0 +1,20 @@
+NAME
+     HelpIndex - show HTML command index
+
+SYNOPSIS
+     HelpIndex
+
+DESCRIPTION
+     Show an alphabetical index of all MOLMOL commands
+     with hyperlinks to the individual help pages in a
+     web browser. The web browser that should be used
+     must be selected with the HelpViewer command.
+
+EXAMPLE
+     HelpIndex
+
+SEE ALSO
+     HelpViewer, HelpManual
+
+DATE
+     991031

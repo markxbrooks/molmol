@@ -1,0 +1,20 @@
+NAME
+     LineInit - set initial style and width of lines
+
+SYNOPSIS
+     LineInit (solid | dashed ) expr
+
+DESCRIPTION
+     Set the inital style and width of the lines used for
+     drawing of new objects. The default width of 0 is the
+     minimal width that can be drawn, it is also the one
+     that can be drawn fastest.
+
+EXAMPLE
+     LineInit solid 3
+
+SEE ALSO
+     LineAtom, LineBond, LineDist, LinePrim
+
+DATE
+     991016

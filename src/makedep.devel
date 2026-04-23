@@ -1,0 +1,9 @@
+	@echo make depend is running on the following files:
+	@echo $?
+	@rm -f makedep
+	@for i in $?; \
+	do  echo --- $$i; \
+	    $(CPP) -M $(CPPFLAGS) $$i >> makedep; \
+	done
+
+include makedep

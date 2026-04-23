@@ -1,0 +1,7 @@
+You can list the current display
+attributes of selected items with the
+AttrAtom, AttrBond, AttrDist and
+AttrPrim commands. The output will also
+contain a macro for that sets these
+values, which you can save or cut and
+paste for reuse.

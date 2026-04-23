@@ -1,0 +1,23 @@
+NAME
+     ClipPos - set position of clipping planes
+     ClipSize - set distance of clipping planes
+
+SYNOPSIS
+     ClipPos expr
+     ClipSize expr
+
+DESCRIPTION
+     Set new values for the distance of the near and
+     far clipping planes. By ClipPos, the user sets
+     the position of the middle between the two
+     planes, by ClipSize the distance:
+
+	 near = pos - size / 2
+	 far  = pos + size / 2
+
+EXAMPLES
+     ClipPos 8.0
+     ClipSize 5.0
+
+DATE
+     950124

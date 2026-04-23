@@ -1,0 +1,45 @@
+NAME
+     TypeRibbon - set type of ribbons
+
+SYNOPSIS
+     TypeRibbon ( interpol | smooth | as_is )
+	 ( free | cylinder | spacing | neighbour | as_is )
+
+DESCRIPTION
+     Set the type of all selected ribbons. The first
+     argument determines whether the ribbon goes through
+     the atoms used for AddRibbon, or whether it is
+     smoothed. The second argument determines how the
+     ribbon is oriented.
+
+     Typically interpol/cylinder or interpol/spacing is
+     used for helices, smooth/neighbour for sheets and
+     smooth/free for turns and random coil.
+
+     'cylinder' does a least square fit of a cylinder
+     surface to the atoms, 'spacing' fits a cylinder so
+     that the spacing of atoms along the axis is as
+     regular as possible. The results are very similar
+     in most cases, but 'spacing' often looks better
+     for very short helices or DNA.
+
+     The information about which residue is the neighbour
+     of which other residue is read from the secondary
+     structure information in PDB files or calculated by
+     the CalcSecondary command. It can also be set with
+     the SetNeigh command.
+
+     For both arguments, the value 'as_is' will leave the
+     value unchanged, this is useful when one wants to
+     change one of the values for multiple ribbons at once.
+
+EXAMPLE
+     TypeRibbon smooth neighbour
+
+SEE ALSO
+     ReadPdb, CalcSecondary, SetNeigh,
+     AddRibbon, SelectPrim, LengthPrim,
+     StyleRibbon, SizeRibbon, PaintRibbon
+
+DATE
+     950307

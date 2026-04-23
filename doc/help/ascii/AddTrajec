@@ -1,0 +1,23 @@
+NAME
+     AddTrajec - add trajectories
+
+SYNOPSIS
+     AddTrajec
+
+DESCRIPTION
+     Add trajectories for all selected atoms. The same
+     number of atoms has to be selected in all selected
+     molecules, the corresponding atoms of all selected
+     molecules will be connected with a polyline. This
+     is mainly used for displaying results of MD runs.
+
+     The created primitives have the property "trajec".
+
+EXAMPLES
+     AddTrajec
+
+SEE ALSO
+     SelectAtom, ColorPrim, StyleTrajec, RemovePrim
+
+DATE
+     970723

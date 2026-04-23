@@ -1,0 +1,46 @@
+<HEAD>
+<TITLE>LengthPrim</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>LengthPrim</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+LengthPrim - set length of primitives
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+LengthPrim expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set the length of all selected ribbons. The first
+argument gives the start parameter, the second
+argument the end parameter. The parameter value is 
+1 for the first atom used for <A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>, 2 for the
+second atom, etc.
+<P>
+The command can also be used for changing the
+length of a cylinder. In this case, the parameter
+range 0 to 1 refers to the current size of the
+cylinder, and the new parameter values are interpreted
+relative to these values.
+<P>
+Entering 0 for any of the parameters will leave this
+value unchanged.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+LengthPrim 12.5 20.5
+LengthPrim 0.1 1.1
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>, <A HREF="SelectPrim.html"><KBD>SelectPrim</KBD></A>, <A HREF="MovePrim.html"><KBD>MovePrim</KBD></A>,
+<A HREF="TypeRibbon.html"><KBD>TypeRibbon</KBD></A>, <A HREF="StyleRibbon.html"><KBD>StyleRibbon</KBD></A>, <A HREF="SizeRibbon.html"><KBD>SizeRibbon</KBD></A>, <A HREF="PaintRibbon.html"><KBD>PaintRibbon</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+951123
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

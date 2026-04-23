@@ -1,0 +1,21 @@
+NAME
+     HelpApropos - locate commands by keyword
+
+SYNOPSIS
+     HelpApropos string
+
+DESCRIPTION
+     Show a list of all commands that have the given
+     keyword in their one-line description. The menu that
+     the command can be found in is given in parentheses.
+     The keyword may contain wildcard characters (?, *),
+     the search is case insensitive.
+
+EXAMPLE
+     HelpApropos "plot"
+
+SEE ALSO
+     HelpCmd
+
+DATE
+     950727

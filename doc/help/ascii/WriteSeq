@@ -1,0 +1,19 @@
+NAME
+     WriteSeq - write sequence
+
+SYNOPSIS
+     WriteSeq fileName
+
+DESCRIPTION
+     Write the sequence of the selected molecule to a
+     file, the name of each residue on a line. Exactly
+     one molecule must be selected.
+
+EXAMPLE
+     WriteSeq /home/joe/struct/my_prot.seq
+
+SEE ALSO
+     WriteAng, WriteDg, WritePdb, ReadSeq
+
+DATE
+     941206

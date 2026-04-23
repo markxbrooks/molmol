@@ -1,0 +1,27 @@
+NAME
+     AddCircles - add circles around atoms
+
+SYNOPSIS
+     AddCircles expr
+
+DESCRIPTION
+     Add circles around atoms. This is typically used to
+     indicate mobility or exactness. A circle will be
+     drawn around every selected atom. The selected bonds
+     are used to determine the direction of the circles.
+     The user will normally select atoms of the backbone
+     (e. g. all CA) and all bonds of the backbone before
+     executing this command.
+
+     The created primitives have the property "circle".
+
+EXAMPLES
+     AddCircles 0.5
+     AddCircles bfactor
+
+SEE ALSO
+     SelectAtom, SelectBond,
+     ColorPrim, LinePrim, RemovePrim
+
+DATE
+     970723

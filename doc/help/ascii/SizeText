@@ -1,0 +1,23 @@
+NAME
+     SizeText - resize text
+
+SYNOPSIS
+     SizeText ( abs | rel ) expr
+
+DESCRIPTION
+     Resize all selected text primitives. If the first
+     argument is 'abs', all sizes are set to the given
+     value. If it is 'rel', the given value is added to the
+     current size.
+
+     Resizing texts is normally done interactively by using
+     the middle mouse button.
+
+EXAMPLE
+     SizeText abs 0.15
+
+SEE ALSO
+     MovePrim
+
+DATE
+     950407

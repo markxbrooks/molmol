@@ -1,0 +1,15 @@
+NAME
+     HelpAbout - show program version and copyright
+
+SYNOPSIS
+     HelpAbout
+
+DESCRIPTION
+     Show a message box with program name, version and
+     copyright.
+
+EXAMPLE
+     HelpAbout
+
+DATE
+     970224

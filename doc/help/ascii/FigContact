@@ -1,0 +1,45 @@
+NAME
+     FigContact - show contact map
+
+SYNOPSIS
+     FigContact name name name name expr expr
+
+DESCRIPTION
+     Create a figure showing a contact map of residues. The
+     first argument gives a property name, the residues
+     with this property set will be shown on the horizontal
+     axis. The residues with the property given as second
+     argument will be shown on the vertical axis.
+
+     For each of these residues, only the atoms with the
+     property given as third argument will be considered
+     for the contacts shown on the top-left side of the
+     diagonal, the ones with the property given as fourth
+     argument will be considered for the bottom-right side
+     of the diagonal.
+
+     Two distances are given as fifth and sixth argument.
+     Nothing will be drawn if the smallest distance between
+     two atoms of the corresponding residues is larger than
+     the maximal distance. A black square will be drawn if
+     it is smaller than the minimal distance. Values in
+     between are shown with increasing levels of grey.
+
+     If more than one molecule is selected, they all need
+     to have the same structure. The distance of each atom
+     pair is calculated as average over the distances in
+     each individual molecule. So what is used for the plot
+     is the minimal average distance of atom pairs between
+     the corresponding residues.
+
+     This command supports groups.
+
+EXAMPLE
+     FigContact 'selected' 'selected' 'bb' 'all' 3.0 5.0
+
+SEE ALSO
+     DefPropRes, DefPropAtom, Group, FigOff,
+     FigLimit, CalcDist
+
+DATE
+     961126

@@ -1,0 +1,50 @@
+<HEAD>
+<TITLE>CalcAxis</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcAxis</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcAxis - calculate lengths of principal axes
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcAxis ( 0 | 1 ) ( 0 | 1 )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Generate a report with the relative lengths of the
+principal axes of all selected molecules. Only the
+selected atoms of each molecule are used, the same
+mass is used for all atoms.
+<P>
+The lengths are listed relatively to the shortest axis,
+the average for all structures is given at the end.
+<P>
+The first option selects whether a list with the angles
+of all selected bonds relative to the principal axes
+should be printed.
+<P>
+The second option selects whether the principal axes
+should be displayed. A cylinder will be added, it can
+be manipulated with the corresponding commands, like
+<A HREF="LengthPrim.html"><KBD>LengthPrim</KBD></A> and <A HREF="RadiusPrim.html"><KBD>RadiusPrim</KBD></A>. The created primitives have
+the properties "axis" and "cylinder".
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcAxis 0 1
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="Fit.html"><KBD>Fit</KBD></A>,  <A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>, <A HREF="LengthPrim.html"><KBD>LengthPrim</KBD></A>,
+<A HREF="RemovePrim.html"><KBD>RemovePrim</KBD></A>, <A HREF="AddCylinder.html"><KBD>AddCylinder</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+9991106
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

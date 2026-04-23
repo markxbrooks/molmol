@@ -1,0 +1,9 @@
+define AddNoe
+  help create partial surface for selected atoms
+  $atom1 = @C "First Atom: "
+  $atom2 = @C "Second Atom: "
+  $distMin = 1 "Minium Noe Value: "
+  $distMax = 5 "Maxium Noe Value: "
+  SelectAtom '$atom1 or $atom2' 
+  CalcDist $distMax $distMin 1 0 1 0 0 'selected' 'selected'
+end

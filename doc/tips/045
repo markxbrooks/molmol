@@ -1,0 +1,7 @@
+You can switch between various stereo
+modes using the Stereo command. If you
+have a machine that is capable of
+hardware stereo display (using shutter
+glasses), you have to start MOLMOL with
+an appropriate command line option, see
+the manual for details.

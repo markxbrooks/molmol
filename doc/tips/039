@@ -1,0 +1,7 @@
+You can bring a molecule back to its
+original orientation with the RotateInit
+command. You can bring a molecule back
+to its original position with the
+MoveInit command, this will also undo
+translations that were automatically
+applied when the molecule was loaded.

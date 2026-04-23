@@ -1,0 +1,23 @@
+NAME
+     LabelDist - choose label of distances
+
+SYNOPSIS
+     LabelDist ( invisible | val | limit | viol )
+
+DESCRIPTION
+     Choose the label of all selected distances.
+     The following possibilities are supported:
+
+         invisible: no label
+         val:       current value of the distance
+         limit:     limit of distance constraints
+         viol:      violation of distance constraints
+
+EXAMPLE
+     LabelDist val
+
+SEE ALSO
+     SelectDist
+
+DATE
+     941122

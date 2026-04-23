@@ -1,0 +1,24 @@
+NAME
+     ReadSeq - read sequence
+
+SYNOPSIS
+     ReadSeq fileName
+
+DESCRIPTION
+     Read a sequence. The file must contain the name of
+     a residue on each line. All residues must appear in
+     the residue library:
+
+         $MOLMOLHOME/setup/amber94.lib
+
+     The molecule will be in an extended conformation,
+     with the standard geometry used for all residues.
+
+EXAMPLE
+     ReadSeq /home/joe/struct/my_prot.seq
+
+SEE ALSO
+     PathNames, ReadAng, ReadDg, ReadPdb, WriteSeq
+
+DATE
+     950704

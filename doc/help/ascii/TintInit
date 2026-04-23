@@ -1,0 +1,19 @@
+NAME
+     TintInit - set initial secondary color
+
+SYNOPSIS
+     TintInit expr expr expr
+
+DESCRIPTION
+     Set the inital secondary color of new objects. The
+     color is given by its Red, Green and Blue components,
+     all in the range between 0.0 and 1.0.
+
+EXAMPLE
+     TintInit 1.0 1.0 0.0
+
+SEE ALSO
+     TintDist, TintPrim
+
+DATE
+     991016

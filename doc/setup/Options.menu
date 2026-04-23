@@ -1,0 +1,68 @@
+# used to build Options pulldown menu
+
+entry U "Set Undo..." "SetUndo"
+pullright D "Dialogs"
+  pullright S "Selection"
+    entry o "on" "DialSelect on"
+    accel "Ctrl<Key>S" "Ctrl+S"
+    entry f "off" "DialSelect off"
+    accel "Alt<Key>S" "Alt+S"
+  end
+  pullright M "Mol"
+    entry o "on" "DialMol on"
+    entry f "off" "DialMol off"
+  end
+  pullright M "Residue"
+    entry o "on" "DialRes on"
+    entry f "off" "DialRes off"
+  end
+  pullright C "Color"
+    entry o "on" "DialColor on"
+    entry f "off" "DialColor off"
+  end
+  pullright t "Style"
+    entry o "on" "DialStyle on"
+    entry f "off" "DialStyle off"
+  end
+  pullright R "RMSD"
+    entry o "on" "DialRmsd on"
+    entry f "off" "DialRmsd off"
+  end
+  pullright e "Measure"
+    entry o "on" "DialMeasure on"
+    entry f "off" "DialMeasure off"
+  end
+end
+pullright A "Drawing Area Size"
+  entry o "Fullscreen on" "Fullscreen on"
+  entry f "Fullscreen off" "Fullscreen off"
+  entry S "Size..." "DrawSize"
+end
+pullright S "Stereo"
+  entry o "off" "Stereo off"
+  accel "Ctrl<Key>O" "Ctrl+O"
+  entry l "left" "Stereo left"
+  entry r "right" "Stereo right"
+  entry s "side_by_side" "Stereo side_by_side"
+  entry c "cross_eye" "Stereo cross_eye"
+  entry h "hardware" "Stereo hardware"
+end
+pullright o "Rock"
+  entry a "Start..." "StartRock"
+  entry o "Stop" "StopRock"
+end
+pullright A "Animation"
+  entry a "Start..." "StartAnim"
+  entry o "Stop" "StopAnim"
+end
+entry B "Bond Display Mode..." "BondMode"
+entry C "Background Color..." "BackColor"
+entry R "Rendering..." "Rendering"
+entry e "Drawing Delay..." "DrawDelay"
+entry P "Drawing Precision..." "DrawPrec"
+pullright l "Plot"
+entry U "Unit..." "PlotUnit"
+entry P "Parameters..." "PlotPar"
+end
+entry N "Path Names..." "PathNames"
+entry I "User Interface..." "UserInterface"

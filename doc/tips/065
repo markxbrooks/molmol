@@ -1,0 +1,6 @@
+You can draw trajectories of molecular
+dynamics calculations using the
+AddTrajec command. You can change their
+display style using the StyleTrajec
+command, they can for example be drawn
+as ellipsoids that indicate mobility.

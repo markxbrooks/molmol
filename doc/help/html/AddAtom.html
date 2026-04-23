@@ -1,0 +1,51 @@
+<HEAD>
+<TITLE>AddAtom</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddAtom</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddAtom - add new atom
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddAtom name name1 name2 name3 expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add an atom with the name given as first argument to
+all selected residues.
+<P>
+name1 is the name of the atom where the new atom is
+attached. name2 is the name of the atom that is used
+to define the axis of the dihedral angle together
+with the atom name1. name3 is the name of the atom
+relative to which the dihedral angle is given.
+<P>
+The first numeric argument gives the dihedral angle,
+the next one the angle between the axis of the
+dihedral angle and the bond between atom name1 and
+the new atom. The last argument gives the bond
+distance.
+<P>
+If name1, name2 and name3 do not exist in a selected
+residue, or if name already exists, then no new atom
+is added for this residue, without an error message.
+<P>
+A bond between the new atom and atom name1 is
+automatically added.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+AddAtom "HB2" "CB" "CA" "HB1" 120 120 1.5
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectRes.html"><KBD>SelectRes</KBD></A>, <A HREF="AddPseudo.html"><KBD>AddPseudo</KBD></A>, <A HREF="RemoveAtom.html"><KBD>RemoveAtom</KBD></A>, <A HREF="WriteLib.html"><KBD>WriteLib</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+961206
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,25 @@
+NAME
+     CheckBond - check number of bonds
+
+SYNOPSIS
+     CheckBond
+
+DESCRIPTION
+     Check all selected atoms for a correct number of
+     bonds. The minimal and maximal number of bonds
+     for each atom type is stored in the third and
+     fourth column of the file:
+
+	 $MOLMOLHOME/setup/AtomRadius
+
+     This is useful after adding bonds with the
+     command CalcBond.
+
+EXAMPLE
+     CheckBond
+
+SEE ALSO
+     PathNames, CalcBond, AddBond, RemoveBond
+
+DATE
+     950704

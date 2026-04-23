@@ -1,0 +1,51 @@
+NAME
+     WriteLib - write entries for residue library
+
+SYNOPSIS
+     WriteLib fileName
+
+DESCRIPTION
+     For all selected residues that were not in the residue
+     library or that were modified by commands like AddAtom
+     and AddBond, write an entry for the residue library
+     into the given file.
+
+     For working with non-standard residues, the best
+     strategy is:
+
+	 1. Read a structure that contains the residue.
+
+	 2. Define bonds with the commands CalcBond,
+	    AddBond and RemoveBond, use AddAtom, RemoveAtom
+	    and AddPseudo if necessary.
+
+	 3. Define angles with AddAngle.
+
+	 4. WriteLib xxx.lib.
+
+	 5. Edit xxx.lib if necessary (e. g. the atom
+	    types).
+
+	 6. Make a copy of the standard library
+	    ($MOLMOLHOME/setup/amber94.lib) and append
+	    xxx.lib.
+
+	 7. InitAll.
+
+	 8. Use PathNames to set name of new library.
+
+	 9. Check the library by executing the command
+	    ReadLib.
+
+	10. Read structure.
+
+EXAMPLE
+     WriteLib /home/joe/my_res.lib
+
+SEE ALSO
+     AddAtom, AddPseudo, RemoveAtom, CalcBond, CheckBond,
+     AddBond, RemoveBond, AddAngle, RemoveAngle,
+     InitAll, PathNames, ReadLib
+
+DATE
+     980303

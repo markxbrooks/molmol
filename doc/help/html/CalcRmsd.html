@@ -1,0 +1,92 @@
+<HEAD>
+<TITLE>CalcRmsd</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcRmsd</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcRmsd - calculate RMSDs and displacements
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcRmsd ( fit_pairs | as_is ) region
+    name name nameList name nameList nameList
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Calculate RMSDs and displacements of all selected
+molecules. The first argument selects whether each
+pair of molecules is superimposed before calculating
+the RMSD, or whether the current orientation is
+used. This can be useful to calculate RMSDs of
+structures already overlaid with the <A HREF="Fit.html"><KBD>Fit</KBD></A> command.
+<P>
+The second arguments selects the residue range
+used for superposition when calculating global
+RMSDs and global displacements.
+<P>
+The third argument selects the name of the first
+property that is used for superposition. The user
+can either give a property defined with DefProp or
+one of the predefined properties. The RMSD values
+will be printed in the upper right part of the
+matrix. This property is also used for the
+superpositions when calculating displacements.
+<P>
+The forth argument selects the name of the second
+property that is used for superposition. The RMSD
+values will be printed in the lower left part of
+the matrix.
+<P>
+The fifth argument is a space separated list of
+property names. It defines the groups of molecules
+that are compared. All the molecules of a group
+must be given a common property with <A HREF="DefPropMol.html"><KBD>DefPropMol</KBD></A>
+(e. g. g1 and g2), and the list of these properties
+must be given here.
+<P>
+The sixth argument is the name of a property of the
+molecule that is used as reference for displacements
+and local RMSDs, typically the mean structure. If no
+name is given, average pairwise values will be
+calculated.
+<P>
+The seventh argument is a space separated list of
+property names. The global displacements will be
+calculated for all the given properties. The
+property used for the superposition is always
+the one given as third argument.
+<P>
+The eighth argument is a space separated list of
+property names. The local RMSDs will be calculated
+for all the given properties. The local RMSD of a
+residue is calculated by superimposing 3 residues
+centered at the given residue, using the property
+given as third argument, and calculating the RMSD
+of all 3 residue.
+<P>
+The ninth argument is a space separated list of
+property names. The local displacements will be
+calculated for all the given properties. The local
+displacement of a residue is calculated by
+superimposing 3 residues centered at the given
+residue, using the property given as third argument,
+and calculating the RMSD of the middle residue.
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcRmsd fit_pairs '5..32,37..55' 'bb' 'heavy' ''
+    'bb heavy heavysc' '' 'bb heavy'
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="DefPropMol.html"><KBD>DefPropMol</KBD></A>, <A HREF="DefPropAtom.html"><KBD>DefPropAtom</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="Fit.html"><KBD>Fit</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960317
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

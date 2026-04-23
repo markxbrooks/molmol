@@ -1,0 +1,43 @@
+<HEAD>
+<TITLE>NameMol</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>NameMol</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+NameMol - change molecule name
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+NameMol name expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Change the name of all selected molecules. When
+multiple molecules are renamed, they can be given
+unique names by appending a number to the name.
+<P>
+The first argument gives the (base) name, the second
+one the starting number for numbering molecules, the
+third one the number of digits for numbering.
+<P>
+When changing the name of only one molecule, the
+number of digits (third argument) should be 0, so that
+the name given as first argument is directly used as
+name.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+NameMol bpti 1 0
+NameMol bpti 21 3
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="NewMol.html"><KBD>NewMol</KBD></A>, <A HREF="DialMol.html"><KBD>DialMol</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+980319
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

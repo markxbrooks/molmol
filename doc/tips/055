@@ -1,0 +1,4 @@
+You can modify initial (default) display
+attributes with the ColorInit, LineInit,
+LabelInit, MaterialInit and TextureInit
+commands.

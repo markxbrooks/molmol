@@ -1,0 +1,53 @@
+<HEAD>
+<TITLE>FigLimit</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>FigLimit</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+FigLimit - show map of distance constraints
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+FigLimit name name expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Create a figure showing a map with the number of
+distance constraints between residue pairs. The
+first argument gives a property name, the residues
+with this property set will be shown on the horizontal
+axis. The residues with the property given as second
+argument will be shown on the vertical axis.
+<P>
+All selected distances are considered. If the two
+properties given as first and second argument are the
+same, upper limits are shown on the top-left side of
+the diagonal, lower limits on the bottom-right side.
+If the properties are different, the number of upper
+and lower limit constraints is shown together.
+<P>
+The third argument gives the number of constraints
+required for a fully black square, the fourth argument
+the minimum number of constraints required for a
+square to be shown at all. The grey value of these
+squares is given as fifth argument (0.0 is black,
+1.0 is white).
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+FigLimit 'selected' 'selected' 5 1 0.7
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="ReadUpl.html"><KBD>ReadUpl</KBD></A>, <A HREF="ReadLol.html"><KBD>ReadLol</KBD></A>, <A HREF="DefPropRes.html"><KBD>DefPropRes</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="FigOff.html"><KBD>FigOff</KBD></A>,
+<A HREF="FigContact.html"><KBD>FigContact</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+961127
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

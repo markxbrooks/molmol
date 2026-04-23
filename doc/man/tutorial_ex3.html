@@ -1,0 +1,201 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>MOLMOL Tutorial - Example 3</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>MOLMOL Tutorial - Example 3</H1>
+
+ <H2>Image</H2>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex3.gif"></CENTER>
+
+ <H2>Steps</H2>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+The structures have to be superimposed for the next step.
+In our example they are already, otherwise we would do that
+here as explained in  <A HREF=tutorial_ex1.html>Example 1</A>
+<P>
+
+ <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A> sausage.mac</KBD><BR>
+(<SAMP>File->Macro->Execute Standard</SAMP>)<BR>
+Use the standard macro for creating a sausage display. If you are
+interested in the detailed commands used to do all of the steps
+manually, have a look at this macro.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A> 'name != "mean"'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The macro created a mean structure. We can get rid of the original
+20 structures now, so we select all but the mean structure...
+<P>
+
+ <KBD><A HREF="../help/html/RemoveMol.html">RemoveMol</A></KBD><BR>
+(<SAMP>Edit->Structure->Remove Mol</SAMP>)<BR>
+... and remove them.
+<P>
+
+ <KBD><A HREF="../help/html/DialStyle.html">DialStyle</A> on</KBD><BR>
+(<SAMP>Button:style</SAMP>)<BR>
+Open the style dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> invisible</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+The bonds of the mean structure are still visible, select
+all bonds and make them invisible
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The standard orientation for BPTI is the one where the pricipal
+axes are aligned to the coordinate axes. So we select all atoms...
+<P>
+
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_axes</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+... and do the alignment.
+<P>
+
+We now have the basic sausage display. Now you will learn how
+to use "variable color", i. e. a separate color for each
+residue. We will use the secondary structure type for determining
+the color, it is also common to use physical properties like
+exchange rates.
+<P>
+
+ <KBD><A HREF="../help/html/CalcSecondary.html">CalcSecondary</A></KBD><BR>
+(<SAMP>Calc->Secondary</SAMP>)<BR>
+So we calculate the secondary structure first.
+<P>
+
+ <KBD><A HREF="../help/html/PaintRibbon.html">PaintRibbon</A> atom</KBD><BR>
+(<SAMP>Prim->Ribbon->Paint</SAMP>)<BR>
+This causes the color of each sausage part to be taken from the
+atom that was used to define it. Because atoms also have a blue
+default color, there is no visible change yet.
+<P>
+
+ <KBD><A HREF="../help/html/DialColor.html">DialColor</A> on</KBD><BR>
+(<SAMP>Button:color</SAMP>)<BR>
+Open the color dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> '@CA'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A> 0.7 0.7 0.7</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+The macro that we used took the CA atoms to define the sausage,
+so we have to set the color of the CA atoms. We first select all
+CA atoms and color them grey.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> '@CA & res.helix'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A> 1 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Then we select all CA atoms within helices and color them red.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> '@CA & res.sheet'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A> 0 1 1</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+In the same way we color all CA atoms within a sheet cyan.
+<P>
+
+ <KBD><A HREF="../help/html/BackColor.html">BackColor</A> 0 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Change the background color to black.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example3.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example3.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H2>Macro</H2>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+XMacStand sausage.mac
+DialSelect on
+SelectMol 'name != "mean"'
+RemoveMol
+DialStyle on
+SelectBond ''
+StyleBond invisible
+SelectAtom ''
+Fit to_axes
+CalcSecondary
+PaintRibbon atom
+DialColor on
+SelectAtom '@CA'
+ColorAtom 0.7 0.7 0.7
+SelectAtom '@CA & res.helix'
+ColorAtom 1 0 0
+SelectAtom '@CA & res.sheet'
+ColorAtom 0 1 1
+BackColor 0 0 0
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example3.tif
+WriteDump example3.mol
+Quit no
+</PRE>
+
+<HR>
+Last modified: Mon Jan 20 19:45:00 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

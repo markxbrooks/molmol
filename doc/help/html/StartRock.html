@@ -1,0 +1,47 @@
+<HEAD>
+<TITLE>StartRock</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>StartRock</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+StartRock - start rock
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+StartRock ( once | cycle ) expr
+    expr expr expr expr expr expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Start to rotate all movable (set with <A HREF="DialMol.html"><KBD>DialMol</KBD></A>)
+molecules automatically. There are parameters for two
+phases, so that it is possible to rotate back and
+forth.
+<P>
+If the first argument is 'once', the movement will
+only happen once. If it is 'cycle', the program will
+repeat it until the <A HREF="StopRock.html"><KBD>StopRock</KBD></A> command is executed.
+<P>
+The second argument is the minimal delay in
+milliseconds between rotations. The rest of the
+arguments are rotation angles for all three axis and
+number of steps.
+<P>
+It is possible to execute the command while
+rocking is running, e. g. for changing the delay.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+StartRock cycle 50 0 10 0 18 0 -10 0 18
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="DialMol.html"><KBD>DialMol</KBD></A>, <A HREF="StopRock.html"><KBD>StopRock</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+940331
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

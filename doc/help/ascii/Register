@@ -1,0 +1,25 @@
+NAME
+     Register - register as MOLMOL user
+
+SYNOPSIS
+     Register string string string string [ string ]
+
+DESCRIPTION
+     Send an E-mail to register as MOLMOL user. The first
+     argument gives your name, the second argument the name
+     of the organisation (university/company) where you
+     work, the third argument the S-mail address, the
+     fourth argument the E-mail address. The fifth argument
+     is the program name and release, just leave the value
+     that is automatically filled in.
+
+     Getting registered is strongly recommended, so that we
+     can inform you of new releases and send you other
+     useful information.
+
+EXAMPLE
+     Register "Joe User" "Useless Univ."
+	 "Street 42, Nowhere, USA" "joe@useless.edu"
+
+DATE
+     960111

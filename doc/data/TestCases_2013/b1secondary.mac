@@ -1,0 +1,78 @@
+DefPropRes 'strand1_1' 'num = 2..5'
+DefPropRes 'strand1_2' 'num = 10..14'
+DefPropRes 'strand1_3' 'num = 28..31'
+DefPropRes 'strand1_4' 'num = 36..39'
+
+
+
+
+DefPropRes 'helix1' ''
+DefPropRes 'sheet1' 'strand1_1 | strand1_2 | strand1_4 | strand1_3'
+DefPropRes 'sheet' 'sheet1'
+DefPropRes 'coil' '! (helix | sheet)'
+
+StyleAtom invisible
+StyleBond invisible
+
+DefPropPrim 'prev_sel' 'selected'
+DefPropBond 'prev_sel' 'selected'
+# deselect all so that we can set the color only on the new ones and
+# set the selection to the previously selected + new ones at the end
+SelectPrim '0'
+
+SelectAtom 'mol.selected & res.selected & ca'
+AddRibbon
+DefPropPrim 'new_ribbon' 'selected'
+SelectPrim 'new_ribbon & helix1'
+ColorPrim 1 0 0
+
+SelectPrim 'new_ribbon & helix2'
+ColorPrim 1 0 0
+
+SelectPrim 'new_ribbon & sheet'
+ColorPrim 1 0 0
+
+
+SelectPrim 'new_ribbon & coil'
+ColorPrim 0.0 0.3 1.0
+
+SelectBond 'mol.selected & res.selected & res.sheet & atom2.name = "CB"'
+LengthBond -0.5 1.0
+
+SelectPrim 'prev_sel | new_ribbon'
+SelectBond 'prev_sel'
+
+SelectRes ':4,6,20,30,37,38@CB,SG'
+SelectAtom ':4,6,20,30,37,38@CB,SG'
+StyleAtom sphere
+RadiusAtom 0.6
+DialColor on
+ColorAtom 1.000 0.843 0.000
+DialSelect on
+SelectBond ':4,6,20,30,37,38@CB,SG'
+StyleBond neon
+DialColor on
+ColorBond 1.000 0.843 0.000
+#SelectAtom ':4@SG :37@SG'
+#AddBond
+#StyleBond neon
+DialColor on
+ColorBond 1.000 0.843 0.000
+SelectAtom ':6@SG :30@SG'
+#AddBond
+StyleBond neon
+DialColor on
+ColorBond 1.000 0.843 0.000
+SelectAtom ':20@SG :38@SG'
+#AddBond
+StyleBond neon
+DialColor on
+ColorBond 1.000 0.843 0.000
+
+#SelectPrim 'num=3,5,7,9'
+#ColorPrim 1.000 0.100 0.000
+#SelectPrim 'num=2,4,6,8,10'
+#ColorPrim 0.129 0.308 0.922
+#SelectPrim 'num=3,5,7,9'
+#StyleRibbon rounded
+#SizeRibbon 2.0 0.5 2 2 1.4

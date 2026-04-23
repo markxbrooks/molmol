@@ -1,0 +1,6 @@
+You can fit a sphere, ellipsoid,
+cylinder, cone or box that contains an
+aribtrary set of molecules using the
+AddSolid command. This can be used as
+a schematic way of showing the overall
+shape of a molecule or group of atoms.

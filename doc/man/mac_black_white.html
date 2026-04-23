@@ -1,0 +1,42 @@
+<HEAD>
+<TITLE>black_white.mac</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+# Set material properties of all items, background color,
+# and light source position for good looking black and
+# white plot.
+
+# white background
+BackColor 1 1 1
+
+# light source at eye point
+Light point 0 0 10
+
+# make all atoms white, and set their material so that
+# they are displayed with a black boundary
+SelectAtom ''
+ColorAtom 1 1 1
+MaterialAtom 0.0 1.0 0.4 3.0 0.0 1.0 1.0
+
+# make all bonds white, and set their material so that
+# they are displayed with a black boundary
+SelectBond ''
+ColorBond 1 1 1
+MaterialBond 0.0 1.0 0.4 3.0 0.0 1.0 1.0
+
+# make all distances white, and set their material so that
+# they are displayed with a black boundary
+SelectDist ''
+ColorDist 1 1 1
+TintDist 1 1 1
+MaterialDist 0.0 1.0 0.4 3.0 0.0 1.0 1.0
+
+# make all primitives white, and set their material so that
+# they are displayed with a black boundary
+SelectPrim ''
+ColorPrim 1 1 1
+TintPrim 1 1 1
+MaterialPrim 0.0 1.0 0.4 3.0 0.0 1.0 1.0
+</PRE>
+</BODY>

@@ -1,0 +1,69 @@
+<HEAD>
+<TITLE>FigRamach</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>FigRamach</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+FigRamach - Ramachandran plot
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+FigRamach name name nameList
+    ( none | normal | VAL-ILE-THR | GLY )
+    ( dot | plus | cross | res | res_box |
+    mol | mol_box )
+    ( dot | plus | cross | res | res_box |
+    mol | mol_box )
+    ( 0 | 1) ( 0 | 1 )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Create a Ramachandran plot with the first angle name
+on the x-axis and the second angle name on the y-axis.
+Only residues where both angles are selected are
+shown.
+<P>
+The third argument is a space separated list of
+alternative residues (typically GLY).
+<P>
+The fourth argument selects the background (allowed
+regions). The allowed regions were determined from
+378 different crystal structures with a resolution
+of 2.5 A or better. The regions where the density
+of points (PHI/PSI) from this statistic is highest
+are marked with color. The green regions contain 80%
+of all points, the green and yellow regions together
+95%, all colored regions together 98%. There is a
+background for all non-GLY/PRO residues, one for
+VAL/ILE/THR and one for GLY.
+<P>
+The fifth argument selects the display style of
+residues not listed as alternative, the sixth
+argument the one for alternative residues.
+<P>
+If the color option is selected, he colors of the
+markers is taken from the bond corresponding to the
+angle, otherwise they are all black.
+<P>
+If the last option is selected and all angles shown
+in the plot have the same angle constraints, the
+allowed region is indicated in light grey.
+<P>
+The user can select residues by clicking on symbols
+in the plot.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+FigRamach 'PHI' 'PSI' 'GLY' normal dot plus 1 0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="ReadAco.html"><KBD>ReadAco</KBD></A>, <A HREF="SelectAngle.html"><KBD>SelectAngle</KBD></A>, <A HREF="FigOff.html"><KBD>FigOff</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960519
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,60 @@
+<HEAD>
+<TITLE>CalcHbond</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcHbond</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcHbond - find H-bonds
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcHbond expr expr expr
+    ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Find pairs of selected atoms where the first one is
+a donor and the second one an acceptor for an H-bond,
+the distance between the two atoms is smaller than
+the first argument, and the angle between the line
+from the atom connected to the donor and the donor
+and the line from the atom connected to the donor
+and the acceptor is smaller than the second argument.
+<P>
+The first option determines whether H-bonds within
+structures or H-bonds between atoms of different
+structures are desired.
+<P>
+Depending on the other three options, the command will
+create a report with the H-bonds, a macro to add the
+H-bonds to all selected structures (can e. g. be used
+to add them to a mean structure later) and will add
+them to the display. Only H-bonds that appear in a
+minimal number of structures given as third argument
+appear in the report and the macro.
+<P>
+In the report produced by this command, a table of
+H-bonds will be created for each set of molecules
+with the same structure. A '+' sign indicates that the
+H-bond is present in the molecule corresponding to
+the column. The '+' sign is replaced by a '5' for
+molecules 5, 15, 25, ... and by a '0' for molecules
+10, 20, 30, ...
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcHbond 2.4 35 10 0 1 0 1
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="AddHbond.html"><KBD>AddHbond</KBD></A>, <A HREF="RemoveDist.html"><KBD>RemoveDist</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+981101
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

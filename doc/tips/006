@@ -1,0 +1,7 @@
+The WriteLib command, in combination
+with a  few other commands (see help
+page of WriteLib) is useful for adding
+non-standard residues to the residue
+library. You can check the contents of
+the residue library with the ReadLib
+command.

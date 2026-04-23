@@ -1,0 +1,20 @@
+NAME
+     LineAtom - set style and width of atom lines
+
+SYNOPSIS
+     LineAtom (solid | dashed ) expr
+
+DESCRIPTION
+     Set the style and width of the lines used for drawing
+     all selected atoms. Lines are used for atoms if the
+     style is 'tetrahedron', or if it is 'sphere' and the
+     shading is set to 'lines'.
+
+EXAMPLE
+     LineAtom solid 3
+
+SEE ALSO
+     SelectAtom, StyleAtom, ColorAtom, ShadeAtom, LineInit
+
+DATE
+     950324

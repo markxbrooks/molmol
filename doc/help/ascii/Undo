@@ -1,0 +1,20 @@
+NAME
+     Undo - undo effect of last command
+
+SYNOPSIS
+     Undo
+
+DESCRIPTION
+     Undo the effect of the last executed command. Multiple
+     undo is possible by entering the Undo command multiple
+     times. The number of possible undos is set with the
+     SetUndo command.
+
+EXAMPLE
+     Undo
+
+SEE ALSO
+     SetUndo, WriteDump
+
+DATE
+     950624

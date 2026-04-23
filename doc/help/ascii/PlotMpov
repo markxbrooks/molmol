@@ -1,0 +1,26 @@
+NAME
+     PlotMpov - make a MegaPov plot
+
+SYNOPSIS
+     PlotMpov fileName
+
+DESCRIPTION
+     Make a plot of the current screen contents in MegaPov
+     format. MegaPov is an improved version of POV-Ray
+     (see PlotPov). This command makes use of the extended
+     possibilities of MegaPov in rendering surfaces with
+     smooth color changes, e. g. surfaces colored by
+     electrostatic potential.
+
+     MegaPov is available from Nathan Kopp's web pages at
+     http://nathan.kopp.com/patched.htm.
+
+EXAMPLE
+     PlotMpov /home/joe/MyPlot.pov
+
+SEE ALSO
+     PlotFm*, PlotPs, PlotTiff, PlotJpeg, PlotPng,
+     PlotPov, PlotVrml1, PlotVrml2
+
+DATE
+     000226

@@ -1,0 +1,6 @@
+You can select atoms based on distance
+to other atoms. After defining one or
+several reference atoms with the SetRef
+command, the symbol 'd' in selection
+expressions refers to the distance to
+the reference atom(s).

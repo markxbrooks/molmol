@@ -1,0 +1,36 @@
+<HEAD>
+<TITLE>ColorBond</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ColorBond</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ColorBond - set color of bonds
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ColorBond expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set the color of all selected bonds. The color is
+given by its Red, Green and Blue component, all in
+the range between 0.0 and 1.0. By using expressions,
+it is possible to give each bond a different color,
+depending e. g. on the B factor of the first atom.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+ColorBond 1.0 0.0 0.0
+ColorBond atom1.bfactor 1.0-atom1.bfactor 0.0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectBond.html"><KBD>SelectBond</KBD></A>, <A HREF="DialColor.html"><KBD>DialColor</KBD></A>, <A HREF="ColorInit.html"><KBD>ColorInit</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+940119
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

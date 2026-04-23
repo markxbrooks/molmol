@@ -1,0 +1,36 @@
+NAME
+     ReadPot - read potentials for surface coloring
+
+SYNOPSIS
+     ReadPot fileName
+
+DESCRIPTION
+     Read a file with potentials, these are used for
+     coloring surfaces. The file must contain values on a
+     grid, the format is:
+
+	 x0 xSize xInc
+	 y0 ySize yInc
+	 z0 zSize zInc
+	 val val val ....
+
+     where x0, y0, z0 (float) are the coordinates of the
+     grid origin, xSize, ySize and zSize (int) are the
+     sizes of the grid in each dimension, and xInc, yInc
+     and zInc (float) the spacing between two grid points
+     in each dimention. This must be followed by
+     xSize * ySize * zSize values (float), where the
+     x-coordinate is the one that is running the fastest.
+
+     The potentials will be set for all selected surfaces,
+     but the PaintSurface command has to be given to update
+     the colors.
+
+EXAMPLE
+     ReadPot /home/joe/struct/my_pot.dat
+
+SEE ALSO
+     CalcPot, AddSurface, SelectPrim, PaintSurface
+
+DATE
+     960509

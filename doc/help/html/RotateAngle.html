@@ -1,0 +1,41 @@
+<HEAD>
+<TITLE>RotateAngle</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>RotateAngle</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+RotateAngle - rotate dihedral angles
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+RotateAngle expr { expr }
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Rotate all selected dihedral angles. The first
+argument gives the number of angles that should rotate
+the chain backwards (i. e. towards the N-terminus in a
+protein). The user will normally not enter the value
+of the angles on the command line, but use the dialog
+box to interactively vary the angles.
+<P>
+If backwards rotation is desired, the first argument
+should be adjusted *before* any of the angles are
+modified, otherwise it will not have the desired
+effect.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+RotateAngle 1 -57.0 -47.0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAngle.html"><KBD>SelectAngle</KBD></A>, <A HREF="SetAngle.html"><KBD>SetAngle</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+951208
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

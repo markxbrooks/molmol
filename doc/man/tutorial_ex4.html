@@ -1,0 +1,213 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>MOLMOL Tutorial - Example 4</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>MOLMOL Tutorial - Example 4</H1>
+
+ <H2>Image</H2>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex4.gif"></CENTER>
+
+ <H2>Steps</H2>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A> 'num > 1'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We only want to plot of the surface of the first of the
+20 structures, so we select all but the first...
+<P>
+
+ <KBD><A HREF="../help/html/RemoveMol.html">RemoveMol</A></KBD><BR>
+(<SAMP>Edit->Structure->Remove Mol</SAMP>)<BR>
+... and remove them.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The standard orientation for BPTI is the one where the pricipal
+axes are aligned to the coordinate axes. So we select all atoms...
+<P>
+
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_axes</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+... and do the alignment.
+<P>
+
+ <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A> pdb_charge.mac</KBD><BR>
+(<SAMP>File->Macro->Execute Standard</SAMP>)<BR>
+For calculating the electrostatic potential, it is very
+important to have the proper charge for all residues. Since
+the charges are normally not given in a PDB file, we call
+this macro that does the typically necessary changes, like
+GLU to GLU-. You should manually check whether all charges
+are correct before calculating the potential. In this case
+we notice that we are missing the charges at the termini,
+because the sequence in the file just starts with an ARG
+and ends with an ALA.
+<P>
+
+ <KBD><A HREF="../help/html/SelectRes.html">SelectRes</A> ':1'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+So we select the first residue...
+<P>
+
+ <KBD><A HREF="../help/html/ChangeRes.html">ChangeRes</A> atoms 'NARG'</KBD><BR>
+(<SAMP>Edit->Structure->Change Res</SAMP>)<BR>
+And convert it to NARG, the form of ARG with an N-terminal
+group, maintaining the old coordinates.
+<P>
+
+ <KBD><A HREF="../help/html/CalcAtom.html">CalcAtom</A> 'HN*'</KBD><BR>
+(<SAMP>Calc->Atom</SAMP>)<BR>
+It is not really needed for this example, but for
+demonstration purpose we calculate the coordinates of the
+HN2 and HN3 that are missing because these atoms did not
+exist in the ARG residue that we originally read from the
+file.
+<P>
+
+ <KBD><A HREF="../help/html/SelectRes.html">SelectRes</A> ':58'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The same way we select the last residue...
+<P>
+
+ <KBD><A HREF="../help/html/ChangeRes.html">ChangeRes</A> atoms 'CALA'</KBD><BR>
+(<SAMP>Edit->Structure->Change Res</SAMP>)<BR>
+... convert it to CALA, the form of ALA with a C-terminal
+group...
+<P>
+
+ <KBD><A HREF="../help/html/CalcAtom.html">CalcAtom</A> 'O*'</KBD><BR>
+(<SAMP>Calc->Atom</SAMP>)<BR>
+... and calculate the coordinates of OA and OB. These we
+actually need, because they hold charges.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> 'heavy'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We only use the heavy atoms for calculating potential and surface.
+If protons are also used, they "dampen" the charges visible at
+the surface, which leads to less clear pictures.
+<P>
+
+ <KBD><A HREF="../help/html/CalcPot.html">CalcPot</A> (vdw) (simplecharge) 2 80 1.4 0.3 2 10 zero 'bpti.pot'</KBD><BR>
+(<SAMP>Calc->Potential</SAMP>)<BR>
+Now we can calculate the electrostatic potential, storing the
+result in the file <KBD>bpti.pot</KBD>. Check the help page for
+details about the arguments. We accept the defaults, except for
+the charge, where we choose the simple model without partial
+charges, only charges located on one or two atoms of each
+charged residue. Note that the current drawing precision
+(see  <KBD><A HREF="../help/html/DrawPrec.html">DrawPrec</A></KBD>) determines the grid width for the
+calculation, we keep the default of 3 that leads to a grid
+spacing of 1 Angstrom.
+<P>
+
+ <KBD><A HREF="../help/html/AddSurface.html">AddSurface</A> (vdw) contact 1.4 shaded 0</KBD><BR>
+(<SAMP>Prim->Surface->Add</SAMP>)<BR>
+Calculate the contact surface.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPot.html">ReadPot</A> bpti.pot</KBD><BR>
+(<SAMP>File->Read Potential</SAMP>)<BR>
+Read the previously calculated potential. The values are
+now mapped onto the surface, so this step has to be executed
+after calculating the surface.
+<P>
+
+ <KBD><A HREF="../help/html/PaintSurface.html">PaintSurface</A> pot 0.0 1.4 0.2 3 '-0.5 1 0 0 0.0 1 1 1 0.5 0 0 1'</KBD><BR>
+(<SAMP>Prim->Surface->Paint</SAMP>)<BR>
+Define how the surface is colored. We choose calculating the
+color from the previously read potential. The second to fifth
+arguments are not used in this case, the last argument gives
+the mapping from potential to color, see the help page for
+details.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example4.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example4.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H2>Macro</H2>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+DialSelect on
+SelectMol 'num > 1'
+RemoveMol
+SelectAtom ''
+Fit to_axes
+XMacStand pdb_charge.mac
+SelectRes ':1'
+ChangeRes atoms 'NARG'
+CalcAtom 'HN*'
+SelectRes ':58'
+ChangeRes atoms 'CALA'
+CalcAtom 'O*'
+SelectAtom 'heavy'
+CalcPot vdw simplecharge 2 80 1.4 0.3 2 10 zero 'bpti.pot'
+AddSurface vdw contact 1.4 shaded 0
+ReadPot bpti.pot
+PaintSurface pot 0.0 1.4 0.2 3 '-0.5 1 0 0 0.0 1 1 1 0.5 0 0 1'
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example4.tif
+WriteDump example4.mol
+Quit no
+</PRE>
+
+<HR>
+Last modified: Mon Jan 20 19:45:00 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

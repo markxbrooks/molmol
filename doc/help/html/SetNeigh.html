@@ -1,0 +1,49 @@
+<HEAD>
+<TITLE>SetNeigh</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>SetNeigh</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+SetNeigh - set sheet neighbours of residues
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+SetNeigh expr expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set the information about neighbouring residues used
+for schematic display of beta sheets. The arguments
+are applied to all selected molecules.
+<P>
+The first and second argument give the numbers of the
+start and end residues in the first strand, where the
+start number must be smaller than the end number. The
+third and fourth argument give the start and end
+numbers of residues in the second strand. For a
+parallel pair of strands, the start number must be
+smaller than the end number, for an antiparallel pair
+it must be larger. Both strands must have the same
+number of residues and must not overlap.
+<P>
+This command is only used if the secondary structure
+information was not read from a PDB file or calculated
+with <A HREF="CalcSecondary.html"><KBD>CalcSecondary</KBD></A>, or if the user wants to modify
+this information.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+SetNeigh 18 24 35 29
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A>, <A HREF="CalcSecondary.html"><KBD>CalcSecondary</KBD></A>, <A HREF="WriteSecondary.html"><KBD>WriteSecondary</KBD></A>,
+<A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>, <A HREF="TypeRibbon.html"><KBD>TypeRibbon</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950523
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

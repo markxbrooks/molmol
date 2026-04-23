@@ -1,0 +1,42 @@
+<HEAD>
+<TITLE>NearPrim</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>NearPrim</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+NearPrim - set near clipping plane of primitives
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+NearPrim expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set the position of the near clipping plane of all
+selected primitives. The position is given as distance
+from the viewing point, the center of the display has
+distance 10.0 from the viewing point. When a negative
+value is given, the current value will be unchanged.
+When 0.0 is given, no separate clipping will be done,
+the global clipping planes set by <A HREF="ClipPos.html"><KBD>ClipPos</KBD></A> and <A HREF="ClipSize.html"><KBD>ClipSize</KBD></A>
+are then used.
+<P>
+This command is mainly useful for surfaces, by
+clipping away the front part it is possible to see
+the inside.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+NearPrim 8.0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectPrim.html"><KBD>SelectPrim</KBD></A>, <A HREF="AddSurface.html"><KBD>AddSurface</KBD></A>, <A HREF="ClipPos.html"><KBD>ClipPos</KBD></A>, <A HREF="ClipSize.html"><KBD>ClipSize</KBD></A>, <A HREF="TrimSurface.html"><KBD>TrimSurface</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970718
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

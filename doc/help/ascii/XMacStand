@@ -1,0 +1,69 @@
+NAME
+     XMacStand - execute standard macro
+     XMacUser  - execute user macro
+
+SYNOPSIS
+     XMacStand fileName
+     XMacUser fileName
+
+DESCRIPTION
+     Execute a macro file. A macro file is a sequence of
+     commands like they are entered on the command line.
+     A history of all executed commands of each session is
+     maintained in the file molmol/history in the users
+     home directory. It can be used as macro.
+
+     The two commands only differ in their search path.
+     XMacStand by default searches in $MOLMOLHOME/macros,
+     while XMacUser uses the current directory as default
+     search path.
+
+     Additonally to regular commands, macros can also
+     contain command definitons. Once a macro with a
+     command definiton is read in, this command can be used
+     like a builtin MOLMOL command. A command definition
+     has the syntax:
+
+         define CommandName
+         help one-line-help
+         $arg1 = default1 prompt1
+         ..
+         $argN = defaultN promptN
+         Command1
+         ..
+         CommandN
+         end
+
+     The help line is optional. The command can have any
+     number of arguments (including zero). If no default
+     value is given, the empty string is assumed the first
+     time the command is executed, the previous value from
+     there on. If the prompt is missing, the name of the
+     argument is taken. If default values or prompts
+     contain blanks or other special characters, they have
+     to be written in single or double quotes.
+
+     At least one command must be present in the body.
+     Empty lines and comments (staring with #) are allowed,
+     the lines can be indented for better readability.
+
+     In the body, the arguments can be referenced by
+     $arg or ${arg}. Any command can be used.
+
+     Example:
+
+         define ZoomRotate
+           help zoom and rotate in one step
+
+           $Zoom = 1.5
+           $rotY = 90 "Rotate Y"
+
+           ZoomRel $Zoom
+           RotateY $rotY
+         end
+
+EXAMPLE
+     XMacUser /home/joe/macros/my_favorite.mac
+
+DATE
+     960208

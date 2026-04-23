@@ -1,0 +1,84 @@
+<HEAD>
+<TITLE>DefPropAtom</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>DefPropAtom</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+DefPropMol   - define molecule property
+DefPropRes   - define residue property
+DefPropAtom  - define atom property
+DefPropBond  - define bond property
+DefPropAngle - define angle property
+DefPropDist  - define distance property
+DefPropPrim  - define primitive property
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+DefPropMol propertyName expr
+DefPropRes propertyName expr
+DefPropAtom propertyName expr
+DefPropBond propertyName expr
+DefPropAngle propertyName expr
+DefPropDist propertyName expr
+DefPropPrim propertyName expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Define a property with the given name by the given
+expression. See <A HREF="SelectMol.html"><KBD>SelectMol</KBD></A> for a description of the
+expression syntax. Properties can be used in other
+property definitions or selections. The Select
+commands are actually just special cases of the
+DefProp commands, they defines the property with
+the name "selected". The following properties are
+used internally by the program and should not be
+defined by this command:
+<P>
+<PRE>
+    all
+    visible
+</PRE>
+The value of the "visible" property is maintained
+by the program, it is set for all atoms, bonds,
+distances and primitives that have their attributes
+(<A HREF="StyleAtom.html"><KBD>Style*</KBD></A>) set in a way to make them visible. This is
+very convenient for selecting only visible items.
+<P>
+The "displayed" property is used by the program to
+decide which items should be displayed. It is not
+recommended to modify it, it is normally better to
+use the <A HREF="StyleAtom.html"><KBD>Style*</KBD></A> commands for changing the visibility.
+It is very useful for molecules, however, but the
+molecule dialog (<A HREF="DialMol.html"><KBD>DialMol</KBD></A> command) is more convenient
+for modifying it in this case.
+<P>
+The "movable" property is used by the program to
+decide which items are moved by rotations etc.
+It only has an influence for molecules, and the
+molecule dialog (<A HREF="DialMol.html"><KBD>DialMol</KBD></A> command) command is more
+convenient for modifying it.
+<P>
+Some properties are predefined, they can be seen
+in the file:
+<P>
+<PRE>
+    $MOLMOLHOME/setup/PropDef
+</PRE>
+or with the <A HREF="HelpProp.html"><KBD>HelpProp</KBD></A> command.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+DefPropRes 'helix' 'num >= 47 & num <= 56'
+DefPropAtom 'helixCA' 'name = "CA" & res.helix'
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="DialSelect.html"><KBD>DialSelect</KBD></A>, <A HREF="SelectAngle.html"><KBD>Select*</KBD></A>, <A HREF="DialMol.html"><KBD>DialMol</KBD></A>, <A HREF="HelpProp.html"><KBD>HelpProp</KBD></A>, <A HREF="ListPropAngle.html"><KBD>ListProp*</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950704
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

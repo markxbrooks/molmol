@@ -1,0 +1,32 @@
+NAME
+     AddAngle - add dihedral angle
+
+SYNOPSIS
+     AddAngle name
+
+DESCRIPTION
+     Add a dihedral angle with the given name, defined
+     by the four selected atoms. Exactly four atoms must
+     be selected before this command is executed, an error
+     message will be issued otherwise.
+
+     Two of the atoms must be from the same residue, one
+     also from the same residue or the previous residue,
+     one from the same residue or the next residue.
+
+     The name must be unique within the residue.
+
+     The new angle cannot be used immediately for commands
+     like RotateAngle, only angles that were in the residue
+     library can be used for that purpose. The command is
+     intended to be used in conjunction with WriteRes to
+     generate library entries for non-standard residues.
+
+EXAMPLE
+     AddAngle "RHO"
+
+SEE ALSO
+     AddAtom, AddBond, CalcBond, WriteLib
+
+DATE
+     961219

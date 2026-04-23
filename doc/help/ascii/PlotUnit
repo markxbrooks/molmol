@@ -1,0 +1,21 @@
+NAME
+     PlotUnit - set unit of plot parameters
+
+SYNOPSIS
+     PlotUnit ( cm | mm | inch )
+
+DESCRIPTION
+     Set the unit used for paper and plot sizes in the
+     PlotPar command. Changing the unit will also reset
+     the paper size to the default associated with the
+     unit, which is A4 for cm and mm and US Letter for
+     inch.
+
+EXAMPLE
+     PlotUnit cm
+
+SEE ALSO
+     PlotPar
+
+DATE
+     950727

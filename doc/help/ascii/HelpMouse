@@ -1,0 +1,14 @@
+NAME
+     HelpMouse - show help text about using the mouse
+
+SYNOPSIS
+     HelpMouse
+
+DESCRIPTION
+     Show a text that explains how to use the mouse.
+
+EXAMPLE
+     HelpMouse
+
+DATE
+     950411

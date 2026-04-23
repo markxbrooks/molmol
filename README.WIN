@@ -1,0 +1,137 @@
+                               MOLMOL 2K.2
+                          Important Information
+
+
+Date: January 20, 2003
+
+
+This file contains information specific to the Windows version of MOLMOL.
+General information is in the file README, which should be read first.
+
+Note: File names in Windows are not case sensitive, so it may be that
+your system displays them in different case than shown here.
+
+
+DOWNLOADING
+
+The files for the Windows version are in subdirectory called "win" of
+the ftp locations given in README. The following files can be downloaded:
+
+    molmol-2k.2.0-doc.exe
+    molmol-2k.2.0-bin.exe
+    molmol-2k.2.0-src.exe
+
+molmol-2k.2.0-doc.exe contains documentation, configuration files, etc.
+These files are REQUIRED for successful operation of the program.
+
+molmol-2k.2.0-bin.exe contains the executable. There is currently only
+one executable for all supported Windows systems (95, 98, NT 4.0 and
+2000).
+
+molmol-2k.2.0-src.exe contains the source code. You should not normally
+need that, downloading the executable is much easier than compiling
+the source code yourself.
+
+It is best if you create a new folder on your harddisk (e. g. C:\molmol),
+and download the files into this folder.
+
+
+INSTALLATION
+
+All files are packed in self-extracting zip archives. You can unpack the
+archives by just double clicking the files in the file manager.
+
+You should extract all files of the archives molmol-2k.2.0-doc.exe and
+molmol-2k.2.0-bin.exe into one directory. We assume the directory
+C:\molmol in the following instructions.
+
+Previous versions of MOLMOL required the environment variable MOLMOLHOME
+to be set. If you follow the instructions above (extract both archives
+in the same directory), this is not needed anymore with MOLMOL 2K.1.
+If you had an older version installed, you should remove the definition
+of MOLMOLHOME from your system. On Windows NT you can do that from the
+System tool of the Control Panel, choose the pane Environment, and
+delete the variable from there. If you use Windows 95, you probably
+added a line like:
+
+    set MOLMOLHOME=C:\molmol
+
+to the file C:\Config.sys. Remove this line, and restart the system.
+
+The program needs OpenGL DLLs. These are included with Windows NT 4.0,
+Windows 98 and recently delivered versions of Windows 95. For use with
+original Windows 95, the necessary files can be downloaded from:
+
+    ftp://ftp.microsoft.com/Softlib/MSLFILES/Opengl95.exe
+
+MOLMOL requires 16-bit or 24-bit color for display. Use the Display
+tool of the Control Panel to check your display settings. For graphics
+cards with hardware acceleration of OpenGL it can also be beneficial
+to reduce the display resolution because hardware acceleration is
+sometimes limited to certain screen resolutions (like 800x600).
+
+You should now be able to start MOLMOL by double clicking the icon
+(capital 'M' in red/cyan) of the executable. If MOLMOLHOME is set
+correctly, the program comes up with a menubar. If it comes up without
+menubar, and an error message is displayed, check your installation.
+
+Optionally you can define a file type for MOLMOL dump files, so that
+they obtain a special icon, and MOLMOL starts up when you double click
+them. For doing that, follow these steps:
+
+    - In any file manager window, select "Options..." from the View menu.
+    - Select the pane called "File Types".
+    - Press the "New Type..." button.
+    - Enter description (e. g. "MOLMOL Dump File") and extension ("mml").
+    - Press the "Change Icon..." button. Select "mol.ico" from the
+      "auxil" subdirectory of your MOLMOL installation. Press "OK".
+    - Press the "New..." button close to the bottom of the dialog. Enter
+      "open" for the name of the action, and select the MOLMOL
+      executable as application. Press "OK".
+    - Press the "OK" button.
+
+
+NOTICE FOR WINDOWS 98
+
+Some users reported problems after installing newer MOLMOL releases on
+Windows 98 when an older release was previously installed, or after
+installing new graphics drivers. The symptoms are that the display of
+molecules is broken, or nothing is displayed at all. Remove the following
+folder:
+
+    C:\Windows\Application Data\molmol\
+
+and the file:
+
+    C:\Windows\Applog\molmol.lgc
+
+to solve this problem. (thanks to Roger Rowlett and Marc Saric)
+
+
+COMPILATION
+
+If for some reason you want to compile the source code yourself, you
+need to download (see above) and unpack molmol-2k.2.0-src.exe. It is best
+if you use a directory different from the installation directory used
+above, e. g. C:\molmol-src.
+
+The program was compiled with Visual C++ Professional 6.0. The following
+instructions are for this compiler only. If you want to use another
+compiler, there are currently no instructions available, but you are
+welcome to send them to us if you manage to compile the program.
+
+Start the Microsoft Developer Studio.
+
+Select "Open Workspace..." from the File menu. Navigate to the directory
+where you unpacked the source archive and open "molmol.dsw".
+
+Select "Set Active Configuration..." from the Build menu. Choose
+"molmol - Win32 Release" from the displayed list.
+
+Select "Build molmol.exe" from the Build menu. Do not be alarmed by
+the many warnings, most of them are completely meaningless.
+
+The executable "molmol.exe" will end up in the subdirectory "Release"
+of the directory where you unpacked the source, you can copy it to your
+installation directory that contains all other files used for running
+the program (the ones from molmol-2k.2.0-doc.exe).

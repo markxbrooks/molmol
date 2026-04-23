@@ -1,0 +1,23 @@
+NAME
+     TintDist - set secondary color of distances
+
+SYNOPSIS
+     TintDist expr expr expr
+
+DESCRIPTION
+     Set the secondary color of all selected distances.
+     The color is given by its Red, Green and Blue
+     component, all in the range between 0.0 and 1.0.
+
+     The secondary color is used to show the size of the
+     violation for distance constraints if this display
+     style is selected with StyleDist.
+
+EXAMPLE
+     TintDist 1.0 0.0 0.0
+
+SEE ALSO
+     SelectDist, StyleDist, ColorDist, DialColor, TintInit
+
+DATE
+     950407

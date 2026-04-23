@@ -1,0 +1,4 @@
+You can change the display radius of
+atoms, bonds and distances with the
+RadiusAtom, RadiusBond and RadiusDist
+commands.

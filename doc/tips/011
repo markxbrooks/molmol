@@ -1,0 +1,5 @@
+You can change between orthogonal and
+perspective projection with the
+Projection command. Perspective normally
+gives a better spatial impression, but
+distorts sizes and distances.

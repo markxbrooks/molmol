@@ -1,0 +1,33 @@
+NAME
+     AddDrawobj - add line, rectangle or circle
+
+SYNOPSIS
+     AddDrawobj ( line | rect | circle ) ( 2D | 3D )
+
+DESCRIPTION
+     Add a line, rectangle or circle for annotation.
+     The first argument selects the type of drawing object.
+
+     If the second argument is 2D, the object is placed
+     at a default location and can be moved to the desired
+     place. It will always keep its screen position and is
+     not related to any atoms.
+
+     If the second argument is 3D, a label is added for
+     each molecule that has selected atoms. The initial
+     position in space is calculated as the average of the
+     coordinates of all selected atoms of the molecule. The
+     positon relative to these atoms can be changed with
+     the mouse or with the MoveDrawobj command.
+
+     The created primitives have the property "drawobj".
+
+EXAMPLES
+     AddDrawobj line 3D
+
+SEE ALSO
+     SelectAtom, ColorPrim, LinePrim, StyleDrawobj,
+     MoveDrawobj, RemovePrim, AddTitle, AddText
+
+DATE
+     970930

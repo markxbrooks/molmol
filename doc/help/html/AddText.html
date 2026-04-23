@@ -1,0 +1,45 @@
+<HEAD>
+<TITLE>AddText</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddText</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddText - add 3D text annotation
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddText expr string
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a 3D text annotation. The first argument gives
+the initial size, the second argument the text.
+<P>
+A label is added for each molecule that has selected
+atoms. The initial position in space is calculated as
+the average of the coordinates of all selected atoms
+of the molecule. It can be moved with the mouse or
+with the <A HREF="MovePrim.html"><KBD>MovePrim</KBD></A> command.
+<P>
+For an explanation on how to enter greek letters,
+sub- and superscript, see the manual page of the
+<A HREF="EditText.html"><KBD>EditText</KBD></A> command.
+<P>
+The created primitives have the property "text".
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+AddText 0.15 "Label"
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="EditText.html"><KBD>EditText</KBD></A>, <A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>, <A HREF="LinePrim.html"><KBD>LinePrim</KBD></A>,
+<A HREF="MovePrim.html"><KBD>MovePrim</KBD></A>, <A HREF="SizeText.html"><KBD>SizeText</KBD></A>, <A HREF="AddTitle.html"><KBD>AddTitle</KBD></A>, <A HREF="RemovePrim.html"><KBD>RemovePrim</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970930
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

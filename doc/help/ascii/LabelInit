@@ -1,0 +1,22 @@
+NAME
+     LabelInit - set initial format of labels
+
+SYNOPSIS
+     LabelInit string ( invisible | val | limit | viol )
+
+DESCRIPTION
+     Set the initial labels used for new atoms and
+     distances. The first argument specifies inital atom
+     labels, the format of the string is described on the
+     help page of LabelAtom. The second argument specifies
+     initial distance labels, the values are described on
+     the hep page of LabelDist.
+
+EXAMPLE
+     LabelInit "R N" val
+
+SEE ALSO
+     LabelAtom, LabelDist
+
+DATE
+     991016

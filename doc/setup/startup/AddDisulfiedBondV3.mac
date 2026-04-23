@@ -1,0 +1,8 @@
+define DisulfideBondV3
+  help Shows disulfied bonds that are present in the selected molecule
+  SelectAtom 'mol.selected & @SG'
+  CalcBond 1 1 1
+  SelectBond 'mol.selected & ( atom1.name = "SG" | atom2.name = "SG" ) '
+  SelectBond 'mol.selected & :CYS@SG,CB'
+  StyleBond neon   
+end

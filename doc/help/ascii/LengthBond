@@ -1,0 +1,28 @@
+NAME
+     LengthBond - set length of bonds for display
+
+SYNOPSIS
+     LengthBond expr expr
+
+DESCRIPTION
+     Set the displayed length of all selected bonds. The
+     first argument gives the start parameter, the second
+     argument the end parameter, the parameter range 0 to 1
+     refers to the original size of the bond.
+
+     Note that this command does not actually modify
+     coordinates that would e. g. be written to a
+     coordinate file, it only changes the way bonds are
+     displayed. The command is especially useful when
+     drawing side chains in ribbon diagrams, where the
+     bonds from CA to CB would otherwise not match with
+     beta strands.
+
+EXAMPLES
+     LengthBond -0.5 1
+
+SEE ALSO
+     SelectBond, AddRibbon
+
+DATE
+     970219

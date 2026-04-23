@@ -1,0 +1,22 @@
+NAME
+     PlotMeta - make a Windows enhanced metafile plot
+
+SYNOPSIS
+     PlotMeta fileName
+
+DESCRIPTION
+     Make a plot of the current screen contents in the
+     Windows enhanced metafile format.
+
+     This command is not supported on all machines and
+     with all graphics systems. It will give an appropriate
+     error message if it is not supported.
+
+EXAMPLE
+     PlotMeta /home/joe/MyPlot.emf
+
+SEE ALSO
+     PlotPar, PlotFm*, PlotPs, PlotPov, PlotVrml2
+
+DATE
+     970225

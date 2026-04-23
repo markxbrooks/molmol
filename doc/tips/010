@@ -1,0 +1,5 @@
+You can set the zoom factor as an
+absolute value with the ZoomAbs command.
+This is useful for making several plots
+that allow comparisons of sizes and
+distances.

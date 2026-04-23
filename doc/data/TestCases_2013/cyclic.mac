@@ -1,0 +1,23 @@
+ReadPdb /Users/ndaly/Documents/Data1/Sync/Data/projects/MolMol/Macros/kalatab1.pdb 
+CalcBond 1 1 1 
+CalcAtom 'H' 
+CalcAtom 'HN' 
+CalcSecondary 
+XMacStand ribbon.mac 
+SelectPrim 'num = 41' 
+DefPropMol 'displayed' 'num = 1' 
+SelectPrim 'num = 1' 
+ColorPrim 1.000 0.000 0.000 
+SelectPrim 'num = 5' 
+ColorPrim 1.000 0.000 0.000 
+SelectPrim 'num = 4' 
+ColorPrim 1.000 0.000 0.000 
+SelectPrim 'num = 2' 
+ColorPrim 1.000 0.000 0.000 
+ReadPdb /Users/ndaly/Documents/Data1/Sync/Data/projects/MolMol/Macros/kalatab1_modifiedforcyclic.pdb 
+CalcBond 1 1 1 
+CalcAtom 'H' 
+CalcAtom 'HN' 
+CalcSecondary 
+XMacStand ribbon.mac 
+DefPropMol 'movable' 'num = 21' 

@@ -1,0 +1,34 @@
+# Display a CA trace for selected residues by adding a
+# distance between CA atoms of subsequent residues.
+
+# store current selection
+DefPropAtom 'prev_sel' 'selected'
+DefPropDist 'prev_sel' 'selected'
+
+# deselect all distances so that we can set the color only
+# on the new distances and set the selection to the previously
+# selected + new distances at the end.
+SelectDist '0'
+
+# select CA atoms of selected residues
+SelectAtom 'res.selected & ca'
+
+# add distances for all pairs of CA that are less than
+# 5 A apart
+CalcDist 5.0 1 1 0 0 0 1
+
+# set property for new distances
+DefPropDist 'new_dist' 'selected'
+
+# make new distances red, and set their line width to 5
+ColorDist 1 0 0
+LineDist solid 5
+
+# select the new distances that are not between
+# subsequent residues, and remove them
+SelectDist 'new_dist & res2.num > res1.num + 1'
+RemoveDist
+
+# restore previous selection, with new distances added
+SelectAtom 'prev_sel'
+SelectDist 'new_dist | prev_sel'

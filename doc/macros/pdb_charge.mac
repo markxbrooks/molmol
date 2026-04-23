@@ -1,0 +1,22 @@
+# Change residue types of potentially charged residues in
+# selected molecules to properly reflect charge.
+
+# store current selection
+DefPropRes 'prev_sel' 'selected'
+DefPropMol 'prev_sel' 'selected'
+
+# change ASP that do not have an HD2 atom to ASP-
+SelectRes 'mol.selected & name = "ASP" & ! exists atom(name = "HD2")'
+ChangeRes atoms 'ASP-'
+
+# change GLU that do not have an HE2 atom to GLU-
+SelectRes 'mol.selected & name = "GLU" & ! exists atom(name = "HE2")'
+ChangeRes atoms 'GLU-'
+
+# change HIS+ that do not have an HE2 atom to HIS
+SelectRes 'mol.selected & name = "HIS+" & ! exists atom(name = "HE2")'
+ChangeRes atoms 'HIS'
+
+# restore previous selection
+SelectRes 'prev_sel'
+SelectMol 'prev_sel'

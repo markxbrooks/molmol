@@ -1,0 +1,35 @@
+NAME
+     PlotFm3 - make a FrameMaker 3 plot
+     PlotFm4 - make a FrameMaker 4 plot
+
+SYNOPSIS
+     PlotFm3 fileName
+     PlotFm4 fileName
+
+DESCRIPTION
+     Make a plot of the current screen contents in MIF
+     format. This can be imported into FrameMaker.
+
+     PlotFm3 produces a file that can be read by
+     FrameMaker 3 or later. This only supports 8
+     different colors, and is therefore not suited for
+     displays with shading. Its main use is for the
+     output of figures from commands like FigAngles.
+
+     PlotFm4 makes use of color possibilities introduced
+     in FrameMaker 4, these files cannot be read by
+     earlier versions. They are also larger.
+
+     FrameMaker can currently not handle the files created
+     with PlotFm4 well, they make it very slow. Unless this
+     improves with future versions, PlotFm4 is only of
+     limited usefulness.
+
+EXAMPLE
+     PlotFm4 /home/joe/MyPlot.fm
+
+SEE ALSO
+     PlotPar, PlotPs
+
+DATE
+     950704

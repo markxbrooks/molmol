@@ -1,0 +1,33 @@
+NAME
+     ReplacePdb - replace with PDB file
+     ReplaceListPdb - replace with list of PDB files
+
+SYNOPSIS
+     ReplacePdb fileName
+     ReplaceListPdb fileName
+
+DESCRIPTION
+     ReplacePdb reads coordinates from a file in PDB
+     format, replacing the coordinates of the currently
+     selected molecules. If not enough molecules are
+     selected, new molecules will be created. The
+     structures in the file should be identical to the
+     structures of the selected molecules, otherwise the
+     result will not be very useful.
+
+     ReplaceListPdb expects a file with one file name per
+     line (empty lines allowed), and reads coordinates
+     from all these files, replacing the coordinates of
+     the selected molecules.
+
+     See ReadPdb for more information about the PDB format.
+
+EXAMPLE
+     ReplacePdb /home/joe/struct/my_prot.pdb
+     ReplaceListPdb /home/joe/struct/my_prot.nam
+
+SEE ALSO
+     ReadPdb, ReadListPdb
+
+DATE
+     950626

@@ -1,0 +1,20 @@
+NAME
+     LineBond - set style and width of bond lines
+
+SYNOPSIS
+     LineBond (solid | dashed ) expr
+
+DESCRIPTION
+     Set the style and width of the lines used for drawing
+     all selected bonds. The default width of 0 is the
+     minimal width that can be drawn, it is also the one
+     that can be drawn fastest.
+
+EXAMPLE
+     LineBond solid 3
+
+SEE ALSO
+     SelectBond, StyleBond, ColorBond, LineInit
+
+DATE
+     940119

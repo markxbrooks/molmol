@@ -1,0 +1,28 @@
+<HEAD>
+<TITLE>cpk.mac</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+# Display currently selected parts as CPK.
+
+# turn atom labels off
+LabelAtom ''
+
+# make selected bonds and distances invisible
+StyleBond invisible 
+StyleDist invisible 
+
+# set atom colors to "standard" colors
+XMacStand color_atom.mac
+
+# select all non-pseudo atoms that were selected
+SelectAtom 'prev_sel & name != "Q*"' 
+
+# set radius to VdW radius, display style to sphere
+RadiusAtom vdw
+StyleAtom sphere 
+
+# restore previous selection
+SelectAtom 'prev_sel'
+</PRE>
+</BODY>

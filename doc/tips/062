@@ -1,0 +1,5 @@
+You can fit a cylinder into a group of
+atoms (typically a helix) using the
+AddCylinder command. You can modify the
+resulting cylinder with commands like
+LengthPrim and RadiusPrim.

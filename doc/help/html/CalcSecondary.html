@@ -1,0 +1,50 @@
+<HEAD>
+<TITLE>CalcSecondary</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcSecondary</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcSecondary - calculate secondary structure
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcSecondary
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Calculate the secondary structure of a protein
+using the algorithm published by Kabsch/Sander.
+The command operates on all selected residues
+of all selected molecules. It will set various
+properties on these residues, depending on the
+secondary structure. These properties are listed
+in a text window. They are used by the <A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>
+command to produce schematic drawings.
+<P>
+Note that editing the text has no effect on the
+definitons used. For changing the definitons it
+is most convenient to use the <A HREF="WriteSecondary.html"><KBD>WriteSecondary</KBD></A>
+command.
+<P>
+Since the calculation is based on hydrogen bonding
+patterns, the coordinates of HN atoms are required.
+So before using the command for a structure without
+coordinates for hydrogen atoms (X-ray), use the
+<A HREF="CalcAtom.html"><KBD>CalcAtom</KBD></A> command for adding them.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcSecondary
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="SelectRes.html"><KBD>SelectRes</KBD></A>, <A HREF="CalcAtom.html"><KBD>CalcAtom</KBD></A>,
+<A HREF="DefPropRes.html"><KBD>DefPropRes</KBD></A>, <A HREF="WriteSecondary.html"><KBD>WriteSecondary</KBD></A>, <A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960815
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

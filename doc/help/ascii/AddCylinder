@@ -1,0 +1,38 @@
+NAME
+     AddCylinder - add cylinder for schematic drawing
+
+SYNOPSIS
+     AddCylinder ( least_square | spacing )
+
+DESCRIPTION
+     Add a cylinder that approximates the selected atoms.
+     The argument selects between two fit criteria.
+     'least_square' does a least square fit of the cylinder
+     surface to the atoms, 'spacing' takes the axis
+     direction that gives the most regular spacing of
+     atoms. The results are normally very similar, but
+     'spacing' works better than 'least_square' if very
+     few atoms are given.
+
+     A cylinder is added for each molecule that has
+     selected atoms. A minimum number of atoms (5 for
+     least_square, 4 for spacing) must be selected,
+     otherwise the cylinder cannot be determined and an
+     error message is issued.
+
+     Cylinders can be used for showing alpha helices in
+     schematic drawings. For good results, it is
+     recommended to either select the CA or all backbone
+     atoms within a helix region.
+
+     The created primitives have the property "cylinder".
+
+EXAMPLE
+     AddCylinder spacing
+
+SEE ALSO
+     SelectAtom, StyleCylinder, ColorPrim, LengthPrim,
+     RemovePrim, AddRibbon, AddSolid, AddDipole
+
+DATE
+     970930

@@ -1,0 +1,4 @@
+In addition to the predifined properties
+like bb and sc, using the DefProp* set
+of commands you can define your own
+properties to simplify selection.

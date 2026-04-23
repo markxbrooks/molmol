@@ -1,0 +1,22 @@
+NAME
+     WriteDump - write dump file
+
+SYNOPSIS
+     WriteDump fileName
+
+DESCRIPTION
+     Write a dump file. A dump file is a binary file that
+     contains the complete program state. A dump file
+     with the name molmol/dump in the users home
+     directory is created whenever the user leaves the
+     program. A dump file with an arbitrary name can be
+     created anytime by using this command.
+
+EXAMPLE
+     WriteDump /home/joe/struct/my_prot.mml
+
+SEE ALSO
+     ReadDump
+
+DATE
+     991017

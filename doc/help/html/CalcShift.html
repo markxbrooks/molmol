@@ -1,0 +1,81 @@
+<HEAD>
+<TITLE>CalcShift</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcShift</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcShift - calculate ring current shifts
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcShift ( 1 | 0 ) ( 1 | 0) string expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Calculate ring current and bond polarization shifts of
+all selected atoms, taking into account all
+rings/atoms of the same molecule.
+<P>
+The first argument selects whether ring current shifts
+should be calculated, the second one whether bond
+polarization shifts should be calculated. At least one
+of the two should be selected, a warning is issued
+otherwise.
+<P>
+The third argument gives the name of the model for the
+calculation. The description of the models is read
+from the file:
+<P>
+<PRE>
+    $MOLMOLHOME/setup/RingShift
+</PRE>
+The fourth argument selects a cutoff, contributions to
+the ring current shifts above this value are listed
+individually *before* the sum.
+<P>
+The fifth argument gives a maximal distance for the
+atoms considered for the calculation of bond
+polarization shifts. Larger values will lead to longer
+calculation times.
+<P>
+The results are listed for each molecule separately,
+a summary with average, minimal and maximal values is
+given at the end.
+<P>
+For all protons but HN, a ring belonging to the same
+residue as the proton is not considered for the
+calculation of the ring current shift.
+<P>
+The same is the case for the bond polarization: atoms
+of the same residue are not considred for the field
+calculation, except for HN atoms. A more elaborate
+strategy would have to be used to make the calculated
+numbers more useful as expected difference to random
+coil shift, especially for HN atoms.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcShift 1 0 Heigh-Mallion 0.5 5.0
+</PRE>
+<STRONG>REFERENCE</STRONG><P>
+Case, DA.
+Calibration of ring-current effects in proteins and
+nucleic acids.
+Journal of Biomolecular NMR, 6 (1995) 341-346
+<P>
+<STRONG>WARNING</STRONG><P>
+The results for bond polarization shifts were not
+compared to the results of other programs, so there is
+no guarantee given on their correctness and usefulness.
+<P>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="PathNames.html"><KBD>PathNames</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960621
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

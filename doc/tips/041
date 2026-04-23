@@ -1,0 +1,5 @@
+Molecules can be aligned for best
+superposition with the Fit command. The
+quality of the fit can sometimes be
+improved by applying the FlipAtom
+command first.

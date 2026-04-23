@@ -1,0 +1,163 @@
+# If your system supports OpenGL or XGL, the program can generate
+# TIFF, JPEG and PNG files. In this case, the corresponding libraries
+# (libtiff by Sam Leffler, libjpeg by Independent JPEG Group,
+# libpng by Group 42) are required. Uncomment and edit the following
+# lines to configure support for the desired formats.
+
+# Uncomment this line if TIFF support is desired, and set it to the
+# directory that contains header files and library of libtiff. A copy
+# of libtiff is in  distributed in the libtiff subdirectory the latest
+# version is available from ftp.sgi.com.
+
+# TIFFDIR = $(TOP)/tiff-v3.4/libtiff
+
+# Uncomment this line if JPEG support is desired, and set it to the
+# directory that contains header files and library of libjpeg. The
+# source code is availabe from ftp.uu.net:/graphics/jpeg/.
+
+# JPEGDIR = $(TOP)/jpeg-6a
+
+# Uncomment these two lines if PNG support is desired, and set it to
+# the directories that contain header files and libraries for libpng
+# and libz. The source code is availabe from ftp.uu.net:/graphics/png/.
+
+# PNGDIR = $(TOP)/libpng-0.89c
+# ZLIBDIR = $(TOP)/zlib-1.0.2
+
+# If you configured any of the above three image formats, uncomment
+# the following four lines, and delete the non-relevant parts if
+# necessary, i. e. if you did not configure all three formats.
+
+# IMGDEF  = -DTIFF_SUPPORT -DJPEG_SUPPORT -DPNG_SUPPORT
+# IMGINCL = -I$(TIFFDIR) -I$(JPEGDIR) -I$(PNGDIR) -I$(ZLIBDIR)
+# IMGLIB  = $(TIFFDIR)/libtiff.a $(JPEGDIR)/libjpeg.a \
+#           $(PNGDIR)/libpng.a $(ZLIBDIR)/libz.a
+
+# Some systems do not have the float versions of various math functions,
+# uncomment the following lines if this is the case
+
+# MISSFUNC = -Dsqrtf=sqrt -Dexpf=exp -Dlogf=log -Dpowf=pow \
+#            -Dsinf=sin -Dcosf=cos -Dtanf=tan \
+#            -Dasinf=asin -Dacosf=acos -Datanf=atan -Datan2f=atan2 \
+#            -Dfabsf=fabs -Dceilf=ceil
+
+# C preprocessor. This path is often correct, edit if needed.
+
+CPP = /lib/cpp
+
+# Options used by preprocessor and compiler. These are typically include
+# paths (-I) and symbol definitions (-D).
+
+MCPPFLAGS = $(MISSFUNC)
+
+# C compiler. This is the correct path on many machines, adapt this if
+# your C compiler is at a different location, or if you want to use a
+# different compiler (e. g. gcc). The compiler must be able to handle
+# ANSI C.
+
+CC = /usr/bin/cc
+
+# Options used by compiler, the options given as MCPPFLAGS above do not
+# have to be repeated. These are typically options giving optimization
+# levels etc. If your compiler needs a special switch for ANSI C, also
+# add it here.
+
+MCFLAGS = -O
+
+# If the system needs ranlib, set the path here.
+
+RANLIB = /bin/true
+
+# Some system miss to write all files into libraries if files from
+# different directories go into the same library, and the machine
+# compiles very fast. Give a command that causes a short wait period
+# if this happens (it does not hurt much otherwise, too..).
+
+WAIT = /bin/sleep 2
+
+# Bourne shell, this should mostly be right.
+
+SHELL = /bin/sh
+
+# Directories that contain the code of all supported graphics devices.
+# All possibilites are listed here, remove the ones that are not desired
+# or not supported (e. g. XGL only exists on Sun). Explanation:
+#    gl:    GL, mostly used on SGI
+#    ogl:   OpenGL, available on many machines
+#    xgl:   XGL, only available on Sun
+#    x11:   X11, available on all supported machines
+#    no:    no graphics, text interface, possible on all supported machines
+#    pov:   plotting in POV-Ray format, possible on all machines
+#    rib:   plotting in RIB (RenderMan) format, possible on all machines
+#    vrml1: plotting in VRML1 format, possible on all machines
+#    vrml2: plotting in VRML2 (VRML97) format, possible on all machines
+#    ps:    plotting in PostScript format, possible on all machines
+#    fm:    plotting in FrameMaker (MIF) format, possible on all machines
+
+SGDEVDIR = gl ogl xgl x11 no pov rib vrml1 vrml2 ps fm
+
+# Definiton of supported graphics devices. These symbols must correspond
+# to the directories defined above, there must be a -DSG_DEV_XXX for each
+# directory xxx. ps has two devices, PS (black & white) and CPS (color).
+# The same is true for fm, add FM3 (FrameMaker 3) and FM4 (FrameMaker 4).
+
+SGDEVDEF = -DSG_DEV_GL -DSG_DEV_OGL -DSG_DEV_XGL -DSG_DEV_X11 -DSG_DEV_NO -DSG_DEV_POV -DSG_DEV_RIB -DSG_DEV_VRML1 -DSG_DEV_VRML2 -DSG_DEV_PS -DSG_DEV_CPS -DSG_DEV_FM3 -DSG_DEV_FM4
+
+# Directories that contain the code of all supported window systems.
+# All possibilites are listed here, remove the ones that are not desired
+# or not supported. Explanation:
+#    motif: Motif (1.1 and 1.2 are tested)
+#    tty: text interface
+
+PUDEVDIR = motif tty
+
+# Definiton of supported window systems. These symbols must correspond
+# to the directories defined above, there must be a -DPU_DEV_XXX for each
+# directory xxx.
+
+PUDEVDEF = -DPU_DEV_MOTIF -DPU_DEV_TTY
+
+# Directories that contain the code of all supported combinations of
+# window systems and graphics devices. All possibilites are listed here,
+# remove the ones that are not desired or not supported. For all
+# combinations, the corresponding graphics device and window system
+# has to be defined in the previous variables (SG*, PU*). Explanation:
+#    motgl:  Motif/GL
+#    motogl: Motif/OpenGL
+#    motxgl: Motif/XGL
+#    motx11: Motif/X11
+#    ttyno:  TTY/NO
+
+IODEVDIR = motgl motogl motxgl motx11 ttyno
+
+# Definiton of supported combinations of window systems and graphics
+# devices. These symbols must correspond to the directories defined above,
+# there must be a -DIO_DEV_XXX_YYY for each directory xxxyyy.
+
+IODEVDEF = -DIO_DEV_MOTIF_GL -DIO_DEV_MOTIF_OGL -DIO_DEV_MOTIF_XGL -DIO_DEV_MOTIF_X11 -DIO_DEV_MOTIF_XGL -DIO_DEV_TTY_NO
+
+# Put special defines for OpenGL code here if necessary.
+# If OPENGL_SGI_STEREO is defined, old style SGI fullscreen stereo
+# support is compiled in.
+# There is a bug in IRIX 5.3 (fixed in patch #1333 for IRIX 6.2) that
+# causes the stereo buffers for stereo in a window to be exchanged,
+# this is worked around if OPENGL_STEREO_BUG is defined.
+
+# OPENGLDEF = -DOPENGL_SGI_STEREO -DOPENGL_STEREO_BUG
+
+# Motif header files on some systems do not have prototypes unless this
+# variable is defined. Does not hurt otherwise.
+
+MOTIFDEF = -DFUNCPROTO
+
+# Libraries required for linking. This is very system specific, look at
+# the examples in other makedef.* files. If you are not sure what you
+# need, just try with a minimal set (like the one listed here), and add
+# the required libraries until you have no undefined symbols.
+
+SYSLIB = -lXm -lXt -lX11 -lm
+
+# Do not change anything below this line.
+
+TOOLSDIR = $(TOP)/tools
+SGDIR    = $(TOP)/sg

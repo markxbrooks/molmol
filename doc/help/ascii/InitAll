@@ -1,0 +1,22 @@
+NAME
+     InitAll - delete and initialize everything
+
+SYNOPSIS
+     InitAll ( yes | no )
+
+DESCRIPTION
+     Delete all data and initialize the program. This can
+     be used before starting with something new. It is
+     also needed after changing certain parameters (e. g.
+     ResLib) to make sure that they take effect.
+
+     The command asks for a confirmation.
+
+EXAMPLE
+     InitAll yes
+
+SEE ALSO
+     PathNames, RemoveMol
+
+DATE
+     940411

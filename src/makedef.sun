@@ -1,0 +1,30 @@
+#definitons for SunOS 4.1
+
+MISSFUNC = -Dsqrtf=sqrt -Dexpf=exp -Dlogf=log -Dpowf=pow \
+           -Dsinf=sin -Dcosf=cos -Dtanf=tan \
+           -Dasinf=asin -Dacosf=acos -Datanf=atan -Datan2f=atan2 \
+           -Dfabsf=fabs -Dceilf=ceil
+MCPPFLAGS = $(MISSFUNC)
+MCFLAGS  = -O2 -ansi -pedantic -Wall
+
+RANLIB   = /bin/ranlib
+WAIT     = /bin/true
+SHELL    = /bin/sh
+CPP      = /lib/cpp
+CC       = /usr/local/bin/gcc
+
+SGDEVDIR = x11 no pov rib vrml1 vrml2 ps fm
+SGDEVDEF = -DSG_DEV_X11 -DSG_DEV_NO -DSG_DEV_POV -DSG_DEV_RIB -DSG_DEV_VRML1 -DSG_DEV_VRML2 -DSG_DEV_PS -DSG_DEV_CPS -DSG_DEV_FM3 -DSG_DEV_FM4
+
+PUDEVDIR = motif tty
+PUDEVDEF = -DPU_DEV_MOTIF -DPU_DEV_TTY
+
+IODEVDIR = motx11 ttyno
+IODEVDEF = -DIO_DEV_MOTIF_X11 -DIO_DEV_TTY_NO
+
+MOTIFDEF = -DFUNCPROTO
+
+SYSLIB   = -lXm -lXt -lX11 -lm
+
+TOOLSDIR = $(TOP)/tools
+SGDIR    = $(TOP)/sg

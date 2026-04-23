@@ -1,0 +1,5 @@
+You can display the dipolar moment of a
+group of atoms using the AddDipole
+command. You can modify the resulting
+cylinder with the StyleCylinder and
+LengthPrim command.

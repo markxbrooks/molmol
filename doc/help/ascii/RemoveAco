@@ -1,0 +1,17 @@
+NAME
+     RemoveAco - remove angle constraints
+
+SYNOPSIS
+     RemoveAco
+
+DESCRIPTION
+     Remove angle constraint for all selected angles.
+
+EXAMPLE
+     RemoveAco
+
+SEE ALSO
+     ReadAco, AddAco, SelectAngle
+
+DATE
+     950302

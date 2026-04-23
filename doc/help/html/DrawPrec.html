@@ -1,0 +1,44 @@
+<HEAD>
+<TITLE>DrawPrec</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>DrawPrec</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+DrawPrec - set drawing precision
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+DrawPrec expr [ expr ]
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set the precision for certain drawing operations,
+e. g. for the approximation of spheres. Making this
+value larger improves the drawing quality, but makes
+the drawing slower. Reasonable values are in the range
+between 2 (moderate quality) and 4 (good quality).
+<P>
+The optional second argument is used as precision
+during interactive manipulations (rotating, moving).
+It can be chosen smaller to make these manipulations
+smoother, at the cost of lower drawing quality.
+<P>
+The value used for plotting can be set seperately with
+the <A HREF="PlotPar.html"><KBD>PlotPar</KBD></A> command.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+DrawPrec 3
+DrawPrec 4 2
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+980818
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

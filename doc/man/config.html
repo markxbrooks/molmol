@@ -1,0 +1,247 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Configuration and Customization</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Configuration and Customization</H1>
+
+ <H2>Startup Macros</H2>
+
+One powerful way to customize and extend MOLMOL is by
+using macros that are automatically started each time
+you start the program. The following macros are executed
+on startup if the files exist:
+
+<OL>
+<LI><KBD>setup/startup.mac</KBD> in the installation
+    directory
+<LI>all files with the extension <KBD>.mac</KBD> in the
+    directory <KBD>setup/startup</KBD> in the installation
+    directory
+<LI><KBD>molmol/startup.mac</KBD> in your home/profile
+    directory
+<LI>all files with the extension <KBD>.mac</KBD> in the
+    directory <KBD>molmol/startup</KBD> in your home/profile
+    directory
+</OL>
+
+You can use any MOLMOL command in these startup macros,
+but especially useful in this context are command definitions,
+as described in the  <A HREF=macro_user.html>User Macros</A> section.
+These allow you to extend the functionality of the program
+with your own commands. These commands will automatically be
+accessible from the  <A HREF=ui_mainwin.html>Opt menu</A>.
+<P>
+
+Another set of commands that is very useful for startup
+macros are the commands for setting default graphics
+attributes, like  <KBD><A HREF="../help/html/ColorInit.html">ColorInit</A></KBD> and  <KBD><A HREF="../help/html/StyleInit.html">StyleInit</A></KBD>.
+So if you would like new graphics elements to be displayed
+in red instead of the default blue, you can put the following
+command into one of your startup macros:
+
+<BLOCKQUOTE>
+<PRE>
+ColorInit 1 0 0
+</PRE>
+</BLOCKQUOTE>
+
+ <H2>New Molecule Macros</H2>
+
+By default, MOLMOL displays all newly loaded molecules in
+line mode. You can change that by writing a macro that
+gets automatically executed each time a new molecule is
+loaded. The program will check for such a macro in the
+following locations:
+
+<OL>
+<LI><KBD>setup/newmol.mac</KBD> in the installation
+    directory
+<LI><KBD>molmol/newmol.mac</KBD> in your home/profile
+    directory
+</OL>
+
+While the macro is executed, the newly loaded molecules
+have the property <KBD>new</KBD> set. This makes it
+possible to change the display style of only the new
+molecule, without affecting molecules that are already
+loaded. E. g. if you want all new molecules to be
+displayed in CPK mode, put the following macro into
+one of the locations above:
+
+<BLOCKQUOTE>
+<PRE>
+SelectAtom 'mol.new'
+SelectBond 'mol.new'
+XMacStand cpk.mac
+</PRE>
+</BLOCKQUOTE>
+
+ <H2>Setup Files</H2>
+
+MOLMOL obtains a lot of configuration information from
+simple text files which can easily be modified or replaced.
+The default files can be found in the subdirectory 
+<KBD>setup</KBD> of your installation. If you want to make
+a change for all users of the installation, you have the
+option to edit these files directly. The preferable and
+safer way to change configuration files, especially for
+individual users, is to make a copy of the original file
+e. g. to your home directory, and then use the
+ <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command of MOLMOL to instruct the
+program to use your modified file.
+<P>
+
+The location of the following files can be changed
+directly with the  <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command:
+
+<DL>
+<DT><KBD><B>AtomRadius</B></KBD>
+<DD>Atom radii for finding bonds, a bond is detected if
+    the distance between two atoms is less than the sum
+    of the two radii. Used by the commands
+     <KBD><A HREF="../help/html/CalcBond.html">CalcBond</A></KBD> and  <KBD><A HREF="../help/html/ReadXyz.html">ReadXyz</A></KBD>.
+<DT><KBD><B>AtomCharge</B></KBD>
+<DD>Formal charges for atoms, each line has the format:<BR>
+    ResidueName AtomName Charge<BR>
+    The residue name can contain wildcards. These charges
+    are used whenever the <KBD>simplecharge</KBD>
+     <A HREF=sel_value.html>value</A> of an atom is accessed,
+    e. g. for the  <KBD><A HREF="../help/html/CalcPot.html">CalcPot</A></KBD> command.
+<DT><KBD><B>FlipAtoms</B></KBD>
+<DD>Defines groups of atoms that can be flipped by the
+     <KBD><A HREF="../help/html/FlipAtom.html">FlipAtom</A></KBD> command.
+<DT><KBD><B>RingShift</B></KBD>
+<DD>Defines paramter sets for the  <KBD><A HREF="../help/html/CalcShift.html">CalcShift</A></KBD>
+    command.
+<DT><KBD><B>PdbAtoms</B></KBD>
+<DD>Name translation table to map atom names from PDB files
+    to names in the residue library. The residue name can
+    contain wildcards.
+<DT><KBD><B>PropDef</B></KBD>
+<DD>Definition of  <A HREF=sel_prop.html>predefined properties</A>.
+<DT><KBD><B>ColorList</B></KBD>
+<DD>Definition of color names for the
+     <A HREF=ui_dialog.html>color dialog</A>.
+</DL>
+
+With the MenuDir entry of the  <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command,
+you can specify an alternate directory where the program
+looks for the following files defining the user interface:
+
+<DL>
+<DT><KBD><B>MenuBar</B></KBD>
+<DD>List of pulldown menus in the menu bar. Each pulldown
+    menu is defined in its own file with the extension
+    <KBD>.menu</KBD>.
+<DT><KBD><B>*.menu</B></KBD>
+<DD>Contents of pulldown menu that is part of <KBD>MenuBar</KBD>.
+<DT><KBD><B>Buttons</B></KBD>
+<DD>Definition of buttons on right side of
+     <A HREF=ui_mainwin.html>main window</A>.
+<DT><KBD><B>Popup</B></KBD>
+<DD>Definition of popup (righ mouse button) menu.
+<DT><KBD><B>Valuator</B></KBD>
+<DD>Definition of sliders in valuator box.
+</DL>
+
+Note that all these parts of the user interface can also
+be disabled completely with the  <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A></KBD>
+command.
+
+ <H2>Residue Libraries</H2>
+
+The residue library works much like the other setup
+files explained in the previous section, its location
+is also set with the  <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command, but
+it is so important for the operation of MOLMOL that its
+description was separated from the rest of the files.
+The residue library contains definitions of residues
+(monomers) that are used whenever a macromolecule is
+read from a file. These residue definitions contain:
+
+<UL>
+<LI>Coordinates of the standard geometry. These will
+    normally not be used when a coordinate file is
+    read, but can still be important e. g. when
+    calculating missing coordinates with the
+     <KBD><A HREF="../help/html/CalcAtom.html">CalcAtom</A></KBD> command.
+<LI>Atom type information. This is used to look up
+    information like the Van der Waals radius or
+    hydrogen bonding capability in the ATOMTYPES
+    section at the beginning of the residue library.
+<LI>Partial charges for atoms.
+<LI>Definition of dihedral angles.
+<LI>Definition of bonds.
+</UL>
+
+MOLMOL can still read files even if they contain
+residues that are not part of the residue library.
+It will display a warning, and since it does not have
+any connectivity information, will not display bonds
+for these residues. In most cases these bonds can
+easily be added with the  <KBD><A HREF="../help/html/CalcBond.html">CalcBond</A></KBD> command.
+<P>
+
+When a small molecule is read with the
+ <KBD><A HREF="../help/html/ReadSybyl.html">ReadSybyl</A></KBD> or  <KBD><A HREF="../help/html/ReadXyz.html">ReadXyz</A></KBD> command ,
+MOLMOL will either take the connectivity
+information from the input file, or add the bonds
+automatically. Entries in the residue library are
+not necessary in this case, only the ATOMTYPES
+section of the residue library is used.
+<P>
+
+The format of the residue library corresponds to
+the one used by the program
+<A HREF="http://www.mol.biol.ethz.ch/wuthrich/software/dyana/">
+DYANA</A>, it is documented in the manual which is
+accessible from the web page. Three libraries are
+distributed with MOLMOL, all of them contain standard
+amino acids and nucleic acids.
+
+<DL>
+<DT><KBD><B>amber94.lib</B></KBD>
+<DD>Standard geometry minimized with the AMBER94 force
+    field, naming conventions from DYANA.
+<DT><KBD><B>dyana.lib</B></KBD>
+<DD>Original DYANA library.
+<DT><KBD><B>pdb.lib</B></KBD>
+<DD>Like <KBD>amber94.lib</KBD>, but using PDB naming
+    conventions.
+</DL>
+
+MOLMOL uses <KBD>amber94.lib</KBD> by default. If you
+frequently read PDB files and do not use DYANA, it may
+be preferable to use <KBD>pdb.lib</KBD>. If you decide
+to do that, you should disable the use of the default
+<KBD>PdbNames</KBD> file. The following command will
+do that:
+
+<BLOCKQUOTE>
+<PRE>
+PathNames '' '' '' '' '0' '' '/usr/local/molmol/setup/pdb.lib' '' ''
+</PRE>
+</BLOCKQUOTE>
+
+If you need to add entries to the residue library,
+the  <KBD><A HREF="../help/html/WriteLib.html">WriteLib</A></KBD> command of MOLMOL can help you
+doing this. After you modify the library, it is a good
+idea to check it with the  <KBD><A HREF="../help/html/ReadLib.html">ReadLib</A></KBD> command.
+
+<HR>
+Last modified: Mon Jan 20 19:44:59 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,16 @@
+NAME
+     HelpTip - show "Tip of the Day"
+
+SYNOPSIS
+     HelpTip
+
+DESCRIPTION
+     Show "Tip of the Day". Automatic display at program
+     startup can be switched on/off with a toggle in the
+     dialog box.
+
+EXAMPLE
+     HelpTip
+
+DATE
+     980720

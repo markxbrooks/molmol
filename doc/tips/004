@@ -1,0 +1,7 @@
+You can replace the coordinates in an
+existing figure, e. g. after a new
+structure calculation, with the
+Replace* set of commands. In combination
+with WriteDump and ReadDump, this helps
+create a set of standard figures while
+working on a structure determination.

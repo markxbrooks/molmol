@@ -1,0 +1,32 @@
+NAME
+     ReplaceDg - replace with DG file
+     ReplaceListDg - replace with list of DG files
+
+SYNOPSIS
+     ReplaceDg fileName
+     ReplaceListDg fileName
+
+DESCRIPTION
+     ReplaceDg reads coordinates from a file in DG format,
+     replacing the coordinates of the currently selected
+     molecule. If no molecule is selected, a new molecule
+     will be created. The structure in the file should be
+     identical to the structure of the selected molecule,
+     otherwise the result will not be very useful.
+
+     ReplaceListDg expects a file with one file name per
+     line (empty lines allowed), and reads coordinates
+     from all these files, replacing the coordinates of
+     the selected molecules.
+
+     See ReadDg for more information about the DG format.
+
+EXAMPLE
+     ReplaceDg /home/joe/struct/my_prot.cor
+     ReplaceListDg /home/joe/struct/my_prot.nam
+
+SEE ALSO
+     ReadDg, ReadListDg
+
+DATE
+     950626

@@ -1,0 +1,28 @@
+NAME
+     UserInterface - switch elements of user interface
+
+SYNOPSIS
+     UserInterface ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+	 ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+
+DESCRIPTION
+     Switch various parts of the user interface on or
+     off. The following elements can be switched:
+
+	 Valuator Box
+	 Log Window
+	 Buttons
+	 Command Line
+	 Status Line
+	 Menubar
+
+     The program makes sure that Command Line and
+     Menubar are not switched off at the same time,
+     because this would make it impossible to enter
+     any more commands.
+
+EXAMPLE
+     UserInterface 0 0 1 1 1 1
+
+DATE
+     940818

@@ -1,0 +1,7 @@
+You can always undo the last command or
+action by typing Ctrl+U (hold down the
+'Ctrl' and 'U' keys at the same time).
+This envokes the Undo command.
+
+You can set the level of possible undo
+steps with the SetUndo command.

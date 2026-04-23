@@ -1,0 +1,21 @@
+NAME
+     ReadUpl - read file with upper limits
+
+SYNOPSIS
+     ReadUpl fileName
+
+DESCRIPTION
+     Read a file with upper distance limits. The format
+     is the same that DIANA/DYANA uses. The distance
+     constraints are added to all selected molecules.
+
+     This command supports groups.
+
+EXAMPLE
+     ReadUpl /home/joe/struct/my_prot.upl
+
+SEE ALSO
+     SelectMol, Group, ReadLol, AddUpl, CheckUpl
+
+DATE
+     960317

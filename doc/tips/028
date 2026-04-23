@@ -1,0 +1,7 @@
+You can write your own macros to speed
+up and simplify frequently repeated
+command sequences, and execute them with
+the XMacUser command. The macro recorder
+which can be opened with the RecordMac
+command is a convenient tool to help you
+writing macros.

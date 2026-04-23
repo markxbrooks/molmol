@@ -1,0 +1,17 @@
+NAME
+     StyleCylinder - set display style of cylinders
+
+SYNOPSIS
+     StyleCylinder ( invisible | normal | arrow )
+
+DESCRIPTION
+     Set the display style of all selected cylinders.
+
+EXAMPLE
+     StyleCylinder arrow
+
+SEE ALSO
+     SelectPrim, AddCylinder, AddDipole, ColorPrim
+
+DATE
+     970722

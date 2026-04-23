@@ -1,0 +1,152 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>MOLMOL Tutorial - Example 2</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>MOLMOL Tutorial - Example 2</H1>
+
+ <H2>Image</H2>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex2.gif"></CENTER>
+
+ <H2>Steps</H2>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A> 'num > 1'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We only want to make a schematic drawing of the first of the
+20 structures, so we select all but the first...
+<P>
+
+ <KBD><A HREF="../help/html/RemoveMol.html">RemoveMol</A></KBD><BR>
+(<SAMP>Edit->Structure->Remove Mol</SAMP>)<BR>
+... and remove them.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The standard orientation for BPTI is the one where the pricipal
+axes are aligned to the coordinate axes. So we select all atoms...
+<P>
+
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_axes</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+... and do the alignment.
+<P>
+
+ <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A> ribbon.mac</KBD><BR>
+(<SAMP>File->Macro->Execute Standard</SAMP>)<BR>
+Use the standard macro for creating a ribbon display. If you are
+interested in the detailed commands used to do all of the steps
+manually, have a look at this macro. We could have used
+<SAMP>Button:ribbon</SAMP> instead, but this would have done an
+automatic determination of the secondary structure first, while we
+preferred to use the definitions from the PDB file in this case.
+<P>
+
+ <KBD><A HREF="../help/html/DialColor.html">DialColor</A> on</KBD><BR>
+(<SAMP>Button:color</SAMP>)<BR>
+Open the color dialog.
+<P>
+
+ <KBD><A HREF="../help/html/BackColor.html">BackColor</A> 0 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Change the background color to black.
+<P>
+
+ <KBD><A HREF="../help/html/SelectPrim.html">SelectPrim</A> 'num = 10'</KBD><BR>
+(<SAMP>Mouse</SAMP>)<BR>
+The second helix seems to be defined too long. So we select it
+by clicking on it with the mouse...
+<P>
+
+ <KBD><A HREF="../help/html/LengthPrim.html">LengthPrim</A> 46 55</KBD><BR>
+(<SAMP>Prim->Length</SAMP>)<BR>
+... and make it half a residue shorter at each end.
+<P>
+
+You could now use commands like
+ <KBD><A HREF="../help/html/SplitRibbon.html">SplitRibbon</A></KBD>,  <KBD><A HREF="../help/html/StyleRibbon.html">StyleRibbon</A></KBD>,  <KBD><A HREF="../help/html/SizeRibbon.html">SizeRibbon</A></KBD>
+and  <KBD><A HREF="../help/html/ColorPrim.html">ColorPrim</A></KBD> to modify the display, but for the moment
+we are happy with the default.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example2.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example2.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H2>Macro</H2>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+DialSelect on
+SelectMol 'num > 1'
+RemoveMol
+SelectAtom ''
+Fit to_axes
+XMacStand ribbon.mac
+DialColor on
+BackColor 0 0 0
+SelectPrim 'num = 10'
+LengthPrim 46 55
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example2.tif
+WriteDump example2.mol
+Quit no
+</PRE>
+
+<HR>
+Last modified: Mon Jan 20 19:45:00 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

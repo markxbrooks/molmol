@@ -1,0 +1,21 @@
+NAME
+     PlotPs - make a PostScript plot
+
+SYNOPSIS
+     PlotPs fileName
+
+DESCRIPTION
+     Make a PostScript plot of the current screen contents.
+     Selection of the desired parameters with the PlotPar
+     command is essential for obtaining good results.
+     Hidden surface elimination of complex scenes can take
+     some time (up to a few minutes typically).
+
+EXAMPLE
+     PlotPs /home/joe/MyPlot.ps
+
+SEE ALSO
+     PlotUnit, PlotPar, Rendering, Stereo
+
+DATE
+     961128

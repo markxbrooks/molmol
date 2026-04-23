@@ -1,0 +1,36 @@
+NAME
+     CalcAxis - calculate lengths of principal axes
+
+SYNOPSIS
+     CalcAxis ( 0 | 1 ) ( 0 | 1 )
+
+DESCRIPTION
+     Generate a report with the relative lengths of the
+     principal axes of all selected molecules. Only the
+     selected atoms of each molecule are used, the same
+     mass is used for all atoms.
+
+     The lengths are listed relatively to the shortest axis,
+     the average for all structures is given at the end.
+
+     The first option selects whether a list with the angles
+     of all selected bonds relative to the principal axes
+     should be printed.
+
+     The second option selects whether the principal axes
+     should be displayed. A cylinder will be added, it can
+     be manipulated with the corresponding commands, like
+     LengthPrim and RadiusPrim. The created primitives have
+     the properties "axis" and "cylinder".
+
+     This command supports groups.
+
+EXAMPLE
+     CalcAxis 0 1
+
+SEE ALSO
+     SelectAtom, Group, Fit,  ColorPrim, LengthPrim,
+     RemovePrim, AddCylinder
+
+DATE
+     9991106

@@ -1,0 +1,129 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Starting</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Starting</H1>
+
+ <H2>UNIX</H2>
+
+MOLMOL is supplied with a shell script (<KBD>molmol</KBD> in
+the top level installation directory) that processes options
+and arguments and sets the necessary environment variables.
+The following options are recognized by this shell script:
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>argument</TH>
+<TH>description</TH></TR>
+<TR><TD><KBD>-h</KBD></TD>
+<TD>give list of options</TD></TR>
+<TR><TD><KBD>-t</KBD></TD>
+<TD>TTY interface (no graphics)</TD></TR>
+<TR><TD><KBD>-o name</KBD></TD>
+<TD>alternate input/output device</TD></TR>
+<TR><TD><KBD>-2</KBD></TD>
+<TD>stereo mode (OpenGL only)</TD></TR>
+<TR><TD><KBD>-a</KBD></TD>
+<TD>display all atoms (not backbone only)</TD></TR>
+<TR><TD><KBD>-s</KBD></TD>
+<TD>superimpose complete backbone</TD></TR>
+<TR><TD><KBD>-r range</KBD></TD>
+<TD>superimpose given backbone range</TD></TR>
+<TR><TD><KBD>-f file</KBD></TD>
+<TD>execute macro file (<KBD>-</KBD> for standard input)</TD></TR>
+<TR><TD><KBD>files</KBD></TD>
+<TD>DG, PDB, Angle or Dump files</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+If the program is started without names of structure files, it
+will recover the saved state of the last invocation (if available)
+and ignore all options but <KBD>-f macro</KBD>.
+<P>
+
+Besides the listed options, the program will also recognize
+standard Xt options, like <KBD>-bg color</KBD> for setting the
+background color.
+
+ <H2>Windows</H2>
+
+Under Windows, you will normally start MOLMOL by double-clicking
+its icon (a capital M in cyan and red). You may want to create a
+shortcut on your desktop. Right-click on the icon e. g. in
+Windows Explorer, select "Create Shortcut" in the menu, and drag
+the shortcut to a convenient location on your desktop.
+<P>
+
+The following command line options are recognized:
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>argument</TH>
+<TH>description</TH></TR>
+<TR><TD><KBD>-stereo</KBD></TD>
+<TD>stereo mode</TD></TR>
+<TR><TD><KBD>file</KBD></TD>
+<TD>execute macro file</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+If you want to use one of these options, you can either start
+the executable from a command prompt, or define a shortcut,
+and then set the argument in the properties of the shortcut
+(right click on icon, select "Properties", click on "Shortcut"
+tab, and add the argument after the executable in the "Target:"
+field).
+<P>
+
+You can also start MOLMOL by defining it as program to be started
+for files with a certain exptension (like <KBD>.pdb</KBD>), and
+then double-clicking a file with this extension.
+<P>
+
+MOLMOL also supports drag and drop for some common molecule
+file types. If a file with one of the following extensions is
+dropped into the main window of the running program, the file
+is loaded with the corresponding command:
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>extension</TH>
+<TH>description</TH></TR>
+<TR><TD><KBD>.pdb</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A></KBD></TD></TR>
+<TR><TD><KBD>.ent</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A></KBD></TD></TR>
+<TR><TD><KBD>.cor</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadDg.html">ReadDg</A></KBD></TD></TR>
+<TR><TD><KBD>.mol2</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadSybyl.html">ReadSybyl</A></KBD></TD></TR>
+<TR><TD><KBD>.ml2</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadSybyl.html">ReadSybyl</A></KBD></TD></TR>
+<TR><TD><KBD>.xyz</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadXyz.html">ReadXyz</A></KBD></TD></TR>
+<TR><TD><KBD>.ang</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadAng.html">ReadAng</A></KBD></TD></TR>
+<TR><TD><KBD>.seq</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadSeq.html">ReadSeq</A></KBD></TD></TR>
+<TR><TD>other</TD>
+<TD> <KBD><A HREF="../help/html/ReadDump.html">ReadDump</A></KBD></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<HR>
+Last modified: Mon Jan 20 19:44:55 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

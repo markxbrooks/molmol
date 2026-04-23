@@ -1,0 +1,7 @@
+You can increase the redraw speed by
+reducing the drawing precision using the
+DrawPrec command. The precision used
+during interactive manipulations
+(rotation, move) can be set separately
+by using the optional second argument of
+DrawPrec.

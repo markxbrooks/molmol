@@ -1,0 +1,4 @@
+You can calculate electrostatic
+potentials with the CalcPot command and
+use them to color surfaces with the
+ReadPot and PaintSurface commands.

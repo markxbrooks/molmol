@@ -1,0 +1,17 @@
+NAME
+     RemoveBond - remove bonds
+
+SYNOPSIS
+     RemoveBond
+
+DESCRIPTION
+     Remove all selected bonds.
+
+EXAMPLE
+     RemoveBond
+
+SEE ALSO
+     SelectBond, AddBond
+
+DATE
+     940119

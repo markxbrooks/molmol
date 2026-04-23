@@ -1,0 +1,30 @@
+NAME
+     WriteSecondary - write macro with secondary structure
+
+SYNOPSIS
+     WriteSecondary
+
+DESCRIPTION
+     Show a macro that describes the current definiton of
+     secondary structure for all selected residues. Exactly
+     one molecule must be selected. This macro can be
+     edited and saved to a given file name. The macro can
+     be executed with XMacUser to set the same (modified)
+     secondary structure again.
+
+     The secondary structure can be read from a PDB file,
+     calculated with CalcSecondary, or set manually with a
+     set of DefPropRes and SetNeigh commands. The most
+     convenient way is often to use CalcSecondary to get an
+     intial definition, then use WriteSecondary to create a
+     macro, edit it to the "correct" definitions, and then
+     use XMacUser to set these.
+
+EXAMPLE
+     WriteSecondary
+
+SEE ALSO
+     ReadPdb, CalcSecondary, XMacUser, AddRibbon
+
+DATE
+     951010

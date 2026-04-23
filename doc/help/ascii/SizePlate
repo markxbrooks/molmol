@@ -1,0 +1,19 @@
+NAME
+     SizePlate - set sizes of plates
+
+SYNOPSIS
+     SizePlate expr
+
+DESCRIPTION
+     Set the thickness of all selected plates to the
+     given value. Entering 0 or a negative value will
+     leave the size unchanged.
+
+EXAMPLES
+     SizePlate 0.6
+
+SEE ALSO
+     AddPlates, SelectPrim, ColorPrim
+
+DATE
+     950426

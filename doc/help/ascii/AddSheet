@@ -1,0 +1,46 @@
+NAME
+     AddSheet - add sheet for schematic drawing
+
+SYNOPSIS
+     AddSheet
+
+DESCRIPTION
+     Create a surface that serves as schematic drawing of
+     a beta sheet. The surface will approximate all
+     selected atoms that belong to the same sheet. An atom
+     is considered belonging to a sheet if the residue it
+     belongs to has the 'sheet' property set. Even if
+     multiple atoms of one residue are selected, only one
+     of them is taken for determining the surface, it is
+     recommended to select just the CA atoms.
+
+     The surface will not exactly pass through the atoms,
+     but a smoothing algorithm is applied. To get nice
+     smoothing at the borders, it is good to select not
+     just the sheet atoms, but also atoms that are adjacent
+     to the sheet.
+
+     The command is very easy to use for structures that
+     have just one beta sheet. Then the user can just
+     select all CA atoms and execute the command, provided
+     that the secondary structure is known from the PDB
+     file or calculated using the CalcSecondary command.
+
+     If a structure has multiple beta sheets, they have to
+     be created one after the other. It is best to start
+     with all CA selected, create one sheet, deselect the
+     atoms belonging to that sheet, creating the second
+     sheet, etc.
+
+     The created primitives have the property "sheet".
+
+EXAMPLE
+     AddSheet
+
+SEE ALSO
+     ReadPdb, CalcSecondary, SelectAtom, DefPropRes,
+     AddRibbon, ColorPrim, TintPrim, ShadePrim,
+     RemovePrim
+
+DATE
+     970723

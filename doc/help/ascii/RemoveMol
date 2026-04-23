@@ -1,0 +1,17 @@
+NAME
+     RemoveMol - remove molecules
+
+SYNOPSIS
+     RemoveMol
+
+DESCRIPTION
+     Remove all selected molecules.
+
+EXAMPLE
+     RemoveMol
+
+SEE ALSO
+     SelectMol, DialMol, InitAll
+
+DATE
+     931201

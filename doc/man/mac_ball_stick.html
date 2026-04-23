@@ -1,0 +1,27 @@
+<HEAD>
+<TITLE>ball_stick.mac</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+# Display currently selected parts as ball and stick.
+
+# turn atom labels off
+LabelAtom ''
+
+# set atom colors to "standard" colors
+XMacStand color_atom.mac
+
+# select all non-pseudo atoms that were selected
+SelectAtom 'prev_sel & name != "Q*"' 
+
+# set radius to 0.3 times VdW radius, display style to sphere
+RadiusAtom 0.3*vdw
+StyleAtom sphere 
+
+# restore previous selection
+SelectAtom 'prev_sel'
+
+# display selected bonds as cylinders
+StyleBond half_cylinder
+</PRE>
+</BODY>

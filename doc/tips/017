@@ -1,0 +1,7 @@
+You can set the size of the drawing area
+with the DrawArea command. This is
+especially important for obtaining plots
+with a certain aspcect ratio.
+E. g. setting the size to 600x400 will
+result in plots with an aspect ratio
+of 3:2.

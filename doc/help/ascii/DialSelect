@@ -1,0 +1,36 @@
+NAME
+     DialSelect - switch selection dialog on and off
+
+SYNOPSIS
+     DialSelect ( off | on )
+
+DESCRIPTION
+     Switch selection dialog on and off. The selection
+     dialog is a convenient interface to the commands
+     SelectMol, SelectRes, SelectAtom, SelectBond,
+     SelectAngle and SelectDist.
+
+     For making a selection, enter an expression (see the
+     Select* help page) in one of the text fields, and
+     either click the corresponding button on the left
+     side, or hit the Return key). When the Return key is
+     used, the expression is stored in a history which can
+     be recalled by the cursor keys or the small arrows on
+     the right side of the text fields.
+
+     The button/field "R+A+B+A" makes a selection with the
+     same expression for residues, atoms, bonds and angles.
+     This can be convenient in some cases, also if the user
+     is unsure what kind of selection a command requires.
+
+     The OK button closes the dialog, the Help button shows
+     this help page.
+
+EXAMPLE
+     DialSelect on
+
+SEE ALSO
+     Select*, DefProp*
+
+DATE
+     980409

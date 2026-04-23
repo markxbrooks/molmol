@@ -1,0 +1,40 @@
+NAME
+     CheckLol - check lower limits
+
+SYNOPSIS
+     CheckLol expr expr
+
+DESCRIPTION
+     Check all selected lower limits for violation in
+     any of the selected molecules. The command will
+     generate a report with all violations greater than
+     the cutoff given as first argument if it occurs in
+     at least the number of structures given as second
+     argument.
+
+     The lower limits do not have to be read/added for
+     all structures, it is enough if they are defined
+     for one structure. If different lower limits are
+     present in different structures, the largest one
+     is considered for the report.
+
+     In the report produced by this command, a table of
+     violations will be created for each set of molecules
+     with the same structure. A '+' sign indicates that
+     the violation is present in the molecule corresponding
+     to the column, a '*' marks the largest of these
+     violations. The '+' sign is replaced by a '5' for
+     molecules 5, 15, 25, ... and by a '0' for molecules
+     10, 20, 30, ...
+
+     This command supports groups.
+
+EXAMPLE
+     CheckLol 0.3 1
+
+SEE ALSO
+     ReadLol, AddLol, Group, RemoveDist, SelectDist,
+     CheckUpl, CheckAco
+
+DATE
+     981101

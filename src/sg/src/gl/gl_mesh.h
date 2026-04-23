@@ -1,0 +1,34 @@
+/*
+************************************************************************
+*
+*   gl_mesh.h - GL mesh
+*
+*   Copyright (c) 1994
+*
+*   ETH Zuerich
+*   Institut fuer Molekularbiologie und Biophysik
+*   ETH-Hoenggerberg
+*   CH-8093 Zuerich
+*
+*   SPECTROSPIN AG
+*   Industriestr. 26
+*   CH-8117 Faellanden
+*
+*   All Rights Reserved
+*
+*   Date of last modification : 95/12/10
+*   Pathname of SCCS file     : /sgiext/molmol/sg/src/gl/SCCS/s.gl_mesh.h
+*   SCCS identification       : 1.4
+*
+************************************************************************
+*/
+
+extern void SgGLDrawTriMesh(float[][3], float[][3], int);
+
+extern void SgGLDrawColorTriMesh(float[][3], float[][3], float[][3], int);
+
+extern void SgGLDrawStrip(float[][3], float[][3],
+    float[][3], float[][3], int);
+
+extern void SgGLDrawColorStrip(float[][3], float[][3],
+    float[][3], float[][3], float[][3], float[][3], int);

@@ -1,0 +1,48 @@
+# Make ribbon drawing of selected residues.
+
+# make selected atoms and bonds invisible
+StyleAtom invisible
+StyleBond invisible
+
+# store current selection
+DefPropPrim 'prev_sel' 'selected'
+DefPropBond 'prev_sel' 'selected'
+
+# deselect all primitives so that we can set the color only
+# on the new ribbons and set the selection to the previously
+# selected primitives + new ribbons at the end
+SelectPrim '0'
+
+# select CA atoms of selected residues
+SelectAtom 'mol.selected & res.selected & ca'
+
+# add the ribbon
+AddRibbon
+
+# set property on new ribbons (new items are always selected,
+# and we deselected other primitives before, so the new
+# ribbons are the only primitives selected)
+DefPropPrim 'new_ribbon' 'selected'
+
+# make helices red/yellow
+SelectPrim 'new_ribbon & helix'
+ColorPrim 1 0 0
+TintPrim 1 1 0
+
+# make beta sheets cyan
+SelectPrim 'new_ribbon & sheet'
+ColorPrim 0 1 1
+
+# make coil segments grey
+SelectPrim 'new_ribbon & coil'
+ColorPrim 0.7 0.7 0.7
+
+# increase display length of bonds between CA and CB in beta
+# sheets, so that they reach into the sheet (sheets do not
+# pass through the CA position, they are smoothed)
+SelectBond 'mol.selected & res.selected & res.sheet & atom2.name = "CB"'
+LengthBond -0.5 1.0
+
+# restore previous selection, with newly created ribbons added
+SelectPrim 'prev_sel | new_ribbon'
+SelectBond 'prev_sel'

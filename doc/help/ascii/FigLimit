@@ -1,0 +1,39 @@
+NAME
+     FigLimit - show map of distance constraints
+
+SYNOPSIS
+     FigLimit name name expr expr expr
+
+DESCRIPTION
+     Create a figure showing a map with the number of
+     distance constraints between residue pairs. The
+     first argument gives a property name, the residues
+     with this property set will be shown on the horizontal
+     axis. The residues with the property given as second
+     argument will be shown on the vertical axis.
+
+     All selected distances are considered. If the two
+     properties given as first and second argument are the
+     same, upper limits are shown on the top-left side of
+     the diagonal, lower limits on the bottom-right side.
+     If the properties are different, the number of upper
+     and lower limit constraints is shown together.
+
+     The third argument gives the number of constraints
+     required for a fully black square, the fourth argument
+     the minimum number of constraints required for a
+     square to be shown at all. The grey value of these
+     squares is given as fifth argument (0.0 is black,
+     1.0 is white).
+
+     This command supports groups.
+
+EXAMPLE
+     FigLimit 'selected' 'selected' 5 1 0.7
+
+SEE ALSO
+     ReadUpl, ReadLol, DefPropRes, Group, FigOff,
+     FigContact
+
+DATE
+     961127

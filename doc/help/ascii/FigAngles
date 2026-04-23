@@ -1,0 +1,27 @@
+NAME
+     FigAngles - show angle distribution bars
+
+SYNOPSIS
+     FigAngles nameList expr
+
+DESCRIPTION
+     Create a figure showing the angle distributions as
+     points inside bars. Only selected angles are shown.
+     The first argument is a space separated list of all
+     angle names shown in the plot. If there is a gap
+     greater than the value given as second argument, the
+     bar indicating the angle range will be split.
+
+     The user can select angles by clicking on symbols
+     in the plot.
+
+     This command supports groups.
+
+EXAMPLE
+     FigAngles 'PHI PSI' 45
+
+SEE ALSO
+     SelectAngle, Group, FigOff, FigCircles
+
+DATE
+     960317

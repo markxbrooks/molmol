@@ -1,0 +1,34 @@
+# definitions for HP-UX 11
+
+TIFFDIR = $(TOP)/tiff-v3.4/libtiff
+
+IMGDEF  = -DTIFF_SUPPORT
+IMGINCL = -I$(TIFFDIR)
+IMGLIB  = $(TIFFDIR)/libtiff.a
+
+MISSFUNC = -Dceilf=ceil
+MCPPFLAGS = $(MISSFUNC) -I/opt/graphics/OpenGL/include
+MCFLAGS = -Ae -O
+
+RANLIB = /bin/true
+AR     = /usr/bin/ar
+WAIT   = /bin/sleep 2
+SHELL  = /bin/sh
+CPP    = /lib/cpp
+CC     = /usr/bin/cc
+
+SGDEVDIR = ogl x11 no pov rib vrml1 vrml2 ps fm
+SGDEVDEF = -DSG_DEV_OGL -DSG_DEV_X11 -DSG_DEV_NO -DSG_DEV_POV -DSG_DEV_RIB -DSG_DEV_VRML1 -DSG_DEV_VRML2 -DSG_DEV_PS -DSG_DEV_CPS -DSG_DEV_FM3 -DSG_DEV_FM4
+
+PUDEVDIR = motif tty
+PUDEVDEF = -DPU_DEV_MOTIF -DPU_DEV_TTY
+
+IODEVDIR = motogl motx11 ttyno
+IODEVDEF = -DIO_DEV_MOTIF_OGL -DIO_DEV_MOTIF_X11 -DIO_DEV_TTY_NO
+
+MOTIFDEF = -DFUNCPROTO
+
+SYSLIB = -L/opt/graphics/OpenGL/lib -lGLw -lXm -lXt -lX11 -lGLU -lGL -lm
+
+TOOLSDIR = $(TOP)/tools
+SGDIR    = $(TOP)/sg

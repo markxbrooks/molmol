@@ -1,0 +1,7 @@
+You can add arbitrary text annotations,
+including super-/subscript and greek
+letters, to the display. They can be
+attached to atoms (AddText command) or
+be placed at a fixed screen position
+(AddTitle command). You can move and
+resize these annotations interactively.

@@ -1,0 +1,20 @@
+NAME
+     RemoveRes - remove residues
+
+SYNOPSIS
+     RemoveRes
+
+DESCRIPTION
+     Remove all selected residues. Only residues at start
+     and end of a molecule can be deleted. A warning is
+     issued if not all selected residues could be deleted
+     due to this restriction.
+
+EXAMPLE
+     RemoveRes
+
+SEE ALSO
+     SelectRes, AddRes, ChangeRes
+
+DATE
+     960616

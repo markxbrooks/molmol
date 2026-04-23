@@ -1,0 +1,33 @@
+NAME
+     StartRock - start rock
+
+SYNOPSIS
+     StartRock ( once | cycle ) expr
+	 expr expr expr expr expr expr expr expr
+
+DESCRIPTION
+     Start to rotate all movable (set with DialMol)
+     molecules automatically. There are parameters for two
+     phases, so that it is possible to rotate back and
+     forth.
+
+     If the first argument is 'once', the movement will
+     only happen once. If it is 'cycle', the program will
+     repeat it until the StopRock command is executed.
+
+     The second argument is the minimal delay in
+     milliseconds between rotations. The rest of the
+     arguments are rotation angles for all three axis and
+     number of steps.
+
+     It is possible to execute the command while
+     rocking is running, e. g. for changing the delay.
+
+EXAMPLE
+     StartRock cycle 50 0 10 0 18 0 -10 0 18
+
+SEE ALSO
+     DialMol, StopRock
+
+DATE
+     940331

@@ -1,0 +1,19 @@
+NAME
+     AddDist - add distance between two atoms
+
+SYNOPSIS
+     AddDist
+
+DESCRIPTION
+     Add a distance between the two selected atoms. Exactly
+     two atoms must be selected before this command is
+     executed, an error message will be issued otherwise.
+
+EXAMPLE
+     AddDist
+
+SEE ALSO
+     RemoveDist, CalcDist, AddUpl, AddLol
+
+DATE
+     961219

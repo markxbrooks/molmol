@@ -1,0 +1,46 @@
+<HEAD>
+<TITLE>ReplaceListDg</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ReplaceListDg</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ReplaceDg - replace with DG file
+ReplaceListDg - replace with list of DG files
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ReplaceDg fileName
+ReplaceListDg fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+<A HREF="ReplaceDg.html"><KBD>ReplaceDg</KBD></A> reads coordinates from a file in DG format,
+replacing the coordinates of the currently selected
+molecule. If no molecule is selected, a new molecule
+will be created. The structure in the file should be
+identical to the structure of the selected molecule,
+otherwise the result will not be very useful.
+<P>
+ReplaceListDg expects a file with one file name per
+line (empty lines allowed), and reads coordinates
+from all these files, replacing the coordinates of
+the selected molecules.
+<P>
+See <A HREF="ReadDg.html"><KBD>ReadDg</KBD></A> for more information about the DG format.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+ReplaceDg /home/joe/struct/my_prot.cor
+ReplaceListDg /home/joe/struct/my_prot.nam
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="ReadDg.html"><KBD>ReadDg</KBD></A>, <A HREF="ReadListDg.html"><KBD>ReadListDg</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950626
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

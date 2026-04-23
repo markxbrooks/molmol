@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Switch stereo mode on SGI systems. These values are for an
+# Indigo2 Maximum Impact, see setmon(1G) for the appropriate
+# values on other systems. 960x680_108s should do it on a
+# Reality Engine. Most other systems, especially the more
+# low-end ones, do not support stereo in a window.
+
+if [ "$1" = "on" ]; then
+  /usr/gfx/setmon -n 1024x768_96s
+elif [ "$1" = "off" ]; then
+  /usr/gfx/setmon -n 1280x1024_72
+else
+  echo "Usage: $0 [on|off]"
+fi

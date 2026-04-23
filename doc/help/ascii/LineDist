@@ -1,0 +1,20 @@
+NAME
+     LineDist - set style and width of distance lines
+
+SYNOPSIS
+     LineDist (solid | dashed ) expr
+
+DESCRIPTION
+     Set the style and width of the lines used for drawing
+     all selected distances. The default width of 0 is the
+     minimal width that can be drawn, it is also the one
+     that can be drawn fastest.
+
+EXAMPLE
+     LineDist solid 3
+
+SEE ALSO
+     SelectDist, StyleDist, ColorDist, LineInit
+
+DATE
+     940119

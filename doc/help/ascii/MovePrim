@@ -1,0 +1,20 @@
+NAME
+     MovePrim - move primitive
+
+SYNOPSIS
+     MovePrim expr expr expr
+
+DESCRIPTION
+     Move all selected primitives by the given amount.
+     Only circles, cylinders and texts can currently be
+     moved. Moving texts is normally done interactively
+     by using the middle mouse button.
+
+EXAMPLE
+     MovePrim 0.3 0.1 0.2
+
+SEE ALSO
+     SizeText, RadiusPrim, LengthPrim
+
+DATE
+     950407

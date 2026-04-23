@@ -1,0 +1,22 @@
+NAME
+     TrimSurface - cut away part of a surface
+
+SYNOPSIS
+     TrimSurface expr
+
+DESCRIPTION
+     Cut away part of all selected surfaces. The part that
+     is trimmed off is given by the selected atoms, all
+     surface parts that have a distance smaller than the
+     value given as argument from a selected atom are cut
+     away. The distance from an atom takes the VdW radius
+     into account, the argument is an additional offset.
+
+EXAMPLE
+     TrimSurface 1.0
+
+SEE ALSO
+     SelectPrim, AddSurface, NearPrim
+
+DATE
+     970718

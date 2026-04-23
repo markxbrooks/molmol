@@ -1,0 +1,18 @@
+NAME
+     HelpButton - show definition of buttons
+
+SYNOPSIS
+     HelpButton
+
+DESCRIPTION
+     Show the file that contains the definition of the
+     buttons.
+
+EXAMPLE
+     HelpButton
+
+SEE ALSO
+     PathNames
+
+DATE
+     950411

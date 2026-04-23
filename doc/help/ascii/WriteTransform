@@ -1,0 +1,22 @@
+NAME
+     WriteTransform - write current transformation
+
+SYNOPSIS
+     WriteTransform fileName
+
+DESCRIPTION
+     Write the current transformation (consisting of
+     rotation, translation and zoom) of the first
+     selected molecule to a macro file. Executing this
+     macro with XMacUser will restore the orientation.
+     At least one molecule must be selected.
+
+EXAMPLE
+     WriteTransform /home/joe/macros/rotate.mac
+
+SEE ALSO
+     XMacUser, RotateInit, RotateX, RotateY, RotateZ
+     MoveInit, MoveX, MoveY, MoveZ, ZoomAbs
+
+DATE
+     010704

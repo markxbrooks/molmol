@@ -1,0 +1,52 @@
+NAME
+     AddSurface - add surface
+
+SYNOPSIS
+     AddSurface expr ( vdw | solvent | contact ) expr
+	 ( dots | shaded ) ( 0 | 1 )
+
+DESCRIPTION
+     Add a surface for the selected atoms. The precision
+     (density of the dots) depends on DrawPrec.
+
+     The first argument is the radius of the atoms, you
+     will normally not change the default value 'vdw'.
+
+     The second argument gives the type of surface:
+
+	 vdw: van der Waals surface
+
+	 solvent: surface given by the center
+	     of spheres (solvent) touching the atoms
+
+	 contact: contact surface (Richards)
+
+     The third argument gives the solvent radius for
+     solvent and contact surfaces.
+
+     The fourth argument gives the type of surface,
+     dots or a solid, shaded surface can be selected.
+
+     The final option selects whether a report with the
+     approximate areas and volumes of all surface parts
+     is desired. The volumes are mainly interesting for
+     cavities. Note that the numbers are not highly
+     precise.
+
+     Depending on the precision, shaded surfaces can use
+     a lot of memory. If the machine runs out of memory,
+     the program may crash occasionally.
+
+     This command supports groups for shaded surfaces,
+     the resulting surface will belong to the first
+     group member.
+
+EXAMPLE
+     AddSurface vdw contact 1.4 dots 0
+
+SEE ALSO
+     SelectAtom, RadiusAtom, DrawPrec, Group,
+     ColorPrim, RemovePrim, CalcSurface
+
+DATE
+     970723

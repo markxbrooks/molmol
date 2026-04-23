@@ -1,0 +1,29 @@
+NAME
+     NameMol - change molecule name
+
+SYNOPSIS
+     NameMol name expr expr
+
+DESCRIPTION
+     Change the name of all selected molecules. When
+     multiple molecules are renamed, they can be given
+     unique names by appending a number to the name.
+     
+     The first argument gives the (base) name, the second
+     one the starting number for numbering molecules, the
+     third one the number of digits for numbering.
+
+     When changing the name of only one molecule, the
+     number of digits (third argument) should be 0, so that
+     the name given as first argument is directly used as
+     name.
+
+EXAMPLES
+     NameMol bpti 1 0
+     NameMol bpti 21 3
+
+SEE ALSO
+     NewMol, DialMol
+
+DATE
+     980319

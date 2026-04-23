@@ -1,0 +1,26 @@
+NAME
+     DialStyle - switch style dialog on and off
+
+SYNOPSIS
+     DialStyle ( off | on )
+
+DESCRIPTION
+     Switch style dialog on and off. The style dialog
+     is a convenient interface to the commands StyleAtom,
+     StyleBond and StyleDist.
+
+     The style for the selected atoms, bonds or distances
+     is changed by clicking on the corresponding button.
+
+     The OK button closes the dialog, the Help button shows
+     this help page.
+
+EXAMPLE
+     DialStyle on
+
+SEE ALSO
+     SelectAtom, SelectBond, SelectDist, DialSelect,
+     StyleAtom, StyleBond, StyleDist
+
+DATE
+     980409

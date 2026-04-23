@@ -1,0 +1,145 @@
+<HEAD>
+<TITLE>SelectDist</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>SelectDist</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+SelectMol   - select molecules
+SelectRes   - select residues
+SelectAtom  - select atoms
+SelectBond  - select bonds
+SelectAngle - select angles
+SelectDist  - select distances
+SelectPrim  - select primitives
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+SelectMol expr
+SelectRes expr
+SelectAtom expr
+SelectBond expr
+SelectAngle expr
+SelectDist expr
+SelectPrim expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Select molecules, residues, atoms, bonds, angles,
+distances or primitives that satisfy a conditions
+specified by an expression. The expression must
+give a result of type boolean (truth value).
+<P>
+There are two special values not covered by the
+expression syntax below. If an empty string is given
+as expression, everything is selected. If the value
+"0" is given, nothing is selected (i. e. everything
+deselected).
+<P>
+The following is a formal sytax description of
+expressions in EBNF notation. Typical examples are
+shown in the next section.
+<P>
+<PRE>
+  expr       = andExpr { "|" andExpr } .
+  andExpr    = relExpr { "&" relExpr } .
+  relExpr    = simpleExpr [ relOp setExpr ] .
+  relOp      = "=" | "!=" | "<=" |
+               "<" | ">=" | ">" .
+  setExpr    = rangeExpr { "," rangeExpr } .
+  rangeExpr  = simpeExpr [ ".." simpleExpr ] .
+  simpleExpr = term { addOp term } .
+  addOp      = "+" | "-" .
+  term       = factor { mulOp factor } .
+  mulOp      = "*" | "/" | "%" .
+  factor     = [ "-" | "sqrt" | "log" | "!" ] primary .
+  primary    = constant | designator | "(" expr ")" .
+  constant   = string | int | float .
+  designator = [ qual "." ] field [ "[" int "]" ] .
+  qual       = "mol" | "mol1" | "mol2" |
+               "res" | "res1" | "res2" | "atom" |
+               "atom1" | "atom2" | "atom3" | "atom4" |
+               "bond" | "angle" | "dist" | "prim" .
+  field      = "num" | "number" | "name" | "attr" |
+               "shift" | "bfactor" | "vdw" | "d" |
+               "charge" | "heavycharge" |
+               "avgcharge" | "simplecharge" |
+               "len" | "val" | "limit" | "viol" |
+               "upl" | "lol" | "hbond" |
+               propertyName .
+</PRE>
+For simple selections, there is a shorter notation
+of the form:
+<P>
+<PRE>
+  expr       = exprPart { exprPart } .
+  exprPart   = [ "#" molSet ] [ ":" resSet ]
+               [ "@" atomSet ] .
+  molSet     = molSel { "," molSel } .
+  molSel     = string | range .
+  resSet     = resSel { "," resSel } .
+  resSel     = string | range .
+  atomSet    = string { "," string ) .
+  range      = int ".." int | int "-" int .
+</PRE>
+Strings are not quoted in this notation.
+<P>
+The full and the short notation can be mixed, in
+this case a part written in the short notation
+behaves like a primary with a boolean value.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+SelectAtom 'name = "C*"'
+    # C atoms
+SelectAtom 'name = "CA" & res.num < 10 &
+    bfactor > 2.0'
+    # CA atoms in residues with number less than 10
+    # and with B factor larger than 2
+SelectAtom 'res.num = 10 & name = "CA"'
+SetRef
+SelectAtom 'd < 5.0'
+    # atoms with distance less than 5.0 from CA
+    # of residue 10
+SelectBond 'atom1.name = "CA" & atom2.name = "CB"'
+    # bonds from CA to CB
+SelectAngle 'name = "OMEGA" & (val < 170 | val > 190)'
+    # omega angles outside the range from 170 to 190
+SelectDist 'res1.num = 7 | res2.num = 7'
+    # distances involving residue 7
+DefPropDist 'hnd' 'atom1.name = "HN" |
+    atom2.name = "HN"'
+    # define property 'hnd' as all distances that
+    # have a HN atom on one side
+SelectDist 'hnd & viol > 1.5'
+    # constraints from HN atoms that have a violation
+    # of more than 1.5
+SelectDist '! hnd & viol > 2.0'
+    # constraints that do not have a HN atom on either
+    # side and that have a violation of more than 2.0
+SelectPrim 'mol.num = 2'
+    # primitives belonging to molecule number 2
+DefPropRes 'helix' 'mol.name = "bpti*" &
+    res.num = 47..56'
+    # define helix region of all molecules that have a
+    # name starting with "bpti"
+SelectAtom 'name = "CA" & res.helixres'
+    # CA atoms in helix region
+</PRE>
+<PRE>
+SelectAtom '#1-5:10-20,25-30@N,CA,C'
+    # N, CA and C atoms of residues 10 to 20 and 25 to 30
+    # in molecules 1 to 5
+SelectAtom ':7@HN :12@HA'
+    # HN of residue 7 and HA of residue 12
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="DialSelect.html"><KBD>DialSelect</KBD></A>, <A HREF="DefPropAngle.html"><KBD>DefProp*</KBD></A>, <A HREF="DialMol.html"><KBD>DialMol</KBD></A>, <A HREF="SetRef.html"><KBD>SetRef</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+991016
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

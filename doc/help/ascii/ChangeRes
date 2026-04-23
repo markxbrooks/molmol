@@ -1,0 +1,24 @@
+NAME
+     ChangeRes - change residue type
+
+SYNOPSIS
+     ChangeRes ( angles | atoms ) name
+
+DESCRIPTION
+     Exchange all selected residues with a different
+     residue type given as second argument. If the first
+     argument is 'angles', the old conformation is
+     maintained by copying the values of the common
+     dihedral angles from the old residue to the new
+     residue. If it is 'atoms', the old conformation is
+     maintained by copying the coordinates of the common
+     atoms from the old residue to the new residue.
+
+EXAMPLE
+     ChangeRes angles "ARG"
+
+SEE ALSO
+     NewMol, AddRes
+
+DATE
+     960411

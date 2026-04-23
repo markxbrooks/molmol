@@ -1,0 +1,4 @@
+You can produce a PostScript plot with
+the PlotPs command. The resulting file
+will make use of the full printer
+resolution.

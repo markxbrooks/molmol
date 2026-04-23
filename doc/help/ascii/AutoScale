@@ -1,0 +1,18 @@
+NAME
+     AutoScale - scale/translate molecules to window size
+
+SYNOPSIS
+     AutoScale
+
+DESCRIPTION
+     Change scaling and translation of molecules so that
+     their display fills the window as well as possible.
+
+EXAMPLE
+     AutoScale
+
+SEE ALSO
+     MoveX, MoveY, MoveZ, MoveInit, Zoom*
+
+DATE
+     991016

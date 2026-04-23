@@ -1,0 +1,26 @@
+NAME
+     PlotBmp - make a BMP (Windows bitmap) plot
+
+SYNOPSIS
+     PlotBmp fileName
+
+DESCRIPTION
+     Save the current screen contents as BMP file, the
+     standard image file format used on Windows. The
+     horizontal resolution can be set with the PlotPar
+     command, the vertical resolution is calculated to
+     maintain the aspect ratio of the screen.
+
+     This command is not supported on all machines and
+     with all graphics systems. It will give an appropriate
+     error message if it is not supported.
+
+EXAMPLE
+     PlotBmp /home/joe/MyPlot.bmp
+
+SEE ALSO
+     PlotPar, PlotTiff, PlotJpeg, PlotPng
+     PlotFm3, PlotFm4, PlotPs
+
+DATE
+     970225

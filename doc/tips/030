@@ -1,0 +1,6 @@
+You can create an image file with the
+current screen contents using one of the
+corresponding plot commands (PlotTiff,
+PlotJpeg, PlotPng, PlotBmp). The
+resolution can be set as part of the
+plot parameters (PlotPar).

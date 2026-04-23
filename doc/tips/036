@@ -1,0 +1,4 @@
+You can add distances and distance
+constraints with AddDist, AddUpl and
+AddLol commands. You can remove them
+with the RemoveDist command.

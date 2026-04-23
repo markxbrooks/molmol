@@ -1,0 +1,7 @@
+You can switch various parts of the user
+interface (e. g. log window, command
+line) on and off with the UserInterface
+command. If you use this command instead
+of just closing the windows, the
+settings will stay in effect next time
+you start the program.

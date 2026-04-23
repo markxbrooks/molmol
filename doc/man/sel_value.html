@@ -1,0 +1,96 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Values</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Values</H1>
+
+The following table lists the values that can be referenced
+for each kind of data item.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>value</TH><TH>type</TH><TH>explanation</TH></TR>
+<TR><TD><KBD>mol</KBD></TD><TD>num</KBD></TD><TD>integer</TD>
+    <TD>molecule number</TD></TR>
+<TR><TD><KBD>mol</KBD></TD><TD>number</KBD></TD><TD>integer</TD>
+    <TD>molecule number</TD></TR>
+<TR><TD><KBD>res</KBD></TD><TD>num</KBD></TD><TD>integer</TD>
+    <TD>residue number</TD></TR>
+<TR><TD><KBD>res</KBD></TD><TD>number</KBD></TD><TD>integer</TD>
+    <TD>residue number</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD>num</KBD></TD><TD>integer</TD>
+    <TD>primitive number</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD>number</KBD></TD><TD>integer</TD>
+    <TD>primitive number</TD></TR>
+<TR><TD><KBD>mol</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>molecule name</TD></TR>
+<TR><TD><KBD>res</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>residue name</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>atom name</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>angle name</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>shift</KBD></TD><TD>float</TD>
+    <TD>chemical shift of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>bfactor</KBD></TD><TD>float</TD>
+    <TD>B factor of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>vdw</KBD></TD><TD>float</TD>
+    <TD>van der Waals radius of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>charge</KBD></TD><TD>float</TD>
+    <TD>partial charge of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>heavycharge</KBD></TD><TD>float</TD>
+    <TD>charges on heavy atoms</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>avgcharge</KBD></TD><TD>float</TD>
+    <TD>averaged charges on heavy atoms</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>simplecharge</KBD></TD><TD>float</TD>
+    <TD>simple charges from setup file</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>d</KBD></TD><TD>float</TD>
+    <TD>distance from reference atom(s)</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD>len</KBD></TD><TD>float</TD>
+    <TD>bond length</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD>val</KBD></TD><TD>float</TD>
+    <TD>angle</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>val</KBD></TD><TD>float</TD>
+    <TD>distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>limit</KBD></TD><TD>float</TD>
+    <TD>limit of constraint</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>viol</KBD></TD><TD>float</TD>
+    <TD>violation of constraint</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>upl</KBD></TD><TD>bool</TD>
+    <TD>true if distance is upper limit</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>lol</KBD></TD><TD>bool</TD>
+    <TD>true if distance is lower limit</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>hbond</KBD></TD><TD>bool</TD>
+    <TD>true if distance is H-bond</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+You can access values of related data items by using the
+corresponding prefix, e. g. in an expression for atoms,
+you can refer to the residue number by <KBD>res.num</KBD>.
+
+<HR>
+Last modified: Mon Jan 20 19:44:57 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,7 @@
+You will typically rotate, move and
+scale molecules using interactive mouse
+manipulations. There are commands that
+allow you to numerically specify angles,
+distances and factors: RotateX, RotateY,
+RotateZ, MoveX, MoveY, MoveZ, ZoomAbs
+and ZoomRel.

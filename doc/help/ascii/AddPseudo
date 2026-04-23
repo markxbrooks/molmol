@@ -1,0 +1,23 @@
+NAME
+     AddPseudo - add new pseudo atom
+
+SYNOPSIS
+     AddPseudo name
+
+DESCRIPTION
+     Add a pseudo atom with the name given as first
+     argument to all selected residues.
+
+     The new pseudo atom will correspond to all selected
+     atoms of the corresponding residue. If less than two
+     atoms are selected in a residue, no pseudo atom is
+     added.
+
+EXAMPLE
+     AddPseudo "QD"
+
+SEE ALSO
+     SelectRes, SelectAtom, AddAtom, RemoveAtom, WriteLib
+
+DATE
+     961206

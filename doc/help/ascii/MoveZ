@@ -1,0 +1,24 @@
+NAME
+     MoveZ - move molecule in Z direction
+
+SYNOPSIS
+     MoveZ expr
+
+DESCRIPTION
+     Move all movable (set with DialMol) molecules by the
+     given amount in Z direction. Moving in Z direction is
+     very similar to zooming, which is normally done
+     interactively by pressing the left and the middle mouse
+     buttons simultanously. The effect is somewhat different
+     if a perspective projection is chosen, and also the
+     clipping planes work differently.
+
+EXAMPLE
+     MoveZ 10
+
+SEE ALSO
+     DialMol, DefPropMol, MoveX, MoveY, MoveInit, Zoom*,
+     ClipPos, ClipSize, Projection
+
+DATE
+     950124

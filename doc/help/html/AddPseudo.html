@@ -1,0 +1,37 @@
+<HEAD>
+<TITLE>AddPseudo</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddPseudo</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddPseudo - add new pseudo atom
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddPseudo name
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a pseudo atom with the name given as first
+argument to all selected residues.
+<P>
+The new pseudo atom will correspond to all selected
+atoms of the corresponding residue. If less than two
+atoms are selected in a residue, no pseudo atom is
+added.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+AddPseudo "QD"
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectRes.html"><KBD>SelectRes</KBD></A>, <A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="AddAtom.html"><KBD>AddAtom</KBD></A>, <A HREF="RemoveAtom.html"><KBD>RemoveAtom</KBD></A>, <A HREF="WriteLib.html"><KBD>WriteLib</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+961206
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

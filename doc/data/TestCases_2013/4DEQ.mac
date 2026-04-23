@@ -1,0 +1,9 @@
+SelectMol 'num = 1' 
+CalcAtom 'H' 
+CalcAtom 'HN' 
+CalcSecondary 
+XMacStand ribbon.mac 
+SelectMol 'num = 2' 
+StyleAtom invisible 
+LabelAtom '' 
+StyleBond neon 

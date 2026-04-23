@@ -1,0 +1,62 @@
+NAME
+     MaterialAtom - set material properties of atoms
+     MaterialBond - set material properties of bonds
+     MaterialDist - set material properties of distances
+     MaterialPrim - set material properties of primitives
+     MaterialInit - set initial material properties
+
+SYNOPSIS
+     MaterialAtom expr expr expr expr expr expr expr
+     MaterialBond expr expr expr expr expr expr expr
+     MaterialDist expr expr expr expr expr expr expr
+     MaterialPrim expr expr expr expr expr expr expr
+     MaterialInit expr expr expr expr expr expr expr
+
+DESCRIPTION
+     The first four commands set the material properties
+     of all selected atoms, bonds, distances or primitives.
+     MaterialInit sets the initial material properties used
+     for new objects.
+
+     The first three paramters give the coefficients for
+     ambient, diffuse and specular reflection. These values
+     should all be between 0 and 1, for good results the
+     ambient and diffuse terms should sum up to around 1.
+
+     The fourth parameter gives the shininess, it only
+     has an effect if the specular coefficient is not zero.
+     Higher values for the shininess result in smaller
+     specular highlights. Values can be from 1.0 (very
+     dull) to 200 and more (highly polished metal).
+
+     The fifth parameter gives the reflection. 1.0 results
+     in a complete reflection of other objects in the scene
+     (mirror), 0.0 in no reflection.
+
+     The sixth parameter gives the opacity. 1.0 results
+     in a completely opaque material, 0.0 in complete
+     transparency.
+
+     The seventh parameter gives the index of refraction,
+     it only has an influence for (partly) transparent
+     materials. 1.0 gives no refraction, 1.5 is the value
+     for glass, 2.4 for diamond.
+
+     Transparency is not supported on most hardware, and
+     only to a limited amount on machines with high-end
+     graphics. It is mainly useful for preparing files
+     for ray tracing (PlotPov). Reflection is not supported
+     on screen, it is only used for ray tracing.
+
+     Giving a value less than 0.0 for any value will not
+     change it, this is useful for changing only part of
+     the parameters.
+
+EXAMPLES
+     MaterialAtom 0.3 0.7 0.4 30 0.0 1.0 1.0
+
+SEE ALSO
+     Select*, Texture*, PlotPov
+
+DATE
+     991016

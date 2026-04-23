@@ -1,0 +1,34 @@
+NAME
+     AttrAtom - list attributes of atoms
+     AttrBond - list attributes of bonds
+     AttrDist - list attributes of distances
+     AttrPrim - list attributes of primitives
+     AttrInit - list initial attributes
+
+SYNOPSIS
+     AttrAtom
+     AttrBond
+     AttrDist
+     AttrPrim
+     AttrInit
+
+DESCRIPTION
+     The first four commands list the values of the
+     attributes of all selected atoms, bonds, distances
+     or primitives. All items have to share the same set
+     of attributes, an error message is issued otherwise.
+
+     AttrInit lists the values of the initial attributes
+     used for new objects.
+
+     Also creates a macro that can be used to set all
+     the attributes to these values.
+
+EXAMPLES
+     AttrAtom
+
+SEE ALSO
+     Select*, Color*, Material*, Texture*, Style*, Line*
+
+DATE
+     991016

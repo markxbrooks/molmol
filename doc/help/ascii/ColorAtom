@@ -1,0 +1,22 @@
+NAME
+     ColorAtom - set color of atoms
+
+SYNOPSIS
+     ColorAtom expr expr expr
+
+DESCRIPTION
+     Set the color of all selected atoms. The color is
+     given by its Red, Green and Blue component, all in
+     the range between 0.0 and 1.0. By using expressions,
+     it is possible to give each atom a different color,
+     depending e. g. on the B factor.
+
+EXAMPLES
+     ColorAtom 1.0 0.0 0.0
+     ColorAtom 0.5*bfactor 1.0-0.5*bfactor 0.0
+
+SEE ALSO
+     SelectAtom, DialColor, ColorInit
+
+DATE
+     940119

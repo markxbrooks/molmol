@@ -1,0 +1,33 @@
+NAME
+     AddSolid - add solid for schematic drawing
+
+SYNOPSIS
+     AddSolid ( sphere | ellipsoid | cylinder |
+	 cone | box ) expr
+
+DESCRIPTION
+     Add a solid that (partly) covers the selected atoms
+     for each selected molecule. The first parameter
+     selects the desired shape. The second parameter gives
+     the fraction of atoms that must be inside the solid.
+
+     The program tries to determine the solid with the
+     smallest volume that covers the desired number of
+     atoms. This is done by a randomized algorithm, so it
+     is possible that the same input parameters do not
+     always lead to exactly the same solid.
+
+     The calculation can take up to a few minutes,
+     depending on the shape, the number of atoms, and
+     the coverage.
+
+     The created primitives have the property "solid".
+
+EXAMPLE
+     AddSolid ellipsoid 0.8
+
+SEE ALSO
+     SelectAtom, ColorPrim, RemovePrim
+
+DATE
+     970723

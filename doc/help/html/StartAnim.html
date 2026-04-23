@@ -1,0 +1,43 @@
+<HEAD>
+<TITLE>StartAnim</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>StartAnim</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+StartAnim - start animation
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+StartAnim ( once | cycle ) expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Start an animation. This can be used for displaying
+MD runs. If the first argument is 'once', every
+selected structure will be displayed once.
+<P>
+If it is 'cycle', the program will loop through all
+selected structures until the <A HREF="StopAnim.html"><KBD>StopAnim</KBD></A> command is
+executed.
+<P>
+The second argument is the minimal delay in
+milliseconds between displaying structures.
+<P>
+It is possible to execute the command while an
+animation is running, e. g. for changing the delay.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+StartAnim cycle 50
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="DialMol.html"><KBD>DialMol</KBD></A>, <A HREF="StopAnim.html"><KBD>StopAnim</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+940216
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

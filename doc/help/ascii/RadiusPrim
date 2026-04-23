@@ -1,0 +1,21 @@
+NAME
+     RadiusPrim - set radius of primitives
+
+SYNOPSIS
+     RadiusPrim expr
+
+DESCRIPTION
+     Set the radius used for drawing all selected
+     primitives. If the radius of a spline is set to 0,
+     the spline is drawn as line, otherwise it is drawn
+     as tube with the given radius.
+
+EXAMPLE
+     RadiusPrim 0.7
+
+SEE ALSO
+     AddRibbon, AddTrajec, AddDrawobj, ColorPrim,
+     RadiusInit
+
+DATE
+     931130

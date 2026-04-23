@@ -1,0 +1,23 @@
+NAME
+     ReadLib - read and error check residue library
+
+SYNOPSIS
+     ReadLib
+
+DESCRIPTION
+     Read the residue library. This command is not normally
+     used, the residue library is read automatically when
+     needed. This command gives diagnostic output, however,
+     where normally errors in the residue library are not
+     reported. So this command is helpful for checking the
+     library after modifications, or whenever problems are
+     suspected.
+
+EXAMPLE
+     ReadLib
+
+SEE ALSO
+     PathNames, InitAll, WriteLib
+
+DATE
+     961206

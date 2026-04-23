@@ -1,0 +1,19 @@
+NAME
+     RadiusDist - set radius of distances
+
+SYNOPSIS
+     RadiusDist expr
+
+DESCRIPTION
+     Set the radius of all selected distances. The radius
+     is only important if an distance is displayed as
+     cylinder.
+
+EXAMPLES
+     RadiusDist 0.5
+
+SEE ALSO
+     SelectDist, StyleDist, RadiusInit
+
+DATE
+     950223

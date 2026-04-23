@@ -1,0 +1,43 @@
+NAME
+     CalcCluster - reduce number of structures
+
+SYNOPSIS
+     CalcCluster expr expr expr
+
+DESCRIPTION
+     Takes a bundle of superimposed structures and
+     determines a smaller number of structures that
+     represent the same bundle as well as possible. This is
+     done by clustering similar structures into groups, and
+     taking the "central" structure of each group.
+
+     The command acts on all selected molecules and only
+     considers the selected atoms of these molecules for
+     the calculation.
+
+     The first argument gives the desired number of
+     structures. The second argument gives the minimal RMSD
+     between two resulting groups, where the RMSD between
+     two groups is defined as the maximal RMSD between a
+     member of one group and a member of the other group.
+     The third argument gives the maximal RMSD of two
+     members of a group. Due to these restrictions, the
+     number of calculated clusters can be different from
+     the one given as first argument.
+
+     The property "cluster" is set on all molecules that
+     represent a group. From each group, the one with the
+     smallest sum of RMSDs to all other members is chosen.
+     A property (cluster1, cluster2, etc.) is also set for
+     each member of every cluster.
+
+     This command supports groups.
+
+EXAMPLE
+     CalcCluster 5 0.02 1
+
+SEE ALSO
+     SelectMol, SelectAtom, Group, Fit, MeanMol
+
+DATE
+     980817

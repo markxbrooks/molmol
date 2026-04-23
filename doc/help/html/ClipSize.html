@@ -1,0 +1,38 @@
+<HEAD>
+<TITLE>ClipSize</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ClipSize</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ClipPos - set position of clipping planes
+ClipSize - set distance of clipping planes
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ClipPos expr
+ClipSize expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set new values for the distance of the near and
+far clipping planes. By <A HREF="ClipPos.html"><KBD>ClipPos</KBD></A>, the user sets
+the position of the middle between the two
+planes, by ClipSize the distance:
+<P>
+<PRE>
+    near = pos - size / 2
+    far  = pos + size / 2
+</PRE>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+ClipPos 8.0
+ClipSize 5.0
+</PRE>
+<STRONG>DATE</STRONG><P>
+950124
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

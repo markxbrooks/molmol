@@ -1,0 +1,182 @@
+                               MOLMOL 2K.2
+                          Important Information
+
+
+Date: January 20, 2003
+
+
+This file contains information specific to the UNIX version of MOLMOL.
+General information is in the file README, which should be read first.
+
+
+DOWNLOADING
+
+The files for the UNIX version are in a subdirectory called "unix" of
+the ftp locations given in README. The following files can be downloaded:
+
+    molmol-2k.2.0-doc.tar.Z
+    molmol-2k.2.0-bin-sgi.tar.Z
+    molmol-2k.2.0-bin-hp.tar.Z
+    molmol-2k.2.0-bin-sol.tar.Z
+    molmol-2k.2.0-src.tar.Z
+
+molmol-2k.2.0-doc.tar.Z contains documentation, configuration files, etc.
+These files are REQUIRED for successful operation of the program.
+
+The molmol-2k.2.0-bin-*.tar.Z contain executables for SGI (IRIX 6.5),
+HP (HP-UX 11) and Solaris (SunOS 5.8). If you are using one of these
+systems, you can just download this file (together with the doc file)
+and do not need source code.
+
+Executables for other UNIX platforms are not distributed as part of
+the original release. They may be added later, check the web site
+and ftp server for the latest information.
+
+molmol-2k.2.0-src.tar.Z contains the source code. You only need this if
+there is no executable for the system that you want to use.
+
+The ftp sites also contain the same files compressed with gzip in the
+subdirectory "unix-gzip". If the command "gunzip" is available on your
+system, it is preferrable to do download the corresponding files from
+there, they are smaller. The following installation instructions are
+for the compressed files, if you have the gzipped files, just replace:
+
+    zcat foo.tar.Z | tar xvf -
+
+by:
+
+    gunzip -c foo.tar.gz | tar xvf -
+
+
+INSTALLATION
+
+Create a directory that holds the program (e. g. /usr/MOLMOL)
+and unpack the files into that directory:
+
+    zcat molmol-2k.2.0-doc.tar.Z | tar xvf -
+    zcat molmol-2k.2.0-bin-xxx.tar.Z | tar xvf -
+
+Binaries for multiple architectures can be installed in the same
+directory, the startup script will automatically select the
+correct binary.
+
+Start the (very simple) installation script:
+
+    ./INSTALL
+
+This only sets the MOLMOLHOME variable in the molmol shell script,
+you can also do that manually in case of problems, like if your
+current path looks strange due to using an automounter.
+
+You may want to replace the /bin/ksh line in the molmol script by
+/bin/sh if your system does not have a Korn shell. The Korn shell
+is taken by default because the Bourne shell on DEC systems cannot
+handle the script.
+
+You can either add the directory where you installed the program
+to your PATH, copy the script to a directory in your path, or do
+that as a symbolic link (preferred). E. g.:
+
+    ln -s /usr/MOLMOL/molmol /usr/local/bin
+
+
+COMPILATION ON SUPPORTED ARCHITECTURE
+
+Note that there are binaries for some platforms, it is simpler to
+use those if they are available for your system.
+
+It is recommended to keep the source code in a directory different
+from the final installation directory, e. g. in /usr/molmol-src.
+Unpack the file with the source code:
+
+    zcat molmol-2k.2.0-src.tar.Z | tar xvf -
+
+Copy the appropriate makedef.xxx file to makedef:
+
+    cp makedef.xxx makedef
+
+For some architectures there are multiple choices, see the comments
+at the top of each file for details. After copying, look at the file
+and edit it to your personal needs if required. You may have to set
+some path names, etc. The file makedef.gen included explanations for
+the variables that can be set in makedef.
+
+For systems that support the PlotTiff command (see manual), i. e.
+systems with OpenGL or XGL, you first have to compile the libtiff
+library (unless you have it on your system already):
+
+    cd tiff-v3.4
+    ./configure
+    cd libtiff
+    make
+    cd ../..
+
+If you want to install the library and some useful tools that come
+with it in a generally accessible place, give these paths when
+the configure script asks for them, do the "make" one directory
+level higher, and do a "make install" afterwards.
+
+For output of images in JPEG and PNG format, additional libraries
+not supplied with the program are necessary. These can be obtained
+from ftp://ftp.uu.net/graphics.
+
+You can optionally create header file dependencies by using the
+following commands. This step does not work on some architectures
+(AIX and Linux), and it is unimportant unless you want to do
+development work on the program, so it is recommended that you
+leave this step away.
+
+    cp makedep.devel makedep
+    make depend
+
+Compile:
+
+    make
+
+The executable is in the directory src/main, you can now strip
+that and copy it to the installation directory:
+
+    cd src/main
+    strip molmol
+    cp molmol /usr/MOLMOL/molmol.xxx
+
+Machine specific hints:
+
+    - the make used by default on DEC cannot handle the
+      include files used in the makefiles, execute the following
+      before compiling:
+	alias make /usr/opt/ultrix/usr/bin/make
+	setenv MAKE /usr/opt/ultrix/usr/bin/make
+
+
+COMPILATION ON UNSUPPORTED ARCHITECTURE
+
+You have to create a makedef file that contains the necessary
+machine specific definitions for your system. You can either
+start from the supplied one that is most closely related, or
+you can take makedef.gen, which contains comments explaining
+the variables, plus some possible settings:
+
+    cp makedef.gen makedef
+    edit makedef
+
+From here on you can follow the instructions from the previous
+paragraph for compiling. In addition you have to select a new
+short system name for the extension, and add the new architecture
+to the startup script, following the example of an existing one:
+
+    cd src/main
+    strip molmol
+    cp molmol /usr/MOLMOL/molmol.foo
+    cd /usr/MOLMOL
+    edit molmol
+
+In case you have compilation proplems: there should be NO changes
+necessary in the source code (unless maybe for some #ifdef's in
+the src/os directory), whenever possible you should get things
+working by settings in the makedef file (often by -D options).
+If you find non-portabilities in the code, please notify the
+authors.
+
+Also send your makedef files after successful compilation, so that
+they can be supplied to other users in the future.

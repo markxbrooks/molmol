@@ -1,0 +1,23 @@
+NAME
+     CalcHelix - calculate angles between helix axes
+
+SYNOPSIS
+     CalcHelix
+
+DESCRIPTION
+     Generate a report with angles between helix axes.
+     Cylinders have to be added for all helices to be
+     considered by this command, and at least two such
+     cylinders have to be selected. The command will
+     create a two-dimensional table with angles for all
+     pairs, indexed with the primitive numbers of the
+     cylinders.
+
+EXAMPLE
+     CalcHelix
+
+SEE ALSO
+     AddCylinder, SelectPrim
+
+DATE
+     961126

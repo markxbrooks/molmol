@@ -1,0 +1,36 @@
+NAME
+     Group - define molecule groups
+
+SYNOPSIS
+     Group expr
+
+DESCRIPTION
+     Define groups with the currently selected molecules.
+     The argument gives the number of members of each
+     group. The default value is all selected molecules.
+     If a smaller number is given, multiple groups with
+     the desired number of molecules each are defined.
+     E. g. the value 2 will make a group with the first
+     and second selected molecule, another one with the
+     third and fourth, etc.
+
+     Defining groups changes the behaviour of a number
+     of commands, mostly the ones for calculation. They
+     will treat the molecules in a group as if they were
+     only one molecule. This is commonly used when dealing
+     with complexes, so that e. g. CalcSurface will
+     calculate the surface of the whole complex, and not
+     of each molecule individually.
+
+     The help page of every command that deals with groups
+     has the remark "this command supports groups" at the
+     bottom.
+
+EXAMPLE
+     Group 2
+
+SEE ALSO
+     SelectMol
+
+DATE
+     960317

@@ -1,0 +1,22 @@
+NAME
+     ColorBond - set color of bonds
+
+SYNOPSIS
+     ColorBond expr expr expr
+
+DESCRIPTION
+     Set the color of all selected bonds. The color is
+     given by its Red, Green and Blue component, all in
+     the range between 0.0 and 1.0. By using expressions,
+     it is possible to give each bond a different color,
+     depending e. g. on the B factor of the first atom.
+
+EXAMPLES
+     ColorBond 1.0 0.0 0.0
+     ColorBond atom1.bfactor 1.0-atom1.bfactor 0.0
+
+SEE ALSO
+     SelectBond, DialColor, ColorInit
+
+DATE
+     940119

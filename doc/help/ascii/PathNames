@@ -1,0 +1,80 @@
+NAME
+     PathNames - set path names
+
+SYNOPSIS
+     PathNames string string string string string
+	 string string string string
+
+DESCRIPTION
+     Set path names for some configuration files.
+     Normally the program reads these file from the
+     directory $MOLMOLHOME/setup.
+
+     The following is a list of all configuration files:
+
+         AtomRadius: Contains radii for atoms. Used for
+             the commands CalcBond and CheckBond.
+
+         AtomCharge: Contains charges for atoms. These
+             are used when 'simplecharge' is referenced
+             in an expression for an atom.
+
+         FlipAtoms: Contains sets of atoms that can be
+             exchanged by the FlipAtom command.
+
+         RingShift: Contains definitions of models for
+             the CalcShift command.
+
+         PdbAtoms: Contains a table that is used to
+             translate atom names from PDB files to
+             atom names from the residue library.
+
+         PropDef: Contains definitons of standard
+             properties.
+
+         ResLib: Residue library.
+
+         MenuDir: Directory that contains menu definition
+             files (MenuBar, *.menu, Popup, Valuator).
+
+         ColorList: List of colors used for DialColor.
+
+     Generally the configuration files are read when
+     they are used the first time, and the contents is
+     kept in memory. This means that changing the path
+     only has an effect after leaving the program and
+     starting it again. This is always true for MenuDir.
+     It is also necessary for AtomRadius if the CalcBond
+     or CheckBond command was used, for RingShift if the
+     CalcShift command was used, for PdbAtoms if a PDB
+     file was read or written, and for ColorList if the
+     color dialog (DialColor) was opened.
+
+     ResLib, together with AtomCharge, is read as soon as
+     a molecule is read from a file. To use the new
+     definitions after ResLib has been changed, the program
+     has to be reinitialized by using the InitAll command,
+     and the molecules have to be read again. Just leaving
+     the program and starting it again does not help, since
+     the contents is stored in the molmol/dump file in the
+     home directory. PropDef is handled in the same way.
+
+     If the file with the given path name cannot be
+     openend, the program will silently fall back to the
+     default file.
+
+     The special name "0" can be given for path names,
+     in this case an empty file will be taken for the
+     corresponding configuration file. This can be handy
+     e. g. for PdbAtoms when you want to read a PDB file
+     without using the normal translation for atom names.
+
+EXAMPLE
+     PathNames "" "" "" "" "" "" "/home/joe/molmol/my.lib" "" ""
+
+SEE ALSO
+     CalcBond, FlipAtom, CalcShift, ReadPdb, DialColor,
+     InitAll, DefProp*
+
+DATE
+     960416

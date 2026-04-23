@@ -1,0 +1,14 @@
+# used to build View pulldown menu
+
+pullright Z "Zoom"
+  entry A "Absolute..." "ZoomAbs"
+  entry R "Relative..." "ZoomRel"
+end
+entry P "Projection..." "Projection"
+pullright C "Clip Planes"
+  entry P "Position..." "ClipPos"
+  entry S "Size..." "ClipSize"
+end
+entry V "View Angle..." "ViewAngle"
+entry L "Light..." "Light"
+entry F "Fog..." "Fog"

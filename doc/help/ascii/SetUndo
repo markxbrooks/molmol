@@ -1,0 +1,24 @@
+NAME
+     SetUndo - set the number of possible undos
+
+SYNOPSIS
+     SetUndo expr
+
+DESCRIPTION
+     Set the number of possible undos. Each level can
+     use a significant amount of memory, so setting the
+     number too high is not recommended if the available
+     memory is tight. There is also a certain overhead
+     for each command as soon as the level is greater
+     than zero, especially if many structures are loaded.
+     So if the program seems to get too slow, try setting
+     the value to zero.
+
+EXAMPLE
+     SetUndo 3
+
+SEE ALSO
+     Undo
+
+DATE
+     950624

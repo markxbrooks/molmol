@@ -1,0 +1,21 @@
+NAME
+     WritePdb - write PDB file
+
+SYNOPSIS
+     WritePdb fileName
+
+DESCRIPTION
+     Write a PDB file. All selected molecules are written
+     to the file.
+
+     See the help page of ReadPdb for an explanation of the
+     handling of atom names.
+
+EXAMPLE
+     WritePdb /home/joe/struct/my_prot.pdb
+
+SEE ALSO
+     DialMol, PathNames, WriteAng, WriteDg, ReadPdb
+
+DATE
+     940408

@@ -1,0 +1,61 @@
+ TOOLSDIR   = $(TOP)/tools
+ SGDIR      = $(TOP)/sg
+ IMGDIR     = $(TOP)/img
+ ZLIBDIR    = $(IMGDIR)/zlib
+ JPEGDIR    = $(IMGDIR)/libjpeg
+ PNGDIR     = $(IMGDIR)/libpng
+ TIFFDIR    = $(IMGDIR)/libtiff
+ MESADIR = 
+
+# If you configured any of the above three image formats, uncomment
+# the following four lines, and delete the non-relevant parts if
+# necessary, i. e. if you did not configure all three formats.
+#
+ IMGDEF  = -DTIFF_SUPPORT -DJPEG_SUPPORT -DPNG_SUPPORT
+ IMGINCL = -I$(TIFFDIR) -I$(JPEGDIR) -I$(PNGDIR) -I$(ZLIBDIR)
+ IMGLIB  = $(IMGDIR)/lib/zlib.a $(IMGDIR)/lib/libjpeg.a \
+           $(IMGDIR)/lib/libpng.a $(IMGDIR)/lib/libtiff.a
+
+# Some systems do not have the float versions of various math functions,
+# uncomment the following lines if this is the case
+
+  MISSFUNC = -Dsqrtf=sqrt -Dexpf=exp -Dlogf=log \
+             -Dsinf=sin -Dcosf=cos  \
+             -Dfabsf=fabs  -DMAXINT=INT_MAX
+	     
+	     # -Dceilf=ceil
+
+CPP = /usr/bin/cpp
+
+MCPPFLAGS =  -DMAXINT=INT_MAX -I$(TOP) -I/sw/include -I/usr/X11R6/include
+
+CC = gcc 
+
+MCFLAGS = -O -Wall -mmacosx-version-min=10.6
+
+RANLIB = /usr/bin/ranlib
+
+WAIT = /bin/sleep 2
+
+SHELL = /bin/sh
+
+SGDEVDIR = ogl x11 no pov rib vrml1 vrml2 ps fm
+
+SGDEVDEF = -DSG_DEV_OGL -DSG_DEV_X11 -DSG_DEV_NO -DSG_DEV_POV -DSG_DEV_RIB -DSG_DEV_VRML1 -DSG_DEV_VRML2 -DSG_DEV_PS -DSG_DEV_CPS -DSG_DEV_FM3 -DSG_DEV_FM4
+
+PUDEVDIR = motif tty
+
+PUDEVDEF = -DPU_DEV_MOTIF -DPU_DEV_TTY
+
+IODEVDIR = motx11 motogl ttyno
+
+IODEVDEF = -DIO_DEV_MOTIF_X11 -DIO_DEV_MOTIF_OGL -DIO_DEV_TTY_NO
+
+
+MOTIFDEF = -DFUNCPROTO
+
+SYSLIB = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk -L/usr/lib -L/sw/lib -L/usr/X11R6/lib  \
+         -lX11 -lXm -lGLU -lGL /System/Library/Frameworks/OpenGL.framework/Libraries/libGL.dylib /sw/lib/libGLw.dylib \
+         -lXmu -lXt -lXp -lXpm -lX11 -lXext -lSM -lICE -lm -lc -lmx
+
+

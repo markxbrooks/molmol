@@ -1,0 +1,75 @@
+<HEAD>
+<TITLE>WriteLib</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>WriteLib</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+WriteLib - write entries for residue library
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+WriteLib fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+For all selected residues that were not in the residue
+library or that were modified by commands like <A HREF="AddAtom.html"><KBD>AddAtom</KBD></A>
+and <A HREF="AddBond.html"><KBD>AddBond</KBD></A>, write an entry for the residue library
+into the given file.
+<P>
+For working with non-standard residues, the best
+strategy is:
+<P>
+<PRE>
+    1. Read a structure that contains the residue.
+</PRE>
+<PRE>
+    2. Define bonds with the commands CalcBond,
+       AddBond and RemoveBond, use AddAtom, RemoveAtom
+       and AddPseudo if necessary.
+</PRE>
+<PRE>
+    3. Define angles with AddAngle.
+</PRE>
+<PRE>
+    4. WriteLib xxx.lib.
+</PRE>
+<PRE>
+    5. Edit xxx.lib if necessary (e. g. the atom
+       types).
+</PRE>
+<PRE>
+    6. Make a copy of the standard library
+       ($MOLMOLHOME/setup/amber94.lib) and append
+       xxx.lib.
+</PRE>
+<PRE>
+    7. InitAll.
+</PRE>
+<PRE>
+    8. Use PathNames to set name of new library.
+</PRE>
+<PRE>
+    9. Check the library by executing the command
+       ReadLib.
+</PRE>
+<PRE>
+   10. Read structure.
+</PRE>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+WriteLib /home/joe/my_res.lib
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="AddAtom.html"><KBD>AddAtom</KBD></A>, <A HREF="AddPseudo.html"><KBD>AddPseudo</KBD></A>, <A HREF="RemoveAtom.html"><KBD>RemoveAtom</KBD></A>, <A HREF="CalcBond.html"><KBD>CalcBond</KBD></A>, <A HREF="CheckBond.html"><KBD>CheckBond</KBD></A>,
+<A HREF="AddBond.html"><KBD>AddBond</KBD></A>, <A HREF="RemoveBond.html"><KBD>RemoveBond</KBD></A>, <A HREF="AddAngle.html"><KBD>AddAngle</KBD></A>, <A HREF="RemoveAngle.html"><KBD>RemoveAngle</KBD></A>,
+<A HREF="InitAll.html"><KBD>InitAll</KBD></A>, <A HREF="PathNames.html"><KBD>PathNames</KBD></A>, <A HREF="ReadLib.html"><KBD>ReadLib</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+980303
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

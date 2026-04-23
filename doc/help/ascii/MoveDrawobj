@@ -1,0 +1,25 @@
+NAME
+     MoveDrawobj - move draw object
+
+SYNOPSIS
+     MoveDrawobj expr expr expr expr
+
+DESCRIPTION
+     Move all selected draw objects (like lines or
+     rectangles) by the given amount. The first argument
+     gives the index of the control point (starting at 0)
+     to be moved, the rest of the arguments give the
+     amount of movement in each direction.
+
+     Moving the control points of drawing objects is
+     normally done interactively by using the middle
+     mouse button.
+
+EXAMPLE
+     MoveDrawObj 0 0.3 0.1 0.2
+
+SEE ALSO
+     AddDrawobj, SelectPrim
+
+DATE
+     950618

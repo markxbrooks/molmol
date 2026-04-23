@@ -1,0 +1,185 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Advanced Topics</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Advanced Topics</H1>
+
+ <H2>Item Relationships</H2>
+
+The data items that can be selected (moelcule, resdiue, atom,
+bond, angle, distance, primitive) have a hierarchy, e. g. atoms
+are part of residues, and residues are parts of molecules.
+The hierarchy is depicted in the following figure:
+
+<CENTER><IMG SRC="images/datarelation.gif"></CENTER>
+
+Thise hierarchy has a direct effect on item selection. When
+selecting an item, the corresponding items higher in the
+hierarchy are also selected. E. g. selecting an atom will
+automatically select the residue and molecule that the atom
+is part of. On the other hand, deselecting an item does not
+automatically deselect items higher in the hierarchy.
+<P>
+
+When traversing the currently selected items, the program
+will also use this hierarchy, and only traverse deeper into
+selected items. Because of the automatic selection of items
+higher in the hierarchy, this is normally transparent to the
+user. However, if you e. g. first select an atom, and then
+deselect the corresponding residue, the atom will effectively
+be deselected.
+<P>
+
+One way of looking at this mechanism is that selection
+proceeds upwards in the hierarchy (selects items that are
+higher), while deselection proceeds downwards (deselects
+items that are lower).
+<P>
+
+The hierarchy also affects how  <A HREF=sel_value.html>values</A>
+and  <A HREF=sel_prop.html>properties</A> can be accessed in
+ <A HREF=sel_syntax.html>expressions</A>. When an expression is
+evaluated for an item, the values and properties of items
+higher in the hierarchy can be accessed with the syntax
+<KBD>item.name</KBD>. For bonds, distances and angles,
+it is also possible to access the values of the atoms
+involved. The following table gives a full list of which
+related items can be accessed from a given kind of item.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>related</TH><TH>description</TH></TR>
+<TR><TD><KBD>res</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of residue</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>res</KBD></TD>
+    <TD>residue of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of atom</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>res</KBD></TD>
+    <TD>residue of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>atom1</KBD></TD>
+    <TD>first atom of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>atom2</KBD></TD>
+    <TD>second atom of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>res1</KBD></TD>
+    <TD>residue of first atom of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>res2</KBD></TD>
+    <TD>residue of second atom of bond</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>res</KBD></TD>
+    <TD>residue of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom1</KBD></TD>
+    <TD>first atom of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom2</KBD></TD>
+    <TD>second atom of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom3</KBD></TD>
+    <TD>third atom of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom4</KBD></TD>
+    <TD>fourth atom of dihedral angle</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>atom1</KBD></TD>
+    <TD>first atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>atom2</KBD></TD>
+    <TD>second atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>res1</KBD></TD>
+    <TD>residue of first atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>res2</KBD></TD>
+    <TD>residue of second atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>mol1</KBD></TD>
+    <TD>molecule of first atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>mol2</KBD></TD>
+    <TD>molecule of second atom of distance</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of primitive (except for title)</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+ <H2>Predicates</H2>
+
+The previous section explained how to access values and
+properties of data items that are higher in the hierarchy
+than the item for which the expression is evaluated
+(current item). It is also possible to make selections
+based on values and properties of items on the same level
+or lower in the hierarchy than the current item. Since these
+can be any number of items, they cannot be accessed as single
+values, but conditions on each of them must be combined with
+the <KBD>all</KBD> or <KBD>exists</KBD> predicate. These
+predicates are directly followed by an item type and an
+expression in parantheses.
+<P>
+
+If the item type after the predicate is lower in the
+hierarchy than the current item, the evaluation will traverse
+downwards in the hierarchy, and evaluate the expression
+in parantheses for each of the desired items. E. g. if an
+expression for a residue is evaluated, and
+<KBD>exists atom(expression)</KBD> is encountered, this
+expression will be evaluated for all atoms of the residue.
+It must have a boolean result, the whole expression will
+be true if at least one of the partial expressions evaluated
+for the atoms yields true.
+<P>
+
+If the item type after the predicate is higher in the
+hierarchy than the current item, the evaluation will
+traverse upwards in the hierarchy until the parent of
+the item is encountered. From there on, the evaluation
+will be performed as described in the previous chapter.
+E. g. if an expression for an atom is evaluated, and
+<KBD>exists bond(expression)</KBD> is encountered, this
+expression will be evaluated for all bonds that the
+atom is part of. The whole expression will be true if
+all of the partial expressions evaluated for the bonds
+yield true.
+<P>
+
+The  <A HREF=macro_stand.html>standard macros</A> contain a few
+examples of using predicates. <KBD>mean_sc.mac</KBD>
+contains the following commands:
+
+<BLOCKQUOTE>
+<PRE>
+DefPropRes 'well_def' '! exists atom(heavy & bfactor > 1.0)'
+SelectAtom 'res.well_def & (ca | heavysc)'
+</PRE>
+</BLOCKQUOTE>
+
+The first command is used to define the property
+<KBD>well_def</KBD> for well defined residues, specified as
+residues that have no heavy atoms with B factors larger
+than 1.0. The second command then uses this property to
+select the CA and heavy side chain atoms of all these well
+defined residues.
+<P>
+
+The following command in <KBD>pdb_charge.mac</KBD>
+selects all ASP residues that do not have an HD2 atom:
+
+<BLOCKQUOTE>
+<PRE>
+SelectRes 'name = "ASP" & ! exists atom(name = "HD2")'
+</PRE>
+</BLOCKQUOTE>
+
+<HR>
+Last modified: Mon Jan 20 19:44:57 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

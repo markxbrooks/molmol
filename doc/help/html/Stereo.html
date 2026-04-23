@@ -1,0 +1,41 @@
+<HEAD>
+<TITLE>Stereo</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>Stereo</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+Stereo - set stereo mode
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+Stereo ( off | left | right | side_by_side |
+    cross_eye | hardware )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set stereo mode. Hardware stereo is not supported by
+all hardware. If it is supported, it normally works
+only in fullscreen mode (see command <A HREF="Fullscreen.html"><KBD>Fullscreen</KBD></A>).
+<P>
+Hardware stereo is also supported for certain plot
+devices. E. g. generating a PostScript plot in
+hardware stereo mode will produce a side by side
+stereo image with the correct eye distance, while
+the distance between the images will very likely
+be wrong when plotting in side_by_side mode.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+Stereo side_by_side
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="Fullscreen.html"><KBD>Fullscreen</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+941205
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

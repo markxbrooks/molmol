@@ -1,0 +1,7 @@
+You can create various kinds of
+molecular surfaces with the AddSurface
+command. Note that the current drawing
+precision (DrawPrec command) is used for
+determining the resolution. You can
+color the surfaces based on different
+criteria using the PaintSurface command.

@@ -1,0 +1,111 @@
+<HEAD>
+<TITLE>CalcPot</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcPot</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcPot - calculate electrostatic potential
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcPot expr expr expr expr expr expr
+    expr ( zero | debye ) fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Calculate the electrostatic potential of all
+selected molecules, and write the result to a
+file with the given name. The resolution (grid
+density) depends on <A HREF="DrawPrec.html"><KBD>DrawPrec</KBD></A>.
+<P>
+The first argument is the radius of the atoms, you
+will normally not change the default value 'vdw'.
+<P>
+The second argument determines the charge of the
+atoms, typical values are:
+<P>
+<PRE>
+    charge: partial charges on all atoms
+</PRE>
+<PRE>
+    heavycharge: partial charges of protons
+        transferred to heavy atoms
+</PRE>
+<PRE>
+    avgcharge: partial charges on heavy atoms,
+        averaged over neighbours
+</PRE>
+<PRE>
+    simplecharge: charges only on one or two atoms
+        of charged residues, as specified in the
+        setup file AtomCharges
+</PRE>
+The third argument gives the dielectricity constant
+for the molecule, typically in the range 2 to 4, the
+fourth for the solvent, normally 80.
+<P>
+The fifth argument gives the solvent radius,
+normally 1.4 for water.
+<P>
+The sixth argument gives the salt concentration as
+ionic strength. For simple salts, this is twice the
+concentration, so the default value of 0.3
+corresponds to a salt concentration of 150 mMol.
+<P>
+The seventh argument gives the salt radius.
+<P>
+The eighth argument gives the size in Angstroms
+that (on each side) the box that the potential is
+calculated in is larger than the extent of the
+molecule. Values of 10 to 15 are recommended.
+Smaller values reduce the calculation time, but may
+introduce artifacts from the boundary conditions.
+<P>
+The ninth argument selects the kind of boundary
+condition, either values fixed at zero, or
+Debye-Hueckel. Using zero is faster, and there
+does not seem to be a noticable difference between
+the two.
+<P>
+For correct results, special care should be taken
+that the residue definitions with the correct
+charges are used. This is expecially important when
+using PDB files, because the residue names in there
+normally do not contain the charges. There is a
+standard macro called pdb_charge.mac that can be
+run after reading PDB files, it should normally do
+the necessary corrections. For the N and C termini,
+the molecules should have charged end groups, or
+special forms of the residues that contain the
+necessary charges.
+<P>
+Depending on the precision, this function can use
+a lot of memory, an error message will be given
+if the memory runs out.
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcPot vdw charge 2.0 80.0 1.4 0.3 2.0
+    10.0 zero foo.pot
+</PRE>
+<STRONG>REFERENCE</STRONG><P>
+Nicholls, A, Honig, B.
+A rapid finite difference algorithm, utilizing
+successive over-relaxation to solve the
+Poisson-Bolzmann equation.
+Journal of Computational Chemistry, 12 (1990) 435-445
+<P>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="DrawPrec.html"><KBD>DrawPrec</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="PathNames.html"><KBD>PathNames</KBD></A>,
+<A HREF="AddSurface.html"><KBD>AddSurface</KBD></A>, <A HREF="ReadPot.html"><KBD>ReadPot</KBD></A>, <A HREF="PaintSurface.html"><KBD>PaintSurface</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960621
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

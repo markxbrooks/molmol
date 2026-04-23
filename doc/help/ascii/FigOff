@@ -1,0 +1,20 @@
+NAME
+     FigOff - switch from figure to normal display
+
+SYNOPSIS
+     FigOff
+
+DESCRIPTION
+     When a figure (e. g. Ramachandran plot) is displayed,
+     this command will switch back to the normal molecule
+     display.
+
+EXAMPLE
+     FigOff
+
+SEE ALSO
+     FigRamach, FigAngles, FigCircles, FigDist,
+     FigContact, FigLimit
+
+DATE
+     950123

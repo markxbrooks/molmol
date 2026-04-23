@@ -1,0 +1,40 @@
+<HEAD>
+<TITLE>UndefProp</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>UndefProp</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+UndefProp - undefine property
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+UndefProp propertyName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Undefine the property with the given name everywhere.
+This command is rarely used. The program cannot detect
+if a property is not used anymore. Executing this
+command with unused properties can help to avoid
+problems (like unnecessarily large dump files or
+overflow of internal tables), especially when a lot
+of different properties are used.
+<P>
+The number of different properties supported by the
+program is currently set to 2048.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+UndefProp bb
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="DefPropAngle.html"><KBD>DefProp*</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+940408
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

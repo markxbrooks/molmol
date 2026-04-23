@@ -1,0 +1,50 @@
+<HEAD>
+<TITLE>Group</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>Group</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+Group - define molecule groups
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+Group expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Define groups with the currently selected molecules.
+The argument gives the number of members of each
+group. The default value is all selected molecules.
+If a smaller number is given, multiple groups with
+the desired number of molecules each are defined.
+E. g. the value 2 will make a group with the first
+and second selected molecule, another one with the
+third and fourth, etc.
+<P>
+Defining groups changes the behaviour of a number
+of commands, mostly the ones for calculation. They
+will treat the molecules in a group as if they were
+only one molecule. This is commonly used when dealing
+with complexes, so that e. g. <A HREF="CalcSurface.html"><KBD>CalcSurface</KBD></A> will
+calculate the surface of the whole complex, and not
+of each molecule individually.
+<P>
+The help page of every command that deals with groups
+has the remark "this command supports groups" at the
+bottom.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+Group 2
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960317
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

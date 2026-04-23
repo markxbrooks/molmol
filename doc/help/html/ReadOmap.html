@@ -1,0 +1,38 @@
+<HEAD>
+<TITLE>ReadOmap</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ReadOmap</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ReadOmap - read O electron density map
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ReadOmap fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Read an electron density map from a plot file created
+by the program O. Only the commands "move", "line" and
+"rline" are interpreted, all other commands in the
+plot file are silently ignored.
+<P>
+Exactly one molecule must be selected, the coordinates
+in the file are expected to be in the same coordinate
+space as this molecule.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+ReadOmap /home/joe/struct/my_map.plt
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="StyleMap.html"><KBD>StyleMap</KBD></A>, <A HREF="LinePrim.html"><KBD>LinePrim</KBD></A>, <A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+991023
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

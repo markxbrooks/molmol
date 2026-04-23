@@ -1,0 +1,53 @@
+NAME
+     DialColor - switch color dialog on and off
+
+SYNOPSIS
+     DialColor ( off | on )
+
+DESCRIPTION
+     Switch color dialog on and off. The color dialog
+     is a convenient interface to the commands BackColor,
+     ColorAtom, ColorBond, ColorDist, TintDist, ColorPrim
+     and TintPrim.
+
+     The central part of the dialog shows the currently
+     chosen color. A selection of commonly used colors is
+     available from the list on the right side of the
+     dialog. These colors can also be selected by typing
+     their name in the top text field on the left side.
+     Arbitrary colors can be chosen by typing their RGB
+     (Red-Green-Blue) components in the range 0.0 to 1.0
+     in the corresponding text fields on the left side of
+     the dialog.
+
+     When an interactive selection is made in the drawing
+     area, the dialog reflects the color of the selected
+     item.
+
+     The currently chosen color can be applied to selected
+     items by activating the corresponding button from the
+     bottom of the dialog.
+
+     The OK button closes the dialog, the Help button shows
+     this help page.
+
+     The list of colors displayed in the dialog is taken
+     from the file:
+
+         $MOLMOLHOME/setup/ColorList
+
+     An alternate file can be chosen with the PathNames
+     command. An extensive list of colors is supplied in
+     the file:
+
+         $MOLMOLHOME/auxil/ColorList
+
+EXAMPLE
+     DialColor on
+
+SEE ALSO
+     BackColor, ColorAtom, ColorBond, ColorDist, TintDist,
+     ColorPrim, TintPrim, PathNames
+
+DATE
+     980409

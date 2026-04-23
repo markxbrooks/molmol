@@ -1,0 +1,8 @@
+# used to build valuators
+
+"Rotate X" "RotateX" r 0.0 360.0 0 180.0
+"Rotate Y" "RotateY" r 0.0 360.0 0 180.0
+"Rotate Z" "RotateZ" r 0.0 360.0 0 180.0
+"Clip Position" "ClipPos" a 0.1 20.0 1 10.0
+"Clip Size" "ClipSize" a 0.1 30.0 1 18.0
+"Clip Surface" "NearPrim" a 0.0 30.0 1 0.0

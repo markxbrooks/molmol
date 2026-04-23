@@ -1,0 +1,9 @@
+#ifndef VALUES_H
+#define VALUES_H
+
+#define M_LN2    0.69314718055994530942
+#define M_PI     3.14159265358979323846
+#define MAXINT   2147483647
+#define MAXFLOAT ((float)3.40282347e+38)
+
+#endif  /* VALUES_H */

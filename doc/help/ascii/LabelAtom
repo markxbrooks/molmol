@@ -1,0 +1,21 @@
+NAME
+     LabelAtom - set format of atom label
+
+SYNOPSIS
+     LabelAtom string
+
+DESCRIPTION
+     Set the format of the label of all selected atoms.
+     If the character 'R' appears in the string, it is
+     replaced by the residue name. 'N' is replace by the
+     residue number, 'A' by the atom name. All other
+     characters are displayed in the label unchanged.
+
+EXAMPLE
+     LabelAtom "R N"
+
+SEE ALSO
+     SelectAtom
+
+DATE
+     940119

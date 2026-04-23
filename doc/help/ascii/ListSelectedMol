@@ -1,0 +1,27 @@
+NAME
+     ListSelectedMol   - list selected molecules
+     ListSelectedRes   - list selected residues
+     ListSelectedAtom  - list selected atoms
+     ListSelectedBond  - list selected bonds
+     ListSelectedAngle - list selected angles
+     ListSelectedDist  - list selected distances
+
+SYNOPSIS
+     ListSelectedMol
+     ListSelectedRes
+     ListSelectedAtom
+     ListSelectedBond
+     ListSelectedAngle
+     ListSelectedDist
+
+DESCRIPTION
+     Lists the selected items in a text window.
+
+EXAMPLES
+     ListSelectedAtom
+
+SEE ALSO
+     DefProp*, Select*, ListProp*
+
+DATE
+     991031
