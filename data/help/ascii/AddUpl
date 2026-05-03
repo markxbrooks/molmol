@@ -1,0 +1,19 @@
+NAME
+     AddUpl - add upper limit between two atoms
+
+SYNOPSIS
+     AddUpl expr
+
+DESCRIPTION
+     Add an upper limit between the two selected atoms.
+     Exactly two atoms must be selected before this command
+     is executed, an error message will be issued otherwise.
+
+EXAMPLE
+     AddUpl 3.7
+
+SEE ALSO
+     RemoveDist, CheckUpl, RemoveDist, AddLol
+
+DATE
+     950302

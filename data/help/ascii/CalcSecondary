@@ -1,0 +1,36 @@
+NAME
+     CalcSecondary - calculate secondary structure
+
+SYNOPSIS
+     CalcSecondary
+
+DESCRIPTION
+     Calculate the secondary structure of a protein
+     using the algorithm published by Kabsch/Sander.
+     The command operates on all selected residues
+     of all selected molecules. It will set various
+     properties on these residues, depending on the
+     secondary structure. These properties are listed
+     in a text window. They are used by the AddRibbon
+     command to produce schematic drawings.
+
+     Note that editing the text has no effect on the
+     definitons used. For changing the definitons it
+     is most convenient to use the WriteSecondary
+     command.
+
+     Since the calculation is based on hydrogen bonding
+     patterns, the coordinates of HN atoms are required.
+     So before using the command for a structure without
+     coordinates for hydrogen atoms (X-ray), use the
+     CalcAtom command for adding them.
+
+EXAMPLE
+     CalcSecondary
+
+SEE ALSO
+     SelectMol, SelectRes, CalcAtom,
+     DefPropRes, WriteSecondary, AddRibbon
+
+DATE
+     960815

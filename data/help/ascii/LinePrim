@@ -1,0 +1,20 @@
+NAME
+     LinePrim - set style and width of primitive lines
+
+SYNOPSIS
+     LinePrim (solid | dashed ) expr
+
+DESCRIPTION
+     Set the style and width of the lines used for drawing
+     all selected primitives. The default width of 0 is the
+     minimal width that can be drawn, it is also the one
+     that can be drawn fastest.
+
+EXAMPLE
+     LinePrim solid 3
+
+SEE ALSO
+     SelectPrim, ColorPrim, LineInit
+
+DATE
+     951013

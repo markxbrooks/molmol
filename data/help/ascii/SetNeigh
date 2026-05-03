@@ -1,0 +1,35 @@
+NAME
+     SetNeigh - set sheet neighbours of residues
+
+SYNOPSIS
+     SetNeigh expr expr expr expr
+
+DESCRIPTION
+     Set the information about neighbouring residues used
+     for schematic display of beta sheets. The arguments
+     are applied to all selected molecules.
+
+     The first and second argument give the numbers of the
+     start and end residues in the first strand, where the
+     start number must be smaller than the end number. The
+     third and fourth argument give the start and end
+     numbers of residues in the second strand. For a
+     parallel pair of strands, the start number must be
+     smaller than the end number, for an antiparallel pair
+     it must be larger. Both strands must have the same
+     number of residues and must not overlap.
+
+     This command is only used if the secondary structure
+     information was not read from a PDB file or calculated
+     with CalcSecondary, or if the user wants to modify
+     this information.
+
+EXAMPLE
+     SetNeigh 18 24 35 29
+
+SEE ALSO
+     ReadPdb, CalcSecondary, WriteSecondary,
+     AddRibbon, TypeRibbon
+
+DATE
+     950523

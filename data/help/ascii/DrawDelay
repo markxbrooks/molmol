@@ -1,0 +1,17 @@
+NAME
+     DrawDelay - set drawing delay
+
+SYNOPSIS
+     DrawDelay expr
+
+DESCRIPTION
+     Set a delay for drawing. The program will pause
+     for the given time (in milliseconds) after each
+     redraw. This can be useful on machines without
+     double buffering, to avoid too much flickering.
+
+EXAMPLE
+     DrawDelay 100
+
+DATE
+     940325

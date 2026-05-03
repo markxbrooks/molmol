@@ -1,0 +1,24 @@
+NAME
+     MakeMolCyclic - make molecule ribbon display cyclic
+
+SYNOPSIS
+     MakeMolCyclic
+
+DESCRIPTION
+     Add a dummy residue 'XXX' with a dummy 'CA' atom
+     as the first and last residue of all selected molecules.
+
+     The resulting molecule structure can then be displayed cyclic
+     using the AddRibbon command.
+
+     If any selected molecules already have residue 'X' then
+     an error is reported and the process halts.
+
+EXAMPLE
+     MakeMolCyclic
+
+SEE ALSO
+     AddRibbon, AddRes and RemoveRes
+
+DATE
+     20131030

@@ -1,0 +1,37 @@
+NAME
+     AddAtom - add new atom
+
+SYNOPSIS
+     AddAtom name name1 name2 name3 expr expr expr
+
+DESCRIPTION
+     Add an atom with the name given as first argument to
+     all selected residues.
+
+     name1 is the name of the atom where the new atom is
+     attached. name2 is the name of the atom that is used
+     to define the axis of the dihedral angle together
+     with the atom name1. name3 is the name of the atom
+     relative to which the dihedral angle is given.
+
+     The first numeric argument gives the dihedral angle,
+     the next one the angle between the axis of the
+     dihedral angle and the bond between atom name1 and
+     the new atom. The last argument gives the bond
+     distance.
+
+     If name1, name2 and name3 do not exist in a selected
+     residue, or if name already exists, then no new atom
+     is added for this residue, without an error message.
+
+     A bond between the new atom and atom name1 is
+     automatically added.
+
+EXAMPLE
+     AddAtom "HB2" "CB" "CA" "HB1" 120 120 1.5
+
+SEE ALSO
+     SelectRes, AddPseudo, RemoveAtom, WriteLib
+
+DATE
+     961206

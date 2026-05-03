@@ -1,0 +1,55 @@
+<HEAD>
+<TITLE>ReadShift</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ReadShift</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ReadShift - read file with chemical shifts
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ReadShift fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Read a file with chemical shifts. Both the old and
+new formats used by EASY/XEASY can be read.
+<P>
+The old format is:
+<P>
+<PRE>
+    columns  1- 4: proton number
+    columns  6-12: shift
+    columns 33-37: atom name
+    columns 38-42: residue number
+</PRE>
+The new format is:
+<P>
+<PRE>
+    columns  1- 4: proton number
+    columns  6-12: shift
+    columns 20-24: atom name
+    columns 25-28: residue number
+</PRE>
+The chemical shifts are added to all selected
+molecules.
+<P>
+The chemical shifts can be used in expressions,
+e. g. for selection. The program can also generate
+an expected NOESY peak list with the command <A HREF="CalcDist.html"><KBD>CalcDist</KBD></A>.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+ReadShift /home/joe/struct/my_prot.prot
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="DialMol.html"><KBD>DialMol</KBD></A>, <A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="CalcDist.html"><KBD>CalcDist</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950810
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

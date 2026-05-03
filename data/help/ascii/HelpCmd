@@ -1,0 +1,25 @@
+NAME
+     HelpCmd - get help on command
+
+SYNOPSIS
+     HelpCmd
+
+DESCRIPTION
+     Switch to help mode. The next command that is entered
+     on the command line or selected in the menu will not
+     be executed, but the according help text will be
+     displayed instead.
+
+     Instead of displaying help texts in a simple text
+     window, it is possible to use a web browser to see
+     the hypertext versions of the help pages. This can be
+     selected with the HelpViewer command.
+
+EXAMPLE
+     HelpCmd
+
+SEE ALSO
+     HelpViewer, HelpApropos
+
+DATE
+     971002

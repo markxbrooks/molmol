@@ -30,5 +30,20 @@
 int
 main(int argc, char *argv[])
 {
+  /* Must match a name in iodev/IODev.c DevList for the IO_DEV_* set in makedef. */
+#if defined(IO_DEV_MOTIF_OGL)
   return MolInit("Motif/OpenGL", argc, argv, NULL);
+#elif defined(IO_DEV_MOTIF_XGL)
+  return MolInit("Motif/XGL", argc, argv, NULL);
+#elif defined(IO_DEV_MOTIF_GL)
+  return MolInit("Motif/GL", argc, argv, NULL);
+#elif defined(IO_DEV_MOTIF_X11)
+  return MolInit("Motif/X11", argc, argv, NULL);
+#elif defined(IO_DEV_WIN_OGL)
+  return MolInit("Windows/OpenGL", argc, argv, NULL);
+#elif defined(IO_DEV_TTY_NO)
+  return MolInit("TTY/NO", argc, argv, NULL);
+#else
+  return MolInit("Motif/OpenGL", argc, argv, NULL);
+#endif
 }

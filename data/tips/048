@@ -1,0 +1,7 @@
+You can modify some rendering options
+with the Rendering command. The program
+will triesy to chose reasonable defaults
+for each graphics device, but it can
+sometimes be necessary to enable more
+advanced options, like Transparency or
+Two-Sided Lighting manually.

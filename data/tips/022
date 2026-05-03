@@ -1,0 +1,6 @@
+You can define groups of molecules with
+the Group command, so that multiple
+molecules are treated as one by many
+commands. This feature is especially
+useful when working with structures of
+complexes.

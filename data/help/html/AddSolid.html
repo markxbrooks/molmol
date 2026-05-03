@@ -1,0 +1,47 @@
+<HEAD>
+<TITLE>AddSolid</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddSolid</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddSolid - add solid for schematic drawing
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddSolid ( sphere | ellipsoid | cylinder |
+    cone | box ) expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a solid that (partly) covers the selected atoms
+for each selected molecule. The first parameter
+selects the desired shape. The second parameter gives
+the fraction of atoms that must be inside the solid.
+<P>
+The program tries to determine the solid with the
+smallest volume that covers the desired number of
+atoms. This is done by a randomized algorithm, so it
+is possible that the same input parameters do not
+always lead to exactly the same solid.
+<P>
+The calculation can take up to a few minutes,
+depending on the shape, the number of atoms, and
+the coverage.
+<P>
+The created primitives have the property "solid".
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+AddSolid ellipsoid 0.8
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>, <A HREF="RemovePrim.html"><KBD>RemovePrim</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970723
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

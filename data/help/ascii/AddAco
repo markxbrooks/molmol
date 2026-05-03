@@ -1,0 +1,19 @@
+NAME
+     AddAco - add angle constraints
+
+SYNOPSIS
+     AddAco expr expr
+
+DESCRIPTION
+     Add an angle constraint for all selected angles.
+     The first argument gives the minimal value, the
+     second the maximal value in degrees.
+
+EXAMPLE
+     AddAco -20 130
+
+SEE ALSO
+     ReadAco, SelectAngle, RemoveAco, AddUpl, AddLol
+
+DATE
+     950302

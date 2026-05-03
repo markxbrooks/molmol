@@ -1,0 +1,120 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>User Macros</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>User Macros</H1>
+
+In addition to the  <A HREF=macro_stand.html>standard macros</A>
+supplied with MOLMOL, you can write your own macros, and
+execute them using the  <KBD><A HREF="../help/html/XMacUser.html">XMacUser</A></KBD> command. The
+default extension for macros is <KBD>.mac</KBD>.
+<P>
+
+ <H2>Writing Macros</H2>
+
+You can write macros from scratch using a text editor.
+If the macro you plan to write is similar to one of the
+standard macros, you may want to start with a copy of
+that, or at least look at it as an example.
+<P>
+
+A more convenient way to build macros is using the macro
+recorder available in MOLMOL. You can start the macro
+recorder with the  <KBD><A HREF="../help/html/RecordMac.html">RecordMac</A></KBD> command. It allows
+you to execute commands in the normal environment (using
+menus and dialog boxes), record them selectively, and
+then save the resulting macro.
+<P>
+
+A history of your session is kept in the file
+<KBD>molmol/history</KBD> of your home/profile directory.
+It can also serve as starting point for macros.
+
+ <H2>Defining Commands</H2>
+
+In addition to simple sequences of commands that are
+immediately executed when the macro is executed, macros
+can also contain command definitions. A command definition
+has the form:
+
+<BLOCKQUOTE>
+<KBD>define</KBD> CommandName<BR>
+<KBD>help</KBD> one-line-help<BR>
+<KBD>$</KBD>arg1 <KBD>=</KBD> default1 prompt1<BR>
+..<BR>
+<KBD>$</KBD>argN <KBD>=</KBD> defaultN promptN<BR>
+Command1<BR>
+..<BR>
+CommandN<BR>
+<KBD>end</KBD>
+</BLOCKQUOTE>
+
+The name of the new command is specified after the
+<<KBD>define</KBD> keyword. This is normally followed by
+a short help message, introduced with the <KBD>help</KBD>
+keyword. An arbitrary number of arguments can be given,
+each followed by (optional) default values and prompt
+strings. The arguments are followed by a series of
+commands that define the functionality of the new command.
+Arguments are referenced in the form <KBD>$argName</KBD>
+or <KBD>${argName}</KBD>.
+<P>
+
+The following example defines a new command for adding
+a partial surface:
+
+<BLOCKQUOTE>
+<PRE>
+define AddPatch
+  help create partial surface for selected atoms
+  $rad = 1.4 "Solvent Radius"
+  DefPropAtom 'surf' 'selected'
+  SelectAtom 'mol.selected'
+  AddSurface (vdw) contact $rad shaded 0
+  SelectAtom 'mol.selected & ! surf'
+  TrimSurface ($rad + 0.1)
+  SelectAtom 'surf'
+end
+</PRE>
+</BLOCKQUOTE>
+
+When such a definition is encountered, the commands used
+for the definition are not executed, the only effect is
+that the definition is added to the MOLMOL command list.
+It can then be used like one of the builtin commands.
+<P>
+
+If you want to extend the program with your own set of
+commands, it is especially useful to have the macro
+definining them be automatically executed each time you
+start up the program. See the section on
+ <A HREF=config.html>Configuration</A> for a description of how
+to do that.
+
+ <H2>Executing Macros</H2>
+
+You can execute macros anytime using the
+ <KBD><A HREF="../help/html/XMacUser.html">XMacUser</A></KBD> command. You can also add menu entries
+or buttons to give you more convenient access to frequently
+used macros, or have them being executed automatically when
+you start the program, or whenever a new molecule is loaded.
+See the section on  <A HREF=config.html>Configuration</A> for a
+description of these possibilities.
+
+<HR>
+Last modified: Mon Jan 20 19:44:59 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

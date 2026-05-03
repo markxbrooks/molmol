@@ -1,0 +1,18 @@
+DefPropMol 'displayed' 'num = 1' 
+CalcBond 1 1 1 
+SelectAtom '' 
+SelectBond '' 
+SelectAngle '' 
+SelectDist '' 
+SelectPrim '' 
+StyleAtom invisible 
+StyleBond invisible 
+StyleRibbon invisible sharp sharp const 
+SelectAtom 'bb' 
+SelectBond 'bb' 
+StyleAtom invisible 
+StyleBond line 
+SelectBond ':CYS@SG,CB' 
+StyleAtom invisible 
+LabelAtom '' 
+StyleBond neon 

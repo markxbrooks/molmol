@@ -1,0 +1,17 @@
+NAME
+     StyleAtom - set display style of atoms
+
+SYNOPSIS
+     StyleAtom ( invisible | sphere | tetrahedron )
+
+DESCRIPTION
+     Set the display style of all selected atoms.
+
+EXAMPLE
+     StyleAtom sphere
+
+SEE ALSO
+     StyleInit, SelectAtom, DialStyle
+
+DATE
+     940119

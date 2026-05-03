@@ -1,0 +1,45 @@
+<HEAD>
+<TITLE>HelpViewer</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>HelpViewer</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+HelpViewer - set viewer for help files
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+HelpViewer ( UNIX-Netscape | Windows-Explorer |
+    builtin | custom ) string
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Choose a viewer for displaying help files. The first
+two options set commonly used web browsers on the
+corresponding platform. With 'builtin', a simple text
+window is used. When 'custom' is selected, the command
+given as second argument is used for starting a web
+browser. For UNIX, this has to be a complete command
+string, where %f will be replaced by the name of the
+HTML file. For Windows, it is only the name of a web
+browser, this must be capable of DDE with the same
+protocol as Explorer.
+<P>
+Once a help file has been displayed, choosing a
+different option with this command may only take
+effect after restarting the program.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+HelpViewer UNIX-Netscape ''
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="HelpCmd.html"><KBD>HelpCmd</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+971002
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

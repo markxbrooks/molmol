@@ -1,0 +1,20 @@
+NAME
+     BondMode - choose bond display mode
+
+SYNOPSIS
+     BondMode ( normal | pseudo )
+
+DESCRIPTION
+     Choose whether the regular bonds or bonds to pseudo
+     atoms are displayed. This is a global switch, it is
+     currently not possible to change this for individual
+     bonds.
+
+EXAMPLE
+     BondMode pseudo
+
+WARNING
+     Rings look somewhat weird in 'pseudo' mode.
+
+DATE
+     950606

@@ -1,0 +1,17 @@
+NAME
+     Projection - choose projection
+
+SYNOPSIS
+     Projection ( orthogonal | perspective )
+
+DESCRIPTION
+     Choose between orthogonal and perspective projection.
+
+EXAMPLE
+     Projection orthogonal
+
+SEE ALSO
+     ClipPos, ClipSize, ViewAngle
+
+DATE
+     950124

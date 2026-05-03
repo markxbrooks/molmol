@@ -1,0 +1,42 @@
+NAME
+     CalcMatch - calculate best matching structure parts
+
+SYNOPSIS
+     CalcMatch expr expr
+
+DESCRIPTION
+     Determines which parts of all selected molecules can
+     be superimposed with the smallest RMSD, taking into
+     account all selected atoms of all selected residues.
+     The structures do not need to be identical, but the
+     same number of residues with the same number of atoms
+     each must be selected. The structures do not need to
+     be superimposed before executing the command.
+
+     The first argument gives the minimal number of
+     residues that must be superimposed, the second
+     argument the maximal RMSD (to the mean) desired.
+
+     The algorithm is relatively simple, it superimposes
+     the structures with the current set of atoms (starting
+     with all selected ones), and in each step it leaves
+     away the atoms from the residue that has the largest
+     global displacement. This is repeated until one of
+     the conditions given by the arguments is met.
+
+     A protocol of the progress, giving RMSD and largest
+     displacement, is printed. All values are to the mean.
+     At the end, an expression for selecting the
+     superimposed residues for each molecule is printed.
+     The property "match" is set on all these residues.
+
+     This command supports groups.
+
+EXAMPLE
+     CalcMatch 50 0.7
+
+SEE ALSO
+     SelectMol, SelectAtom, Group, Fit, CalcRmsd
+
+DATE
+     960323

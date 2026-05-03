@@ -1,0 +1,4 @@
+You can delete selected molecules with
+the RemoveMol command. You can delete
+all molecules and reinitialze the
+program with the InitAll command.

@@ -1,0 +1,21 @@
+NAME
+     ReadXyz - read XYZ file
+
+SYNOPSIS
+     ReadXyz fileName
+
+DESCRIPTION
+     Read a file in XYZ format. Bonds are automatically
+     added based on the atom radii in:
+
+         $MOLMOLHOME/setup/AtomRadius
+
+EXAMPLE
+     ReadXyz /home/joe/struct/my_mol.xyz
+
+SEE ALSO
+     PathNames, ReadAng, ReadDg, ReadPdb, ReadSybyl
+     CalcBond
+
+DATE
+     970314

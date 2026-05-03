@@ -1,0 +1,28 @@
+NAME
+     ShadeAtom - set shading of atoms
+
+SYNOPSIS
+     ShadeAtom ( none | flat | gouraud | phong |
+	 dots | lines )
+
+DESCRIPTION
+     Set the shading method for atoms if they are
+     displayed as spheres.
+
+	 none:    no shading
+	 flat:    polygons shaded in uniform color
+	 gouraud: color interpolated between vertices
+	 phong:   normals interpolated, highest quality
+	 dots:    draw surface using dots
+	 lines:   draw surface using lines
+
+     Not all graphics devices support all shading methods.
+
+EXAMPLE
+     ShadeAtom phong
+
+SEE ALSO
+     SelectAtom, StyleAtom, ColorAtom
+
+DATE
+     950309

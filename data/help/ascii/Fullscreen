@@ -1,0 +1,25 @@
+NAME
+     Fullscreen - switch fullscreen display on and off
+
+SYNOPSIS
+     Fullscreen ( off | on )
+
+DESCRIPTION
+     Switch fullscreen display on and off. Fullscreen
+     mode is usefull for making screen photos and it is
+     required for stereo display on some machines. Note
+     that the menu and the command line are not visible
+     in fullscreen mode. If the Fullscreen command is in
+     the popup menu (right mouse button), this is the
+     easiest way to switch back to normal mode. You can
+     also type commands in fullscreen mode, but it is not
+     very convenient because there is no feedback.
+
+EXAMPLE
+     Fullscreen on
+
+SEE ALSO
+     Stereo
+
+DATE
+     931129

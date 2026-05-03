@@ -1,0 +1,37 @@
+NAME
+     ReadShift - read file with chemical shifts
+
+SYNOPSIS
+     ReadShift fileName
+
+DESCRIPTION
+     Read a file with chemical shifts. Both the old and
+     new formats used by EASY/XEASY can be read.
+
+     The old format is:
+	 columns  1- 4: proton number
+	 columns  6-12: shift
+	 columns 33-37: atom name
+	 columns 38-42: residue number
+
+     The new format is:
+	 columns  1- 4: proton number
+	 columns  6-12: shift
+	 columns 20-24: atom name
+	 columns 25-28: residue number
+
+     The chemical shifts are added to all selected
+     molecules.
+
+     The chemical shifts can be used in expressions,
+     e. g. for selection. The program can also generate
+     an expected NOESY peak list with the command CalcDist.
+
+EXAMPLE
+     ReadShift /home/joe/struct/my_prot.prot
+
+SEE ALSO
+     DialMol, SelectMol, CalcDist
+
+DATE
+     950810

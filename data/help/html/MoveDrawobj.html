@@ -1,0 +1,39 @@
+<HEAD>
+<TITLE>MoveDrawobj</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>MoveDrawobj</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+MoveDrawobj - move draw object
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+MoveDrawobj expr expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Move all selected draw objects (like lines or
+rectangles) by the given amount. The first argument
+gives the index of the control point (starting at 0)
+to be moved, the rest of the arguments give the
+amount of movement in each direction.
+<P>
+Moving the control points of drawing objects is
+normally done interactively by using the middle
+mouse button.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+MoveDrawObj 0 0.3 0.1 0.2
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="AddDrawobj.html"><KBD>AddDrawobj</KBD></A>, <A HREF="SelectPrim.html"><KBD>SelectPrim</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950618
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

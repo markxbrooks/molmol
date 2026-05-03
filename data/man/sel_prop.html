@@ -1,0 +1,118 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Properties</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Properties</H1>
+
+The following table lists builtin properties.
+Builtin properties are properties that are set from within
+the program. You are free to use them for making selections,
+but you should normally avoid modifying builitin properties
+(with the excpetion of <KBD>selected</KBD>, <KBD>movable</KBD>
+and <KBD>displayed</KBD>), some of them are used by the
+program itself, and the results of the user modifying them
+may be unpredictable.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>name</TH><TH>description</TH></TR>
+<TR><TD>any</TD><TD><KBD>all</KBD></TD>
+    <TD>Always set for all items. Do not modify!</TD></TR>
+<TR><TD>any</TD><TD><KBD>selected</KBD></TD>
+    <TD>Set for selected items. Most commands operate on
+    items that have this property set.</TD></TR>
+<TR><TD>any</TD><TD><KBD>displayed</KBD></TD>
+    <TD>Only items with this property set are displayed.
+    Can be useful for making items (especially molecules)
+    temporarily visible/invisible, use the
+     <A HREF=ui_dialog.html>Molecule Dialog</A> for a convenient
+    way of setting it.</TD></TR>
+<TR><TD>mol</TD><TD><KBD>movable</KBD></TD>
+    <TD>Only molecules with this property set are affected
+    by  <A HREF=ui_mouse.html>interactive manipulations</A> and
+    commands that transform molecules. Useful for moving
+    molecules relative to each other, use the
+     <A HREF=ui_dialog.html>Molecule Dialog</A> for a convenient
+    way of setting it.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all atoms that have a display style that
+    makes them visible. Convenient to restrict a selection
+    to only visible items.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all bonds that have a display style that
+    makes them visible.</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all distances that have a display style
+    that makes them visible.</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all primitives that have a display style
+    that makes them visible.</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+The following table lists predefined properties.
+Predefined properties are properties whose definitions are
+read from a file (by default <KBD>setup/PropDef</KBD> in
+the installation directory) and evaluated whenever new data
+is added, e. g. a new molecule loaded.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>name</TH><TH>description</TH></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>bb</KBD></TD>
+    <TD>Backbone atoms of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>bb</KBD></TD>
+    <TD>Backbone bonds of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>sc</KBD></TD>
+    <TD>Side chain atoms of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>bonds</KBD></TD><TD><KBD>sc</KBD></TD>
+    <TD>Side chain bonds of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>heavy</KBD></TD>
+    <TD>Heavy atoms.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>heavy</KBD></TD>
+    <TD>Bonds between two heavy atoms.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>heavysc</KBD></TD>
+    <TD>Heavy side chain atoms of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>heavysc</KBD></TD>
+    <TD>Bonds between two heavy side chain atoms of a protein
+    or nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>phos</KBD></TD>
+    <TD>Atoms in phosphate group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>phos</KBD></TD>
+    <TD>Bonds in phosphate group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>sugar</KBD></TD>
+    <TD>Atoms in sugar group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>sugar</KBD></TD>
+    <TD>Bonds in sugar group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>base</KBD></TD>
+    <TD>Atoms in base of a nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>base</KBD></TD>
+    <TD>Bonds in base of a nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>proton</KBD></TD>
+    <TD>Hydrogen atoms.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>ca</KBD></TD>
+    <TD>Atoms with name CA.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>pseudo</KBD></TD>
+    <TD>Pseudo atoms (name starting with Q).</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>lonepair</KBD></TD>
+    <TD>Lone pair (name starting with LP).</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+<HR>
+Last modified: Mon Jan 20 19:44:57 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

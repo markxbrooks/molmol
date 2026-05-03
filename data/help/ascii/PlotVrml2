@@ -1,0 +1,23 @@
+NAME
+     PlotVrml2 - make a VRML 2.0 (VRML97) plot
+
+SYNOPSIS
+     PlotVrml2 fileName
+
+DESCRIPTION
+     Make a plot of the current screen contents in VRML
+     (Virtual Reality Modeling Language) format. VRML is
+     a standard format for transferring and displaying
+     three-dimensional geometry on the World Wide Web.
+     The created files follow the VRML97 standard, and
+     should also be compatible with the very similar
+     VRML 2.0 specifications.
+
+EXAMPLE
+     PlotVrml2 /home/joe/MyPlot.wrl
+
+SEE ALSO
+     PlotFm*, PlotPs, PlotPov, PlotRib, PlotVrml1
+
+DATE
+     991031

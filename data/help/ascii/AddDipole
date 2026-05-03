@@ -1,0 +1,28 @@
+NAME
+     AddDipole - add arrow showing dipolar moment
+
+SYNOPSIS
+     AddDipole
+
+DESCRIPTION
+     Add an arrow that shows the dipolar moment of the
+     selected atoms. A separate arrow is created for each
+     molecule that has selected atoms.
+
+     The arrow is in fact a cylinder, like it is created
+     with AddCylinder, and can be manipulated with the
+     corresponding commands, like StyleCylinder or
+     LengthPrim.
+
+     The created primitives have the properties "dipole"
+     and "cylinder".
+
+EXAMPLE
+     AddDipole
+
+SEE ALSO
+     SelectAtom, StyleCylinder, ColorPrim, LengthPrim,
+     RemovePrim, AddCylinder
+
+DATE
+     970723

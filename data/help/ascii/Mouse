@@ -1,0 +1,28 @@
+Definiton of Actions
+--------------------
+
+click:     press one (or multiple) mouse button(s) and
+	   release them without moving the mouse
+
+click+mod: hold down a modifier key (Shift or Ctrl) and
+	   click.
+
+drag:      press one (or multiple) mouse button(s), move
+	   the mouse, and release the button(s)
+
+
+Table of Actions
+----------------
+
+                   | click  | click+mod   | drag
+------------------------------------------------------------
+left               | select | select add. | rotate
+------------------------------------------------------------
+middle (in text)   |  toggle text select  | move/resize text
+------------------------------------------------------------
+middle (elsewhere) | select | select add. | move molecules
+------------------------------------------------------------
+left+middle        |        |             | zoom
+------------------------------------------------------------
+right              | popup  |             |
+------------------------------------------------------------

@@ -1,0 +1,180 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Expression Syntax</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Expression Syntax</H1>
+
+This section explains the expressions syntax with text
+descriptions and examples. A formal expression syntax
+(in EBNF) can be found on the help page of the
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A></KBD> command. The page also contains a
+number of examples of selection expressions.
+
+ <H2>Constants</H2>
+
+There are three types of constants: integer, floating
+point, and string.
+
+<UL>
+<LI>Integer constants are written in the usual decimal
+    notation.<BR>
+    Examples: <KBD>7</KBD>, <KBD>395</KBD>.
+<LI>Floating point constants are written in the ususal
+    notation, with a decimal point.  The scientific
+    notation (indicated with the letter <KBD>e</KBD>
+    or <KBD>E</KBD>) is also supported, the decimal
+    point is optional for numbers with exponent.<BR>
+    Examples: <KBD>5.3</KBD>, <KBD>23.478e17</KBD>,
+    <KBD>3.59E-5</KBD>, <KBD>1E3</KBD>.
+<LI>String constants are enclosed in double quotes.
+    If double quotes are used inside a string, they
+    have to be escaped by a <KBD>\</KBD> (backslash).
+    If a string is used as part of a command argument,
+    single quotes also have to be escaped by a
+    <KBD>\</KBD> because they are used for enclosing
+    each argument.<BR>
+    Examples: <KBD>"hello"</KBD>, <KBD>"Hello World!"</KBD>.
+</UL>
+
+Integer constants are automatically converted to
+floating point when required by the context, e. g.
+when they are added to a floating point value.
+
+ <H2>Values</H2>
+
+Depending on the context, an expression can use values of
+a data item. When an expression is evaluated for a data
+item, it can use the values of this item directly by just
+using their names. Values for related data items can be
+accessed by using the form <KBD>item.value</KBD>. E. g.
+when evaluating an expression for an atom, <KBD>name</KBD>
+refers to the name of the atom, while <KBD>res.name</KBD>
+refers to the name of the residue that the atom is part of.
+The relationships between different data items is explained
+as part of the section about
+ <A HREF=sel_adv.html> advanced selection topics</A>.
+<P>
+
+A  <A HREF=sel_value.html>table of available values</A> was given in
+a previous section.
+
+ <H2>Properties</H2>
+
+Properties are similar to the values described in the
+previous section. One main difference is that they can
+be defined by the user, either with commands like
+ <KBD><A HREF="../help/html/DefPropAtom.html">DefPropAtom</A></KBD>, or by adding them to the set of
+standard properties, as documented in the section about
+ <A HREF=config.html>configuration</A>. Another difference to values
+is that the type of properties is always boolean.
+<P>
+
+A  <A HREF=sel_prop.html>table of predefined properties</A> was given
+in a previous section.
+
+ <H2>Operators</H2>
+
+Most common arithmetic and logical operators are supported
+in expressions. The following table lists all operators with
+the type of their operands and the type of the result, in order
+of precedence. Operators with higher precedence are evaluated
+before operators with lower precedence. Evaluation of operators
+with the same precedence is left to right. This evaluation order
+can be changed by using parantheses. The table also indicates
+whether an operator is unary (has one operand) or binary
+(has two operands).
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>operator</TH><TH>kind</TH><TH>precedence</TH>
+    <TH>operand</TH><TH>result</TH><TH>description</TH></TR>
+<TR><TD><KBD>-</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>integer</TD><TD>integer</TD><TD>numerical negation</TD></TR>
+<TR><TD><KBD>-</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>float</TD><TD>float</TD><TD>numerical negation</TD></TR>
+<TR><TD><KBD>sqrt</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>float</TD><TD>float</TD><TD>square root</TD></TR>
+<TR><TD><KBD>log</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>float</TD><TD>float</TD><TD>natural logarithm</TD></TR>
+<TR><TD><KBD>!</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical negation</TD></TR>
+<TR><TD><KBD>not</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical negation</TD></TR>
+<TR><TD><KBD>*</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>integer</TD><TD>integer</TD><TD>multiplication</TD></TR>
+<TR><TD><KBD>*</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>float</TD><TD>float</TD><TD>multiplication</TD></TR>
+<TR><TD><KBD>/</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>integer</TD><TD>integer</TD><TD>division</TD></TR>
+<TR><TD><KBD>/</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>float</TD><TD>float</TD><TD>division</TD></TR>
+<TR><TD><KBD>%</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>integer</TD><TD>integer</TD><TD>remainder</TD></TR>
+<TR><TD><KBD>+</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>integer</TD><TD>integer</TD><TD>addition</TD></TR>
+<TR><TD><KBD>+</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>float</TD><TD>float</TD><TD>addition</TD></TR>
+<TR><TD><KBD>-</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>integer</TD><TD>integer</TD><TD>subtraction</TD></TR>
+<TR><TD><KBD>-</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>float</TD><TD>float</TD><TD>subtraction</TD></TR>
+<TR><TD><KBD>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>equal</TD></TR>
+<TR><TD><KBD>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>equal</TD></TR>
+<TR><TD><KBD>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>string</TD><TD>bool</TD><TD>equal (with wildcards)</TD></TR>
+<TR><TD><KBD>!=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>not equal</TD></TR>
+<TR><TD><KBD>!=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>not equal</TD></TR>
+<TR><TD><KBD>!=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>string</TD><TD>bool</TD><TD>not equal (with wildcards)</TD></TR>
+<TR><TD><KBD><</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>less</TD></TR>
+<TR><TD><KBD><</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>less</TD></TR>
+<TR><TD><KBD><=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>less or equal</TD></TR>
+<TR><TD><KBD><=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>less or equal</TD></TR>
+<TR><TD><KBD>></KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>greater</TD></TR>
+<TR><TD><KBD>></KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>greater</TD></TR>
+<TR><TD><KBD>>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>greater or equal</TD></TR>
+<TR><TD><KBD>>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>greater or equal</TD></TR>
+<TR><TD><KBD>&</KBD></TD><TD>binary</TD><TD>2</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical and</TD></TR>
+<TR><TD><KBD>and</KBD></TD><TD>binary</TD><TD>2</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical and</TD></TR>
+<TR><TD><KBD>|</KBD></TD><TD>binary</TD><TD>1</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical or</TD></TR>
+<TR><TD><KBD>or</KBD></TD><TD>binary</TD><TD>1</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical or</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+Note that the string comparison operators support wildcards,
+<KBD>?</KBD> matches one character, <KBD>*</KBD>matches any
+number of characters.
+
+<HR>
+Last modified: Mon Jan 20 19:44:57 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

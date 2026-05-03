@@ -1,0 +1,20 @@
+NAME
+     FirstMol - move molecules to front of molecule list
+
+SYNOPSIS
+     FirstMol
+
+DESCRIPTION
+     Move all selected molecules to the front of the
+     molecule list. This can be useful for commands that
+     are sensitive to the order of molecules, most
+     notably Fit.
+
+EXAMPLE
+     FirstMol
+
+SEE ALSO
+     SelectMol, DialMol, Fit
+
+DATE
+     970722

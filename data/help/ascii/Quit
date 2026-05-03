@@ -1,0 +1,24 @@
+NAME
+     Quit - quit the program
+
+SYNOPSIS
+     Quit ( yes | no )
+
+DESCRIPTION
+     Quit the program. If the argument is 'yes', it will
+     save the program state ("dump") to the file
+     molmol/dump in the users home directory. This file
+     is read whenever the program is started again.
+
+     The program state can also be saved and recovered
+     to an arbitrary file by using the commands WriteDump
+     and ReadDump.
+
+EXAMPLE
+     Quit yes
+
+SEE ALSO
+     ReadDump, WriteDump
+
+DATE
+     951013

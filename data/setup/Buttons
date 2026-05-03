@@ -1,0 +1,111 @@
+# used to build buttons
+
+button AutoScale
+  help scale/translate molecules to window size
+  AutoScale
+button Undo
+  help undo effect of last command
+  Undo
+
+button
+button Selection
+  help open selection dialog
+  DialSelect on
+button Mol
+  help open molecule dialog
+  DialMol on
+button Res
+  help open molecule dialog
+  DialRes on
+button bb
+  help select backbone atoms and bonds
+  SelectAtom 'bb'
+  SelectBond 'bb' 
+button all
+  help select everything
+  SelectAtom ''
+  SelectBond ''
+  SelectAngle ''
+  SelectDist ''
+  SelectPrim ''
+button heavy
+  help select heavy atoms and bonds
+  SelectAtom 'heavy'
+  SelectBond 'heavy' 
+button sidechain
+  help select sidechain atoms and bonds
+  SelectAtom 'sc'
+  SelectBond 'sc'
+button Show sel.
+  help display only selected visible items
+  DefPropAtom 'displayed' 'selected'
+  DefPropBond 'displayed' 'selected'
+  DefPropDist 'displayed' 'selected'
+  DefPropPrim 'displayed' 'selected'
+  DefPropMol 'displayed' 'selected'
+button Show all
+  help display all visible items
+  DefPropMol 'displayed' ''
+  DefPropAtom 'displayed' ''
+  DefPropBond 'displayed' ''
+  DefPropDist 'displayed' ''
+  DefPropPrim 'displayed' ''
+
+button
+button Style
+  help open style dialog
+  DialStyle on
+button line
+  help make selected atoms invisible, display selected bonds as lines
+  StyleAtom invisible
+  StyleBond line
+button neon
+  help make selected atoms invisible, display selected bonds as neon
+  StyleAtom invisible
+  LabelAtom ''
+  StyleBond neon
+button ball/stick
+  help display selected atoms and bonds as ball and stick model
+  XMacStand ball_stick.mac
+button CPK
+  help display selected atoms as CPK model, make selected bonds invisible
+  XMacStand cpk.mac
+button ribbon
+  help display ribbon model of selected residues
+  CalcAtom 'H'
+  CalcAtom 'HN'
+  CalcSecondary
+  XMacStand ribbon.mac
+button invisible
+  help make selected atoms, bonds and ribbons invisible
+  StyleAtom invisible
+  StyleBond invisible
+  StyleRibbon invisible
+
+button
+button Color
+  help open color dialog
+  DialColor on
+button Atom Rad.
+  help set radius of selected atoms
+  RadiusAtom
+button Bond Width
+  help set line width of selected bonds
+  LineBond
+button Bond Rad.
+  help set radius of selected bonds
+  RadiusBond
+
+button
+button Label num
+  help label CA atoms with residue number
+  SelectAtom 'ca' 
+  LabelAtom 'N' 
+button name+num
+  help label CA atoms with residue name and number
+  SelectAtom 'ca' 
+  LabelAtom 'R N' 
+button off
+  help turn labels of CA atoms off
+  SelectAtom 'ca' 
+  LabelAtom '' 

@@ -1,0 +1,32 @@
+NAME
+     ListPropMol   - list all molecule properties
+     ListPropRes   - list all residue properties
+     ListPropAtom  - list all atom properties
+     ListPropBond  - list all bond properties
+     ListPropAngle - list all angle properties
+     ListPropDist  - list all distance properties
+     ListPropPrim  - list all primitive properties
+
+SYNOPSIS
+     ListPropMol
+     ListPropRes
+     ListPropAtom
+     ListPropBond
+     ListPropAngle
+     ListPropDist
+     ListPropPrim
+
+DESCRIPTION
+     Lists the set properties of all selected molecules,
+     residues, atoms, bonds, angles, distances or
+     primitives. All items have to share the same set of
+     properties, an error message is issued otherwise.
+
+EXAMPLES
+     ListPropRes
+
+SEE ALSO
+     DefProp*, Select*
+
+DATE
+     960213

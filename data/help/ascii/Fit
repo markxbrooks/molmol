@@ -1,0 +1,89 @@
+NAME
+     Fit - calculate structure superpositions
+
+SYNOPSIS
+     Fit ( to_axes | to_first | circular | to_mean )
+	 nameList
+
+DESCRIPTION
+     Calculate a superposition of all selected molecules,
+     using the selected atoms (or the atoms with properties
+     given by the second argument, see below). The number
+     of selected atoms of all selected molecules must be
+     the same, otherwise an error message is issued.
+
+     If the option 'to_axes' is selected, the principal
+     axes of the structures are aligned to the axes of the
+     coordinate system. This is useful for obtaining a
+     standard orientation.
+
+     If the option 'to_first' is selected, the RMSD of each
+     structure to the first structure is minimized
+     separately.
+
+     If the option 'circular' is selected, the sum of the
+     RMSDs from the first to the second, from the second to
+     the third, ... and from the last to the first
+     structure is minimized.
+
+     If the option 'to_mean' is selected, the sum of all
+     RMSDs to the resulting mean structure is minimized.
+
+     The options 'circular' and 'to_mean' use a less
+     efficient algorithm than 'to_first', they can take
+     very long to calculate. Their use is therefore
+     generally not recommended. They can help in rare cases
+     where the algorithm used in 'to_first' is numerically
+     unstable.
+
+     At least one molecule has to be selected for
+     'to_axes', at least two for all other options.
+
+     For only two selected molecules, all algorithms give
+     the same result.
+
+     The RMSD to the mean averaged over all molecules for
+     the selected atoms after the fit is printed on the
+     status line.
+
+     The optional second argument gives a list of
+     properties of atoms to be fitted, where the default
+     is just all selected atoms. If several properties
+     are given, the corresponding atoms are fitted in
+     this order. This is useful when superimposing
+     different molecules, and the fragments to be
+     superimposed are not in the same order in all
+     molecules. E. g. for superimposing fragments of
+     two molecules like this:
+
+         mol 1      mol 2
+         10-20 <--> 15-25
+         30-40 <--> 55-65
+         50-60 <--> 35-45
+
+     Just selecting all these atoms would take all
+     fragments in ascending order, making the
+     following superposition:
+
+         mol 1      mol 2
+         10-20 <--> 15-25
+         30-40 <--> 35-45
+         50-60 <--> 55-65
+
+     For getting the desired result:
+
+         DefPropAtom 'fragm1' '(#1:10-20 #2:15-25) & bb'
+         DefPropAtom 'fragm2' '(#1:30-40 #2:55-65) & bb'
+         DefPropAtom 'fragm3' '(#1:50-60 #2:35-45) & bb'
+         Fit to_first 'fragm1 fragm2 fragm3'
+
+     This command supports groups.
+
+EXAMPLE
+     Fit to_first 'selected'
+
+SEE ALSO
+     SelectAtom, Group, DialMol
+
+DATE
+     961217

@@ -1,0 +1,45 @@
+NAME
+     ReadOldPdb - read Old nomenclature PDB file
+
+SYNOPSIS
+     ReadOldPdb fileName
+
+DESCRIPTION
+     Read a PDB file. The file can contain more than one
+     structure. If only one structure is stored in the file,
+     the file name is taken as name of the molecule. If
+     there are multiple structures, numbers are appended
+     to the file name for generating the molecule names.
+
+     ReadListPdb expects a file with one file name per line
+     (empty lines allowed), and reads all these files.
+
+     If residues appear in the residue library
+     ($MOLMOLHOME/setup/amber94.lib by default, can be
+     changed with the PathNames command), the covalent
+     structure is taken from there. If a residue is not
+     present in the library, just the atom coordianates are
+     read from the PDB file. The user can add bonds with
+     the command CalcBond later.
+
+     Because the PDB naming conventions do not fully
+     correspond with the names in the residue library of
+     MOLMOL, a translation table for atom names is used.
+     This is $MOLMOLHOME/setup/PdbAtoms by default, and
+     can be changed with the PathNames command.
+
+     The command also reads secondary structure information
+     (HELIX and SHEET records) and sets the corresponding
+     properties on the residues. They are used by the
+     AddRibbon command to create schematic drawings.
+
+EXAMPLE
+     ReadOldPdb /home/joe/struct/my_prot.pdb
+
+SEE ALSO
+     ReadPdb, ReadListPdb,
+     PathNames, ReadAng, ReadDg, WritePdb,
+     CalcBond, AddRibbon
+
+DATE
+     20131030

@@ -1,0 +1,20 @@
+NAME
+     ReadAco - read file with angle constraints
+
+SYNOPSIS
+     ReadAco fileName
+
+DESCRIPTION
+     Read a file with angle constraints. The format is
+     the one that DIANA uses. The angle constraints
+     are added to all selected molecules.
+
+EXAMPLE
+     ReadAco /home/joe/struct/my_prot.aco
+
+SEE ALSO
+     SelectMol, DialMol,
+     ReadUpl, ReadLol, AddAco, RemoveAco, CheckAco
+
+DATE
+     950302

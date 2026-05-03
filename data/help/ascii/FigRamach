@@ -1,0 +1,55 @@
+NAME
+     FigRamach - Ramachandran plot
+
+SYNOPSIS
+     FigRamach name name nameList
+	 ( none | normal | VAL-ILE-THR | GLY )
+	 ( dot | plus | cross | res | res_box |
+	 mol | mol_box )
+	 ( dot | plus | cross | res | res_box |
+	 mol | mol_box )
+	 ( 0 | 1) ( 0 | 1 )
+
+DESCRIPTION
+     Create a Ramachandran plot with the first angle name
+     on the x-axis and the second angle name on the y-axis.
+     Only residues where both angles are selected are
+     shown.
+
+     The third argument is a space separated list of
+     alternative residues (typically GLY).
+
+     The fourth argument selects the background (allowed
+     regions). The allowed regions were determined from
+     378 different crystal structures with a resolution
+     of 2.5 A or better. The regions where the density
+     of points (PHI/PSI) from this statistic is highest
+     are marked with color. The green regions contain 80%
+     of all points, the green and yellow regions together
+     95%, all colored regions together 98%. There is a
+     background for all non-GLY/PRO residues, one for
+     VAL/ILE/THR and one for GLY.
+
+     The fifth argument selects the display style of
+     residues not listed as alternative, the sixth
+     argument the one for alternative residues.
+
+     If the color option is selected, he colors of the
+     markers is taken from the bond corresponding to the
+     angle, otherwise they are all black.
+
+     If the last option is selected and all angles shown
+     in the plot have the same angle constraints, the
+     allowed region is indicated in light grey.
+
+     The user can select residues by clicking on symbols
+     in the plot.
+
+EXAMPLE
+     FigRamach 'PHI' 'PSI' 'GLY' normal dot plus 1 0
+
+SEE ALSO
+     ReadAco, SelectAngle, FigOff
+
+DATE
+     960519

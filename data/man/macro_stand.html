@@ -1,0 +1,80 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Standard Macros</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Standard Macros</H1>
+
+The subdirectory <KBD>macros</KBD> of your MOLMOL installation
+contains some standard macros. Some of them are used by
+ <A HREF=ui_mainwin.html>buttons</A>. All of them can be executed
+using the  <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A></KBD> command. These standard macros
+are commented, you can use them as instructive examples or
+basis for your own macros.
+
+<DL>
+<DT><A HREF="mac_color_atom.html"><KBD><B>color_atom.mac</B></KBD></A>
+<DD>Set color of selected atoms to "standard" colors (red for O,
+    yellow for S, etc.), e. g. for CPK model.
+<DT><A HREF="mac_cpk.html"><KBD><B>cpk.mac</B></KBD></A>
+<DD>Display currently selected parts as CPK. For selected atoms,
+    sets color to standard color, display style to sphere and
+    radius to VdW radius. Makes selected bonds and distances
+    invisible.
+<DT><A HREF="mac_ball_stick.html"><KBD><B>ball_stick.mac</B></KBD></A>
+<DD>Display currently selected parts as ball and stick. For
+    selected atoms, sets color to standard color, display style
+    to sphere and radius to 0.3 times VdW radius. Sets style
+    of selected bonds to <KBD>half_cylinder</KBD>.
+<DT><A HREF="mac_ca_trace.html"><KBD><B>ca_trace.mac</B></KBD></A>
+<DD>Display a CA trace for selected resdiues by adding a
+    distance between CA atoms of subsequent residues.
+<DT><A HREF="mac_ribbon.html"><KBD><B>ribbon.mac</B></KBD></A>
+<DD>Make ribbon drawing of selected residues. Makes selected
+    atoms and bonds invisible.
+<DT><A HREF="mac_sausage.html"><KBD><B>sausage.mac</B></KBD></A>
+<DD>Draw spline with variable radius for bundle of structures.
+    Calculates a mean structure, and adds a spline (ribbon)
+    with the average displacement of the CA atoms to the
+    mean structure as the radius.
+<DT><A HREF="mac_mean_sc.html"><KBD><B>mean_sc.mac</B></KBD></A>
+<DD>Draw bonds between heavy atoms of side chains of well
+    defined residues as cones, using the B-factor of atoms
+    as radius, draw other other side chains as sticks.
+    Can e. g. be used for drawing side chains of the mean
+    structure calculated as part of <KBD>sausage.mac</KBD>.
+<DT><A HREF="mac_schem_dna.html"><KBD><B>schem_dna.mac</B></KBD></A>
+<DD>Make schematic display of selected DNA/RNA residues.
+    Only sequential residues from one strand should be
+    selected, the macro must be invoked for each strand
+    separately. Draws ribbon through the backbone of the
+    strand, and displays rings as plates in a different
+    color for each base type.
+<DT><A HREF="mac_temper.html"><KBD><B>temper.mac</B></KBD></A>
+<DD>Set color of selected atoms and bonds based on B-factor,
+    using a blue - red - yellow scale for values from 0 to 50.
+<DT><A HREF="mac_pdb_charge.html"><KBD><B>pdb_charge.mac</B></KBD></A>
+<DD>Change residue types of potentially charged residues in
+    selected molecules to properly reflect charge.
+<DT><A HREF="mac_black_white.html"><KBD><B>black_white.mac</B></KBD></A>
+<DD>Set material properties of all items, background color,
+    and light source position for good looking black and
+    white plot.
+</DL>
+
+<HR>
+Last modified: Mon Jan 20 19:44:59 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

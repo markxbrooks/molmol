@@ -1,0 +1,25 @@
+NAME
+     WriteUpl - write file with upper limits
+
+SYNOPSIS
+     WriteUpl fileName
+
+DESCRIPTION
+     Write a file with upper distance limits. The format is
+     the same that DIANA/DYANA uses. All selected upper
+     distance limits are written. When a constraint between
+     two atoms appears in more than one molecule, the
+     smallest constraint value is written. All selected
+     distances are also written, for these the actual
+     distance is taken as constraint value.
+
+     This command supports groups.
+
+EXAMPLE
+     WriteUpl /home/joe/struct/my_prot.upl
+
+SEE ALSO
+     SelectMol, Group, ReadUpl, AddUpl, CheckUpl, WriteLol
+
+DATE
+     980326

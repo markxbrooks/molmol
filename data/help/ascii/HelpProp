@@ -1,0 +1,18 @@
+NAME
+     HelpProp - show definition of standard properties
+
+SYNOPSIS
+     HelpProp
+
+DESCRIPTION
+     Show the file that contains the definition of the
+     standard properties.
+
+EXAMPLE
+     HelpProp
+
+SEE ALSO
+     PathNames, DefProp*, Select*
+
+DATE
+     950302

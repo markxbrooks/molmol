@@ -1,0 +1,18 @@
+NAME
+     Center - change rotation center
+
+SYNOPSIS
+     Center
+
+DESCRIPTION
+     Change the center for future rotations to the center of
+     gravity of all selected atoms.
+
+     At least one atom must be selected before this command
+     is executed, an error message will be issued otherwise.
+
+EXAMPLE
+     Center
+
+DATE
+     970417

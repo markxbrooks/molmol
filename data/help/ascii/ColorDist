@@ -1,0 +1,22 @@
+NAME
+     ColorDist - set color of distances
+
+SYNOPSIS
+     ColorDist expr expr expr
+
+DESCRIPTION
+     Set the color of all selected distances. The color
+     is given by its Red, Green and Blue component, all
+     in the range between 0.0 and 1.0. By using expressions,
+     it is possible to give each distance a different color,
+     depending e. g. on the value of the distance.
+
+EXAMPLES
+     ColorDist 0.0 0.0 1.0
+     ColorDist val/5 1.0-val/5 0.0
+
+SEE ALSO
+     SelectDist, DialColor, ColorInit
+
+DATE
+     940119

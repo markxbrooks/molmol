@@ -1,0 +1,5 @@
+You can produce input files for external
+rendering (ray tracing) programs using
+the commands PlotPov (for POV-Ray),
+PlotMpov (for MegaPov) and PlotRib
+(for RenderMan).

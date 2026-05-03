@@ -1,0 +1,25 @@
+NAME
+     Light - setup of light source
+
+SYNOPSIS
+     Light ( off | point | infinite ) expr expr expr
+
+DESCRIPTION
+     The first argument selects between no light source,
+     a point light source or a light source at infinity.
+     The coordinates are used as position if a point light
+     source was chosen as point, or only as direction for
+     an infinite light source. Point light sources might
+     not be supported on all hardware, or they may be
+     slower than infinite light sources.
+
+     Coordinates are so that the origin is at the center
+     of the screen, the x-axis points to the right, the
+     y-axis to the top, and the z-axis out of the screen.
+     The viewpoint (eye, camera) is at (0, 0, 10).
+
+EXAMPLE
+     Light point 0 5 5
+
+DATE
+     950824

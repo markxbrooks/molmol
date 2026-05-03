@@ -1,0 +1,87 @@
+<HEAD>
+<TITLE>XMacStand</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>XMacStand</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+XMacStand - execute standard macro
+XMacUser  - execute user macro
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+XMacStand fileName
+XMacUser fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Execute a macro file. A macro file is a sequence of
+commands like they are entered on the command line.
+A history of all executed commands of each session is
+maintained in the file molmol/history in the users
+home directory. It can be used as macro.
+<P>
+The two commands only differ in their search path.
+XMacStand by default searches in $MOLMOLHOME/macros,
+while <A HREF="XMacUser.html"><KBD>XMacUser</KBD></A> uses the current directory as default
+search path.
+<P>
+Additonally to regular commands, macros can also
+contain command definitons. Once a macro with a
+command definiton is read in, this command can be used
+like a builtin MOLMOL command. A command definition
+has the syntax:
+<P>
+<PRE>
+    define CommandName
+    help one-line-help
+    $arg1 = default1 prompt1
+    ..
+    $argN = defaultN promptN
+    Command1
+    ..
+    CommandN
+    end
+</PRE>
+The help line is optional. The command can have any
+number of arguments (including zero). If no default
+value is given, the empty string is assumed the first
+time the command is executed, the previous value from
+there on. If the prompt is missing, the name of the
+argument is taken. If default values or prompts
+contain blanks or other special characters, they have
+to be written in single or double quotes.
+<P>
+At least one command must be present in the body.
+Empty lines and comments (staring with #) are allowed,
+the lines can be indented for better readability.
+<P>
+In the body, the arguments can be referenced by
+$arg or ${arg}. Any command can be used.
+<P>
+Example:
+<P>
+<PRE>
+    define ZoomRotate
+      help zoom and rotate in one step
+</PRE>
+<PRE>
+      $Zoom = 1.5
+      $rotY = 90 "Rotate Y"
+</PRE>
+<PRE>
+      ZoomRel $Zoom
+      RotateY $rotY
+    end
+</PRE>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+XMacUser /home/joe/macros/my_favorite.mac
+</PRE>
+<STRONG>DATE</STRONG><P>
+960208
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

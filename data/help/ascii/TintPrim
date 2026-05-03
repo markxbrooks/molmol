@@ -1,0 +1,23 @@
+NAME
+     TintPrim - change secondary color of primitives
+
+SYNOPSIS
+     TintPrim expr expr expr
+
+DESCRIPTION
+     Set the secondary color of the selected primitives.
+     The color is given by its Red, Green and Blue
+     components, all in the range between 0.0 and 1.0.
+
+     The secondary color is used for drawing ribbons in
+     two colors and for one side of sheets.
+
+EXAMPLE
+     TintPrim 1.0 0.0 0.0
+
+SEE ALSO
+     SelectPrim, ColorPrim, PaintRibbon, DialColor,
+     AddRibbon, AddSheet, TintInit
+
+DATE
+     950411

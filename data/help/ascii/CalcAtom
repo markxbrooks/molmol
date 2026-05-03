@@ -1,0 +1,30 @@
+NAME
+     CalcAtom - calculate missing atom coordinates
+
+SYNOPSIS
+     CalcAtom name
+
+DESCRIPTION
+     Calculate coordinates of atoms that were missing 
+     in the input file (e. g. protons in PDB files of
+     crystal structures).
+
+     The command uses the standard geometry from the
+     residue library to calculate the coordinates of
+     the atoms with the given name in all selected
+     residues. If there are not enough known atoms to
+     determine the orientation (e. g. if only the O
+     of a water is given), the program will choose a
+     random orientation. Atom oordinates that are
+     known already will not be changed.
+
+     The name can contain wildcards (?, *).
+
+EXAMPLE
+     CalcAtom "H*"
+
+SEE ALSO
+     SelectRes, AddAtom
+
+DATE
+     951110

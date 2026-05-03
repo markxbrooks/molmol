@@ -1,0 +1,17 @@
+NAME
+     RadiusInit - set initial radius
+
+SYNOPSIS
+     RadiusInit expr
+
+DESCRIPTION
+     Set the inital radius of new objects.
+
+EXAMPLE
+     RadiusInit 1.0
+
+SEE ALSO
+     RadiusAtom, RadiusBond, RadiusDist, RadiusPrim
+
+DATE
+     991016

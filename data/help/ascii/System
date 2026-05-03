@@ -1,0 +1,17 @@
+NAME
+     System - execute operating system command
+
+SYNOPSIS
+     System string
+
+DESCRIPTION
+     Pass the command given as argument for execution
+     by the operating system. Since MOLMOL is currently
+     only running on UNIX, this will generally be a
+     UNIX command.
+
+EXAMPLE
+     System 'lp tt.ps'
+
+DATE
+     960418

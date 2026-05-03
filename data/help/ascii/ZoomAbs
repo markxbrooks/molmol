@@ -1,0 +1,32 @@
+NAME
+     ZoomAbs - zoom absolute
+     ZoomRel - zoom relative
+
+SYNOPSIS
+     ZoomAbs expr
+     ZoomRel expr
+
+DESCRIPTION
+     Enlarge/reduce the size of the display. ZoomRel
+     changes the size by a given factor, relative to the
+     current size.  Factors greater than 1 make the
+     display larger, factors less than 1 make it smaller.
+     ZoomAbs sets the zoom factor to an absolute value.
+
+     ZoomAbs, in conjunction with PlotPar, can be used to
+     produce different plots with the same scale. If the
+     zoom factor and the plot size are set to the same
+     values, the scales will be identical.
+
+     Zooming is normally done interactively by pressing
+     the left and the middle mouse button.
+
+EXAMPLES
+     ZoomAbs 0.2
+     ZoomRel 1.4
+
+SEE ALSO
+     PlotPar
+
+DATE
+     950124

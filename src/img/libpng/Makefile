@@ -3,7 +3,7 @@ TOP      = ../..
 include $(TOP)/makedef
 
 LIBDIR   = $(IMGDIR)/lib
-INCLUDES = -I$(TOOLSDIR)/include
+INCLUDES = -I$(TOOLSDIR)/include -I$(ZLIBDIR)
 CPPFLAGS = $(INCLUDES) $(MCPPFLAGS)
 CFLAGS   = $(CPPFLAGS) $(MCFLAGS)
 

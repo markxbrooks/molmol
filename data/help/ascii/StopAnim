@@ -1,0 +1,17 @@
+NAME
+     StopAnim - stop animation
+
+SYNOPSIS
+     StopAnim
+
+DESCRIPTION
+     Stop an animation started with StartAnim.
+
+EXAMPLE
+     StopAnim
+
+SEE ALSO
+     StartAnim
+
+DATE
+     940216

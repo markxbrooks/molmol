@@ -1,0 +1,3278 @@
+
+
+
+
+
+
+<HEAD>
+<TITLE>Manual MOLMOL 2K.2</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+<H1>Manual MOLMOL 2K.2</H1>
+
+<BLOCKQUOTE>
+Author: Reto Koradi
+<P>
+Institut f&uuml;r Molekularbiologie und Biophysik<BR>
+ETH-H&ouml;nggerberg<BR>
+CH-8093 Z&uuml;rich<BR>
+E-mail: molmol@mol.biol.ethz.ch
+<P>
+Spectrospin AG<BR>
+Industriestr. 26<BR>
+CH-8117 F&auml;llanden<BR>
+E-mail: molmol@spectrospin.ch
+</BLOCKQUOTE>
+
+ 1. <A HREF=#intro>Introduction</A><P>
+ 2. <A HREF=#overview>Documentation Overview</A><P>
+ 3. <A HREF=#starting>Starting</A><P>
+ 4. <A HREF=#ui_idx>User Interface</A><P>
+<BLOCKQUOTE>
+ <A HREF=#ui_mainwin>Main Window Elements</A><P>
+ <A HREF=#ui_cmd>Executing Commands</A><P>
+ <A HREF=#ui_dialog>Dialog Boxes</A><P>
+ <A HREF=#ui_help>Using Online Help</A><P>
+ <A HREF=#ui_mouse>Mouse Manipulations</A><P>
+</BLOCKQUOTE>
+ 5. <A HREF=#sel_idx>Selection</A><P>
+<BLOCKQUOTE>
+ <A HREF=#sel_interact>Interactive Selection</A><P>
+ <A HREF=#sel_expr>Using Expressions</A><P>
+ <A HREF=#sel_value>Values</A><P>
+ <A HREF=#sel_prop>Properties</A><P>
+ <A HREF=#sel_syntax>Expression Syntax</A><P>
+ <A HREF=#sel_adv>Advanced Topics</A><P>
+</BLOCKQUOTE>
+ 6. <A HREF=#cmd_idx>Command List</A><P>
+<BLOCKQUOTE>
+ <A HREF=#cmd_io>Input/Output</A><P>
+ <A HREF=#cmd_modify>Modify Molecules</A><P>
+ <A HREF=#cmd_prim>Primitives</A><P>
+ <A HREF=#cmd_display>Display</A><P>
+ <A HREF=#cmd_move>Movement</A><P>
+ <A HREF=#cmd_ui>User Interface</A><P>
+ <A HREF=#cmd_select>Selection</A><P>
+ <A HREF=#cmd_attr>Attributes</A><P>
+ <A HREF=#cmd_plot>Plotting</A><P>
+ <A HREF=#cmd_calc>Calculations</A><P>
+ <A HREF=#cmd_fig>Figures</A><P>
+ <A HREF=#cmd_misc>Miscellaneous</A><P>
+</BLOCKQUOTE>
+ 7. <A HREF=#macro_stand>Standard Macros</A><P>
+ 8. <A HREF=#macro_user>User Macros</A><P>
+ 9. <A HREF=#config>Configuration and Customization</A><P>
+ 10. <A HREF=#features>Features</A><P>
+ 11. <A HREF=#tutorial_idx>MOLMOL Tutorial</A><P>
+<BLOCKQUOTE>
+ <A HREF=#tutorial_ex1>MOLMOL Tutorial - Example 1</A><P>
+ <A HREF=#tutorial_ex2>MOLMOL Tutorial - Example 2</A><P>
+ <A HREF=#tutorial_ex3>MOLMOL Tutorial - Example 3</A><P>
+ <A HREF=#tutorial_ex4>MOLMOL Tutorial - Example 4</A><P>
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<A NAME=intro>
+
+ <H2>1. Introduction</H2>
+
+MOLMOL is a molecular graphics program for displaying, analyzing,
+and manipulating the three-dimensional structure of molecules,
+with special emphasis on biological macromolecules. The program has
+features that make it particularly useful for the study of protein
+or DNA structures determined by NMR, but most of its possibilities
+are useful also outside of this particular area.
+<P>
+
+MOLMOL runs on UNIX and Windows NT/95/98 and is freely available.
+Copyright conditions are included in the distribution, all users
+are required to carefully read and follow them.
+<P>
+
+The latest information about the program is always available on the
+<A HREF="http://www.mol.biol.ethz.ch/wuthrich/software/molmol/">
+MOLMOL Web Site</A>. Links and instructions for downloading and
+installing the software can also be found there.
+<P>
+
+Questions and problem reports should normally be sent to the
+MOLMOL mailing list, subscription information and archives
+are available on the web site. Since the author has moved to
+a new job, mail sent to the address on the title page may not
+be answered.
+
+
+
+
+
+
+
+
+<A NAME=overview>
+
+ <H2>2. Documentation Overview</H2>
+
+This manual gives an introduction into using MOLMOL, and
+explains the basic concepts. The user is encouraged to use the
+online help system of the program. A
+ <A HREF=#cmd_idx>list of commands</A> can be found towards the
+end of this manual, the tables in that section contain links
+to the online help pages.
+<P>
+
+Users who prefer to learn from tutorials may want to skip
+to the  <A HREF=#tutorial_idx>tutorial section</A> before reading
+through the complete manual. Even after completing the tutorials
+successfully, it is still recommended to come back to the
+remaining parts of the manual later, a good understanding of
+of the basic concepts will help you to use MOLMOL more
+efficiently.
+<P>
+
+The collection of online manual pages is also available as
+a PostScript file named <KBD>ref.ps</KBD> in the <KBD>man</KBD>
+subdirectory of the installation directory. All other
+documentation is distributed in HTML format only. For easier
+printing of the manual, it is available as
+<A HREF="manual.html">one single file</A> as well as as
+<A HREF="index.html">set of separate files</A>. The contents
+of the two forms is identical.
+
+
+
+
+
+
+
+
+<A NAME=starting>
+
+ <H2>3. Starting</H2>
+
+ <H3>UNIX</H3>
+
+MOLMOL is supplied with a shell script (<KBD>molmol</KBD> in
+the top level installation directory) that processes options
+and arguments and sets the necessary environment variables.
+The following options are recognized by this shell script:
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>argument</TH>
+<TH>description</TH></TR>
+<TR><TD><KBD>-h</KBD></TD>
+<TD>give list of options</TD></TR>
+<TR><TD><KBD>-t</KBD></TD>
+<TD>TTY interface (no graphics)</TD></TR>
+<TR><TD><KBD>-o name</KBD></TD>
+<TD>alternate input/output device</TD></TR>
+<TR><TD><KBD>-2</KBD></TD>
+<TD>stereo mode (OpenGL only)</TD></TR>
+<TR><TD><KBD>-a</KBD></TD>
+<TD>display all atoms (not backbone only)</TD></TR>
+<TR><TD><KBD>-s</KBD></TD>
+<TD>superimpose complete backbone</TD></TR>
+<TR><TD><KBD>-r range</KBD></TD>
+<TD>superimpose given backbone range</TD></TR>
+<TR><TD><KBD>-f file</KBD></TD>
+<TD>execute macro file (<KBD>-</KBD> for standard input)</TD></TR>
+<TR><TD><KBD>files</KBD></TD>
+<TD>DG, PDB, Angle or Dump files</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+If the program is started without names of structure files, it
+will recover the saved state of the last invocation (if available)
+and ignore all options but <KBD>-f macro</KBD>.
+<P>
+
+Besides the listed options, the program will also recognize
+standard Xt options, like <KBD>-bg color</KBD> for setting the
+background color.
+
+ <H3>Windows</H3>
+
+Under Windows, you will normally start MOLMOL by double-clicking
+its icon (a capital M in cyan and red). You may want to create a
+shortcut on your desktop. Right-click on the icon e. g. in
+Windows Explorer, select "Create Shortcut" in the menu, and drag
+the shortcut to a convenient location on your desktop.
+<P>
+
+The following command line options are recognized:
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>argument</TH>
+<TH>description</TH></TR>
+<TR><TD><KBD>-stereo</KBD></TD>
+<TD>stereo mode</TD></TR>
+<TR><TD><KBD>file</KBD></TD>
+<TD>execute macro file</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+If you want to use one of these options, you can either start
+the executable from a command prompt, or define a shortcut,
+and then set the argument in the properties of the shortcut
+(right click on icon, select "Properties", click on "Shortcut"
+tab, and add the argument after the executable in the "Target:"
+field).
+<P>
+
+You can also start MOLMOL by defining it as program to be started
+for files with a certain exptension (like <KBD>.pdb</KBD>), and
+then double-clicking a file with this extension.
+<P>
+
+MOLMOL also supports drag and drop for some common molecule
+file types. If a file with one of the following extensions is
+dropped into the main window of the running program, the file
+is loaded with the corresponding command:
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>extension</TH>
+<TH>description</TH></TR>
+<TR><TD><KBD>.pdb</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A></KBD></TD></TR>
+<TR><TD><KBD>.ent</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A></KBD></TD></TR>
+<TR><TD><KBD>.cor</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadDg.html">ReadDg</A></KBD></TD></TR>
+<TR><TD><KBD>.mol2</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadSybyl.html">ReadSybyl</A></KBD></TD></TR>
+<TR><TD><KBD>.ml2</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadSybyl.html">ReadSybyl</A></KBD></TD></TR>
+<TR><TD><KBD>.xyz</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadXyz.html">ReadXyz</A></KBD></TD></TR>
+<TR><TD><KBD>.ang</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadAng.html">ReadAng</A></KBD></TD></TR>
+<TR><TD><KBD>.seq</KBD></TD>
+<TD> <KBD><A HREF="../help/html/ReadSeq.html">ReadSeq</A></KBD></TD></TR>
+<TR><TD>other</TD>
+<TD> <KBD><A HREF="../help/html/ReadDump.html">ReadDump</A></KBD></TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+
+<A NAME=ui_idx>
+
+ <H2>4. User Interface</H2>
+
+This section describes how to use the most important parts
+of the MOLMOL user interface. We assume that you are familiar
+with the basic concepts of using applications with graphical
+user interfaces. Here you will learn about:
+
+<UL>
+<LI> <A HREF=#ui_mainwin>Main Window Elements</A>
+<LI> <A HREF=#ui_cmd>Executing Commands</A>
+<LI> <A HREF=#ui_dialog>Dialog Boxes</A>
+<LI> <A HREF=#ui_help>Using Online Help</A>
+<LI> <A HREF=#ui_mouse>Mouse Manipulations</A>
+</UL>
+
+
+
+
+
+
+
+<A NAME=ui_mainwin>
+
+ <H3>Main Window Elements</H3>
+
+The following image shows a screen dump of the MOLMOL main
+window, with annotations for its elements. Each of them
+will be briefly explained in the following sections.
+
+<CENTER><IMG SRC="images/mainwin.gif"></CENTER>
+
+When you start up MOLMOL for the first time, you will see
+two dialogs boxes in addition to the main window. If you
+prefer not to see them each time you start the program,
+you can disable them using the  <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A></KBD>
+command, and choose the option to save the program state
+when you quit the program. You can do the same if you
+do not want certain parts of the main window to appear.
+
+ <H4>Drawing Area</H4>
+
+All graphical display of molecules (and other items)
+will appear here. You also use this area for interactive
+ <A HREF=#ui_mouse>mouse manipulations</A>, like zooming and
+rotating.
+
+ <H4>Menu</H4>
+
+The menu contains all MOLMOL commands, you use the common
+navigation methods known from other programs to access
+commands in the menu. The following is a short overview of
+which kinds of commands can be found in which pulldown menu:
+
+<DL>
+<DT><B>File</B>
+<DD>Input and output of files. This includes reading and
+    writing of molecules in many formats, output of plots,
+    execution of macros, and a variety of other commands.
+<DT><B>Edit</B>
+<DD>Commands that modify molecules. This includes
+    commands that change the covalent structure (adding
+    and removing atoms and bonds, building molecules
+    from residues, etc.) and commands that modify
+    coordinates (rotation, translation, changing dihedral
+    angles, superposition, etc.).
+<DT><B>View</B>
+<DD>Commands that change global viewing parameters.
+    This includes zooming, camera and light source
+    parameters, clipping planes and fog.
+<DT><B>Options</B>
+<DD>Commands that change various kinds of configuration
+    options and preferences. This includes the choice
+    whether certain dialogs are displayed, selection of
+    stereo and animation modes, rendering options,
+    display quality, plot parameters, and path names of
+    configuration files.
+<DT><B>Prop</B>
+<DD>Commands that change or list properties. Properties
+    are boolean values that can be set for various data
+    items, they are mainly used for
+     <A HREF=#sel_idx>Selection</A>.
+<DT><B>Attr</B>
+<DD>Commands that change graphics attributes, like
+    colors, display styles, material properties, etc.
+<DT><B>Calc</B>
+<DD>Commands that perform calculations. A large
+    variety of calculation and analysis possibilites
+    for molecules can be found here.
+<DT><B>Prim</B>
+<DD>Commands that create and modify primitives.
+    Primitives are things that can be displayed, but
+    are not molecules. This includes annotations,
+    schematic displays (ribbons) and surfaces.
+<DT><B>Fig</B>
+<DD>Commands that draw figures used for the analysis
+    of molecules. This includes Ramachandran plots,
+    angle distribution plots, contact maps, etc.
+<DT><B>Opt</B>
+<DD>This menu appears when optional commands are defined
+    as part of the startup macros, and those commands are
+    not contained in any other menu. See the section on
+     <A HREF=#config>configuration</A> for information on
+    how to extend the program with optional commands.
+<DT><B>Help</B>
+<DD>Commands for access to various forms of
+     <A HREF=#ui_help>online help</A>.
+</DL>
+
+ <H4>Buttons</H4>
+
+The buttons give quick access to some frequently used
+(combinations of) commands. You can use the  <KBD><A HREF="../help/html/HelpButton.html">HelpButton</A></KBD>
+command to see how exactly the buttons are defined.
+
+ <H4>Command Line</H4>
+
+As well as selecting them from the menu, all commands can
+also be entered on the command line. Parts of commands that
+are unique are completed automatically while typing. You can
+also enter command arguments on the command line.
+
+ <H4>Status Line</H4>
+
+A short help message is displayed here while the mouse
+pointer is moved over menu entries or buttons, or when a
+command is entered on the command line. Some commands also
+display informative messages on the status line.
+
+ <H4>Break Button</H4>
+
+Most long running commands can be interrupted by clicking
+the mouse on this button. The button will be active while
+such a command is running, inactive (grayed out) otherwise.
+
+
+
+
+
+
+<A NAME=ui_cmd>
+
+ <H3>Executing Commands</H3>
+
+The description of the  <A HREF=#ui_mainwin>main window</A>
+already mentioned some ways of executing commands in
+MOLMOL. This section gives a more complete and detailed
+list of how you can enter commands.
+
+<UL>
+<LI>All commands can be executed by selecting them in a
+     <A HREF=#ui_mainwin>pulldown menu</A>. Commands that need
+    arguments will ask for them using a
+     <A HREF=#ui_dialog>dialog box</A>.
+<LI>Users that prefer keyboard input can enter commands
+    on the  <A HREF=#ui_mainwin>command line</A>. Parts of
+    commands that are unique are completed automatically.
+    It is possible to also enter the command arguments on
+    the command line. If no or only part of the arguments
+    are given, a   <A HREF=#ui_dialog>dialog box</A> will appear.
+<LI>If you have a three button mouse, you can access some
+    frequently used commands from the popup menu associated
+    to the right mouse button.
+<LI>Some frequently used commands and command combinations
+    can be executed by using the  <A HREF=#ui_mainwin>buttons</A>
+    on the right side of the  <A HREF=#ui_mainwin>drawing area</A>.
+<LI>Some commands have keyboard accelerators, they can be seen
+    in the  <A HREF=#ui_mainwin>pulldown menu</A>. These commands
+    can be executed by using the corresponding key combination
+    anywhere in the  <A HREF=#ui_mainwin>main window</A>.
+<LI>If you have the log window open (use the
+     <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A></KBD> command to open it if it is closed),
+    you can repeat previous commands by clicking on them in
+    there.
+<LI>You can execute command macros with the  <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A></KBD>
+    (see section  <A HREF=#Standard Macros>macro_user</A>) and
+     <KBD><A HREF="../help/html/XMacUser.html">XMacUser</A></KBD> (see section
+     <A HREF=#User Macros>macro_user</A>) commands.
+<LI>The UNIX version executes commands that it receives on
+    standard input. This can be used to interface MOLMOL with
+    other programs, e. g. by writing a program (shell script)
+    that generates commands and then piping the output of
+    this program into MOLMOL.
+</UL>
+
+Command arguments can be arbitrary expressions, as documented
+in the section about  <A HREF=#sel_syntax>expression syntax</A>.
+
+
+
+
+
+
+<A NAME=ui_dialog>
+
+ <H3>Dialog Boxes</H3>
+
+MOLMOL has two main kinds of dialog boxes, which are
+described in the following sections.
+
+ <H4>Command Arguments</H4>
+
+When a command requiring arguments is selected in
+the menu (or executed by other means, as described
+under  <A HREF=#ui_cmd>Command Execution</A>), it prompts
+for the arguments with a dialog. These dialogs typically
+contain text fields for entering strings and numerical
+values, radio boxes for selecting between different
+values of an enumerated set, and check boxes for
+enabling options.
+<P>
+
+These dialogs always have three buttons:
+
+<DL>
+<DT>OK
+<DD>Closes the dialog, and executes the command with
+    the arguments entered.
+<DT>Cancel
+<DD>Closes the dialog without executing the command.
+<DT>Help
+<DD>Display help information for the command, leaving
+    the dialog open.
+</DL>
+
+ <H4>Convenience Dialogs</H4>
+
+There is a number of dialogs that give faster and more
+convenient access to frequently used operations that
+could also be executed by using normal commands. These
+dialogs are explicitly opened and closed by using a
+command starting with <KBD>Dial</KBD>:
+
+<UL>
+<LI>Selection Dialog for  <A HREF=#sel_idx>selecting</A>
+    items by entering expressions ( <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A></KBD>).
+<LI>Molecule Dialog for quickly choosing the molecules
+    that should be selected, displayed and/or movable
+    ( <KBD><A HREF="../help/html/DialMol.html">DialMol</A></KBD>).
+<LI>Color Dialog for choosing colors and applying them
+    to selected items ( <KBD><A HREF="../help/html/DialColor.html">DialColor</A></KBD>).
+<LI>Style Dialog for changing the display style of
+    selected items ( <KBD><A HREF="../help/html/DialStyle.html">DialStyle</A></KBD>).
+<LI>RMSD Dialog for calculating RMSD values between
+    molecules ( <KBD><A HREF="../help/html/DialRmsd.html">DialRmsd</A></KBD>).
+<LI>Measurement Dialog for measuring bond lengths,
+    angles, distances, etc. ( <KBD><A HREF="../help/html/DialMeasure.html">DialMeasure</A></KBD>).
+</UL>
+
+The first four dialogs in this list can be opened
+with one of the buttons on the right side of the
+ <A HREF=#ui_mainwin>main window</A>.
+<P>
+
+These dialogs can remain open as long as you need them,
+commands are executed by clicking buttons within the
+dialog. They have two buttons at the bottom:
+
+<DL>
+<DT>Close
+<DD>Closes the dialog.
+<DT>Help
+<DD>Display help information for the dialog.
+</DL>
+
+
+
+
+
+
+<A NAME=ui_help>
+
+ <H3>Using Online Help</H3>
+
+MOLMOL has extensive online help possibilities, all
+available documentation is available online. There
+is a help page for each command, available in both
+text and HTML format. Most of the other documentation
+is in HTML format. Use the  <KBD><A HREF="../help/html/HelpViewer.html">HelpViewer</A></KBD> command
+for selecting whether you want to see the text or HTML
+version of the command help pages, and to configure
+which browser should be used for displaying HTML.
+
+ <H4>Command Help Pages</H4>
+
+The online help page for commands can be displayed
+in two different ways. The first way is to click the
+Help button in the  <A HREF=#ui_dialog>argument dialog</A>
+of the command. The second way is to execute the
+ <KBD><A HREF="../help/html/HelpCmd.html">HelpCmd</A></KBD> command. This puts the program into
+help mode (indicated by the prompt in front of the
+ <A HREF=#ui_mainwin>command line</A>), so that the next
+command is not executed, but its help page is displayed
+instead. The first method is more convenient, but only
+works for commands that have arguments.
+
+ <H4>Finding Commands</H4>
+
+If you are looking for a command, but do not know
+its name and cannot locate it in the menu, the
+ <KBD><A HREF="../help/html/HelpApropos.html">HelpApropos</A></KBD> command can be very useful.
+It allows you to look for commands by a keyword,
+and displays a list of all commands that contain
+this keyword in their short description, including
+their location in the menu and the short description.
+
+ <H4>Other Options</H4>
+
+Explore the Help menu to find other useful options,
+like displaying this manual and tutorial, or listing
+available standard properties for
+ <A HREF=#sel_idx>selection</A>. The  <KBD><A HREF="../help/html/Register.html">Register</A></KBD>
+command is also available from the Help menu, you are
+encouraged to register if you use MOLMOL.
+
+
+
+
+
+
+<A NAME=ui_mouse>
+
+ <H3>Mouse Manipulations</H3>
+
+This section describes how to use the mouse in the
+ <A HREF=#ui_mainwin>drawing area</A>. MOLMOL can only be
+(reasonably) used with a mouse with at least two buttons.
+If you have a three button mouse, the right mouse button
+displays a popup menu.
+<P>
+
+The usual terms will be used to describe mouse input:
+
+<DL>
+<DT>click
+<DD>Press one (or multiple) mouse button(s), and release
+    them without moving the mouse.
+<DT>drag
+<DD>Press one (or multiple) mouse button(s), move the
+    mouse, and release the button(s).
+</DL>
+
+The following list refers to the left and middle button
+of a three button mouse. If your mouse has only two
+buttons (as is commonly the case with Windows), the
+second (right) button of your mouse will take the role
+of the middle button.
+
+<DL>
+<DT>click left
+<DD>Select item closest to position of mouse pointer,
+    deselecting everything else.
+<DT>click left, while holding down Shift or Ctrl key
+<DD>Select item closest to position of mouse pointer
+    in addition to already selected items.
+<DT>click middle
+<DD>Same as click left.
+<DT>drag left
+<DD>Rotate molecules, using the virtual trackball model.
+<DT>drag middle
+<DD>Translate molecules in direction of mouse movement.
+<DT>drag left+middle
+<DD>Zoom. Moving right/up zooms in, moving left/down
+    zooms out.
+</DL>
+
+When used over text labels, the middle mouse button
+takes on different functionality:
+
+<DL>
+<DT>click middle
+<DD>Toggle selection of text label.
+<DT>drag middle
+<DD>Move/resize text label, depending on the position within
+    the text labels. Different zones are indicated with
+    dashed lines, the zones on the edges/corners are for
+    resizing, the one in the middle is for moving the label.
+</DL>
+
+If you need a quick reminder of these manipulations, you
+can view a table with the  <KBD><A HREF="../help/html/HelpMouse.html">HelpMouse</A></KBD> command.
+
+
+
+
+
+
+
+<A NAME=sel_idx>
+
+ <H2>5. Selection</H2>
+
+MOLMOL uses the selection-action principle wherever
+possible. This means that the user first selects a set
+of items, and then executes the command(s) that performs
+the desired action on the selected items. The kinds of
+items that can be selected are:
+
+<UL>
+<LI>molecules
+<LI>residues
+<LI>atoms
+<LI>bonds
+<LI>angles
+<LI>distances
+<LI>primitives (annotations, ribbons, surfaces, etc.)
+</UL>
+
+What kind of items need to be selected for a given
+command is often clear from the command name, e. g. the
+command  <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A></KBD> operates on atoms, and therefore
+you need to select the desired atoms before executing the
+command. If you are uncertain about the required selection
+for a command, check the online help pages, the first
+sentence in the description normally tells you how the
+command operates on the selection.
+<P>
+
+Selected items do not look visually distinct in the
+graphical display. When you perform a selection operation,
+the status line will give you information about the items
+that were selected. You can also choose to only see the
+currently selected items by clicking the <B>Show Sel.</B>
+button on the right side of the
+ <A HREF=#ui_mainwin>main window</A>. Use the <B>Show All</B>
+button to get back to displaying all visible items.
+<P>
+
+The following sections explain various aspects of how
+to make selections:
+
+<UL>
+<LI> <A HREF=#sel_interact>Interactive Selection</A>
+<LI> <A HREF=#sel_expr>Using Expressions</A>
+<LI> <A HREF=#sel_value>Values</A>
+<LI> <A HREF=#sel_prop>Properties</A>
+<LI> <A HREF=#sel_syntax>Expression Syntax</A>
+<LI> <A HREF=#sel_adv>Advanced Topics</A>
+</UL>
+
+
+
+
+
+
+
+<A NAME=sel_interact>
+
+ <H3>Interactive Selection</H3>
+
+Items (like atoms or bonds) can be selected by clicking
+on them with the left or middle mouse button. Doing that
+will normally deselect all other items of the same class.
+To prevent that, hold down either the Shift or the Ctrl
+key must be pressed on the keyboard while making the
+selection.
+<P>
+
+For text annotations there is a difference between the
+function of the left and middle mouse buttons: the left
+mouse button only selects texts if their bottom-left corner
+is the nearest item, while the middle mouse button gives
+priority to texts and selects them whenever the position
+is within the text.
+<P>
+
+See the section on  <A HREF=#ui_mouse>Mouse Manipulations</A>
+for a more detailed description on how to use the mouse.
+
+
+
+
+
+
+<A NAME=sel_expr>
+
+ <H3>Using Expressions</H3>
+
+When you want to select a number of items,
+ <A HREF=#sel_interact>interactive selection</A> can be very
+cumbersome, especially in large molecules. MOLMOL allows
+you to select items using a powerful expression syntax.
+You can interpret these expressions as rules that an
+item has to satisfy to get selected.
+<P>
+
+You can use commands like  <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A></KBD> to
+select items, but it is normally much more convenient
+to use the  <A HREF=#ui_dialog>Selection Dialog</A> that
+can be opened by clicking the <B>Selection</B> button on
+the right side of the main window.
+<P>
+
+This section gives an informal introduction into
+selection expressions, a more complete and precise
+description can be found in the section
+ <A HREF=#sel_syntax>Expression Syntax</A>.
+
+ <H4>Short Notation</H4>
+
+While the full expression syntax is necessary for complex
+selections, a more compact notation is supported to make
+simple selections easier. In this short notation, the
+expression consists of three parts, all of which are
+optional:
+
+<OL>
+<LI>the character <KBD>#</KBD> followed by a list of molecule
+    names and numbers
+<LI>the character <KBD>:</KBD> followed by a list of residue
+    names and numbers
+<LI>the character <KBD>@</KBD> followed by a list of atom names
+</OL>
+
+Spaces are not allowed within such an expression. Lists of
+names and numbers, separated by commas, are allowed, as well
+as ranges of numbers, denoted by the <KBD>-</KBD> (minus)
+character. It is possible to give a list of such expressions,
+separated by spaces, this will select all parts.
+<P>
+
+The following are some examples of this short notation used
+for selecting atoms:
+
+<DL>
+<DT><KBD>@CA</KBD>
+<DD>all atoms named CA
+<DT><KBD>:10-20</KBD>
+<DD>all atoms in residues number 10 to 20
+<DT><KBD>#1-3,5:10-20,25,LYS@N,CA,C</KBD>
+<DD>all atoms named N, CA or C in residues number 10 to 20
+    residue number 25, and residues named LYS, in molecules
+    number 1 to 3 and 5
+<DT><KBD>:10@HN :17@HA</KBD>
+<DD>atom named HN in residue number 10 and atom named HA
+    in residue number 17
+</DL>
+
+ <H4>Selecting Everything/Nothing</H4>
+
+Giving an empty string as selection expression selects
+all items. The expression <KBD>'0'</KBD> (a string with
+the digit zero as the only character) will deselect
+everything.
+
+ <H4>Full Expression Syntax</H4>
+
+The full expression syntax of MOLMOL is very similar to
+expressions in a programming language like C. A number
+of  <A HREF=#sel_value>values</A>, e. g.  <KBD>charge</KBD>
+for the charge of an atom or <KBD>len</KBD> for the
+length of a bond, and boolean  <A HREF=#sel_prop>properties</A>,
+like <KBD>bb</KBD> for backbone, are available for each
+item. These can be arbitrarily combined with arithmetic
+and logical operators. The result of the expression must
+be a boolean value, all items for which the expression
+evaluates to true are selected.
+<P>
+
+The following are some examples of the full notation used
+for selecting atoms:
+
+<DL>
+<DT><KBD>name = "CA" & bfactor > 3.2</KBD>
+<DD>atoms with name CA and B factor larger than 3.2
+<DT><KBD>vdw < 1.5 | charge > 0.0</KBD>
+<DD>atoms with VdW radius less than 1.5 or a positive
+    partial charge
+</DL>
+
+
+
+
+
+
+<A NAME=sel_value>
+
+ <H3>Values</H3>
+
+The following table lists the values that can be referenced
+for each kind of data item.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>value</TH><TH>type</TH><TH>explanation</TH></TR>
+<TR><TD><KBD>mol</KBD></TD><TD>num</KBD></TD><TD>integer</TD>
+    <TD>molecule number</TD></TR>
+<TR><TD><KBD>mol</KBD></TD><TD>number</KBD></TD><TD>integer</TD>
+    <TD>molecule number</TD></TR>
+<TR><TD><KBD>res</KBD></TD><TD>num</KBD></TD><TD>integer</TD>
+    <TD>residue number</TD></TR>
+<TR><TD><KBD>res</KBD></TD><TD>number</KBD></TD><TD>integer</TD>
+    <TD>residue number</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD>num</KBD></TD><TD>integer</TD>
+    <TD>primitive number</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD>number</KBD></TD><TD>integer</TD>
+    <TD>primitive number</TD></TR>
+<TR><TD><KBD>mol</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>molecule name</TD></TR>
+<TR><TD><KBD>res</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>residue name</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>atom name</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD>name</KBD></TD><TD>string</TD>
+    <TD>angle name</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>shift</KBD></TD><TD>float</TD>
+    <TD>chemical shift of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>bfactor</KBD></TD><TD>float</TD>
+    <TD>B factor of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>vdw</KBD></TD><TD>float</TD>
+    <TD>van der Waals radius of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>charge</KBD></TD><TD>float</TD>
+    <TD>partial charge of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>heavycharge</KBD></TD><TD>float</TD>
+    <TD>charges on heavy atoms</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>avgcharge</KBD></TD><TD>float</TD>
+    <TD>averaged charges on heavy atoms</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>simplecharge</KBD></TD><TD>float</TD>
+    <TD>simple charges from setup file</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>d</KBD></TD><TD>float</TD>
+    <TD>distance from reference atom(s)</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD>len</KBD></TD><TD>float</TD>
+    <TD>bond length</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD>val</KBD></TD><TD>float</TD>
+    <TD>angle</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>val</KBD></TD><TD>float</TD>
+    <TD>distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>limit</KBD></TD><TD>float</TD>
+    <TD>limit of constraint</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>viol</KBD></TD><TD>float</TD>
+    <TD>violation of constraint</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>upl</KBD></TD><TD>bool</TD>
+    <TD>true if distance is upper limit</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>lol</KBD></TD><TD>bool</TD>
+    <TD>true if distance is lower limit</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>hbond</KBD></TD><TD>bool</TD>
+    <TD>true if distance is H-bond</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD>attr</KBD></TD><TD>integer</TD>
+    <TD>graphics attribute index</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+You can access values of related data items by using the
+corresponding prefix, e. g. in an expression for atoms,
+you can refer to the residue number by <KBD>res.num</KBD>.
+
+
+
+
+
+
+<A NAME=sel_prop>
+
+ <H3>Properties</H3>
+
+The following table lists builtin properties.
+Builtin properties are properties that are set from within
+the program. You are free to use them for making selections,
+but you should normally avoid modifying builitin properties
+(with the excpetion of <KBD>selected</KBD>, <KBD>movable</KBD>
+and <KBD>displayed</KBD>), some of them are used by the
+program itself, and the results of the user modifying them
+may be unpredictable.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>name</TH><TH>description</TH></TR>
+<TR><TD>any</TD><TD><KBD>all</KBD></TD>
+    <TD>Always set for all items. Do not modify!</TD></TR>
+<TR><TD>any</TD><TD><KBD>selected</KBD></TD>
+    <TD>Set for selected items. Most commands operate on
+    items that have this property set.</TD></TR>
+<TR><TD>any</TD><TD><KBD>displayed</KBD></TD>
+    <TD>Only items with this property set are displayed.
+    Can be useful for making items (especially molecules)
+    temporarily visible/invisible, use the
+     <A HREF=#ui_dialog>Molecule Dialog</A> for a convenient
+    way of setting it.</TD></TR>
+<TR><TD>mol</TD><TD><KBD>movable</KBD></TD>
+    <TD>Only molecules with this property set are affected
+    by  <A HREF=#ui_mouse>interactive manipulations</A> and
+    commands that transform molecules. Useful for moving
+    molecules relative to each other, use the
+     <A HREF=#ui_dialog>Molecule Dialog</A> for a convenient
+    way of setting it.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all atoms that have a display style that
+    makes them visible. Convenient to restrict a selection
+    to only visible items.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all bonds that have a display style that
+    makes them visible.</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all distances that have a display style
+    that makes them visible.</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD><KBD>visible</KBD></TD>
+    <TD>Set for all primitives that have a display style
+    that makes them visible.</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+The following table lists predefined properties.
+Predefined properties are properties whose definitions are
+read from a file (by default <KBD>setup/PropDef</KBD> in
+the installation directory) and evaluated whenever new data
+is added, e. g. a new molecule loaded.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>name</TH><TH>description</TH></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>bb</KBD></TD>
+    <TD>Backbone atoms of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>bb</KBD></TD>
+    <TD>Backbone bonds of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>sc</KBD></TD>
+    <TD>Side chain atoms of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>bonds</KBD></TD><TD><KBD>sc</KBD></TD>
+    <TD>Side chain bonds of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>heavy</KBD></TD>
+    <TD>Heavy atoms.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>heavy</KBD></TD>
+    <TD>Bonds between two heavy atoms.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>heavysc</KBD></TD>
+    <TD>Heavy side chain atoms of a protein or nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>heavysc</KBD></TD>
+    <TD>Bonds between two heavy side chain atoms of a protein
+    or nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>phos</KBD></TD>
+    <TD>Atoms in phosphate group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>phos</KBD></TD>
+    <TD>Bonds in phosphate group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>sugar</KBD></TD>
+    <TD>Atoms in sugar group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>sugar</KBD></TD>
+    <TD>Bonds in sugar group of a nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>base</KBD></TD>
+    <TD>Atoms in base of a nucleic acid.</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>base</KBD></TD>
+    <TD>Bonds in base of a nucleic acid.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>proton</KBD></TD>
+    <TD>Hydrogen atoms.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>ca</KBD></TD>
+    <TD>Atoms with name CA.</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>pseudo</KBD></TD>
+    <TD>Pseudo atoms (name starting with Q).</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>lonepair</KBD></TD>
+    <TD>Lone pair (name starting with LP).</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=sel_syntax>
+
+ <H3>Expression Syntax</H3>
+
+This section explains the expressions syntax with text
+descriptions and examples. A formal expression syntax
+(in EBNF) can be found on the help page of the
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A></KBD> command. The page also contains a
+number of examples of selection expressions.
+
+ <H4>Constants</H4>
+
+There are three types of constants: integer, floating
+point, and string.
+
+<UL>
+<LI>Integer constants are written in the usual decimal
+    notation.<BR>
+    Examples: <KBD>7</KBD>, <KBD>395</KBD>.
+<LI>Floating point constants are written in the ususal
+    notation, with a decimal point.  The scientific
+    notation (indicated with the letter <KBD>e</KBD>
+    or <KBD>E</KBD>) is also supported, the decimal
+    point is optional for numbers with exponent.<BR>
+    Examples: <KBD>5.3</KBD>, <KBD>23.478e17</KBD>,
+    <KBD>3.59E-5</KBD>, <KBD>1E3</KBD>.
+<LI>String constants are enclosed in double quotes.
+    If double quotes are used inside a string, they
+    have to be escaped by a <KBD>\</KBD> (backslash).
+    If a string is used as part of a command argument,
+    single quotes also have to be escaped by a
+    <KBD>\</KBD> because they are used for enclosing
+    each argument.<BR>
+    Examples: <KBD>"hello"</KBD>, <KBD>"Hello World!"</KBD>.
+</UL>
+
+Integer constants are automatically converted to
+floating point when required by the context, e. g.
+when they are added to a floating point value.
+
+ <H4>Values</H4>
+
+Depending on the context, an expression can use values of
+a data item. When an expression is evaluated for a data
+item, it can use the values of this item directly by just
+using their names. Values for related data items can be
+accessed by using the form <KBD>item.value</KBD>. E. g.
+when evaluating an expression for an atom, <KBD>name</KBD>
+refers to the name of the atom, while <KBD>res.name</KBD>
+refers to the name of the residue that the atom is part of.
+The relationships between different data items is explained
+as part of the section about
+ <A HREF=#sel_adv> advanced selection topics</A>.
+<P>
+
+A  <A HREF=#sel_value>table of available values</A> was given in
+a previous section.
+
+ <H4>Properties</H4>
+
+Properties are similar to the values described in the
+previous section. One main difference is that they can
+be defined by the user, either with commands like
+ <KBD><A HREF="../help/html/DefPropAtom.html">DefPropAtom</A></KBD>, or by adding them to the set of
+standard properties, as documented in the section about
+ <A HREF=#config>configuration</A>. Another difference to values
+is that the type of properties is always boolean.
+<P>
+
+A  <A HREF=#sel_prop>table of predefined properties</A> was given
+in a previous section.
+
+ <H4>Operators</H4>
+
+Most common arithmetic and logical operators are supported
+in expressions. The following table lists all operators with
+the type of their operands and the type of the result, in order
+of precedence. Operators with higher precedence are evaluated
+before operators with lower precedence. Evaluation of operators
+with the same precedence is left to right. This evaluation order
+can be changed by using parantheses. The table also indicates
+whether an operator is unary (has one operand) or binary
+(has two operands).
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>operator</TH><TH>kind</TH><TH>precedence</TH>
+    <TH>operand</TH><TH>result</TH><TH>description</TH></TR>
+<TR><TD><KBD>-</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>integer</TD><TD>integer</TD><TD>numerical negation</TD></TR>
+<TR><TD><KBD>-</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>float</TD><TD>float</TD><TD>numerical negation</TD></TR>
+<TR><TD><KBD>sqrt</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>float</TD><TD>float</TD><TD>square root</TD></TR>
+<TR><TD><KBD>log</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>float</TD><TD>float</TD><TD>natural logarithm</TD></TR>
+<TR><TD><KBD>!</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical negation</TD></TR>
+<TR><TD><KBD>not</KBD></TD><TD>unary</TD><TD>6</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical negation</TD></TR>
+<TR><TD><KBD>*</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>integer</TD><TD>integer</TD><TD>multiplication</TD></TR>
+<TR><TD><KBD>*</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>float</TD><TD>float</TD><TD>multiplication</TD></TR>
+<TR><TD><KBD>/</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>integer</TD><TD>integer</TD><TD>division</TD></TR>
+<TR><TD><KBD>/</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>float</TD><TD>float</TD><TD>division</TD></TR>
+<TR><TD><KBD>%</KBD></TD><TD>binary</TD><TD>5</TD>
+    <TD>integer</TD><TD>integer</TD><TD>remainder</TD></TR>
+<TR><TD><KBD>+</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>integer</TD><TD>integer</TD><TD>addition</TD></TR>
+<TR><TD><KBD>+</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>float</TD><TD>float</TD><TD>addition</TD></TR>
+<TR><TD><KBD>-</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>integer</TD><TD>integer</TD><TD>subtraction</TD></TR>
+<TR><TD><KBD>-</KBD></TD><TD>binary</TD><TD>4</TD>
+    <TD>float</TD><TD>float</TD><TD>subtraction</TD></TR>
+<TR><TD><KBD>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>equal</TD></TR>
+<TR><TD><KBD>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>equal</TD></TR>
+<TR><TD><KBD>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>string</TD><TD>bool</TD><TD>equal (with wildcards)</TD></TR>
+<TR><TD><KBD>!=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>not equal</TD></TR>
+<TR><TD><KBD>!=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>not equal</TD></TR>
+<TR><TD><KBD>!=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>string</TD><TD>bool</TD><TD>not equal (with wildcards)</TD></TR>
+<TR><TD><KBD><</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>less</TD></TR>
+<TR><TD><KBD><</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>less</TD></TR>
+<TR><TD><KBD><=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>less or equal</TD></TR>
+<TR><TD><KBD><=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>less or equal</TD></TR>
+<TR><TD><KBD>></KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>greater</TD></TR>
+<TR><TD><KBD>></KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>greater</TD></TR>
+<TR><TD><KBD>>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>integer</TD><TD>bool</TD><TD>greater or equal</TD></TR>
+<TR><TD><KBD>>=</KBD></TD><TD>binary</TD><TD>3</TD>
+    <TD>float</TD><TD>bool</TD><TD>greater or equal</TD></TR>
+<TR><TD><KBD>&</KBD></TD><TD>binary</TD><TD>2</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical and</TD></TR>
+<TR><TD><KBD>and</KBD></TD><TD>binary</TD><TD>2</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical and</TD></TR>
+<TR><TD><KBD>|</KBD></TD><TD>binary</TD><TD>1</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical or</TD></TR>
+<TR><TD><KBD>or</KBD></TD><TD>binary</TD><TD>1</TD>
+    <TD>bool</TD><TD>bool</TD><TD>logical or</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+Note that the string comparison operators support wildcards,
+<KBD>?</KBD> matches one character, <KBD>*</KBD>matches any
+number of characters.
+
+
+
+
+
+
+<A NAME=sel_adv>
+
+ <H3>Advanced Topics</H3>
+
+ <H4>Item Relationships</H4>
+
+The data items that can be selected (moelcule, resdiue, atom,
+bond, angle, distance, primitive) have a hierarchy, e. g. atoms
+are part of residues, and residues are parts of molecules.
+The hierarchy is depicted in the following figure:
+
+<CENTER><IMG SRC="images/datarelation.gif"></CENTER>
+
+Thise hierarchy has a direct effect on item selection. When
+selecting an item, the corresponding items higher in the
+hierarchy are also selected. E. g. selecting an atom will
+automatically select the residue and molecule that the atom
+is part of. On the other hand, deselecting an item does not
+automatically deselect items higher in the hierarchy.
+<P>
+
+When traversing the currently selected items, the program
+will also use this hierarchy, and only traverse deeper into
+selected items. Because of the automatic selection of items
+higher in the hierarchy, this is normally transparent to the
+user. However, if you e. g. first select an atom, and then
+deselect the corresponding residue, the atom will effectively
+be deselected.
+<P>
+
+One way of looking at this mechanism is that selection
+proceeds upwards in the hierarchy (selects items that are
+higher), while deselection proceeds downwards (deselects
+items that are lower).
+<P>
+
+The hierarchy also affects how  <A HREF=#sel_value>values</A>
+and  <A HREF=#sel_prop>properties</A> can be accessed in
+ <A HREF=#sel_syntax>expressions</A>. When an expression is
+evaluated for an item, the values and properties of items
+higher in the hierarchy can be accessed with the syntax
+<KBD>item.name</KBD>. For bonds, distances and angles,
+it is also possible to access the values of the atoms
+involved. The following table gives a full list of which
+related items can be accessed from a given kind of item.
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TH>item</TH><TH>related</TH><TH>description</TH></TR>
+<TR><TD><KBD>res</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of residue</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>res</KBD></TD>
+    <TD>residue of atom</TD></TR>
+<TR><TD><KBD>atom</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of atom</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>res</KBD></TD>
+    <TD>residue of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>atom1</KBD></TD>
+    <TD>first atom of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>atom2</KBD></TD>
+    <TD>second atom of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>res1</KBD></TD>
+    <TD>residue of first atom of bond</TD></TR>
+<TR><TD><KBD>bond</KBD></TD><TD><KBD>res2</KBD></TD>
+    <TD>residue of second atom of bond</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>res</KBD></TD>
+    <TD>residue of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom1</KBD></TD>
+    <TD>first atom of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom2</KBD></TD>
+    <TD>second atom of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom3</KBD></TD>
+    <TD>third atom of dihedral angle</TD></TR>
+<TR><TD><KBD>angle</KBD></TD><TD><KBD>atom4</KBD></TD>
+    <TD>fourth atom of dihedral angle</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>atom1</KBD></TD>
+    <TD>first atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>atom2</KBD></TD>
+    <TD>second atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>res1</KBD></TD>
+    <TD>residue of first atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>res2</KBD></TD>
+    <TD>residue of second atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>mol1</KBD></TD>
+    <TD>molecule of first atom of distance</TD></TR>
+<TR><TD><KBD>dist</KBD></TD><TD><KBD>mol2</KBD></TD>
+    <TD>molecule of second atom of distance</TD></TR>
+<TR><TD><KBD>prim</KBD></TD><TD><KBD>mol</KBD></TD>
+    <TD>molecule of primitive (except for title)</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+ <H4>Predicates</H4>
+
+The previous section explained how to access values and
+properties of data items that are higher in the hierarchy
+than the item for which the expression is evaluated
+(current item). It is also possible to make selections
+based on values and properties of items on the same level
+or lower in the hierarchy than the current item. Since these
+can be any number of items, they cannot be accessed as single
+values, but conditions on each of them must be combined with
+the <KBD>all</KBD> or <KBD>exists</KBD> predicate. These
+predicates are directly followed by an item type and an
+expression in parantheses.
+<P>
+
+If the item type after the predicate is lower in the
+hierarchy than the current item, the evaluation will traverse
+downwards in the hierarchy, and evaluate the expression
+in parantheses for each of the desired items. E. g. if an
+expression for a residue is evaluated, and
+<KBD>exists atom(expression)</KBD> is encountered, this
+expression will be evaluated for all atoms of the residue.
+It must have a boolean result, the whole expression will
+be true if at least one of the partial expressions evaluated
+for the atoms yields true.
+<P>
+
+If the item type after the predicate is higher in the
+hierarchy than the current item, the evaluation will
+traverse upwards in the hierarchy until the parent of
+the item is encountered. From there on, the evaluation
+will be performed as described in the previous chapter.
+E. g. if an expression for an atom is evaluated, and
+<KBD>exists bond(expression)</KBD> is encountered, this
+expression will be evaluated for all bonds that the
+atom is part of. The whole expression will be true if
+all of the partial expressions evaluated for the bonds
+yield true.
+<P>
+
+The  <A HREF=#macro_stand>standard macros</A> contain a few
+examples of using predicates. <KBD>mean_sc.mac</KBD>
+contains the following commands:
+
+<BLOCKQUOTE>
+<PRE>
+DefPropRes 'well_def' '! exists atom(heavy & bfactor > 1.0)'
+SelectAtom 'res.well_def & (ca | heavysc)'
+</PRE>
+</BLOCKQUOTE>
+
+The first command is used to define the property
+<KBD>well_def</KBD> for well defined residues, specified as
+residues that have no heavy atoms with B factors larger
+than 1.0. The second command then uses this property to
+select the CA and heavy side chain atoms of all these well
+defined residues.
+<P>
+
+The following command in <KBD>pdb_charge.mac</KBD>
+selects all ASP residues that do not have an HD2 atom:
+
+<BLOCKQUOTE>
+<PRE>
+SelectRes 'name = "ASP" & ! exists atom(name = "HD2")'
+</PRE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<A NAME=cmd_idx>
+
+ <H2>6. Command List</H2>
+
+The following tables give a complete list of MOLMOL commands.
+Each table entry gives the name of the command as it would
+be typed on the command line and a short description of the
+command. The command names are also links to the full
+description, corresponding to the online help page of the
+command.
+<P>
+
+The commands are listed in several groups:
+
+<UL>
+<LI> <A HREF=#cmd_io>Input/Output</A>
+<LI> <A HREF=#cmd_modify>Modify Molecules</A>
+<LI> <A HREF=#cmd_prim>Primitives</A>
+<LI> <A HREF=#cmd_display>Display</A>
+<LI> <A HREF=#cmd_move>Movement</A>
+<LI> <A HREF=#cmd_ui>User Interface</A>
+<LI> <A HREF=#cmd_select>Selection</A>
+<LI> <A HREF=#cmd_attr>Attributes</A>
+<LI> <A HREF=#cmd_plot>Plotting</A>
+<LI> <A HREF=#cmd_calc>Calculations</A>
+<LI> <A HREF=#cmd_fig>Figures</A>
+<LI> <A HREF=#cmd_misc>Miscellaneous</A>
+</UL>
+
+
+
+
+
+
+
+<A NAME=cmd_io>
+
+ <H3>Input/Output</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/ReadAng.html">ReadAng</A></KBD></TD><TD>read DIANA dihedral angle file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadListAng.html">ReadListAng</A></KBD></TD><TD>read list of DIANA dihedral angle files</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadDg.html">ReadDg</A></KBD></TD><TD>read DG file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadListDg.html">ReadListDg</A></KBD></TD><TD>read list of DG files</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A></KBD></TD><TD>read PDB file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadListPdb.html">ReadListPdb</A></KBD></TD><TD>read list of PDB files</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadSybyl.html">ReadSybyl</A></KBD></TD><TD>read SYBYL Mol2 file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadXyz.html">ReadXyz</A></KBD></TD><TD>read XYZ file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadSeq.html">ReadSeq</A></KBD></TD><TD>read sequence</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadDump.html">ReadDump</A></KBD></TD><TD>read dump file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadLol.html">ReadLol</A></KBD></TD><TD>read file with lower limits</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadUpl.html">ReadUpl</A></KBD></TD><TD>read file with upper limits</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadAco.html">ReadAco</A></KBD></TD><TD>read file with angle constraints</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadShift.html">ReadShift</A></KBD></TD><TD>read file with chemical shifts</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadOmap.html">ReadOmap</A></KBD></TD><TD>read O electron density map</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadPot.html">ReadPot</A></KBD></TD><TD>read potentials for surface coloring</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReplaceDg.html">ReplaceDg</A></KBD></TD><TD>replace with DG file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReplaceListDg.html">ReplaceListDg</A></KBD></TD><TD>replace with list of DG files</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReplacePdb.html">ReplacePdb</A></KBD></TD><TD>replace with PDB file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReplaceListPdb.html">ReplaceListPdb</A></KBD></TD><TD>replace with list of PDB files</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ReadLib.html">ReadLib</A></KBD></TD><TD>read and error check residue library</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteAng.html">WriteAng</A></KBD></TD><TD>write DIANA dihedral angle file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteDg.html">WriteDg</A></KBD></TD><TD>write DG file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteSeq.html">WriteSeq</A></KBD></TD><TD>write sequence</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A></KBD></TD><TD>write dump file</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteLol.html">WriteLol</A></KBD></TD><TD>write file with lower limits</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteUpl.html">WriteUpl</A></KBD></TD><TD>write file with upper limits</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteLib.html">WriteLib</A></KBD></TD><TD>write entries for residue library</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteTransform.html">WriteTransform</A></KBD></TD><TD>write current transformation</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/WriteSecondary.html">WriteSecondary</A></KBD></TD><TD>write macro with secondary structure</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_modify>
+
+ <H3>Modify Molecules</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/NewMol.html">NewMol</A></KBD></TD><TD>create new molecule</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MeanMol.html">MeanMol</A></KBD></TD><TD>create mean molecule</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/NameMol.html">NameMol</A></KBD></TD><TD>change molecule name</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FirstMol.html">FirstMol</A></KBD></TD><TD>move molecules to front of molecule list</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemoveMol.html">RemoveMol</A></KBD></TD><TD>remove molecules</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddRes.html">AddRes</A></KBD></TD><TD>add residue to molecule</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ChangeRes.html">ChangeRes</A></KBD></TD><TD>change residue type</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemoveRes.html">RemoveRes</A></KBD></TD><TD>remove residues</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddAtom.html">AddAtom</A></KBD></TD><TD>add new atom</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddPseudo.html">AddPseudo</A></KBD></TD><TD>add new pseudo atom</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FlipAtom.html">FlipAtom</A></KBD></TD><TD>flip atoms for better superposition</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemoveAtom.html">RemoveAtom</A></KBD></TD><TD>remove atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddBond.html">AddBond</A></KBD></TD><TD>add bond between two atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemoveBond.html">RemoveBond</A></KBD></TD><TD>remove bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddDist.html">AddDist</A></KBD></TD><TD>add distance between two atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddHbond.html">AddHbond</A></KBD></TD><TD>add H-bond between two atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddLol.html">AddLol</A></KBD></TD><TD>add lower limit between two atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddUpr.html">AddUpr</A></KBD></TD><TD>add upper limit between two atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemoveDist.html">RemoveDist</A></KBD></TD><TD>remove distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddAngle.html">AddAngle</A></KBD></TD><TD>add dihedral angle</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RotateAngle.html">RotateAngle</A></KBD></TD><TD>rotate dihedral angles</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SetAngle.html">SetAngle</A></KBD></TD><TD>rotate dihedral angles</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemoveAngle.html">RemoveAngle</A></KBD></TD><TD>remove angles</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddAco.html">AddAco</A></KBD></TD><TD>add angle constraints</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemoveAco.html">RemoveAco</A></KBD></TD><TD>remove angle constraints</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_prim>
+
+ <H3>Primitives</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/AddTitle.html">AddTitle</A></KBD></TD><TD>add 2D text annotation</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddText.html">AddText</A></KBD></TD><TD>add 3D text annotation</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/EditText.html">EditText</A></KBD></TD><TD>edit text annotation</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SizeText.html">SizeText</A></KBD></TD><TD>resize text</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddDrawobj.html">AddDrawobj</A></KBD></TD><TD>add line, rectangle or circle</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MoveDrawobj.html">MoveDrawobj</A></KBD></TD><TD>move draw object</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleDrawobj.html">StyleDrawobj</A></KBD></TD><TD>set display style of draw objects</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SetNeigh.html">SetNeigh</A></KBD></TD><TD>set sheet neighbours of residues</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddRibbon.html">AddRibbon</A></KBD></TD><TD>add ribbons (schematic drawing)</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SplitRibbon.html">SplitRibbon</A></KBD></TD><TD>split ribbons</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TypeRibbon.html">TypeRibbon</A></KBD></TD><TD>set type of ribbons</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleRibbon.html">StyleRibbon</A></KBD></TD><TD>set display style of ribbons</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SizeRibbon.html">SizeRibbon</A></KBD></TD><TD>set sizes of ribbons</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PaintRibbon.html">PaintRibbon</A></KBD></TD><TD>set coloring style of ribbons</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddPlates.html">AddPlates</A></KBD></TD><TD>add plates for rings</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SizePlate.html">SizePlate</A></KBD></TD><TD>set sizes of plates</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddSurface.html">AddSurface</A></KBD></TD><TD>add surface</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TrimSurface.html">TrimSurface</A></KBD></TD><TD>cut away part of a surface</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PaintSurface.html">PaintSurface</A></KBD></TD><TD>set coloring style of surfaces</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddIsosurface.html">AddIsosurface</A></KBD></TD><TD>add isosurface of potential</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddTrajec.html">AddTrajec</A></KBD></TD><TD>add trajectories</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleTrajec.html">StyleTrajec</A></KBD></TD><TD>set display style of trajectories</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddCircles.html">AddCircles</A></KBD></TD><TD>add circles around atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddCylinder.html">AddCylinder</A></KBD></TD><TD>add cylinder for schematic drawing</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddDipole.html">AddDipole</A></KBD></TD><TD>add arrow showing dipolar moment</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleCylinder.html">StyleCylinder</A></KBD></TD><TD>set display style of cylinders</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddSheet.html">AddSheet</A></KBD></TD><TD>add sheet for schematic drawing</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AddSolid.html">AddSolid</A></KBD></TD><TD>add solid for schematic drawing</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleMap.html">StyleMap</A></KBD></TD><TD>set display style of density map</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ColorPrim.html">ColorPrim</A></KBD></TD><TD>change color of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TintPrim.html">TintPrim</A></KBD></TD><TD>change secondary color of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LinePrim.html">LinePrim</A></KBD></TD><TD>set style and width of primitive lines</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ShadePrim.html">ShadePrim</A></KBD></TD><TD>set shading of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RadiusPrim.html">RadiusPrim</A></KBD></TD><TD>set radius of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/NearPrim.html">NearPrim</A></KBD></TD><TD>set near clipping plane of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MovePrim.html">MovePrim</A></KBD></TD><TD>move primitive</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LengthPrim.html">LengthPrim</A></KBD></TD><TD>set length of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RemovePrim.html">RemovePrim</A></KBD></TD><TD>remove primitive</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_display>
+
+ <H3>Display</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/ZoomAbs.html">ZoomAbs</A></KBD></TD><TD>zoom absolute</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ZoomRel.html">ZoomRel</A></KBD></TD><TD>zoom relative</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Fullscreen.html">Fullscreen</A></KBD></TD><TD>switch fullscreen display on and off</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DrawSize.html">DrawSize</A></KBD></TD><TD>set size of drawing area</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Stereo.html">Stereo</A></KBD></TD><TD>set stereo mode</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StartRock.html">StartRock</A></KBD></TD><TD>start rock</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StopRock.html">StopRock</A></KBD></TD><TD>stop rock</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StartAnim.html">StartAnim</A></KBD></TD><TD>start animation</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StopAnim.html">StopAnim</A></KBD></TD><TD>stop animation</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/BondMode.html">BondMode</A></KBD></TD><TD>choose bond display mode</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/BackColor.html">BackColor</A></KBD></TD><TD>change background color</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Projection.html">Projection</A></KBD></TD><TD>choose projection</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ClipPos.html">ClipPos</A></KBD></TD><TD>set position of clipping planes</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ClipSize.html">ClipSize</A></KBD></TD><TD>set distance of clipping planes</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ViewAngle.html">ViewAngle</A></KBD></TD><TD>set view angle</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Light.html">Light</A></KBD></TD><TD>setup of light source</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Fog.html">Fog</A></KBD></TD><TD>setup of fog (depth cueing)</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Rendering.html">Rendering</A></KBD></TD><TD>set rendering options</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DrawDelay.html">DrawDelay</A></KBD></TD><TD>set drawing delay</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DrawPrec.html">DrawPrec</A></KBD></TD><TD>set drawing precision</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_move>
+
+ <H3>Movement</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/Center.html">Center</A></KBD></TD><TD>change rotation center</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Fit.html">Fit</A></KBD></TD><TD>calculate structure superpositions</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MoveInit.html">MoveInit</A></KBD></TD><TD>undo all translations</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MoveX.html">MoveX</A></KBD></TD><TD>move molecule in X direction</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MoveY.html">MoveY</A></KBD></TD><TD>move molecule in Y direction</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MoveZ.html">MoveZ</A></KBD></TD><TD>move molecule in Z direction</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RotateInit.html">RotateInit</A></KBD></TD><TD>undo all rotations</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RotateX.html">RotateX</A></KBD></TD><TD>rotate molecule around X axis</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RotateY.html">RotateY</A></KBD></TD><TD>rotate molecule around Y axis</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RotateZ.html">RotateZ</A></KBD></TD><TD>rotate molecule around Z axis</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AutoScale.html">AutoScale</A></KBD></TD><TD>scale/translate molecules to window size</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_ui>
+
+ <H3>User Interface</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A></KBD></TD><TD>switch elements of user interface</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A></KBD></TD><TD>switch selection dialog on and off</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DialMol.html">DialMol</A></KBD></TD><TD>switch molecule dialog on and off</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DialColor.html">DialColor</A></KBD></TD><TD>switch color dialog on and off</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DialStyle.html">DialStyle</A></KBD></TD><TD>switch style dialog on and off</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DialMeasure.html">DialMeasure</A></KBD></TD><TD>switch measurement dialog on and off</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_select>
+
+ <H3>Selection</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A></KBD></TD><TD>select molecules</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SelectRes.html">SelectRes</A></KBD></TD><TD>select residues</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A></KBD></TD><TD>select atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A></KBD></TD><TD>select bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SelectAngle.html">SelectAngle</A></KBD></TD><TD>select angles</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SelectDist.html">SelectDist</A></KBD></TD><TD>select distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SelectPrim.html">SelectPrim</A></KBD></TD><TD>select primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DefPropMol.html">DefPropMol</A></KBD></TD><TD>define molecule property</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DefPropRes.html">DefPropRes</A></KBD></TD><TD>define residue property</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DefPropAtom.html">DefPropAtom</A></KBD></TD><TD>define atom property</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DefPropBond.html">DefPropBond</A></KBD></TD><TD>define bond property</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DefPropAngle.html">DefPropAngle</A></KBD></TD><TD>define angle property</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DefPropDist.html">DefPropDist</A></KBD></TD><TD>define distance property</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/DefPropPrim.html">DefPropPrim</A></KBD></TD><TD>define primitive property</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListSelectedMol.html">ListSelectedMol</A></KBD></TD><TD>list selected molecules</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListSelectedRes.html">ListSelectedRes</A></KBD></TD><TD>list selected residues</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListSelectedAtom.html">ListSelectedAtom</A></KBD></TD><TD>list selected atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListSelectedBond.html">ListSelectedBond</A></KBD></TD><TD>list selected bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListSelectedAngle.html">ListSelectedAngle</A></KBD></TD><TD>list selected angles</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListSelectedDist.html">ListSelectedDist</A></KBD></TD><TD>list selected distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListPropMol.html">ListPropMol</A></KBD></TD><TD>list all molecule properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListPropRes.html">ListPropRes</A></KBD></TD><TD>list all residue properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListPropAtom.html">ListPropAtom</A></KBD></TD><TD>list all atom properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListPropBond.html">ListPropBond</A></KBD></TD><TD>list all bond properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListPropAngle.html">ListPropAngle</A></KBD></TD><TD>list all angle properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListPropDist.html">ListPropDist</A></KBD></TD><TD>list all distance properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ListPropPrim.html">ListPropPrim</A></KBD></TD><TD>list all primitive properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SetRef.html">SetRef</A></KBD></TD><TD>set reference atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/UndefProp.html">UndefProp</A></KBD></TD><TD>undefine property</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_attr>
+
+ <H3>Attributes</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A></KBD></TD><TD>set color of atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ColorBond.html">ColorBond</A></KBD></TD><TD>set color of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ColorDist.html">ColorDist</A></KBD></TD><TD>set color of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ColorInit.html">ColorInit</A></KBD></TD><TD>set initial color</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TintDist.html">TintDist</A></KBD></TD><TD>set secondary color of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TintInit.html">TintInit</A></KBD></TD><TD>set initial secondary color</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LabelAtom.html">LabelAtom</A></KBD></TD><TD>set format of atom label</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LabelDist.html">LabelDist</A></KBD></TD><TD>choose label of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LabelInit.html">LabelInit</A></KBD></TD><TD>set initial format of labels</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LineAtom.html">LineAtom</A></KBD></TD><TD>set style and width of atom lines</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LineBond.html">LineBond</A></KBD></TD><TD>set style and width of bond lines</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LineDist.html">LineDist</A></KBD></TD><TD>set style and width of distance lines</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LineInit.html">LineInit</A></KBD></TD><TD>set initial style and width of lines</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RadiusAtom.html">RadiusAtom</A></KBD></TD><TD>set radius of atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RadiusBond.html">RadiusBond</A></KBD></TD><TD>set radius of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RadiusDist.html">RadiusDist</A></KBD></TD><TD>set radius of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RadiusInit.html">RadiusInit</A></KBD></TD><TD>set initial radius</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MaterialAtom.html">MaterialAtom</A></KBD></TD><TD>set material properties of atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MaterialBond.html">MaterialBond</A></KBD></TD><TD>set material properties of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MaterialDist.html">MaterialDist</A></KBD></TD><TD>set material properties of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MaterialPrim.html">MaterialPrim</A></KBD></TD><TD>set material properties of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/MaterialInit.html">MaterialInit</A></KBD></TD><TD>set initial material properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TextureAtom.html">TextureAtom</A></KBD></TD><TD>set texture of atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TextureBond.html">TextureBond</A></KBD></TD><TD>set texture of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TextureDist.html">TextureDist</A></KBD></TD><TD>set texture of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TexturePrim.html">TexturePrim</A></KBD></TD><TD>set texture of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/TextureInit.html">TextureInit</A></KBD></TD><TD>set initial texture</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ShadeAtom.html">ShadeAtom</A></KBD></TD><TD>set shading of atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ShadeBond.html">ShadeBond</A></KBD></TD><TD>set shading of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/ShadeDist.html">ShadeDist</A></KBD></TD><TD>set shading of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleAtom.html">StyleAtom</A></KBD></TD><TD>set display style of atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A></KBD></TD><TD>set display style of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleDist.html">StyleDist</A></KBD></TD><TD>set display style of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/StyleInit.html">StyleInit</A></KBD></TD><TD>set initial display styles</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AttrAtom.html">AttrAtom</A></KBD></TD><TD>list attributes of atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AttrBond.html">AttrBond</A></KBD></TD><TD>list attributes of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AttrDist.html">AttrDist</A></KBD></TD><TD>list attributes of distances</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AttrPrim.html">AttrPrim</A></KBD></TD><TD>list attributes of primitives</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/AttrInit.html">AttrInit</A></KBD></TD><TD>list initial attributes</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_plot>
+
+ <H3>Plotting</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/PlotUnit.html">PlotUnit</A></KBD></TD><TD>set unit of plot parameters</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A></KBD></TD><TD>set plot parameters</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotPs.html">PlotPs</A></KBD></TD><TD>make a PostScript plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotFm3.html">PlotFm3</A></KBD></TD><TD>make a FrameMaker 3 plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotFm4.html">PlotFm4</A></KBD></TD><TD>make a FrameMaker 4 plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotMeta.html">PlotMeta</A></KBD></TD><TD>make a Windows enhanced metafile plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A></KBD></TD><TD>make a TIFF plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotJpeg.html">PlotJpeg</A></KBD></TD><TD>make a JPEG plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotPng.html">PlotPng</A></KBD></TD><TD>make a PNG plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotBmp.html">PlotBmp</A></KBD></TD><TD>make a BMP (Windows bitmap) plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotPov.html">PlotPov</A></KBD></TD><TD>make a POV-Ray plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotMpov.html">PlotMpov</A></KBD></TD><TD>make a MegaPov plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotRib.html">PlotRib</A></KBD></TD><TD>make a RenderMan plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotVrml1.html">PlotVrml1</A></KBD></TD><TD>make a VRML 1.0 plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PlotVrml2.html">PlotVrml2</A></KBD></TD><TD>make a VRML 2.0 (VRML97) plot</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_calc>
+
+ <H3>Calculations</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/CalcSecondary.html">CalcSecondary</A></KBD></TD><TD>calculate secondary structure</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcRmsd.html">CalcRmsd</A></KBD></TD><TD>calculate RMSDs and displacements</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcMatch.html">CalcMatch</A></KBD></TD><TD>calculate best matching structure parts</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcCluster.html">CalcCluster</A></KBD></TD><TD>reduce number of structures</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcSurface.html">CalcSurface</A></KBD></TD><TD>calculate solvent accessible surface</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcPot.html">CalcPot</A></KBD></TD><TD>calculate electrostatic potential</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcShift.html">CalcShift</A></KBD></TD><TD>calculate ring current shifts</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcAtom.html">CalcAtom</A></KBD></TD><TD>calculate missing atom coordinates</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcBond.html">CalcBond</A></KBD></TD><TD>calculate bonds between close atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcHbond.html">CalcHbond</A></KBD></TD><TD>find H-bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcVdw.html">CalcVdw</A></KBD></TD><TD>find Van der Waals violations</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcDist.html">CalcDist</A></KBD></TD><TD>find short distances between atoms</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcAngle.html">CalcAngle</A></KBD></TD><TD>calculate angular order parameters</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcHelix.html">CalcHelix</A></KBD></TD><TD>calculate angles between helix axes</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CalcAxis.html">CalcAxis</A></KBD></TD><TD>calculate lengths of principal axes</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CheckBond.html">CheckBond</A></KBD></TD><TD>check number of bonds</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CheckUpl.html">CheckUpl</A></KBD></TD><TD>check upper limits</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CheckLol.html">CheckLol</A></KBD></TD><TD>check lower limits</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/CheckAco.html">CheckAco</A></KBD></TD><TD>check angle constraints</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_fig>
+
+ <H3>Figures</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/FigRamach.html">FigRamach</A></KBD></TD><TD>Ramachandran plot</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FigAngles.html">FigAngles</A></KBD></TD><TD>show angle distribution bars</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FigCircles.html">FigCircles</A></KBD></TD><TD>show angle distribution circles</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FigDist.html">FigDist</A></KBD></TD><TD>show distance vs. structure number</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FigContact.html">FigContact</A></KBD></TD><TD>show contact map</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FigLimit.html">FigLimit</A></KBD></TD><TD>show map of distance constraints</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/FigOff.html">FigOff</A></KBD></TD><TD>switch from figure to normal display</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+<A NAME=cmd_misc>
+
+ <H3>Miscellaneous</H3>
+
+<BLOCKQUOTE>
+<TABLE BORDER CELLPADDING=4>
+<TR><TD> <KBD><A HREF="../help/html/Group.html">Group</A></KBD></TD><TD>define molecule groups</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/LengthBond.html">LengthBond</A></KBD></TD><TD>set length of bonds for display</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpViewer.html">HelpViewer</A></KBD></TD><TD>set viewer for help files</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpApropos.html">HelpApropos</A></KBD></TD><TD>locate commands by keyword</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpCmd.html">HelpCmd</A></KBD></TD><TD>get help on command</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpMouse.html">HelpMouse</A></KBD></TD><TD>show help text about using the mouse</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpButton.html">HelpButton</A></KBD></TD><TD>show definition of buttons</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpProp.html">HelpProp</A></KBD></TD><TD>show definition of standard properties</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpManual.html">HelpManual</A></KBD></TD><TD>show manual in web browser</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpTutorial.html">HelpTutorial</A></KBD></TD><TD>show tutorial in web browser</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpIndex.html">HelpIndex</A></KBD></TD><TD>show HTML command index</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpTip.html">HelpTip</A></KBD></TD><TD>show "Tip of the Day"</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/HelpAbout.html">HelpAbout</A></KBD></TD><TD>show program version and copyright</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/SetUndo.html">SetUndo</A></KBD></TD><TD>set the number of possible undos</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Undo.html">Undo</A></KBD></TD><TD>undo effect of last command</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A></KBD></TD><TD>execute standard macro</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/XMacUser.html">XMacUser</A></KBD></TD><TD>execute user macro</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/RecordMac.html">RecordMac</A></KBD></TD><TD>open macro recorder</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD></TD><TD>set path names</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/InitAll.html">InitAll</A></KBD></TD><TD>delete and initialize everything</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/System.html">System</A></KBD></TD><TD>execute operating system command</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Register.html">Register</A></KBD></TD><TD>register as MOLMOL user</TD></TR>
+<TR><TD> <KBD><A HREF="../help/html/Quit.html">Quit</A></KBD></TD><TD>quit the program</TD></TR>
+</TABLE>
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<A NAME=macro_stand>
+
+ <H2>7. Standard Macros</H2>
+
+The subdirectory <KBD>macros</KBD> of your MOLMOL installation
+contains some standard macros. Some of them are used by
+ <A HREF=#ui_mainwin>buttons</A>. All of them can be executed
+using the  <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A></KBD> command. These standard macros
+are commented, you can use them as instructive examples or
+basis for your own macros.
+
+<DL>
+<DT><A HREF="mac_color_atom.html"><KBD><B>color_atom.mac</B></KBD></A>
+<DD>Set color of selected atoms to "standard" colors (red for O,
+    yellow for S, etc.), e. g. for CPK model.
+<DT><A HREF="mac_cpk.html"><KBD><B>cpk.mac</B></KBD></A>
+<DD>Display currently selected parts as CPK. For selected atoms,
+    sets color to standard color, display style to sphere and
+    radius to VdW radius. Makes selected bonds and distances
+    invisible.
+<DT><A HREF="mac_ball_stick.html"><KBD><B>ball_stick.mac</B></KBD></A>
+<DD>Display currently selected parts as ball and stick. For
+    selected atoms, sets color to standard color, display style
+    to sphere and radius to 0.3 times VdW radius. Sets style
+    of selected bonds to <KBD>half_cylinder</KBD>.
+<DT><A HREF="mac_ca_trace.html"><KBD><B>ca_trace.mac</B></KBD></A>
+<DD>Display a CA trace for selected resdiues by adding a
+    distance between CA atoms of subsequent residues.
+<DT><A HREF="mac_ribbon.html"><KBD><B>ribbon.mac</B></KBD></A>
+<DD>Make ribbon drawing of selected residues. Makes selected
+    atoms and bonds invisible.
+<DT><A HREF="mac_sausage.html"><KBD><B>sausage.mac</B></KBD></A>
+<DD>Draw spline with variable radius for bundle of structures.
+    Calculates a mean structure, and adds a spline (ribbon)
+    with the average displacement of the CA atoms to the
+    mean structure as the radius.
+<DT><A HREF="mac_mean_sc.html"><KBD><B>mean_sc.mac</B></KBD></A>
+<DD>Draw bonds between heavy atoms of side chains of well
+    defined residues as cones, using the B-factor of atoms
+    as radius, draw other other side chains as sticks.
+    Can e. g. be used for drawing side chains of the mean
+    structure calculated as part of <KBD>sausage.mac</KBD>.
+<DT><A HREF="mac_schem_dna.html"><KBD><B>schem_dna.mac</B></KBD></A>
+<DD>Make schematic display of selected DNA/RNA residues.
+    Only sequential residues from one strand should be
+    selected, the macro must be invoked for each strand
+    separately. Draws ribbon through the backbone of the
+    strand, and displays rings as plates in a different
+    color for each base type.
+<DT><A HREF="mac_temper.html"><KBD><B>temper.mac</B></KBD></A>
+<DD>Set color of selected atoms and bonds based on B-factor,
+    using a blue - red - yellow scale for values from 0 to 50.
+<DT><A HREF="mac_pdb_charge.html"><KBD><B>pdb_charge.mac</B></KBD></A>
+<DD>Change residue types of potentially charged residues in
+    selected molecules to properly reflect charge.
+<DT><A HREF="mac_black_white.html"><KBD><B>black_white.mac</B></KBD></A>
+<DD>Set material properties of all items, background color,
+    and light source position for good looking black and
+    white plot.
+</DL>
+
+
+
+
+
+
+
+
+<A NAME=macro_user>
+
+ <H2>8. User Macros</H2>
+
+In addition to the  <A HREF=#macro_stand>standard macros</A>
+supplied with MOLMOL, you can write your own macros, and
+execute them using the  <KBD><A HREF="../help/html/XMacUser.html">XMacUser</A></KBD> command. The
+default extension for macros is <KBD>.mac</KBD>.
+<P>
+
+ <H3>Writing Macros</H3>
+
+You can write macros from scratch using a text editor.
+If the macro you plan to write is similar to one of the
+standard macros, you may want to start with a copy of
+that, or at least look at it as an example.
+<P>
+
+A more convenient way to build macros is using the macro
+recorder available in MOLMOL. You can start the macro
+recorder with the  <KBD><A HREF="../help/html/RecordMac.html">RecordMac</A></KBD> command. It allows
+you to execute commands in the normal environment (using
+menus and dialog boxes), record them selectively, and
+then save the resulting macro.
+<P>
+
+A history of your session is kept in the file
+<KBD>molmol/history</KBD> of your home/profile directory.
+It can also serve as starting point for macros.
+
+ <H3>Defining Commands</H3>
+
+In addition to simple sequences of commands that are
+immediately executed when the macro is executed, macros
+can also contain command definitions. A command definition
+has the form:
+
+<BLOCKQUOTE>
+<KBD>define</KBD> CommandName<BR>
+<KBD>help</KBD> one-line-help<BR>
+<KBD>$</KBD>arg1 <KBD>=</KBD> default1 prompt1<BR>
+..<BR>
+<KBD>$</KBD>argN <KBD>=</KBD> defaultN promptN<BR>
+Command1<BR>
+..<BR>
+CommandN<BR>
+<KBD>end</KBD>
+</BLOCKQUOTE>
+
+The name of the new command is specified after the
+<<KBD>define</KBD> keyword. This is normally followed by
+a short help message, introduced with the <KBD>help</KBD>
+keyword. An arbitrary number of arguments can be given,
+each followed by (optional) default values and prompt
+strings. The arguments are followed by a series of
+commands that define the functionality of the new command.
+Arguments are referenced in the form <KBD>$argName</KBD>
+or <KBD>${argName}</KBD>.
+<P>
+
+The following example defines a new command for adding
+a partial surface:
+
+<BLOCKQUOTE>
+<PRE>
+define AddPatch
+  help create partial surface for selected atoms
+  $rad = 1.4 "Solvent Radius"
+  DefPropAtom 'surf' 'selected'
+  SelectAtom 'mol.selected'
+  AddSurface (vdw) contact $rad shaded 0
+  SelectAtom 'mol.selected & ! surf'
+  TrimSurface ($rad + 0.1)
+  SelectAtom 'surf'
+end
+</PRE>
+</BLOCKQUOTE>
+
+When such a definition is encountered, the commands used
+for the definition are not executed, the only effect is
+that the definition is added to the MOLMOL command list.
+It can then be used like one of the builtin commands.
+<P>
+
+If you want to extend the program with your own set of
+commands, it is especially useful to have the macro
+definining them be automatically executed each time you
+start up the program. See the section on
+ <A HREF=#config>Configuration</A> for a description of how
+to do that.
+
+ <H3>Executing Macros</H3>
+
+You can execute macros anytime using the
+ <KBD><A HREF="../help/html/XMacUser.html">XMacUser</A></KBD> command. You can also add menu entries
+or buttons to give you more convenient access to frequently
+used macros, or have them being executed automatically when
+you start the program, or whenever a new molecule is loaded.
+See the section on  <A HREF=#config>Configuration</A> for a
+description of these possibilities.
+
+
+
+
+
+
+
+
+<A NAME=config>
+
+ <H2>9. Configuration and Customization</H2>
+
+ <H3>Startup Macros</H3>
+
+One powerful way to customize and extend MOLMOL is by
+using macros that are automatically started each time
+you start the program. The following macros are executed
+on startup if the files exist:
+
+<OL>
+<LI><KBD>setup/startup.mac</KBD> in the installation
+    directory
+<LI>all files with the extension <KBD>.mac</KBD> in the
+    directory <KBD>setup/startup</KBD> in the installation
+    directory
+<LI><KBD>molmol/startup.mac</KBD> in your home/profile
+    directory
+<LI>all files with the extension <KBD>.mac</KBD> in the
+    directory <KBD>molmol/startup</KBD> in your home/profile
+    directory
+</OL>
+
+You can use any MOLMOL command in these startup macros,
+but especially useful in this context are command definitions,
+as described in the  <A HREF=#macro_user>User Macros</A> section.
+These allow you to extend the functionality of the program
+with your own commands. These commands will automatically be
+accessible from the  <A HREF=#ui_mainwin>Opt menu</A>.
+<P>
+
+Another set of commands that is very useful for startup
+macros are the commands for setting default graphics
+attributes, like  <KBD><A HREF="../help/html/ColorInit.html">ColorInit</A></KBD> and  <KBD><A HREF="../help/html/StyleInit.html">StyleInit</A></KBD>.
+So if you would like new graphics elements to be displayed
+in red instead of the default blue, you can put the following
+command into one of your startup macros:
+
+<BLOCKQUOTE>
+<PRE>
+ColorInit 1 0 0
+</PRE>
+</BLOCKQUOTE>
+
+ <H3>New Molecule Macros</H3>
+
+By default, MOLMOL displays all newly loaded molecules in
+line mode. You can change that by writing a macro that
+gets automatically executed each time a new molecule is
+loaded. The program will check for such a macro in the
+following locations:
+
+<OL>
+<LI><KBD>setup/newmol.mac</KBD> in the installation
+    directory
+<LI><KBD>molmol/newmol.mac</KBD> in your home/profile
+    directory
+</OL>
+
+While the macro is executed, the newly loaded molecules
+have the property <KBD>new</KBD> set. This makes it
+possible to change the display style of only the new
+molecule, without affecting molecules that are already
+loaded. E. g. if you want all new molecules to be
+displayed in CPK mode, put the following macro into
+one of the locations above:
+
+<BLOCKQUOTE>
+<PRE>
+SelectAtom 'mol.new'
+SelectBond 'mol.new'
+XMacStand cpk.mac
+</PRE>
+</BLOCKQUOTE>
+
+ <H3>Setup Files</H3>
+
+MOLMOL obtains a lot of configuration information from
+simple text files which can easily be modified or replaced.
+The default files can be found in the subdirectory 
+<KBD>setup</KBD> of your installation. If you want to make
+a change for all users of the installation, you have the
+option to edit these files directly. The preferable and
+safer way to change configuration files, especially for
+individual users, is to make a copy of the original file
+e. g. to your home directory, and then use the
+ <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command of MOLMOL to instruct the
+program to use your modified file.
+<P>
+
+The location of the following files can be changed
+directly with the  <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command:
+
+<DL>
+<DT><KBD><B>AtomRadius</B></KBD>
+<DD>Atom radii for finding bonds, a bond is detected if
+    the distance between two atoms is less than the sum
+    of the two radii. Used by the commands
+     <KBD><A HREF="../help/html/CalcBond.html">CalcBond</A></KBD> and  <KBD><A HREF="../help/html/ReadXyz.html">ReadXyz</A></KBD>.
+<DT><KBD><B>AtomCharge</B></KBD>
+<DD>Formal charges for atoms, each line has the format:<BR>
+    ResidueName AtomName Charge<BR>
+    The residue name can contain wildcards. These charges
+    are used whenever the <KBD>simplecharge</KBD>
+     <A HREF=#sel_value>value</A> of an atom is accessed,
+    e. g. for the  <KBD><A HREF="../help/html/CalcPot.html">CalcPot</A></KBD> command.
+<DT><KBD><B>FlipAtoms</B></KBD>
+<DD>Defines groups of atoms that can be flipped by the
+     <KBD><A HREF="../help/html/FlipAtom.html">FlipAtom</A></KBD> command.
+<DT><KBD><B>RingShift</B></KBD>
+<DD>Defines paramter sets for the  <KBD><A HREF="../help/html/CalcShift.html">CalcShift</A></KBD>
+    command.
+<DT><KBD><B>PdbAtoms</B></KBD>
+<DD>Name translation table to map atom names from PDB files
+    to names in the residue library. The residue name can
+    contain wildcards.
+<DT><KBD><B>PropDef</B></KBD>
+<DD>Definition of  <A HREF=#sel_prop>predefined properties</A>.
+<DT><KBD><B>ColorList</B></KBD>
+<DD>Definition of color names for the
+     <A HREF=#ui_dialog>color dialog</A>.
+</DL>
+
+With the MenuDir entry of the  <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command,
+you can specify an alternate directory where the program
+looks for the following files defining the user interface:
+
+<DL>
+<DT><KBD><B>MenuBar</B></KBD>
+<DD>List of pulldown menus in the menu bar. Each pulldown
+    menu is defined in its own file with the extension
+    <KBD>.menu</KBD>.
+<DT><KBD><B>*.menu</B></KBD>
+<DD>Contents of pulldown menu that is part of <KBD>MenuBar</KBD>.
+<DT><KBD><B>Buttons</B></KBD>
+<DD>Definition of buttons on right side of
+     <A HREF=#ui_mainwin>main window</A>.
+<DT><KBD><B>Popup</B></KBD>
+<DD>Definition of popup (righ mouse button) menu.
+<DT><KBD><B>Valuator</B></KBD>
+<DD>Definition of sliders in valuator box.
+</DL>
+
+Note that all these parts of the user interface can also
+be disabled completely with the  <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A></KBD>
+command.
+
+ <H3>Residue Libraries</H3>
+
+The residue library works much like the other setup
+files explained in the previous section, its location
+is also set with the  <KBD><A HREF="../help/html/PathNames.html">PathNames</A></KBD> command, but
+it is so important for the operation of MOLMOL that its
+description was separated from the rest of the files.
+The residue library contains definitions of residues
+(monomers) that are used whenever a macromolecule is
+read from a file. These residue definitions contain:
+
+<UL>
+<LI>Coordinates of the standard geometry. These will
+    normally not be used when a coordinate file is
+    read, but can still be important e. g. when
+    calculating missing coordinates with the
+     <KBD><A HREF="../help/html/CalcAtom.html">CalcAtom</A></KBD> command.
+<LI>Atom type information. This is used to look up
+    information like the Van der Waals radius or
+    hydrogen bonding capability in the ATOMTYPES
+    section at the beginning of the residue library.
+<LI>Partial charges for atoms.
+<LI>Definition of dihedral angles.
+<LI>Definition of bonds.
+</UL>
+
+MOLMOL can still read files even if they contain
+residues that are not part of the residue library.
+It will display a warning, and since it does not have
+any connectivity information, will not display bonds
+for these residues. In most cases these bonds can
+easily be added with the  <KBD><A HREF="../help/html/CalcBond.html">CalcBond</A></KBD> command.
+<P>
+
+When a small molecule is read with the
+ <KBD><A HREF="../help/html/ReadSybyl.html">ReadSybyl</A></KBD> or  <KBD><A HREF="../help/html/ReadXyz.html">ReadXyz</A></KBD> command ,
+MOLMOL will either take the connectivity
+information from the input file, or add the bonds
+automatically. Entries in the residue library are
+not necessary in this case, only the ATOMTYPES
+section of the residue library is used.
+<P>
+
+The format of the residue library corresponds to
+the one used by the program
+<A HREF="http://www.mol.biol.ethz.ch/wuthrich/software/dyana/">
+DYANA</A>, it is documented in the manual which is
+accessible from the web page. Three libraries are
+distributed with MOLMOL, all of them contain standard
+amino acids and nucleic acids.
+
+<DL>
+<DT><KBD><B>amber94.lib</B></KBD>
+<DD>Standard geometry minimized with the AMBER94 force
+    field, naming conventions from DYANA.
+<DT><KBD><B>dyana.lib</B></KBD>
+<DD>Original DYANA library.
+<DT><KBD><B>pdb.lib</B></KBD>
+<DD>Like <KBD>amber94.lib</KBD>, but using PDB naming
+    conventions.
+</DL>
+
+MOLMOL uses <KBD>amber94.lib</KBD> by default. If you
+frequently read PDB files and do not use DYANA, it may
+be preferable to use <KBD>pdb.lib</KBD>. If you decide
+to do that, you should disable the use of the default
+<KBD>PdbNames</KBD> file. The following command will
+do that:
+
+<BLOCKQUOTE>
+<PRE>
+PathNames '' '' '' '' '0' '' '/usr/local/molmol/setup/pdb.lib' '' ''
+</PRE>
+</BLOCKQUOTE>
+
+If you need to add entries to the residue library,
+the  <KBD><A HREF="../help/html/WriteLib.html">WriteLib</A></KBD> command of MOLMOL can help you
+doing this. After you modify the library, it is a good
+idea to check it with the  <KBD><A HREF="../help/html/ReadLib.html">ReadLib</A></KBD> command.
+
+
+
+
+
+
+
+
+<A NAME=features>
+
+ <H2>10. Features</H2>
+
+<UL>
+
+<LI>hardware platforms and operating systems supported by
+    official distribution
+    <UL>
+    <LI>Silicon Graphics (IRIX 6.5)
+    <LI>PCs with Intel Pentium (Linux)
+    <LI>PCs with Intel Pentium (Windows NT/95/98)
+    </UL>
+
+<LI>other hardware platforms and operating systems that the
+    source code has been successfully compiled on
+    <UL>
+    <LI>Silicon Graphics (IRIX 4.X, 5.X, 6.2)
+    <LI>Sun SPARC (SunOS 4.X, Solaris 2.X)
+    <LI>IBM RS6000 (AIX)
+    <LI>Digital ALPHA (OSF/1)
+    <LI>various Linux platforms
+    </UL>
+
+<LI>display systems
+    <UL>
+    <LI>GL (Silicon Graphics), including stereo display
+    <LI>OpenGL, including stereo display
+    <LI>XGL (Sun)
+    <LI>X11
+    <LI>TTY (no graphics)
+    </UL>
+
+<LI>user interface
+    <UL>
+    <LI>command line with automatic command completion and history
+    <LI>pulldown menus (created from ASCII file)
+    <LI>popup menu (created from ASCII file)
+    <LI>buttons (created from ASCII file)
+    <LI>dialog boxes
+    <LI>slider box
+    <LI>online help (optionally in web broser)
+    <LI>Tip of the Day
+    <LI>log window
+    <LI>macro recorder
+    <LI>user-defined commands
+    <LI>undo (multiple level)
+    </UL>
+
+<LI>interactive manipulations (selected subset of molecules)
+    <UL>
+    <LI>rotations (virtual trackball)
+    <LI>translations
+    <LI>zoom
+    </UL>
+
+<LI>data input/output
+    <UL>
+    <LI>read residue library
+    <LI>write entries for residue library
+    <LI>read/write PDB file
+    <LI>read list of PDB files
+    <LI>read/write DIANA angle file
+    <LI>read list of DIANA angle files
+    <LI>read/write DG file
+    <LI>read list of DG files
+    <LI>read SYBYL Mol2 files
+    <LI>read XYZ files
+    <LI>read/write sequence
+    <LI>read/write binary file (with full graphics information)
+    <LI>replace coordinates with new ones from PDB file
+    <LI>replace coordinates with new ones from list of PDB files
+    <LI>replace coordinates with new ones from DG file
+    <LI>replace coordinates with new ones from list of DG files
+    <LI>read/write file with distance constraints
+    <LI>read file with angle constraints
+    <LI>read file with chemical shifts
+    <LI>save/load orientation
+    </UL>
+
+<LI>create entries in residue library (from DG and PDP format)
+
+<LI>structure manipulation
+    <UL>
+    <LI>create new molecule
+    <LI>change molecule name
+    <LI>add residue at start or end
+    <LI>change residue (mutation)
+    <LI>remove residue
+    <LI>add/remove atoms
+    <LI>add pseudo atom
+    <LI>flip ring/methyl atoms for better superposition
+    <LI>add bond
+    <LI>generate bonds between atoms with close distance
+    <LI>remove bonds
+    <LI>add/remove angles
+    <LI>add/remove angle constraints
+    <LI>calculate mean structure
+    </UL>
+
+<LI>definition of distances (constraints, H-bonds)
+
+<LI>setting of dihedral angles (construction of helices,...)
+
+<LI>interactive rotation about single bonds
+
+<LI>calculation of superpositions and principal axes
+
+<LI>selection
+    <UL>
+    <LI>with general expressions
+    <LI>interactively
+    <LI>list selected items
+    </UL>
+
+<LI>display possibilities
+    <UL>
+    <LI>select light position
+    <LI>intensity of ambient light
+    <LI>select projection (orthogonal or perspective)
+    <LI>anti aliasing
+    <LI>depth cueing (set fog density)
+    <LI>normal bonds or bonds to pseudo atoms
+    <LI>bonds: invisible, lines, half lines, cylinders, half cylinders,
+        cones, half cones
+    <LI>atoms: invisible, spheres or tetrahedrons
+    <LI>distances: invisible, line, cylinder, cone (also dashed)
+    <LI>atom labels
+    <LI>circles for B-factors
+    <LI>constraints
+    <LI>violations
+    <LI>electron density maps (from O)
+    <LI>plates for rings (e. g. for DNA)
+    <LI>principal axes
+    <LI>dottet or shaded, colored molecule surfaces
+        (VdW, solvent accessible, contact), optionally trimmed
+    <LI>isosurfaces of electrostatic potential
+    <LI>MD trajectories (with lines or cylinders)
+    <LI>MD runs (animation)
+    <LI>automatic rotation
+    <LI>stereo (left, right, side-by-side, cross-eye)
+    </UL>
+
+<LI>labels and annotation
+    <UL>
+    <LI>placement in 2D and 3D (stereo)
+    <LI>super-/subscript
+    <LI>symbols (greek letters)
+    <LI>edit
+    <LI>interactive move/resize
+    <LI>draw lines, rectangles and circles
+    </UL>
+
+<LI>display attributes
+    <UL>
+    <LI>color
+    <LI>line width
+    <LI>line style
+    <LI>reflection coefficients (ambient, diffuse, specular, shininess)
+    <LI>reflection, texture/image, bumpiness (for ray tracing)
+    <LI>shading (none, flat, Gouraud, Phong, dots, lines)
+    <LI>radius (cylinders, spheres and splines)
+    <LI>list current attributes, create macro
+    <LI>change default attributes
+    </UL>
+
+<LI>schematic display
+    <UL>
+    <LI>read secondary structure information from PDB file
+    <LI>calculate secondary structure (Kabsch/Sander algorithm)
+    <LI>ribbons (for helices, sheets), splines (turns, coil)
+    <LI>split/merge elements
+    <LI>change start and end position of elements
+    <LI>various profiles (elliptical, rectangular, \ldots)
+    <LI>end styles: sharp, soft, arrow
+    <LI>splines with variable radius (e. g. for mobility)
+    <LI>change width, thickness, size of arrow, \ldots
+    <LI>one, two or variable colors
+    <LI>cylinders (can be moved and resized), optionally with arrow head
+    <LI>dipolar moments as arrows
+    <LI>surfaces for beta-sheets
+    <LI>solids (sphere, ellipsoid, cylinder, cone, box)
+    </UL>
+
+<LI>plotting
+    <UL>
+    <LI>PostScript (portrait/landscape, also with stereo, shading,
+        depth cueing and hidden surface elimination)
+    <LI>FrameMaker (MIF), for FrameMaker 3 (only 8 colors) and
+        FrameMaker 4 (many colors)
+    <LI>Enhanced MetaFile (Windows)
+    <LI>image formats: TIFF, JPEG, PNG, BMP
+    <LI>POV-Ray (ray tracing)
+    <LI>RenderMan Interface Bytestream
+    <LI>VRML 1.0
+    <LI>VRML 2.0 (VRML97)
+    </UL>
+
+<LI>calculations
+    <UL>
+    <LI>global RMSDs with average, standard deviation, minimum
+        and maximum
+    <LI>global displacements
+    <LI>local RMSDs
+    <LI>local displacements
+    <LI>RMSD calculations for groups of structures
+    <LI>calculate best matching structure parts
+    <LI>reduce number of structures (calculate clusters of
+        similar structures)
+    <LI>solvent accessible surface of residues
+    <LI>electrostatic potential
+    <LI>ring current and bond polarization shifts
+    <LI>missing atom coordinates (protons, pseudo atoms)
+    <LI>angular order parameters
+    <LI>angles between helix axes
+    <LI>relative lengths of principal axes
+    <LI>angles of bonds relative to principal axes
+    <LI>find/generate bonds between close atoms
+    <LI>find/generate H-bonds
+    <LI>find Van der Waals violations
+    <LI>find short distances between atoms, generate peak list
+    <LI>check distance constraints
+    <LI>check angle constraints
+    <LI>all functions listed above also for groups (complexes)
+    <LI>interactive measurement of bond lengths, bond angles
+        and dihedrals
+    </UL>
+
+<LI>figures
+    <UL>
+    <LI>Ramachandran plots (in color, with allowed regions and
+        angle constraints)
+    <LI>angle distribution plots with dots inside bars (in color)
+    <LI>angle distribution plots in circles (for MD)
+    <LI>distance vs. structure number (for MD)
+    <LI>contact maps
+    <LI>maps of distance constraints
+    </UL>
+
+<LI>history
+
+<LI>command macros
+
+</UL>
+
+
+
+
+
+
+
+
+<A NAME=tutorial_idx>
+
+ <H2>11. MOLMOL Tutorial</H2>
+
+This document shows the use of MOLMOL in some examples. It is meant
+to be used together with the manual (users guide). Each example will
+first show a picture and give commented step by step instructions
+on how it can be created.
+
+ <H3>Notation</H3>
+
+The commands are listed with all arguments in the way they appear in
+the log window and history. They can be entered on the command line in
+this form, but this is not what you would normally do. Every command
+can be activated from a pulldown menu, and the arguments can be
+entered in the dialog box that will appear. If this is the preferred
+way, it will be indicated with the notation
+<SAMP>Menu->Submenu->Entry</SAMP> below the command. Frequently used
+commands or combinations can also be activated from the buttons on the
+right side of the window. This is indicated by <SAMP>Button:name</SAMP>.
+Some actions are normally done with the mouse, this is indicated by
+<SAMP>Mouse</SAMP>. Other actions are most convenietly carried out by
+using one of the dialog boxes, this is indicated by
+<SAMP>Dialog:name</SAMP>.  The dialogs can be opened by clicking the
+corresponding buttons (<SAMP>selection</SAMP>, <SAMP>style</SAMP>,
+<SAMP>color</SAMP>).
+<P>
+
+Whenever a command appears in the text, it can be used as link
+to the corresponding online manual page.
+
+ <H3>Preconditions</H3>
+
+All examples are based on the NMR structure of BPTI determined by
+K. Berndt et al., this file is stored as <SAMP>data/1pit.pdb</SAMP>
+in your MOLMOL distribution. The tutorial assumes that you start
+the program from the directory that contains this file.
+
+Note that menus, buttons etc. can be configured by the system
+adminstrator or user. This tutorial assumes that the program is
+in its default configuration.
+
+ <H3>Examples</H3>
+
+ <H4> <A HREF=#tutorial_ex1>Example 1</A>:
+Neon Figure of Bundle with Sidechains in Different Colors</H4>
+
+ <H4> <A HREF=#tutorial_ex2>Example 2</A>:
+Ribbon Display</H4>
+
+ <H4> <A HREF=#tutorial_ex3>Example 3</A>:
+"Sausage" Display</H4>
+
+ <H4> <A HREF=#tutorial_ex4>Example 4</A>:
+Surface with Electrostatic Potential</H4>
+
+
+
+
+
+
+
+<A NAME=tutorial_ex1>
+
+ <H3>MOLMOL Tutorial - Example 1</H3>
+
+ <H4>Image</H4>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex1.gif"></CENTER>
+
+ <H4>Steps</H4>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+ <KBD><A HREF="../help/html/DialStyle.html">DialStyle</A> on</KBD><BR>
+(<SAMP>Button:style</SAMP>)<BR>
+Open the style dialog.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> invisible</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+When you want to show only part of the bonds, it's often
+most convenient to make everything invisible first and
+then "build up" the visible parts piece by piece. Everything
+is selected by default, so this will make all bonds invisible.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> 'bb'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+Now we select all bonds in the backbone. <KBD>bb</KBD> is a
+shortcut for that, a so called "predefined property".
+Activate the  <KBD><A HREF="../help/html/HelpProp.html">HelpProp</A></KBD> (<SAMP>Help->Prop</SAMP>)
+command for getting a list of all predefined properties.
+The definitons will also give you an impression of how
+the full MOLMOL expression syntax looks, in this tutorial
+we will mostly use shortcuts.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> line</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+Now we see only the backbone drawn with lines.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ':2-56 & bb'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_first</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+The structures in the example file were already superimposed, but
+for demonstration purposes we do it again. We just use the backbone
+atoms of residues 2 to 56 for superposition, </KBD>&</KBD> is
+short for <KBD>and</KBD>.
+<P>
+
+You can now also try to rotate and zoom the structure. See
+ <KBD><A HREF="../help/html/HelpMouse.html">HelpMouse</A></KBD> (<SAMP>Help->Mouse</SAMP>) for a description
+on how to use the mouse.
+<P>
+
+ <KBD><A HREF="../help/html/DefPropRes.html">DefPropRes</A> 'inter' ':2,4,6,8,9,11,16,18,19,21-25,27,30,32-35,38,40,43,45,47,48,51,54'</KBD><BR>
+(<SAMP>Prop->Define->Res</SAMP>)<BR>
+We will display the well-defined (interiour) sidechains different
+from the other ones. We could select them with the residue numbers
+each time, but we can also define our own shortcut (property) that
+we can use each time we want to select these.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> 'res.inter & heavysc'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We now select the bonds to heavy atoms in the well-defined sidechains
+using the <KBD>inter</KBD> property that we just defined (since we
+defined it for residues, we have to write <KBD>res.inter</KBD> if we
+want to use if for bonds) and the predefined property <KBD>heavysc</KBD>
+(for heavy sidechain).
+<P>
+
+ <KBD><A HREF="../help/html/DialColor.html">DialColor</A> on</KBD><BR>
+(<SAMP>Button:color</SAMP>)<BR>
+Open the color dialog.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> line</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorBond.html">ColorBond</A> 1 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Draw the selected bonds as red lines. The commands take
+colors as RGB (Red-Green-Blue) values, the color dialog
+allows you to choose the most common colors by name.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> '! res.inter & heavysc'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+Select the rest of the sidechains. <KBD>!</KBD> is short for
+<KBD>not</KBD>.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> line</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorBond.html">ColorBond</A> 0 1 0</KBD>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Draw the selected bonds as green lines.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> 'visible'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+So far we just displayed bonds as lines, mainly because it makes
+the display much faster. We now select all visible bonds...
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> neon</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+... and display them as neon (cylinder with round ends).
+<P>
+
+ <KBD><A HREF="../help/html/RadiusBond.html">RadiusBond</A> 0.15</KBD><BR>
+(<SAMP>Button:bond rad</SAMP>)<BR>
+Make the cylinders somewhat thinner.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example1.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example1.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H4>Macro</H4>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+DialStyle on
+StyleBond invisible
+DialSelect on
+SelectBond 'bb'
+StyleBond line
+SelectAtom ':2-56 & bb'
+Fit to_first
+DefPropRes 'inter' ':2,4,6,8,9,11,16,18,19,21-25,27,30,32-35,38,40,43,45,47,48,51,54'
+SelectBond 'res.inter & heavysc'
+DialColor on
+StyleBond line
+ColorBond 1 0 0
+SelectBond '! res.inter & heavysc'
+StyleBond line
+ColorBond 0 1 0
+SelectBond 'visible'
+StyleBond neon
+RadiusBond 0.15
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example1.tif
+WriteDump example1.mol
+Quit no
+</PRE>
+
+
+
+
+
+
+<A NAME=tutorial_ex2>
+
+ <H3>MOLMOL Tutorial - Example 2</H3>
+
+ <H4>Image</H4>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex2.gif"></CENTER>
+
+ <H4>Steps</H4>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A> 'num > 1'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We only want to make a schematic drawing of the first of the
+20 structures, so we select all but the first...
+<P>
+
+ <KBD><A HREF="../help/html/RemoveMol.html">RemoveMol</A></KBD><BR>
+(<SAMP>Edit->Structure->Remove Mol</SAMP>)<BR>
+... and remove them.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The standard orientation for BPTI is the one where the pricipal
+axes are aligned to the coordinate axes. So we select all atoms...
+<P>
+
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_axes</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+... and do the alignment.
+<P>
+
+ <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A> ribbon.mac</KBD><BR>
+(<SAMP>File->Macro->Execute Standard</SAMP>)<BR>
+Use the standard macro for creating a ribbon display. If you are
+interested in the detailed commands used to do all of the steps
+manually, have a look at this macro. We could have used
+<SAMP>Button:ribbon</SAMP> instead, but this would have done an
+automatic determination of the secondary structure first, while we
+preferred to use the definitions from the PDB file in this case.
+<P>
+
+ <KBD><A HREF="../help/html/DialColor.html">DialColor</A> on</KBD><BR>
+(<SAMP>Button:color</SAMP>)<BR>
+Open the color dialog.
+<P>
+
+ <KBD><A HREF="../help/html/BackColor.html">BackColor</A> 0 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Change the background color to black.
+<P>
+
+ <KBD><A HREF="../help/html/SelectPrim.html">SelectPrim</A> 'num = 10'</KBD><BR>
+(<SAMP>Mouse</SAMP>)<BR>
+The second helix seems to be defined too long. So we select it
+by clicking on it with the mouse...
+<P>
+
+ <KBD><A HREF="../help/html/LengthPrim.html">LengthPrim</A> 46 55</KBD><BR>
+(<SAMP>Prim->Length</SAMP>)<BR>
+... and make it half a residue shorter at each end.
+<P>
+
+You could now use commands like
+ <KBD><A HREF="../help/html/SplitRibbon.html">SplitRibbon</A></KBD>,  <KBD><A HREF="../help/html/StyleRibbon.html">StyleRibbon</A></KBD>,  <KBD><A HREF="../help/html/SizeRibbon.html">SizeRibbon</A></KBD>
+and  <KBD><A HREF="../help/html/ColorPrim.html">ColorPrim</A></KBD> to modify the display, but for the moment
+we are happy with the default.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example2.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example2.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H4>Macro</H4>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+DialSelect on
+SelectMol 'num > 1'
+RemoveMol
+SelectAtom ''
+Fit to_axes
+XMacStand ribbon.mac
+DialColor on
+BackColor 0 0 0
+SelectPrim 'num = 10'
+LengthPrim 46 55
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example2.tif
+WriteDump example2.mol
+Quit no
+</PRE>
+
+
+
+
+
+
+<A NAME=tutorial_ex3>
+
+ <H3>MOLMOL Tutorial - Example 3</H3>
+
+ <H4>Image</H4>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex3.gif"></CENTER>
+
+ <H4>Steps</H4>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+The structures have to be superimposed for the next step.
+In our example they are already, otherwise we would do that
+here as explained in  <A HREF=#tutorial_ex1>Example 1</A>
+<P>
+
+ <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A> sausage.mac</KBD><BR>
+(<SAMP>File->Macro->Execute Standard</SAMP>)<BR>
+Use the standard macro for creating a sausage display. If you are
+interested in the detailed commands used to do all of the steps
+manually, have a look at this macro.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A> 'name != "mean"'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The macro created a mean structure. We can get rid of the original
+20 structures now, so we select all but the mean structure...
+<P>
+
+ <KBD><A HREF="../help/html/RemoveMol.html">RemoveMol</A></KBD><BR>
+(<SAMP>Edit->Structure->Remove Mol</SAMP>)<BR>
+... and remove them.
+<P>
+
+ <KBD><A HREF="../help/html/DialStyle.html">DialStyle</A> on</KBD><BR>
+(<SAMP>Button:style</SAMP>)<BR>
+Open the style dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> invisible</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+The bonds of the mean structure are still visible, select
+all bonds and make them invisible
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The standard orientation for BPTI is the one where the pricipal
+axes are aligned to the coordinate axes. So we select all atoms...
+<P>
+
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_axes</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+... and do the alignment.
+<P>
+
+We now have the basic sausage display. Now you will learn how
+to use "variable color", i. e. a separate color for each
+residue. We will use the secondary structure type for determining
+the color, it is also common to use physical properties like
+exchange rates.
+<P>
+
+ <KBD><A HREF="../help/html/CalcSecondary.html">CalcSecondary</A></KBD><BR>
+(<SAMP>Calc->Secondary</SAMP>)<BR>
+So we calculate the secondary structure first.
+<P>
+
+ <KBD><A HREF="../help/html/PaintRibbon.html">PaintRibbon</A> atom</KBD><BR>
+(<SAMP>Prim->Ribbon->Paint</SAMP>)<BR>
+This causes the color of each sausage part to be taken from the
+atom that was used to define it. Because atoms also have a blue
+default color, there is no visible change yet.
+<P>
+
+ <KBD><A HREF="../help/html/DialColor.html">DialColor</A> on</KBD><BR>
+(<SAMP>Button:color</SAMP>)<BR>
+Open the color dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> '@CA'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A> 0.7 0.7 0.7</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+The macro that we used took the CA atoms to define the sausage,
+so we have to set the color of the CA atoms. We first select all
+CA atoms and color them grey.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> '@CA & res.helix'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A> 1 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Then we select all CA atoms within helices and color them red.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> '@CA & res.sheet'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorAtom.html">ColorAtom</A> 0 1 1</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+In the same way we color all CA atoms within a sheet cyan.
+<P>
+
+ <KBD><A HREF="../help/html/BackColor.html">BackColor</A> 0 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Change the background color to black.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example3.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example3.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H4>Macro</H4>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+XMacStand sausage.mac
+DialSelect on
+SelectMol 'name != "mean"'
+RemoveMol
+DialStyle on
+SelectBond ''
+StyleBond invisible
+SelectAtom ''
+Fit to_axes
+CalcSecondary
+PaintRibbon atom
+DialColor on
+SelectAtom '@CA'
+ColorAtom 0.7 0.7 0.7
+SelectAtom '@CA & res.helix'
+ColorAtom 1 0 0
+SelectAtom '@CA & res.sheet'
+ColorAtom 0 1 1
+BackColor 0 0 0
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example3.tif
+WriteDump example3.mol
+Quit no
+</PRE>
+
+
+
+
+
+
+<A NAME=tutorial_ex4>
+
+ <H3>MOLMOL Tutorial - Example 4</H3>
+
+ <H4>Image</H4>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex4.gif"></CENTER>
+
+ <H4>Steps</H4>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectMol.html">SelectMol</A> 'num > 1'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We only want to plot of the surface of the first of the
+20 structures, so we select all but the first...
+<P>
+
+ <KBD><A HREF="../help/html/RemoveMol.html">RemoveMol</A></KBD><BR>
+(<SAMP>Edit->Structure->Remove Mol</SAMP>)<BR>
+... and remove them.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ''</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The standard orientation for BPTI is the one where the pricipal
+axes are aligned to the coordinate axes. So we select all atoms...
+<P>
+
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_axes</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+... and do the alignment.
+<P>
+
+ <KBD><A HREF="../help/html/XMacStand.html">XMacStand</A> pdb_charge.mac</KBD><BR>
+(<SAMP>File->Macro->Execute Standard</SAMP>)<BR>
+For calculating the electrostatic potential, it is very
+important to have the proper charge for all residues. Since
+the charges are normally not given in a PDB file, we call
+this macro that does the typically necessary changes, like
+GLU to GLU-. You should manually check whether all charges
+are correct before calculating the potential. In this case
+we notice that we are missing the charges at the termini,
+because the sequence in the file just starts with an ARG
+and ends with an ALA.
+<P>
+
+ <KBD><A HREF="../help/html/SelectRes.html">SelectRes</A> ':1'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+So we select the first residue...
+<P>
+
+ <KBD><A HREF="../help/html/ChangeRes.html">ChangeRes</A> atoms 'NARG'</KBD><BR>
+(<SAMP>Edit->Structure->Change Res</SAMP>)<BR>
+And convert it to NARG, the form of ARG with an N-terminal
+group, maintaining the old coordinates.
+<P>
+
+ <KBD><A HREF="../help/html/CalcAtom.html">CalcAtom</A> 'HN*'</KBD><BR>
+(<SAMP>Calc->Atom</SAMP>)<BR>
+It is not really needed for this example, but for
+demonstration purpose we calculate the coordinates of the
+HN2 and HN3 that are missing because these atoms did not
+exist in the ARG residue that we originally read from the
+file.
+<P>
+
+ <KBD><A HREF="../help/html/SelectRes.html">SelectRes</A> ':58'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+The same way we select the last residue...
+<P>
+
+ <KBD><A HREF="../help/html/ChangeRes.html">ChangeRes</A> atoms 'CALA'</KBD><BR>
+(<SAMP>Edit->Structure->Change Res</SAMP>)<BR>
+... convert it to CALA, the form of ALA with a C-terminal
+group...
+<P>
+
+ <KBD><A HREF="../help/html/CalcAtom.html">CalcAtom</A> 'O*'</KBD><BR>
+(<SAMP>Calc->Atom</SAMP>)<BR>
+... and calculate the coordinates of OA and OB. These we
+actually need, because they hold charges.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> 'heavy'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We only use the heavy atoms for calculating potential and surface.
+If protons are also used, they "dampen" the charges visible at
+the surface, which leads to less clear pictures.
+<P>
+
+ <KBD><A HREF="../help/html/CalcPot.html">CalcPot</A> (vdw) (simplecharge) 2 80 1.4 0.3 2 10 zero 'bpti.pot'</KBD><BR>
+(<SAMP>Calc->Potential</SAMP>)<BR>
+Now we can calculate the electrostatic potential, storing the
+result in the file <KBD>bpti.pot</KBD>. Check the help page for
+details about the arguments. We accept the defaults, except for
+the charge, where we choose the simple model without partial
+charges, only charges located on one or two atoms of each
+charged residue. Note that the current drawing precision
+(see  <KBD><A HREF="../help/html/DrawPrec.html">DrawPrec</A></KBD>) determines the grid width for the
+calculation, we keep the default of 3 that leads to a grid
+spacing of 1 Angstrom.
+<P>
+
+ <KBD><A HREF="../help/html/AddSurface.html">AddSurface</A> (vdw) contact 1.4 shaded 0</KBD><BR>
+(<SAMP>Prim->Surface->Add</SAMP>)<BR>
+Calculate the contact surface.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPot.html">ReadPot</A> bpti.pot</KBD><BR>
+(<SAMP>File->Read Potential</SAMP>)<BR>
+Read the previously calculated potential. The values are
+now mapped onto the surface, so this step has to be executed
+after calculating the surface.
+<P>
+
+ <KBD><A HREF="../help/html/PaintSurface.html">PaintSurface</A> pot 0.0 1.4 0.2 3 '-0.5 1 0 0 0.0 1 1 1 0.5 0 0 1'</KBD><BR>
+(<SAMP>Prim->Surface->Paint</SAMP>)<BR>
+Define how the surface is colored. We choose calculating the
+color from the previously read potential. The second to fifth
+arguments are not used in this case, the last argument gives
+the mapping from potential to color, see the help page for
+details.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example4.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example4.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H4>Macro</H4>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+DialSelect on
+SelectMol 'num > 1'
+RemoveMol
+SelectAtom ''
+Fit to_axes
+XMacStand pdb_charge.mac
+SelectRes ':1'
+ChangeRes atoms 'NARG'
+CalcAtom 'HN*'
+SelectRes ':58'
+ChangeRes atoms 'CALA'
+CalcAtom 'O*'
+SelectAtom 'heavy'
+CalcPot vdw simplecharge 2 80 1.4 0.3 2 10 zero 'bpti.pot'
+AddSurface vdw contact 1.4 shaded 0
+ReadPot bpti.pot
+PaintSurface pot 0.0 1.4 0.2 3 '-0.5 1 0 0 0.0 1 1 1 0.5 0 0 1'
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example4.tif
+WriteDump example4.mol
+Quit no
+</PRE>
+
+<HR>
+Last modified: Mon Jan 20 19:44:55 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

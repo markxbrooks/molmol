@@ -1,0 +1,103 @@
+<HEAD>
+<TITLE>PathNames</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>PathNames</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+PathNames - set path names
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+PathNames string string string string string
+    string string string string
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set path names for some configuration files.
+Normally the program reads these file from the
+directory $MOLMOLHOME/setup.
+<P>
+The following is a list of all configuration files:
+<P>
+<PRE>
+    AtomRadius: Contains radii for atoms. Used for
+        the commands CalcBond and CheckBond.
+</PRE>
+<PRE>
+    AtomCharge: Contains charges for atoms. These
+        are used when 'simplecharge' is referenced
+        in an expression for an atom.
+</PRE>
+<PRE>
+    FlipAtoms: Contains sets of atoms that can be
+        exchanged by the FlipAtom command.
+</PRE>
+<PRE>
+    RingShift: Contains definitions of models for
+        the CalcShift command.
+</PRE>
+<PRE>
+    PdbAtoms: Contains a table that is used to
+        translate atom names from PDB files to
+        atom names from the residue library.
+</PRE>
+<PRE>
+    PropDef: Contains definitons of standard
+        properties.
+</PRE>
+<PRE>
+    ResLib: Residue library.
+</PRE>
+<PRE>
+    MenuDir: Directory that contains menu definition
+        files (MenuBar, *.menu, Popup, Valuator).
+</PRE>
+<PRE>
+    ColorList: List of colors used for DialColor.
+</PRE>
+Generally the configuration files are read when
+they are used the first time, and the contents is
+kept in memory. This means that changing the path
+only has an effect after leaving the program and
+starting it again. This is always true for MenuDir.
+It is also necessary for AtomRadius if the <A HREF="CalcBond.html"><KBD>CalcBond</KBD></A>
+or <A HREF="CheckBond.html"><KBD>CheckBond</KBD></A> command was used, for RingShift if the
+<A HREF="CalcShift.html"><KBD>CalcShift</KBD></A> command was used, for PdbAtoms if a PDB
+file was read or written, and for ColorList if the
+color dialog (<A HREF="DialColor.html"><KBD>DialColor</KBD></A>) was opened.
+<P>
+ResLib, together with AtomCharge, is read as soon as
+a molecule is read from a file. To use the new
+definitions after ResLib has been changed, the program
+has to be reinitialized by using the <A HREF="InitAll.html"><KBD>InitAll</KBD></A> command,
+and the molecules have to be read again. Just leaving
+the program and starting it again does not help, since
+the contents is stored in the molmol/dump file in the
+home directory. PropDef is handled in the same way.
+<P>
+If the file with the given path name cannot be
+openend, the program will silently fall back to the
+default file.
+<P>
+The special name "0" can be given for path names,
+in this case an empty file will be taken for the
+corresponding configuration file. This can be handy
+e. g. for PdbAtoms when you want to read a PDB file
+without using the normal translation for atom names.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+PathNames "" "" "" "" "" "" "/home/joe/molmol/my.lib" "" ""
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="CalcBond.html"><KBD>CalcBond</KBD></A>, <A HREF="FlipAtom.html"><KBD>FlipAtom</KBD></A>, <A HREF="CalcShift.html"><KBD>CalcShift</KBD></A>, <A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A>, <A HREF="DialColor.html"><KBD>DialColor</KBD></A>,
+<A HREF="InitAll.html"><KBD>InitAll</KBD></A>, <A HREF="DefPropAngle.html"><KBD>DefProp*</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960416
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

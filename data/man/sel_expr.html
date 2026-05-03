@@ -1,0 +1,115 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Using Expressions</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Using Expressions</H1>
+
+When you want to select a number of items,
+ <A HREF=sel_interact.html>interactive selection</A> can be very
+cumbersome, especially in large molecules. MOLMOL allows
+you to select items using a powerful expression syntax.
+You can interpret these expressions as rules that an
+item has to satisfy to get selected.
+<P>
+
+You can use commands like  <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A></KBD> to
+select items, but it is normally much more convenient
+to use the  <A HREF=ui_dialog.html>Selection Dialog</A> that
+can be opened by clicking the <B>Selection</B> button on
+the right side of the main window.
+<P>
+
+This section gives an informal introduction into
+selection expressions, a more complete and precise
+description can be found in the section
+ <A HREF=sel_syntax.html>Expression Syntax</A>.
+
+ <H2>Short Notation</H2>
+
+While the full expression syntax is necessary for complex
+selections, a more compact notation is supported to make
+simple selections easier. In this short notation, the
+expression consists of three parts, all of which are
+optional:
+
+<OL>
+<LI>the character <KBD>#</KBD> followed by a list of molecule
+    names and numbers
+<LI>the character <KBD>:</KBD> followed by a list of residue
+    names and numbers
+<LI>the character <KBD>@</KBD> followed by a list of atom names
+</OL>
+
+Spaces are not allowed within such an expression. Lists of
+names and numbers, separated by commas, are allowed, as well
+as ranges of numbers, denoted by the <KBD>-</KBD> (minus)
+character. It is possible to give a list of such expressions,
+separated by spaces, this will select all parts.
+<P>
+
+The following are some examples of this short notation used
+for selecting atoms:
+
+<DL>
+<DT><KBD>@CA</KBD>
+<DD>all atoms named CA
+<DT><KBD>:10-20</KBD>
+<DD>all atoms in residues number 10 to 20
+<DT><KBD>#1-3,5:10-20,25,LYS@N,CA,C</KBD>
+<DD>all atoms named N, CA or C in residues number 10 to 20
+    residue number 25, and residues named LYS, in molecules
+    number 1 to 3 and 5
+<DT><KBD>:10@HN :17@HA</KBD>
+<DD>atom named HN in residue number 10 and atom named HA
+    in residue number 17
+</DL>
+
+ <H2>Selecting Everything/Nothing</H2>
+
+Giving an empty string as selection expression selects
+all items. The expression <KBD>'0'</KBD> (a string with
+the digit zero as the only character) will deselect
+everything.
+
+ <H2>Full Expression Syntax</H2>
+
+The full expression syntax of MOLMOL is very similar to
+expressions in a programming language like C. A number
+of  <A HREF=sel_value.html>values</A>, e. g.  <KBD>charge</KBD>
+for the charge of an atom or <KBD>len</KBD> for the
+length of a bond, and boolean  <A HREF=sel_prop.html>properties</A>,
+like <KBD>bb</KBD> for backbone, are available for each
+item. These can be arbitrarily combined with arithmetic
+and logical operators. The result of the expression must
+be a boolean value, all items for which the expression
+evaluates to true are selected.
+<P>
+
+The following are some examples of the full notation used
+for selecting atoms:
+
+<DL>
+<DT><KBD>name = "CA" & bfactor > 3.2</KBD>
+<DD>atoms with name CA and B factor larger than 3.2
+<DT><KBD>vdw < 1.5 | charge > 0.0</KBD>
+<DD>atoms with VdW radius less than 1.5 or a positive
+    partial charge
+</DL>
+
+<HR>
+Last modified: Mon Jan 20 19:44:56 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

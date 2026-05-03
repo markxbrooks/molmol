@@ -1,0 +1,47 @@
+<HEAD>
+<TITLE>ReplacePdb</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ReplacePdb</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ReplacePdb - replace with PDB file
+ReplaceListPdb - replace with list of PDB files
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ReplacePdb fileName
+ReplaceListPdb fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+ReplacePdb reads coordinates from a file in PDB
+format, replacing the coordinates of the currently
+selected molecules. If not enough molecules are
+selected, new molecules will be created. The
+structures in the file should be identical to the
+structures of the selected molecules, otherwise the
+result will not be very useful.
+<P>
+<A HREF="ReplaceListPdb.html"><KBD>ReplaceListPdb</KBD></A> expects a file with one file name per
+line (empty lines allowed), and reads coordinates
+from all these files, replacing the coordinates of
+the selected molecules.
+<P>
+See <A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A> for more information about the PDB format.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+ReplacePdb /home/joe/struct/my_prot.pdb
+ReplaceListPdb /home/joe/struct/my_prot.nam
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A>, <A HREF="ReadListPdb.html"><KBD>ReadListPdb</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950626
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

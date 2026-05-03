@@ -1,0 +1,49 @@
+<HEAD>
+<TITLE>PlotFm3</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>PlotFm3</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+PlotFm3 - make a FrameMaker 3 plot
+PlotFm4 - make a FrameMaker 4 plot
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+PlotFm3 fileName
+PlotFm4 fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Make a plot of the current screen contents in MIF
+format. This can be imported into FrameMaker.
+<P>
+PlotFm3 produces a file that can be read by
+FrameMaker 3 or later. This only supports 8
+different colors, and is therefore not suited for
+displays with shading. Its main use is for the
+output of figures from commands like <A HREF="FigAngles.html"><KBD>FigAngles</KBD></A>.
+<P>
+<A HREF="PlotFm4.html"><KBD>PlotFm4</KBD></A> makes use of color possibilities introduced
+in FrameMaker 4, these files cannot be read by
+earlier versions. They are also larger.
+<P>
+FrameMaker can currently not handle the files created
+with <A HREF="PlotFm4.html"><KBD>PlotFm4</KBD></A> well, they make it very slow. Unless this
+improves with future versions, <A HREF="PlotFm4.html"><KBD>PlotFm4</KBD></A> is only of
+limited usefulness.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+PlotFm4 /home/joe/MyPlot.fm
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>, <A HREF="PlotPs.html"><KBD>PlotPs</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950704
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

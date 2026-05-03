@@ -1,0 +1,26 @@
+NAME
+     AddRes - add residue to molecule
+
+SYNOPSIS
+     AddRes ( first | last ) name
+
+DESCRIPTION
+     Add a residue as first or last residue of all selected
+     molecules.
+
+     The new residue can only be docked properly if the
+     coordinates of the 3 atoms that overlap for subsequent
+     residues are known for the last residue. If this is
+     not the case, which happens frequently if a coordinate
+     file was read, the missing atom coordinates (mostly
+     the 'N' for proteints) should be calculated with the
+     CalcAtom command first.
+
+EXAMPLE
+     AddRes last "ALA"
+
+SEE ALSO
+     NewMol, SelectMol, CalcAtom, ChangeRes, RemoveRes
+
+DATE
+     970401

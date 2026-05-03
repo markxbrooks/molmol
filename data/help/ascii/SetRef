@@ -1,0 +1,19 @@
+NAME
+     SetRef - set reference atoms
+
+SYNOPSIS
+     SetRef
+
+DESCRIPTION
+     Use the currently selected atoms as reference atoms.
+     The reference atoms are used for selecting atoms by
+     distance.
+
+EXAMPLE
+     SetRef
+
+SEE ALSO
+     SelectAtom
+
+DATE
+     950525

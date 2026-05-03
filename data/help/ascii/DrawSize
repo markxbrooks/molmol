@@ -1,0 +1,29 @@
+NAME
+     DrawSize - set size of drawing area
+
+SYNOPSIS
+     DrawSize ( set | restore ) [ expr expr ]
+
+DESCRIPTION
+     If the fist argument is 'set', set the size of the
+     drawing are to the given width and height (in pixels).
+     This can be useful in connection with plotting, so
+     that the user can enforce a certain aspect ratio for
+     the resulting plot.
+
+     With the first argument 'restore', the command
+     restores the drawing area to the last size given with
+     the 'set' option. The saved size is also stored in
+     parameter and dump files, so this command is mainly
+     used for saving a desired window (and plot) size in a
+     dump file, and restoring it after reading it back.
+
+EXAMPLE
+     DrawSize set 1000 750
+     DrawSize restore
+
+SEE ALSO
+     PlotPar
+
+DATE
+     961213

@@ -1,0 +1,47 @@
+<HEAD>
+<TITLE>AddDrawobj</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddDrawobj</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddDrawobj - add line, rectangle or circle
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddDrawobj ( line | rect | circle ) ( 2D | 3D )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a line, rectangle or circle for annotation.
+The first argument selects the type of drawing object.
+<P>
+If the second argument is 2D, the object is placed
+at a default location and can be moved to the desired
+place. It will always keep its screen position and is
+not related to any atoms.
+<P>
+If the second argument is 3D, a label is added for
+each molecule that has selected atoms. The initial
+position in space is calculated as the average of the
+coordinates of all selected atoms of the molecule. The
+positon relative to these atoms can be changed with
+the mouse or with the <A HREF="MoveDrawobj.html"><KBD>MoveDrawobj</KBD></A> command.
+<P>
+The created primitives have the property "drawobj".
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+AddDrawobj line 3D
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>, <A HREF="LinePrim.html"><KBD>LinePrim</KBD></A>, <A HREF="StyleDrawobj.html"><KBD>StyleDrawobj</KBD></A>,
+<A HREF="MoveDrawobj.html"><KBD>MoveDrawobj</KBD></A>, <A HREF="RemovePrim.html"><KBD>RemovePrim</KBD></A>, <A HREF="AddTitle.html"><KBD>AddTitle</KBD></A>, <A HREF="AddText.html"><KBD>AddText</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970930
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

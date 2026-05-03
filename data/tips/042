@@ -1,0 +1,6 @@
+You can change the global near and far
+clipping planes using the ClipPos and
+ClipSize commands. An additional near
+clippling plane can be set for each
+primitive using the NearPrim command,
+this is especially useful for surfaces.

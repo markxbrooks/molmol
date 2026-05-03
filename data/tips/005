@@ -1,0 +1,4 @@
+You can save the current orientation of
+a molecule with the WriteTransform
+command, and later restore it by using
+XMacUser to execute the created macro.

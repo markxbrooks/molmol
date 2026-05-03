@@ -1,0 +1,39 @@
+<HEAD>
+<TITLE>WriteUpl</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>WriteUpl</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+WriteUpl - write file with upper limits
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+WriteUpl fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Write a file with upper distance limits. The format is
+the same that DIANA/DYANA uses. All selected upper
+distance limits are written. When a constraint between
+two atoms appears in more than one molecule, the
+smallest constraint value is written. All selected
+distances are also written, for these the actual
+distance is taken as constraint value.
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+WriteUpl /home/joe/struct/my_prot.upl
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="ReadUpl.html"><KBD>ReadUpl</KBD></A>, <A HREF="AddUpl.html"><KBD>AddUpl</KBD></A>, <A HREF="CheckUpl.html"><KBD>CheckUpl</KBD></A>, <A HREF="WriteLol.html"><KBD>WriteLol</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+980326
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

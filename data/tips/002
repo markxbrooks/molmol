@@ -1,0 +1,5 @@
+Many important plotting parameters, like
+sizes, resolution and precision, can be
+set with the PlotPar command. The unit
+(inches, cm, mm) of the sizes can be
+changed with the PlotUnit command.

@@ -1,0 +1,29 @@
+NAME
+     StartAnim - start animation
+
+SYNOPSIS
+     StartAnim ( once | cycle ) expr
+
+DESCRIPTION
+     Start an animation. This can be used for displaying
+     MD runs. If the first argument is 'once', every
+     selected structure will be displayed once.
+
+     If it is 'cycle', the program will loop through all
+     selected structures until the StopAnim command is
+     executed.
+
+     The second argument is the minimal delay in
+     milliseconds between displaying structures.
+
+     It is possible to execute the command while an
+     animation is running, e. g. for changing the delay.
+
+EXAMPLE
+     StartAnim cycle 50
+
+SEE ALSO
+     SelectMol, DialMol, StopAnim
+
+DATE
+     940216

@@ -1,0 +1,32 @@
+NAME
+     LengthPrim - set length of primitives
+
+SYNOPSIS
+     LengthPrim expr expr
+
+DESCRIPTION
+     Set the length of all selected ribbons. The first
+     argument gives the start parameter, the second
+     argument the end parameter. The parameter value is 
+     1 for the first atom used for AddRibbon, 2 for the
+     second atom, etc.
+
+     The command can also be used for changing the
+     length of a cylinder. In this case, the parameter
+     range 0 to 1 refers to the current size of the
+     cylinder, and the new parameter values are interpreted
+     relative to these values.
+
+     Entering 0 for any of the parameters will leave this
+     value unchanged.
+
+EXAMPLES
+     LengthPrim 12.5 20.5
+     LengthPrim 0.1 1.1
+
+SEE ALSO
+     AddRibbon, SelectPrim, MovePrim,
+     TypeRibbon, StyleRibbon, SizeRibbon, PaintRibbon
+
+DATE
+     951123

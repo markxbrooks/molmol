@@ -1,0 +1,29 @@
+NAME
+     SizeRibbon - set sizes of ribbons
+
+SYNOPSIS
+     SizeRibbon expr [ expr [ expr [ expr [ expr ] ] ] ]
+
+DESCRIPTION
+     Set the size of all selected ribbons. The first
+     argument gives the width, the second argument the
+     thickness, the third the length of the start part,
+     the fourth the length of the end part and the fifth
+     the width of the arrow as multiple of the ribbon
+     width. Start/end length and arrow width only have an
+     effect if the style is set accordingly (soft, arrow).
+
+     Entering 0 for any of the sizes will leave this value
+     unchanged. This is useful when one wants to change
+     part of the values for multiple ribbons at once.
+
+EXAMPLES
+     SizeRibbon 3.0 0.5
+     SizeRibbon 2.5 0.4 2.0 2.0 1.4
+
+SEE ALSO
+     AddRibbon, SelectPrim, LengthPrim,
+     TypeRibbon, StyleRibbon, PaintRibbon
+
+DATE
+     950407

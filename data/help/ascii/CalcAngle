@@ -1,0 +1,37 @@
+NAME
+     CalcAngle - calculate angular order parameters
+
+SYNOPSIS
+     CalcAngle
+
+DESCRIPTION
+     Generate a report with angular order parameters for
+     all selected angles in all selected molecules. The
+     same number of angles must be selected in all selected
+     molecules.
+
+     The first column of the report will show an average
+     angle. This is not an arithmetic average, but the
+     angle of the resulting vector sum used for the
+     calculation of the angular order parameters.
+
+     The second number is the standard deviation from
+     this average.
+
+     The third number is the angular order parameter.
+
+EXAMPLE
+     CalcAngle
+
+REFERENCE
+     Hyberts, SG, Goldberg, MS, Havel, TF, Wagner, G.
+     The solution structure of eglin c based on measurements
+     of many NOEs and coupling constants and its
+     comparison with X-ray structures.
+     Protein Science, 1 (1992) 736-751.
+
+SEE ALSO
+     SelectAngle, CheckAco, FigAngles
+
+DATE
+     960621

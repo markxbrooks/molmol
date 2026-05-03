@@ -1,0 +1,61 @@
+# used to build Edit pulldown menu
+
+entry U "Undo" "Undo"
+accel "Ctrl<Key>U" "Ctrl+U"
+pullright M "Molecule"
+  entry N "New..." "NewMol"
+  entry a "Name..." "NameMol"
+  entry F "Make First" "FirstMol"
+  entry R "Remove" "RemoveMol"
+  entry M "Mean Structure..." "MeanMol"
+  entry C "Make Cyclic..." "MakeMolCyclic"
+end
+pullright R "Residue"
+  entry A "Add..." "AddRes"
+  entry C "Change..." "ChangeRes"
+  entry R "Remove" "RemoveRes"
+end
+pullright A "Atom"
+  entry A "Add..." "AddAtom"
+  entry P "Add Pseudo..." "AddPseudo"
+  entry F "Flip..." "FlipAtom"
+  entry R "Remove" "RemoveAtom"
+end
+pullright B "Bond"
+  entry A "Add" "AddBond"
+  entry L "Length..." "LengthBond"
+  entry R "Remove" "RemoveBond"
+end
+pullright D "Distance"
+  entry D "Add Distance" "AddDist"
+  entry H "Add H-Bond" "AddHbond"
+  entry U "Add Upper Limit..." "AddUpl"
+  entry L "Add Lower Limit..." "AddLol"
+  entry R "Remove" "RemoveDist"
+end
+pullright n "Angle"
+  entry A "Add..." "AddAngle"
+  entry S "Set..." "SetAngle"
+  entry R "Rotate..." "RotateAngle"
+  entry e "Remove" "RemoveAngle"
+end
+pullright C "Angle Constr"
+  entry A "Add..." "AddAco"
+  entry R "Remove" "RemoveAco"
+end
+entry I "Init All..." "InitAll"
+pullright v "Move"
+  entry I "Init" "MoveInit"
+  entry X "X axis..." "MoveX"
+  entry Y "Y axis..." "MoveY"
+  entry Z "Z axis..." "MoveZ"
+end
+pullright o "Rotate"
+  entry I "Init" "RotateInit"
+  entry X "X axis..." "RotateX"
+  entry Y "Y axis..." "RotateY"
+  entry Z "Z axis..." "RotateZ"
+end
+entry S "Auto Scale" "AutoScale"
+entry F "Fit..." "Fit"
+entry C "Center"

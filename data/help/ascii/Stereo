@@ -1,0 +1,27 @@
+NAME
+     Stereo - set stereo mode
+
+SYNOPSIS
+     Stereo ( off | left | right | side_by_side |
+	 cross_eye | hardware )
+
+DESCRIPTION
+     Set stereo mode. Hardware stereo is not supported by
+     all hardware. If it is supported, it normally works
+     only in fullscreen mode (see command Fullscreen).
+
+     Hardware stereo is also supported for certain plot
+     devices. E. g. generating a PostScript plot in
+     hardware stereo mode will produce a side by side
+     stereo image with the correct eye distance, while
+     the distance between the images will very likely
+     be wrong when plotting in side_by_side mode.
+
+EXAMPLE
+     Stereo side_by_side
+
+SEE ALSO
+     Fullscreen
+
+DATE
+     941205

@@ -1,0 +1,13 @@
+ARG+  NH1  0.5
+ARG+  NH2  0.5
+ASP-  OD1 -0.5
+ASP-  OD2 -0.5
+GLU-  OE1 -0.5
+GLU-  OE2 -0.5
+HIS+  ND1  0.5
+HIS+  NE2  0.5
+LYS+  NZ   1.0
+N*    N    1.0
+C*    OA  -0.5
+C*    OB  -0.5
+C*    OXT -1.0

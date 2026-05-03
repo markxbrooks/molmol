@@ -1,0 +1,6 @@
+define DisulfideBondV2
+  help Shows disulfied bonds that are present
+  CalcBond 1 1 1
+  SelectBond 'atom1.name = "SG" | atom2.name = "SG"'
+  StyleBond neon   
+end

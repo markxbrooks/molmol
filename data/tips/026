@@ -1,0 +1,5 @@
+You can read and display electron
+density maps from the program "O" using
+the ReadOmap command. You can change the
+display style of the map using the
+StyleMap command.

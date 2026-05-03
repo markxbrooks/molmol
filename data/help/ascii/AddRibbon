@@ -1,0 +1,60 @@
+NAME
+     AddRibbon - add ribbons (schematic drawing)
+
+SYNOPSIS
+     AddRibbon
+
+DESCRIPTION
+     Create a schematic drawing with ribbons. The ribbons
+     will go through the currently selected atoms, this
+     will normally be all CA atoms in a protein.
+
+     If ribbons for helices and sheets are desired, certain
+     properties of the residues must be set to give the
+     necessary secondary structure information. The
+     following properties are used:
+
+	 helix
+	 helix1, helix2,...
+	 sheet
+	 sheet1, sheet2,...
+	 strand1_1, strand1_2,...
+
+     These properties are set when a PDB file containing
+     secondary structure information (HELIX and SHEET
+     records) is read, or they can be calculated with the
+     CalcSecondary command. They can also be set/modified
+     using the DefPropRes command, a more convenient way
+     for modifying the result of CalcSecondary is often to
+     use the WriteSecondary command.
+
+     For sheets, the neighbour of the residues should be
+     set with the SetNeigh command if the secondary
+     structure was not read from a PDB file or calculated
+     with CalcSecondary.
+
+     The created primitives will have exactly one of the
+     following properties set:
+
+	 helix
+	 sheet
+	 coil
+
+     and for helix and sheet the numbered one from the 
+     residue (helix1,...) is also copied.
+
+     In addition, all created primitives have the property
+     "ribbon".
+
+EXAMPLE
+     AddRibbon
+
+SEE ALSO
+     ReadPdb, CalcSecondary, SelectAtom,
+     WriteSecondary, DefPropRes, SetNeigh,
+     LengthPrim, ColorPrim, TintPrim, ShadePrim,
+     TypeRibbon, StyleRibbon, SizeRibbon, PaintRibbon
+     LengthBond, RemovePrim
+
+DATE
+     970723

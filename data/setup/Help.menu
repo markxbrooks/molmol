@@ -1,0 +1,14 @@
+# used to build Help pulldown menu
+
+entry V "Viewer..." "HelpViewer"
+entry A "Apropos..." "HelpApropos"
+entry C "Command" "HelpCmd"
+entry M "Mouse" "HelpMouse"
+entry B "Button" "HelpButton"
+entry P "Prop" "HelpProp"
+entry n "Manual" "HelpManual"
+entry T "Tutorial" "HelpTutorial"
+entry I "Index" "HelpIndex"
+entry D "Tip of the Day" "HelpTip"
+entry R "Register..." "Register"
+entry o "About" "HelpAbout"

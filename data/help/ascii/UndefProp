@@ -1,0 +1,26 @@
+NAME
+     UndefProp - undefine property
+
+SYNOPSIS
+     UndefProp propertyName
+
+DESCRIPTION
+     Undefine the property with the given name everywhere.
+     This command is rarely used. The program cannot detect
+     if a property is not used anymore. Executing this
+     command with unused properties can help to avoid
+     problems (like unnecessarily large dump files or
+     overflow of internal tables), especially when a lot
+     of different properties are used.
+
+     The number of different properties supported by the
+     program is currently set to 2048.
+
+EXAMPLES
+     UndefProp bb
+
+SEE ALSO
+     DefProp*
+
+DATE
+     940408

@@ -1,0 +1,35 @@
+NAME
+     AddTitle - add 2D text annotation
+
+SYNOPSIS
+     AddTitle <coord> expr string
+
+DESCRIPTION
+     Add a text annotation at a given screen position.
+     The screen position must be entered by a mouse click
+     or on the command line. The second argument is the
+     size, the third the string to be displayed.
+
+     The origin of the screen coordinates is at the center
+     of the window. The x-axis runs from left to right,
+     the y-axis from bottom to top. The range for y is
+     -1.0 to 1.0, the one for x depends on the aspect
+     ratio, e. g. it would be -1.5 to 1.5 if the window
+     width is 50% larger than the window height.
+
+     For an explanation on how to enter greek letters,
+     sub- and superscript, see the manual page of the
+     EditText command.
+
+     The created primitives have the properties "text"
+     and "title".
+
+EXAMPLES
+     AddTitle 0.5 0.3 0.15 "Label"
+
+SEE ALSO
+     EditText, ColorPrim, LinePrim, MovePrim, SizeText,
+     AddText, RemovePrim
+
+DATE
+     970723

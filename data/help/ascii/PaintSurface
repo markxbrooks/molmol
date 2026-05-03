@@ -1,0 +1,73 @@
+NAME
+     PaintSurface - set coloring style of surfaces
+
+SYNOPSIS
+     PaintSurface ( one_color | atom | dist | center |
+         access | pot ) expr expr expr expr string
+
+DESCRIPTION
+     Set the coloring style of all selected surfaces.
+     With the value one_color, the surface will be drawn
+     entirely in the color set with ColorPrim.
+
+     With the value atom, the color for each point is
+     taken from the color of the closest selected atom.
+     For this case, the third argument gives the maximum
+     distance from the atom surface, the user will normally
+     give the solvent radius used for calculating the
+     surface for this argument.
+
+     With the value dist, the color for each point is
+     calculated from the smallest distance to a selected
+     atom, using the mapping of values to colors described
+     below.
+
+     With the value center, the color for each point is
+     calculated from the distance to the center of gravity
+     of all selected atoms, using the mapping of values to
+     colors described below.
+
+     With the value access, the color for each point is
+     calculated from the accessibility of the point, using
+     the mapping of values to colors described below. The
+     accessibility is calculated by an experimental (and
+     relatively slow) algorithm that casts a number (4**p,
+     where p is the precision given as fifth argument) of
+     rays from each surface point, and counts how many of
+     them intersect a selected atom within the distance
+     range given by the second and third argument. A small
+     offset given as fourth argument is normally applied to
+     each surface point to avoid artefacts.
+
+     With the value pot, the color is calculated from a
+     potential field read with ReadPot, using the mapping
+     of values to colors described below.
+
+     For the options that require a mapping of values to
+     colors, this mapping is given by the last argument.
+     It consists of space separated tuples of the form:
+
+	 v r g b
+
+     where v is the potential and r, g, b give the color as
+     RGB (red, green, blue) components. Colors are
+     interpolated between the values in the table.
+
+     Potentials have to be calculated with the CalcPot
+     command, and then read with ReadPot, before using
+     this command with the corresponding option.
+
+EXAMPLE
+     PaintSurface atom 0.0 1.4 0.0 0 ''
+     PaintSurface dist 0.0 0.0 0.0 0
+	 '5.0 1 0 0 10.0 1 0 1 20.0 0 0 1'
+     PaintSurface access 3.0 8.0 0.2 2
+	 '0.4 1 0 0 0.5 1 1 0 0.8 0 1 0'
+     PaintSurface pot 0.0 0.0 0.0 0.0 '0.0 0 0 1 4.0 1 0 0'
+
+SEE ALSO
+     AddSurface, SelectPrim, CalcPot, ReadPot,
+     ColorPrim, ColorAtom
+
+DATE
+     991031

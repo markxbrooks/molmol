@@ -1,0 +1,59 @@
+<HEAD>
+<TITLE>TypeRibbon</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>TypeRibbon</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+TypeRibbon - set type of ribbons
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+TypeRibbon ( interpol | smooth | as_is )
+    ( free | cylinder | spacing | neighbour | as_is )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set the type of all selected ribbons. The first
+argument determines whether the ribbon goes through
+the atoms used for <A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>, or whether it is
+smoothed. The second argument determines how the
+ribbon is oriented.
+<P>
+Typically interpol/cylinder or interpol/spacing is
+used for helices, smooth/neighbour for sheets and
+smooth/free for turns and random coil.
+<P>
+'cylinder' does a least square fit of a cylinder
+surface to the atoms, 'spacing' fits a cylinder so
+that the spacing of atoms along the axis is as
+regular as possible. The results are very similar
+in most cases, but 'spacing' often looks better
+for very short helices or DNA.
+<P>
+The information about which residue is the neighbour
+of which other residue is read from the secondary
+structure information in PDB files or calculated by
+the <A HREF="CalcSecondary.html"><KBD>CalcSecondary</KBD></A> command. It can also be set with
+the <A HREF="SetNeigh.html"><KBD>SetNeigh</KBD></A> command.
+<P>
+For both arguments, the value 'as_is' will leave the
+value unchanged, this is useful when one wants to
+change one of the values for multiple ribbons at once.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+TypeRibbon smooth neighbour
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A>, <A HREF="CalcSecondary.html"><KBD>CalcSecondary</KBD></A>, <A HREF="SetNeigh.html"><KBD>SetNeigh</KBD></A>,
+<A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>, <A HREF="SelectPrim.html"><KBD>SelectPrim</KBD></A>, <A HREF="LengthPrim.html"><KBD>LengthPrim</KBD></A>,
+<A HREF="StyleRibbon.html"><KBD>StyleRibbon</KBD></A>, <A HREF="SizeRibbon.html"><KBD>SizeRibbon</KBD></A>, <A HREF="PaintRibbon.html"><KBD>PaintRibbon</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950307
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

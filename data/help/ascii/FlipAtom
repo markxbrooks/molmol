@@ -1,0 +1,39 @@
+NAME
+     FlipAtom - flip atoms for better superposition
+
+SYNOPSIS
+     FlipAtom nameList
+
+DESCRIPTION
+     Exchanges sets of atom names in all selected
+     residues if that leads to a better superposition to
+     the first structure. The sets of atoms that can
+     be exchanged is listed in the file:
+
+	 $MOLMOLHOME/setup/FlipAtoms
+
+     The specifications in this file list atoms that
+     are part of one potential exchange operation on one
+     line. Each set of (typically 2 or 3) atoms that will
+     be permuted by this operation is inside a pair of
+     parentheses.
+
+     The atoms that can be exchanged are normally the
+     atoms of rings that do not have a fixed orientation
+     in an NMR structure (PHE, TYR), and the protons of
+     methyl groups.
+
+     This command is typcially used before calculating
+     mean structures, or RMSDs that involve side chains.
+
+     The command will make a report listing the atoms
+     that were exchanged.
+
+EXAMPLE
+     FlipAtom "PHE TYR"
+
+SEE ALSO
+     PathNames, MeanMol, CalcRmsd
+
+DATE
+     950922

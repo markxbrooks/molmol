@@ -1,0 +1,52 @@
+<HEAD>
+<TITLE>AddCylinder</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddCylinder</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddCylinder - add cylinder for schematic drawing
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddCylinder ( least_square | spacing )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a cylinder that approximates the selected atoms.
+The argument selects between two fit criteria.
+'least_square' does a least square fit of the cylinder
+surface to the atoms, 'spacing' takes the axis
+direction that gives the most regular spacing of
+atoms. The results are normally very similar, but
+'spacing' works better than 'least_square' if very
+few atoms are given.
+<P>
+A cylinder is added for each molecule that has
+selected atoms. A minimum number of atoms (5 for
+least_square, 4 for spacing) must be selected,
+otherwise the cylinder cannot be determined and an
+error message is issued.
+<P>
+Cylinders can be used for showing alpha helices in
+schematic drawings. For good results, it is
+recommended to either select the CA or all backbone
+atoms within a helix region.
+<P>
+The created primitives have the property "cylinder".
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+AddCylinder spacing
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="StyleCylinder.html"><KBD>StyleCylinder</KBD></A>, <A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>, <A HREF="LengthPrim.html"><KBD>LengthPrim</KBD></A>,
+<A HREF="RemovePrim.html"><KBD>RemovePrim</KBD></A>, <A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>, <A HREF="AddSolid.html"><KBD>AddSolid</KBD></A>, <A HREF="AddDipole.html"><KBD>AddDipole</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970930
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,13 @@
+DefPropMol 'displayed' 'num = 1' 
+CalcAtom 'H' 
+CalcAtom 'HN' 
+CalcSecondary 
+XMacStand ribbon.mac 
+SelectBond ':3' 
+SelectBond ':3' 
+StyleAtom invisible 
+StyleBond line 
+SelectBond ':3@HB2,HB3' 
+StyleAtom invisible 
+LabelAtom '' 
+StyleBond neon 

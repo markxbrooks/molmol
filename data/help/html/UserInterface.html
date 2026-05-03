@@ -1,0 +1,43 @@
+<HEAD>
+<TITLE>UserInterface</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>UserInterface</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+UserInterface - switch elements of user interface
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+UserInterface ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+    ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Switch various parts of the user interface on or
+off. The following elements can be switched:
+<P>
+<PRE>
+    Valuator Box
+    Log Window
+    Buttons
+    Command Line
+    Status Line
+    Menubar
+</PRE>
+The program makes sure that Command Line and
+Menubar are not switched off at the same time,
+because this would make it impossible to enter
+any more commands.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+UserInterface 0 0 1 1 1 1
+</PRE>
+<STRONG>DATE</STRONG><P>
+940818
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

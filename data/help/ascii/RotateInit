@@ -1,0 +1,18 @@
+NAME
+     RotateInit - undo all rotations
+
+SYNOPSIS
+     RotateInit
+
+DESCRIPTION
+     Bring all movable (set with DialMol) molecules back
+     to their original orientation.
+
+EXAMPLE
+     RotateInit
+
+SEE ALSO
+     DialMol, RotateX, RotateY, RotateZ
+
+DATE
+     941206

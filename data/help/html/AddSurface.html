@@ -1,0 +1,69 @@
+<HEAD>
+<TITLE>AddSurface</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddSurface</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddSurface - add surface
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddSurface expr ( vdw | solvent | contact ) expr
+    ( dots | shaded ) ( 0 | 1 )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a surface for the selected atoms. The precision
+(density of the dots) depends on <A HREF="DrawPrec.html"><KBD>DrawPrec</KBD></A>.
+<P>
+The first argument is the radius of the atoms, you
+will normally not change the default value 'vdw'.
+<P>
+The second argument gives the type of surface:
+<P>
+<PRE>
+    vdw: van der Waals surface
+</PRE>
+<PRE>
+    solvent: surface given by the center
+        of spheres (solvent) touching the atoms
+</PRE>
+<PRE>
+    contact: contact surface (Richards)
+</PRE>
+The third argument gives the solvent radius for
+solvent and contact surfaces.
+<P>
+The fourth argument gives the type of surface,
+dots or a solid, shaded surface can be selected.
+<P>
+The final option selects whether a report with the
+approximate areas and volumes of all surface parts
+is desired. The volumes are mainly interesting for
+cavities. Note that the numbers are not highly
+precise.
+<P>
+Depending on the precision, shaded surfaces can use
+a lot of memory. If the machine runs out of memory,
+the program may crash occasionally.
+<P>
+This command supports groups for shaded surfaces,
+the resulting surface will belong to the first
+group member.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+AddSurface vdw contact 1.4 dots 0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="RadiusAtom.html"><KBD>RadiusAtom</KBD></A>, <A HREF="DrawPrec.html"><KBD>DrawPrec</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>,
+<A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>, <A HREF="RemovePrim.html"><KBD>RemovePrim</KBD></A>, <A HREF="CalcSurface.html"><KBD>CalcSurface</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970723
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

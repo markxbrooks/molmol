@@ -1,0 +1,4 @@
+You can read and display NMR data from
+files compatible with the program DYANA
+using the ReadUpl, ReadLol, ReadAco and
+ReadShift commands.

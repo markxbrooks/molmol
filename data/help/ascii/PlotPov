@@ -1,0 +1,31 @@
+NAME
+     PlotPov - make a POV-Ray plot
+
+SYNOPSIS
+     PlotPov fileName
+
+DESCRIPTION
+     Make a plot of the current screen contents in POV-Ray
+     format. This can be used as input file for the ray
+     tracing package POV-Ray (Persistence of Vision Ray
+     Tracer) to produce high quality pictures.
+
+     The POV-Ray software is available free of charge by
+     anonymous ftp from ftp.povray.org, directory
+     /pub/povray/Official. See the accompanying files for
+     copyright conditions and instructions on installation
+     and use of the program. The output files generally
+     have to be rendered with version 3.0 (or higher) of
+     POV-Ray. If certain features, like text, are not
+     used, they may also work with POV-Ray 2.2, but this
+     is not supported.
+
+EXAMPLE
+     PlotPov /home/joe/MyPlot.pov
+
+SEE ALSO
+     PlotFm*, PlotPs, PlotTiff, PlotJpeg, PlotPng,
+     PlotVrml1, PlotVrml2
+
+DATE
+     961204

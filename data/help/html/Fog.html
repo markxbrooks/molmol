@@ -1,0 +1,40 @@
+<HEAD>
+<TITLE>Fog</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>Fog</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+Fog - setup of fog (depth cueing)
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+Fog ( off | exp | exp2 | linear ) expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set fog mode and parameters. The first argument
+selects the mode (off, exponential, squared
+exponential, linear). The second argument selects the
+density for both kinds of exponential fog. The third
+and fourth argument give the start and end distance
+for linear fog.
+<P>
+Negative values for any of the numerical arguments
+will leave the value unchanged, this is useful for
+changing only one value if the command is put on a
+slider.
+<P>
+Not all fog modes are supported on all hardware.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+Fog linear 0.1 7.0 13.0
+</PRE>
+<STRONG>DATE</STRONG><P>
+960305
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

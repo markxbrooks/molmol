@@ -1,0 +1,40 @@
+<HEAD>
+<TITLE>AddRes</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddRes</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddRes - add residue to molecule
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddRes ( first | last ) name
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a residue as first or last residue of all selected
+molecules.
+<P>
+The new residue can only be docked properly if the
+coordinates of the 3 atoms that overlap for subsequent
+residues are known for the last residue. If this is
+not the case, which happens frequently if a coordinate
+file was read, the missing atom coordinates (mostly
+the 'N' for proteints) should be calculated with the
+<A HREF="CalcAtom.html"><KBD>CalcAtom</KBD></A> command first.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+AddRes last "ALA"
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="NewMol.html"><KBD>NewMol</KBD></A>, <A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="CalcAtom.html"><KBD>CalcAtom</KBD></A>, <A HREF="ChangeRes.html"><KBD>ChangeRes</KBD></A>, <A HREF="RemoveRes.html"><KBD>RemoveRes</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970401
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

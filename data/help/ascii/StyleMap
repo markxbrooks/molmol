@@ -1,0 +1,20 @@
+NAME
+     StyleMap - set display style of density map
+
+SYNOPSIS
+     StyleMap ( invisible | line | cylinder | neon )
+
+DESCRIPTION
+     Set the display style of all selected electron
+     density maps. The style 'cylinder' draws the map
+     using cylinders with open ends. The style 'neon'
+     draws the map using cylinders with round ends.
+
+EXAMPLE
+     StyleMap neon
+
+SEE ALSO
+     ReadOmap, SelectPrim, ColorPrim
+
+DATE
+     991023

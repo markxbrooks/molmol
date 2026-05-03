@@ -1,0 +1,49 @@
+<HEAD>
+<TITLE>ReadDg</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ReadDg</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ReadDg - read DG file
+ReadListDg - read list of DG files
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ReadDg fileName
+ReadListDg fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+ReadDg reads a file in DG format. Since no clear
+separation of molecules is supported by the DG format,
+it is assumed that a new molecule starts whenever the
+residue number decreases.
+<P>
+<A HREF="ReadListDg.html"><KBD>ReadListDg</KBD></A> expects a file with one file name per line
+(empty lines allowed), and reads all these files.
+<P>
+If residues appear in the residue library
+($MOLMOLHOME/setup/amber94.lib by default), the
+covalent structure is taken from there. The optional
+connection information of the DG format is also read,
+bonds not already known from the residue library are
+inserted. If there is no connection information at
+all, the user can add bonds with the command <A HREF="CalcBond.html"><KBD>CalcBond</KBD></A>
+later.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+ReadDg /home/joe/struct/my_prot.cor
+ReadListDg /home/joe/struct/my_prot.nam
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PathNames.html"><KBD>PathNames</KBD></A>, <A HREF="ReadAng.html"><KBD>ReadAng</KBD></A>, <A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A>, <A HREF="WriteDg.html"><KBD>WriteDg</KBD></A>, <A HREF="CalcBond.html"><KBD>CalcBond</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+951116
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

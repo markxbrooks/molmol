@@ -1,0 +1,29 @@
+NAME
+     PlotTiff - make a TIFF plot
+
+SYNOPSIS
+     PlotTiff fileName
+
+DESCRIPTION
+     Save the current screen contents as TIFF File. The
+     horizontal resolution can be set with the PlotPar
+     command, the vertical resolution is calculated to
+     maintain the aspect ratio of the screen.
+
+     This command is not supported on all machines and
+     with all graphics systems. It will give an appropriate
+     error message if it is not supported.
+
+     The freely available TIFF library written by
+     Sam Leffler, Copyright (c) 1988-1995 Sam Leffler and
+     Silicon Graphics, is used for writing the TIFF file.
+
+EXAMPLE
+     PlotTiff /home/joe/MyPlot.tif
+
+SEE ALSO
+     PlotPar, PlotJpeg, PlotPng,
+     PlotFm3, PlotFm4, PlotPs
+
+DATE
+     960625

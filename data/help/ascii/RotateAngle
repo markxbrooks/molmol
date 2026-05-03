@@ -1,0 +1,27 @@
+NAME
+     RotateAngle - rotate dihedral angles
+
+SYNOPSIS
+     RotateAngle expr { expr }
+
+DESCRIPTION
+     Rotate all selected dihedral angles. The first
+     argument gives the number of angles that should rotate
+     the chain backwards (i. e. towards the N-terminus in a
+     protein). The user will normally not enter the value
+     of the angles on the command line, but use the dialog
+     box to interactively vary the angles.
+
+     If backwards rotation is desired, the first argument
+     should be adjusted *before* any of the angles are
+     modified, otherwise it will not have the desired
+     effect.
+
+EXAMPLE
+     RotateAngle 1 -57.0 -47.0
+
+SEE ALSO
+     SelectAngle, SetAngle
+
+DATE
+     951208

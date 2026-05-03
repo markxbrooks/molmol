@@ -1,0 +1,30 @@
+NAME
+     DrawPrec - set drawing precision
+
+SYNOPSIS
+     DrawPrec expr [ expr ]
+
+DESCRIPTION
+     Set the precision for certain drawing operations,
+     e. g. for the approximation of spheres. Making this
+     value larger improves the drawing quality, but makes
+     the drawing slower. Reasonable values are in the range
+     between 2 (moderate quality) and 4 (good quality).
+
+     The optional second argument is used as precision
+     during interactive manipulations (rotating, moving).
+     It can be chosen smaller to make these manipulations
+     smoother, at the cost of lower drawing quality.
+
+     The value used for plotting can be set seperately with
+     the PlotPar command.
+
+EXAMPLE
+     DrawPrec 3
+     DrawPrec 4 2
+
+SEE ALSO
+     PlotPar
+
+DATE
+     980818

@@ -1,0 +1,46 @@
+<HEAD>
+<TITLE>ZoomAbs</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ZoomAbs</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ZoomAbs - zoom absolute
+ZoomRel - zoom relative
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ZoomAbs expr
+ZoomRel expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Enlarge/reduce the size of the display. <A HREF="ZoomRel.html"><KBD>ZoomRel</KBD></A>
+changes the size by a given factor, relative to the
+current size.  Factors greater than 1 make the
+display larger, factors less than 1 make it smaller.
+ZoomAbs sets the zoom factor to an absolute value.
+<P>
+ZoomAbs, in conjunction with <A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>, can be used to
+produce different plots with the same scale. If the
+zoom factor and the plot size are set to the same
+values, the scales will be identical.
+<P>
+Zooming is normally done interactively by pressing
+the left and the middle mouse button.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+ZoomAbs 0.2
+ZoomRel 1.4
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950124
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

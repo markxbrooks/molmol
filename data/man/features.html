@@ -1,0 +1,264 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Features</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Features</H1>
+
+<UL>
+
+<LI>hardware platforms and operating systems supported by
+    official distribution
+    <UL>
+    <LI>Silicon Graphics (IRIX 6.5)
+    <LI>PCs with Intel Pentium (Linux)
+    <LI>PCs with Intel Pentium (Windows NT/95/98)
+    </UL>
+
+<LI>other hardware platforms and operating systems that the
+    source code has been successfully compiled on
+    <UL>
+    <LI>Silicon Graphics (IRIX 4.X, 5.X, 6.2)
+    <LI>Sun SPARC (SunOS 4.X, Solaris 2.X)
+    <LI>IBM RS6000 (AIX)
+    <LI>Digital ALPHA (OSF/1)
+    <LI>various Linux platforms
+    </UL>
+
+<LI>display systems
+    <UL>
+    <LI>GL (Silicon Graphics), including stereo display
+    <LI>OpenGL, including stereo display
+    <LI>XGL (Sun)
+    <LI>X11
+    <LI>TTY (no graphics)
+    </UL>
+
+<LI>user interface
+    <UL>
+    <LI>command line with automatic command completion and history
+    <LI>pulldown menus (created from ASCII file)
+    <LI>popup menu (created from ASCII file)
+    <LI>buttons (created from ASCII file)
+    <LI>dialog boxes
+    <LI>slider box
+    <LI>online help (optionally in web broser)
+    <LI>Tip of the Day
+    <LI>log window
+    <LI>macro recorder
+    <LI>user-defined commands
+    <LI>undo (multiple level)
+    </UL>
+
+<LI>interactive manipulations (selected subset of molecules)
+    <UL>
+    <LI>rotations (virtual trackball)
+    <LI>translations
+    <LI>zoom
+    </UL>
+
+<LI>data input/output
+    <UL>
+    <LI>read residue library
+    <LI>write entries for residue library
+    <LI>read/write PDB file
+    <LI>read list of PDB files
+    <LI>read/write DIANA angle file
+    <LI>read list of DIANA angle files
+    <LI>read/write DG file
+    <LI>read list of DG files
+    <LI>read SYBYL Mol2 files
+    <LI>read XYZ files
+    <LI>read/write sequence
+    <LI>read/write binary file (with full graphics information)
+    <LI>replace coordinates with new ones from PDB file
+    <LI>replace coordinates with new ones from list of PDB files
+    <LI>replace coordinates with new ones from DG file
+    <LI>replace coordinates with new ones from list of DG files
+    <LI>read/write file with distance constraints
+    <LI>read file with angle constraints
+    <LI>read file with chemical shifts
+    <LI>save/load orientation
+    </UL>
+
+<LI>create entries in residue library (from DG and PDP format)
+
+<LI>structure manipulation
+    <UL>
+    <LI>create new molecule
+    <LI>change molecule name
+    <LI>add residue at start or end
+    <LI>change residue (mutation)
+    <LI>remove residue
+    <LI>add/remove atoms
+    <LI>add pseudo atom
+    <LI>flip ring/methyl atoms for better superposition
+    <LI>add bond
+    <LI>generate bonds between atoms with close distance
+    <LI>remove bonds
+    <LI>add/remove angles
+    <LI>add/remove angle constraints
+    <LI>calculate mean structure
+    </UL>
+
+<LI>definition of distances (constraints, H-bonds)
+
+<LI>setting of dihedral angles (construction of helices,...)
+
+<LI>interactive rotation about single bonds
+
+<LI>calculation of superpositions and principal axes
+
+<LI>selection
+    <UL>
+    <LI>with general expressions
+    <LI>interactively
+    <LI>list selected items
+    </UL>
+
+<LI>display possibilities
+    <UL>
+    <LI>select light position
+    <LI>intensity of ambient light
+    <LI>select projection (orthogonal or perspective)
+    <LI>anti aliasing
+    <LI>depth cueing (set fog density)
+    <LI>normal bonds or bonds to pseudo atoms
+    <LI>bonds: invisible, lines, half lines, cylinders, half cylinders,
+        cones, half cones
+    <LI>atoms: invisible, spheres or tetrahedrons
+    <LI>distances: invisible, line, cylinder, cone (also dashed)
+    <LI>atom labels
+    <LI>circles for B-factors
+    <LI>constraints
+    <LI>violations
+    <LI>electron density maps (from O)
+    <LI>plates for rings (e. g. for DNA)
+    <LI>principal axes
+    <LI>dottet or shaded, colored molecule surfaces
+        (VdW, solvent accessible, contact), optionally trimmed
+    <LI>isosurfaces of electrostatic potential
+    <LI>MD trajectories (with lines or cylinders)
+    <LI>MD runs (animation)
+    <LI>automatic rotation
+    <LI>stereo (left, right, side-by-side, cross-eye)
+    </UL>
+
+<LI>labels and annotation
+    <UL>
+    <LI>placement in 2D and 3D (stereo)
+    <LI>super-/subscript
+    <LI>symbols (greek letters)
+    <LI>edit
+    <LI>interactive move/resize
+    <LI>draw lines, rectangles and circles
+    </UL>
+
+<LI>display attributes
+    <UL>
+    <LI>color
+    <LI>line width
+    <LI>line style
+    <LI>reflection coefficients (ambient, diffuse, specular, shininess)
+    <LI>reflection, texture/image, bumpiness (for ray tracing)
+    <LI>shading (none, flat, Gouraud, Phong, dots, lines)
+    <LI>radius (cylinders, spheres and splines)
+    <LI>list current attributes, create macro
+    <LI>change default attributes
+    </UL>
+
+<LI>schematic display
+    <UL>
+    <LI>read secondary structure information from PDB file
+    <LI>calculate secondary structure (Kabsch/Sander algorithm)
+    <LI>ribbons (for helices, sheets), splines (turns, coil)
+    <LI>split/merge elements
+    <LI>change start and end position of elements
+    <LI>various profiles (elliptical, rectangular, \ldots)
+    <LI>end styles: sharp, soft, arrow
+    <LI>splines with variable radius (e. g. for mobility)
+    <LI>change width, thickness, size of arrow, \ldots
+    <LI>one, two or variable colors
+    <LI>cylinders (can be moved and resized), optionally with arrow head
+    <LI>dipolar moments as arrows
+    <LI>surfaces for beta-sheets
+    <LI>solids (sphere, ellipsoid, cylinder, cone, box)
+    </UL>
+
+<LI>plotting
+    <UL>
+    <LI>PostScript (portrait/landscape, also with stereo, shading,
+        depth cueing and hidden surface elimination)
+    <LI>FrameMaker (MIF), for FrameMaker 3 (only 8 colors) and
+        FrameMaker 4 (many colors)
+    <LI>Enhanced MetaFile (Windows)
+    <LI>image formats: TIFF, JPEG, PNG, BMP
+    <LI>POV-Ray (ray tracing)
+    <LI>RenderMan Interface Bytestream
+    <LI>VRML 1.0
+    <LI>VRML 2.0 (VRML97)
+    </UL>
+
+<LI>calculations
+    <UL>
+    <LI>global RMSDs with average, standard deviation, minimum
+        and maximum
+    <LI>global displacements
+    <LI>local RMSDs
+    <LI>local displacements
+    <LI>RMSD calculations for groups of structures
+    <LI>calculate best matching structure parts
+    <LI>reduce number of structures (calculate clusters of
+        similar structures)
+    <LI>solvent accessible surface of residues
+    <LI>electrostatic potential
+    <LI>ring current and bond polarization shifts
+    <LI>missing atom coordinates (protons, pseudo atoms)
+    <LI>angular order parameters
+    <LI>angles between helix axes
+    <LI>relative lengths of principal axes
+    <LI>angles of bonds relative to principal axes
+    <LI>find/generate bonds between close atoms
+    <LI>find/generate H-bonds
+    <LI>find Van der Waals violations
+    <LI>find short distances between atoms, generate peak list
+    <LI>check distance constraints
+    <LI>check angle constraints
+    <LI>all functions listed above also for groups (complexes)
+    <LI>interactive measurement of bond lengths, bond angles
+        and dihedrals
+    </UL>
+
+<LI>figures
+    <UL>
+    <LI>Ramachandran plots (in color, with allowed regions and
+        angle constraints)
+    <LI>angle distribution plots with dots inside bars (in color)
+    <LI>angle distribution plots in circles (for MD)
+    <LI>distance vs. structure number (for MD)
+    <LI>contact maps
+    <LI>maps of distance constraints
+    </UL>
+
+<LI>history
+
+<LI>command macros
+
+</UL>
+
+<HR>
+Last modified: Mon Jan 20 19:44:59 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

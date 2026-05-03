@@ -1,0 +1,18 @@
+NAME
+     RadiusBond - set radius of bonds
+
+SYNOPSIS
+     RadiusBond expr
+
+DESCRIPTION
+     Set the radius of all selected bonds. The radius
+     is only visible if an bond is displayed as cylinder.
+
+EXAMPLES
+     RadiusBond 0.5
+
+SEE ALSO
+     SelectBond, StyleBond, RadiusInit
+
+DATE
+     940119

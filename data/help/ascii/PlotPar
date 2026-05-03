@@ -1,0 +1,79 @@
+NAME
+     PlotPar - set plot parameters
+
+SYNOPSIS
+     PlotPar expr expr expr expr expr
+         ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+         expr expr expr
+
+DESCRIPTION
+     Set size and options for plots. The first argument
+     gives the width of the paper, the second one the
+     height. The third argument gives the width of the
+     plot, the fourth one the height. If one of the plot
+     sizes is 0, it is calculated to correspond to the
+     dimensions (aspect ratio) of the window. The plot
+     is centered on the paper.
+
+     The current unit for these sizes is shown in the
+     prompt, it can be changed with the PlotUnit command.
+     The default paper size also depends on the current
+     unit.
+
+     The fifth argument selects the horizontal resolution
+     used for saving image (TIFF, JPEG, PNG) files.
+
+     The first option switches stereo plotting on or off.
+
+     The second option switches shading and hidden surface
+     elimination for the plot. The third only has an
+     influence if shading is switched on. If it is
+     selected, a full hidden surface elimination is done.
+     This can take a few minutes for complex plots, but it
+     is necessary to produce perfect results as soon as the
+     scene contains spheres, cylinders or primitives. If it
+     is not selected, a simple depth sorting is used, which
+     is much faster, but the result can contain slight
+     errors. For important plots (publications), this
+     option must always be switched on.
+
+     The fourth option selects whether the plot is
+     rotated by 90 degrees to produce a landscape plot.
+     Note that the size of the plot (arguments 3 and 4)
+     is still given in the original orientation of the
+     plot, before rotation. The size of the paper is
+     given in the orientation used by the printer, which
+     is normally portrait. So e. g. good size for a
+     landscape plot on A3 format are 29.7 42 0 26.
+
+     The third but last parameter select the precision
+     (resolution) of the plot. See DrawPrec for an
+     explanation of this parameter.
+
+     The second but last parameter selects a gamma correction
+     parameter. 1.0 will leave the colors unchanged, values
+     less than 1.0 will make the colors brighter, values
+     greater than 1.0 will make the colors darker. Note
+     that the "correct" gamma value depends on the output
+     device used, so using gamma correction when producing
+     the file is in principal not the right thing to do.
+     We offer this possibilty for convenience sake, it is
+     often difficult to do decent gamma correction on the
+     output file (e. g. for PostScript) with other
+     possibilities.
+
+     The last parameter selects the quality for JPEG plots.
+     Recommended values are between 50 (strong compression
+     with reasonable quality) and 95 (excellent quality).
+
+EXAMPLES
+     PlotPar 21 29.7 18 0 1000 0 0 1 0 3 1.0 75
+     PlotPar 21 29.7 0 18 2000 0 1 1 1 3 0.7 60
+     PlotPar 29.7 42 0 26 1500 0 1 1 1 4 0.5 90
+
+SEE ALSO
+     PlotUnit, PlotPs, PlotFm*,
+     PlotTiff, PlotJpeg, PlotPng, DrawPrec
+
+DATE
+     960321

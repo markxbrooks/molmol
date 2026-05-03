@@ -1,0 +1,23 @@
+NAME
+     PlotRib - make a RenderMan plot
+
+SYNOPSIS
+     PlotRib fileName
+
+DESCRIPTION
+     Make a plot of the current screen contents in
+     RenderMan Interface Bytestream (RIB) format. This
+     can be used as input for an external rendering
+     package to produce high quality pictures.
+
+     Information about suitable renderers can be found
+     at http://www.bmrt.org and http://www.pixar.com.
+
+EXAMPLE
+     PlotRib /home/joe/MyPlot.rib
+
+SEE ALSO
+     PlotPov, PlotVrml2
+
+DATE
+     991016

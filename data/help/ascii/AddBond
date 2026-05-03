@@ -1,0 +1,19 @@
+NAME
+     AddBond - add bond between two atoms
+
+SYNOPSIS
+     AddBond
+
+DESCRIPTION
+     Add a bond between the two selected atoms. Exactly
+     two atoms must be selected before this command is
+     executed, an error message will be issued otherwise.
+
+EXAMPLE
+     AddBond
+
+SEE ALSO
+     RemoveBond, CalcBond, AddAtom
+
+DATE
+     931126

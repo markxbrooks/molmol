@@ -1,0 +1,17 @@
+NAME
+     RemoveAtom - remove atoms
+
+SYNOPSIS
+     RemoveAtom
+
+DESCRIPTION
+     Remove all selected atoms.
+
+EXAMPLE
+     RemoveAtom
+
+SEE ALSO
+     SelectAtom, AddAtom, WriteLib
+
+DATE
+     950131

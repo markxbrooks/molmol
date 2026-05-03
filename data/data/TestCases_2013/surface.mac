@@ -1,0 +1,20 @@
+SelectAtom '' 
+Fit to_axes 'selected' 
+XMacStand pdb_charge.mac 
+SelectRes ':1' 
+ChangeRes atoms 'NARG+' 
+CalcAtom 'HN*' 
+SelectRes ':28' 
+ChangeRes atoms 'NASP' 
+CalcAtom 'HN*' 
+SelectRes ':27' 
+ChangeRes atoms 'CTRP' 
+CalcAtom 'O*' 
+SelectRes ':51' 
+ChangeRes atoms 'CCYS' 
+CalcAtom 'O*' 
+SelectAtom 'heavy'
+CalcPot vdw simplecharge 2 80 1.4 2 2 10 zero 'mrvib.pot' 
+AddSurface vdw contact 1.4 shaded  
+ReadPot mrvib.pot 
+PaintSurface pot 1.4 '-0.5 1 0 0 0.0 1 1 1 0.5 0 0 1' 

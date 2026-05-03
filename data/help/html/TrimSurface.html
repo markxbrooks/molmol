@@ -1,0 +1,36 @@
+<HEAD>
+<TITLE>TrimSurface</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>TrimSurface</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+TrimSurface - cut away part of a surface
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+TrimSurface expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Cut away part of all selected surfaces. The part that
+is trimmed off is given by the selected atoms, all
+surface parts that have a distance smaller than the
+value given as argument from a selected atom are cut
+away. The distance from an atom takes the VdW radius
+into account, the argument is an additional offset.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+TrimSurface 1.0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectPrim.html"><KBD>SelectPrim</KBD></A>, <A HREF="AddSurface.html"><KBD>AddSurface</KBD></A>, <A HREF="NearPrim.html"><KBD>NearPrim</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970718
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

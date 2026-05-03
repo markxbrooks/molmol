@@ -1,0 +1,38 @@
+NAME
+     FigDist - show distance vs. structure number
+
+SYNOPSIS
+     FigDist expr expr expr ( 0 | 1 ) ( 0 | 1 )
+
+DESCRIPTION
+     Create a figure showing distances on the vertical axis
+     vs. structure numbers on the horizontal axis. The first
+     argument gives the number of rows over which the plots
+     are distributed.
+
+     The second and third argument give the distance range
+     on the vertical axis.
+
+     A plot will be made for all selected distances of the
+     first selected molecule, the corresponding distances
+     from all selected molecules will be shown.
+
+     The first option selects whether residue numbers are
+     written as subscripts. The second option selects
+     whether the values of constraints are shown as
+     horizontal lines.
+
+     This kind of figure is mainly used for analyzing
+     results of MD runs.
+
+     This command supports groups.
+
+EXAMPLE
+     FigDist 4 3.0 7.0 0 1
+
+SEE ALSO
+     SelectMol, SelectDist, Group, FigOff,
+     FigAngles, FigCircles
+
+DATE
+     960317

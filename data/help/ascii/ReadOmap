@@ -1,0 +1,24 @@
+NAME
+     ReadOmap - read O electron density map
+
+SYNOPSIS
+     ReadOmap fileName
+
+DESCRIPTION
+     Read an electron density map from a plot file created
+     by the program O. Only the commands "move", "line" and
+     "rline" are interpreted, all other commands in the
+     plot file are silently ignored.
+
+     Exactly one molecule must be selected, the coordinates
+     in the file are expected to be in the same coordinate
+     space as this molecule.
+
+EXAMPLE
+     ReadOmap /home/joe/struct/my_map.plt
+
+SEE ALSO
+     SelectMol, StyleMap, LinePrim, ColorPrim
+
+DATE
+     991023

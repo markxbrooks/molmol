@@ -1,0 +1,34 @@
+<HEAD>
+<TITLE>color_atom.mac</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+# Set color of selected atoms to "standard" colors.
+
+# store current selection
+DefPropAtom 'prev_sel' 'selected'
+
+# make carbons dark grey
+SelectAtom 'prev_sel & name = "C*"' 
+ColorAtom 0.3 0.3 0.3
+
+# make oxygens red
+SelectAtom 'prev_sel & name = "O*"' 
+ColorAtom 1 0 0
+
+# make nitrogens blue
+SelectAtom 'prev_sel & name = "N*"' 
+ColorAtom 0 0 1
+
+# make sulfurs yellow
+SelectAtom 'prev_sel & name = "S*"' 
+ColorAtom 1 1 0
+
+# make hydrogens light grey
+SelectAtom 'prev_sel & name = "H*"' 
+ColorAtom 0.9 0.9 0.9
+
+# restore previous selection
+SelectAtom 'prev_sel'
+</PRE>
+</BODY>

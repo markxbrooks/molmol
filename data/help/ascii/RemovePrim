@@ -1,0 +1,19 @@
+NAME
+     RemovePrim - remove primitive
+
+SYNOPSIS
+     RemovePrim
+
+DESCRIPTION
+     Remove all selected primitives (circles, cylinders,
+     texts, ribbons, etc.).
+
+EXAMPLE
+     RemovePrim
+
+SEE ALSO
+     AddCircles, AddCylinder, AddTitle, AddText, AddRibbon,
+     SelectPrim
+
+DATE
+     950407

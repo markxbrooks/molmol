@@ -1,0 +1,168 @@
+#!/bin/zsh -f
+#
+# startup script for MOLMOL
+#
+
+MOLMOLHOME=/sw/share/molmol;MOLMOLDEV="Motif/OpenGL"
+export MOLMOLHOME
+export MOLMOLDEV
+
+ostype=`uname`
+osrel=`uname -r`
+osmaj=`echo $osrel | awk -F. '{print $1}'`
+osmin=`echo $osrel | awk -F. '{print $2}'`
+localdev=Motif/OpenGL
+glxdev=Motif/OpenGL
+printUsage () {
+  echo "Usage: molmol -ht2as [-o dev] [-r range] [-f macro] files"
+  echo ""
+  echo "       -h        print this message"
+  echo "       -t        TTY interface (no graphics)"
+  echo "       -o name   alternate input/output device"
+  echo "       -2        stereo mode (OpenGL only)"
+  echo "       -a        display all atoms instead of backbone"
+  echo "       -s        superimpose complete backbone"
+  echo "       -r range  superimpose backbone of given range"
+  echo "       -f file   execute macro file (- for standard input)"
+  echo "       files     DG, PDB, Angle or Dump files"
+}
+
+nograph=
+xopt=
+bb=y
+super=
+range=
+input=
+while getopts hto:2asr:f: option; do
+  case $option in
+    h) printUsage
+       exit 0;;
+    t) nograph=y;;
+    2) xopt=-stereo;;
+    a) bb=;;
+    s) super=y;;
+    r) range=$OPTARG;;
+    f) input=$OPTARG;;
+    o) MOLMOLDEV=$OPTARG;;
+    *) printUsage
+       echo ""
+       echo "passing unknown options to Xt"
+       break;;
+  esac
+done
+shift `expr $OPTIND - 1`
+
+display=$DISPLAY
+
+while [ -n "$*" ]; do
+  case $1 in
+    -bg | -ba*) xopt="$xopt $1 $2"; shift 2;;
+    -bd) xopt="$xopt $1 $2"; shift 2;;
+    -bw | -borderw*) xopt="$xopt $1 $2"; shift 2;;
+    -borderc*) xopt="$xopt $1 $2"; shift 2;;
+    -d*) xopt="$xopt $1 $2"; display=$2; shift 2;;
+    -fg | -for*) xopt="$xopt $1 $2"; shift 2;;
+    -fn | -fon*) xopt="$xopt $1 $2"; shift 2;;
+    -g*) xopt="$xopt $1 $2"; shift 2;;
+    -n*) xopt="$xopt $1 $2"; shift 2;;
+    -t*) xopt="$xopt $1 $2"; shift 2;;
+    -x*) xopt="$xopt $1 $2"; shift 2;;
+    -* | +*) xopt="$xopt $1"; shift;;
+    *) break;;
+  esac
+done
+
+magictmp=/tmp/molmol_magic$$
+
+if [ ! -d $HOME/molmol ]; then
+  mkdir $HOME/molmol
+fi
+startmacro=$HOME/molmol/options.mac
+cp /dev/null $startmacro
+
+if [ -n "$*" ]; then
+  if [ -f $HOME/molmol/dump ]; then
+    mv -f $HOME/molmol/dump $HOME/molmol/dump.old
+  fi
+  echo "0	long	0x3b7a12f9	MOLMOL" > $magictmp
+  echo "0	long	0xf9127a3b	MOLMOL" >> $magictmp
+  (
+    for i in $*; do
+      case `file -m $magictmp $i` in
+        *MOLMOL) echo "ReadDump $i"
+                 bb=
+                 continue;;
+      esac
+      line1=`awk '/^@<TRIPOS>/ {print; exit}; NR > 20 {exit}' $i`
+      case $line1 in
+        @\<TRIPOS\>*) echo "ReadSybyl $i"
+             bb=
+             continue;;
+      esac
+      line1=`awk 'NR == 1; NR > 1 {exit}' $i`
+      case $line1 in
+        \#*) echo "ReadAng $i"
+             continue;;
+      esac
+      line4=`awk 'NR == 4 {print $1}; NR > 4 {exit}' $i`
+      case $line4 in
+        [A-Z]|[A-Z][A-Za-z]) echo "ReadXyz $i"
+                 bb=
+                 continue;;
+        [A-Z]*)  echo "ReadPdb $i"
+                 continue;;
+      esac
+      echo "ReadDg $i"
+    done
+    if [ -n "$range" ]; then
+      echo "SelectAtom ':$range && bb'"
+      echo "Fit to_first"
+      echo "SelectAtom ''"
+    fi
+    if [ -n "$super" ]; then
+      echo "SelectAtom 'bb'"
+      echo "Fit to_first"
+      echo "SelectAtom ''"
+    fi
+    if [ -n "$bb" ]; then
+      echo "SelectBond '! bb'"
+      echo "StyleBond invisible"
+      echo "SelectBond 'bb'"
+    fi
+  ) >> $startmacro
+fi
+
+if [ -n "$input" -a "$input" != "-" ]; then
+  if [ -r $input ]; then
+    echo "XMacUser $input" >> $startmacro
+  else
+    echo "XMacStand $input" >> $startmacro
+  fi
+fi
+
+trap "rm -f $startmacro $magictmp" 0 1 2 15
+
+if [ -n "$nograph" ]; then
+  MOLMOLDEV=TTY/NO
+elif [ -n "$MOLMOLDEV" ]; then
+  true  # already set
+elif [ -n "$localdev" -a \( $display = ":0" -o $display = ":0.0" \) ]; then
+  MOLMOLDEV=$localdev
+elif [ -x $xdpy ]; then
+  xdpyout=`$xdpy -d $display 2>&1 | egrep 'GLX|unable'`
+  case $xdpyout in
+    *unable*) MOLMOLDEV=TTY/NO
+              nograph=y
+              continue;;
+    *GLX*)    if [ -n "$glxdev" ]; then
+                MOLMOLDEV=$glxdev
+              fi
+              continue;;
+  esac
+fi
+
+if [ "$input" = "-" -o -n "$nograph" ]; then
+    echo "LineBond solid 1  "  >>| $startmacro ; /sw/share/molmol/src/main/molmol $xopt
+else
+    echo "LineBond solid 1  "  >>| $startmacro ; /sw/share/molmol/src/main/molmol $xopt  
+fi

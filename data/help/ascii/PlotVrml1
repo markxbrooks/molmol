@@ -1,0 +1,31 @@
+NAME
+     PlotVrml1 - make a VRML 1.0 plot
+
+SYNOPSIS
+     PlotVrml1 fileName
+
+DESCRIPTION
+     Make a plot of the current screen contents in VRML
+     (Virtual Reality Modeling Language) format. VRML is
+     the standard format for transferring and displaying
+     three-dimensional geometry on the World Wide Web.
+     The created files follow version 1.0 of the VRML
+     specifications and can be displayed by any VRML
+     browser supporting VRML 1.0.
+
+     Files following the newer VRML 2.0 (VRML97)
+     standard can be produced with the PlotVrml2
+     command.
+
+EXAMPLE
+     PlotVrml1 /home/joe/MyPlot.wrl
+
+WARNING
+     This command was not tested thoroughly. Not all
+     display possibilities of MOLMOL are supported.
+
+SEE ALSO
+     PlotFm*, PlotPs, PlotPov, PlotVrml2
+
+DATE
+     991031

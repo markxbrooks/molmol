@@ -1,0 +1,43 @@
+<HEAD>
+<TITLE>DrawSize</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>DrawSize</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+DrawSize - set size of drawing area
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+DrawSize ( set | restore ) [ expr expr ]
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+If the fist argument is 'set', set the size of the
+drawing are to the given width and height (in pixels).
+This can be useful in connection with plotting, so
+that the user can enforce a certain aspect ratio for
+the resulting plot.
+<P>
+With the first argument 'restore', the command
+restores the drawing area to the last size given with
+the 'set' option. The saved size is also stored in
+parameter and dump files, so this command is mainly
+used for saving a desired window (and plot) size in a
+dump file, and restoring it after reading it back.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+DrawSize set 1000 750
+DrawSize restore
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+961213
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

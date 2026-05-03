@@ -1,0 +1,19 @@
+NAME
+     HelpManual - show manual in web browser
+
+SYNOPSIS
+     HelpManual
+
+DESCRIPTION
+     Show the MOLMOL manual in a web browser. The web
+     browser that should be used must be selected with
+     the HelpViewer command.
+
+EXAMPLE
+     HelpManual
+
+SEE ALSO
+     HelpViewer
+
+DATE
+     991031

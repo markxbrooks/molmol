@@ -1,0 +1,28 @@
+NAME
+     ShadeBond - set shading of bonds
+
+SYNOPSIS
+     ShadeBond ( none | flat | gouraud | phong |
+	 dots | lines )
+
+DESCRIPTION
+     Set the shading method for bonds if they are
+     displayed as cylinders.
+
+	 none:    no shading
+	 flat:    polygons shaded in uniform color
+	 gouraud: color interpolated between vertices
+	 phong:   normals interpolated, highest quality
+	 dots:    draw surface using dots
+	 lines:   draw surface using lines
+
+     Not all graphics devices support all shading methods.
+
+EXAMPLE
+     ShadeBond phong
+
+SEE ALSO
+     SelectBond, StyleBond, ColorBond
+
+DATE
+     950309

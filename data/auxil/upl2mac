@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# Change an upper limit (upl) file to a MOLMOL macro. This is useful when
+# a file contains limits between different molecules, the ReadUpl command
+# of MOLMOL cannot read such limits from an upl file.
+#
+#    original written by Oliver Schott, modified by Reto Koradi
+#
+
+nawk ' \
+  /^#/ {print; next} \
+  { if ($1 <= 10000) { \
+      num1 = $1; \
+    } else { \
+      gsub(/"/, "\\\""); \
+      len = length($1); \
+      nam1 = ""; \
+      for (i = 1; i <= len; i++) { \
+	ch = substr($1, i, 1); \
+	if (ch == "\x27") \
+	  nam1 = nam1 "\\\x27"; \
+	else \
+	  nam1 = nam1 ch \
+      } \
+      num2 = $2; \
+      len = length($4); \
+      nam2 = ""; \
+      for (i = 1; i <= len; i++) { \
+	ch = substr($4, i, 1); \
+	if (ch == "\x27") \
+	  nam2 = nam2 "\\\x27"; \
+	else \
+	  nam2 = nam2 ch \
+      } \
+      dist = $5; \
+      printf("SelectAtom \x27:%i@%s :%i@%s\x27\n", num1, nam1, num2, nam2); \
+      printf("AddUpl %4.2f\n", dist); \
+    } \
+  } \
+' $*

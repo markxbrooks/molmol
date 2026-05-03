@@ -1,0 +1,46 @@
+<HEAD>
+<TITLE>AddAngle</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddAngle</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddAngle - add dihedral angle
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddAngle name
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a dihedral angle with the given name, defined
+by the four selected atoms. Exactly four atoms must
+be selected before this command is executed, an error
+message will be issued otherwise.
+<P>
+Two of the atoms must be from the same residue, one
+also from the same residue or the previous residue,
+one from the same residue or the next residue.
+<P>
+The name must be unique within the residue.
+<P>
+The new angle cannot be used immediately for commands
+like <A HREF="RotateAngle.html"><KBD>RotateAngle</KBD></A>, only angles that were in the residue
+library can be used for that purpose. The command is
+intended to be used in conjunction with WriteRes to
+generate library entries for non-standard residues.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+AddAngle "RHO"
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="AddAtom.html"><KBD>AddAtom</KBD></A>, <A HREF="AddBond.html"><KBD>AddBond</KBD></A>, <A HREF="CalcBond.html"><KBD>CalcBond</KBD></A>, <A HREF="WriteLib.html"><KBD>WriteLib</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+961219
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,7 @@
+You can modify some advanced display
+attributes using the Material* and
+Texture* families of commands. Some
+of these attributes do not affect
+interactive display, but only the output
+for external renderers, like files
+produced for POV-Ray (PlotPov command).

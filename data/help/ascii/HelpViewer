@@ -1,0 +1,31 @@
+NAME
+     HelpViewer - set viewer for help files
+
+SYNOPSIS
+     HelpViewer ( UNIX-Netscape | Windows-Explorer |
+	 builtin | custom ) string
+
+DESCRIPTION
+     Choose a viewer for displaying help files. The first
+     two options set commonly used web browsers on the
+     corresponding platform. With 'builtin', a simple text
+     window is used. When 'custom' is selected, the command
+     given as second argument is used for starting a web
+     browser. For UNIX, this has to be a complete command
+     string, where %f will be replaced by the name of the
+     HTML file. For Windows, it is only the name of a web
+     browser, this must be capable of DDE with the same
+     protocol as Explorer.
+
+     Once a help file has been displayed, choosing a
+     different option with this command may only take
+     effect after restarting the program.
+
+EXAMPLE
+     HelpViewer UNIX-Netscape ''
+
+SEE ALSO
+     HelpCmd
+
+DATE
+     971002

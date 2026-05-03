@@ -1,0 +1,5 @@
+You can set the drawing area to a
+specific size (in pixels) using the
+DrawSize command. This is especially
+useful for obtaining a certain aspect
+ratio for plots.

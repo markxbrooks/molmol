@@ -1,0 +1,25 @@
+NAME
+     RecordMac - open macro recorder
+
+SYNOPSIS
+     RecordMac
+
+DESCRIPTION
+     Open a macro recorder. The text area shows the macro
+     recorded so far, it can also be edited manually.
+     The 'Add' button adds the most recently executed
+     commands, the number of commands is given in the
+     text field. If 'automatic' is switched on, each
+     executed command is recorded automatically.
+
+     The 'Test' button executes the recorded macro, the
+     'Save' button stores it with the given file name.
+
+EXAMPLE
+     RecordMac
+
+SEE ALSO
+     XMacUser
+
+DATE
+     950626

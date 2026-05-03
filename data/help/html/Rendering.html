@@ -1,0 +1,93 @@
+<HEAD>
+<TITLE>Rendering</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>Rendering</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+Rendering - set rendering options
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+Rendering ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+    ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set some rendering options. Depending on the output
+device, some options may always be enabled, no
+matter whether they are switched on or off by this
+command. Some of these options (like two-sided
+lighting) are also used to generate plots, so the
+appropriate options have to be set before giving the
+plotting command.
+<P>
+The following options are supported:
+<P>
+<PRE>
+    Anti Aliasing: Draw smooth lines. This may not
+        be supported on all hardware.
+</PRE>
+<PRE>
+    Transparency: Use transparent drawing for objects
+        that are not completely opaque. This may not
+        be supported on all hardware.
+</PRE>
+<PRE>
+    Fast Spheres Drawing: Instead of approximating
+        spheres with many polygons, they are drawn
+        as circles. This makes shading impossible,
+        but can make the display much faster.
+</PRE>
+<PRE>
+    Backface Elimination: Eliminate polygons that
+        face away from the viewpoint at an early
+        display step. This has normally no visual
+        effect on the display, but can make it
+        faster.
+</PRE>
+<PRE>
+    Shading: Color polygons depending on the angle
+        from the light source and the view point.
+        This is also necessary for the support of
+        depth cueing on most devices, e. g. for
+        plotting.
+</PRE>
+<PRE>
+    Two-sided Lighting: Normally lighting calculations
+        are only done for the "outside" of an object.
+        This triggers lighting calculation to be done
+        for both sides. The effect is visible if
+        objects are cut, mostly by the front clipping
+        plane.  It is not switched on by default on
+        most devices because it can make all rendering
+        slower.
+</PRE>
+<PRE>
+    Depth Sorting: Sort all display elements by depth
+        before drawing. This gives a quick, but
+        sometimes unexact, method for hidden surface
+        elimination.
+</PRE>
+<PRE>
+    Hidden Surface Elimination: Eliminate display
+        elements that are hidden by other elements
+        closer to the viewpoint. If the hardware
+        supports this feature, it is enabled by
+        default. If it has to be emulated by the
+        program, the display can get very slow.
+</PRE>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+Rendering 0 0 0 1 1 0 1 0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>, <A HREF="PlotPs.html"><KBD>PlotPs</KBD></A>, <A HREF="PlotFm3.html"><KBD>PlotFm*</KBD></A>, <A HREF="Fog.html"><KBD>Fog</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960305
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

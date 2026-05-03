@@ -1,0 +1,21 @@
+NAME
+     StyleDrawobj - set display style of draw objects
+
+SYNOPSIS
+     StyleDrawobj ( invisible | line | cylinder | neon )
+
+DESCRIPTION
+     Set the display style of all selected draw objects
+     (lines etc.). The style 'cylinder' draws the object as
+     a cylinder with flat ends, 'neon' draws it as cylinder
+     with round ends.  Not all display styles are supported
+     for all draw objects types.
+
+EXAMPLE
+     StyleDrawobj cylinder
+
+SEE ALSO
+     SelectPrim, AddDrawobj, ColorPrim
+
+DATE
+     950713

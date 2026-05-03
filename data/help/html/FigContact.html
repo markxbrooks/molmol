@@ -1,0 +1,59 @@
+<HEAD>
+<TITLE>FigContact</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>FigContact</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+FigContact - show contact map
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+FigContact name name name name expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Create a figure showing a contact map of residues. The
+first argument gives a property name, the residues
+with this property set will be shown on the horizontal
+axis. The residues with the property given as second
+argument will be shown on the vertical axis.
+<P>
+For each of these residues, only the atoms with the
+property given as third argument will be considered
+for the contacts shown on the top-left side of the
+diagonal, the ones with the property given as fourth
+argument will be considered for the bottom-right side
+of the diagonal.
+<P>
+Two distances are given as fifth and sixth argument.
+Nothing will be drawn if the smallest distance between
+two atoms of the corresponding residues is larger than
+the maximal distance. A black square will be drawn if
+it is smaller than the minimal distance. Values in
+between are shown with increasing levels of grey.
+<P>
+If more than one molecule is selected, they all need
+to have the same structure. The distance of each atom
+pair is calculated as average over the distances in
+each individual molecule. So what is used for the plot
+is the minimal average distance of atom pairs between
+the corresponding residues.
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+FigContact 'selected' 'selected' 'bb' 'all' 3.0 5.0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="DefPropRes.html"><KBD>DefPropRes</KBD></A>, <A HREF="DefPropAtom.html"><KBD>DefPropAtom</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="FigOff.html"><KBD>FigOff</KBD></A>,
+<A HREF="FigLimit.html"><KBD>FigLimit</KBD></A>, <A HREF="CalcDist.html"><KBD>CalcDist</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+961126
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

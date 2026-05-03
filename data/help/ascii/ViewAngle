@@ -1,0 +1,21 @@
+NAME
+     ViewAngle - set view angle
+
+SYNOPSIS
+     ViewAngle expr
+
+DESCRIPTION
+     Set the view angle. For orthogonal projection, this
+     influences only the size (zooming factor) of the
+     display, for perspective projection, a larger view
+     angle leads to a stronger perspective. The value
+     is given in radians.
+
+EXAMPLE
+     ViewAngle 0.5
+
+SEE ALSO
+     Projection, ClipPos, ClipSize
+
+DATE
+     931201

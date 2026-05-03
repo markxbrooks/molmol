@@ -1,0 +1,63 @@
+<HEAD>
+<TITLE>MeanMol</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>MeanMol</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+MeanMol - create mean molecule
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+MeanMol name
+    ( avg_bfactor | max_disp | rms_disp | x_ray )
+    ( mean_only | set_all )
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Create a new molecule with the given name. The new
+molecule will be the mean structure of all selected
+molecules. At least one molecule must be selected,
+and all selected molecules must have the same
+structure.
+<P>
+The second argument determines how the B-factors
+of the new molecule are set:
+<P>
+<PRE>
+    avg_bfactor: average value of all B-factors
+</PRE>
+<PRE>
+    max_disp: maximal displacement from mean
+        structure
+</PRE>
+<PRE>
+    rms_disp: root mean square of all displacements
+</PRE>
+<PRE>
+    x_ray: values corresponding to B-factors used
+        for X-ray structures (mean square displacement
+        multiplied by 8/3 * pi * pi)
+</PRE>
+If the third argument is mean_only, this B-factors
+are only set in the new mean structure, if it is
+set_all, the B-factors of all selected structures are
+set to this value.
+<P>
+The newly created molecule will have the property
+"mean".
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+MeanMol "mean" rms_disp mean_only
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="RemoveMol.html"><KBD>RemoveMol</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960314
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

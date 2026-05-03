@@ -1,0 +1,54 @@
+NAME
+     TextureAtom - set texture of atoms
+     TextureBond - set texture of bonds
+     TextureDist - set texture of distances
+     TexturePrim - set texture of primitives
+     TextureInit - set initial texture
+
+SYNOPSIS
+     TextureAtom string expr expr expr
+     TextureBond string expr expr expr
+     TextureDist string expr expr expr
+     TexturePrim string expr expr expr
+     TextureInit string expr expr expr
+
+DESCRIPTION
+     The first four commands set the texture mapping
+     parameters of all selected atoms, bonds, distances
+     or primitives. TextureInit sets the initial
+     texture mapping parameters used for new objects.
+
+     The first parameter gives the name of a texture,
+     the second paramter its scaling factor.
+
+     The third parameter determines the amount of
+     bumpiness of the surface. 0.0 results in a smooth
+     surface, 1.0 in a very bumpy surface. The fourth
+     paramter is a scaling factor for the bump pattern,
+     a larger scaling factor will result in wider bumps.
+
+     Texture mapping is not supported on screen, these
+     parameters are used for preparing files for
+     ray-tracing (PlotPOV).
+
+     The texture name must appear in the texture definition
+     file of POV-Ray (textures.inc). If a texture is
+     selected, the attributes of this texture will override
+     the colors and material properties selected otherwise.
+     If the name has the extension ".gif", it is assumed to
+     be the name of a GIF file which is used as image map.
+
+     Giving a value of 'as is' for the texture name or
+     less than 0.0 for any numerical argument will not
+     change it, this is useful for changing only part of
+     the parameters.
+
+EXAMPLES
+     TextureAtom 'Blood_Marble' 0.5 0.0 1.0
+     TextureBond '' 1.0 0.5 1.0
+
+SEE ALSO
+     Select*, Color*, Material*, PlotPov
+
+DATE
+     991016

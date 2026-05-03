@@ -1,0 +1,10 @@
+define AddPatch
+  help create partial surface for selected atoms
+  $rad = 1.4 "Solvent Radius"
+  DefPropAtom 'surf' 'selected'
+  SelectAtom 'mol.selected'
+  AddSurface (vdw) contact $rad shaded 0
+  SelectAtom 'mol.selected & ! surf'
+  TrimSurface ($rad + 0.1)
+  SelectAtom 'surf'
+end

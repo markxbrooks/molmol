@@ -1,0 +1,54 @@
+<HEAD>
+<TITLE>FlipAtom</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>FlipAtom</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+FlipAtom - flip atoms for better superposition
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+FlipAtom nameList
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Exchanges sets of atom names in all selected
+residues if that leads to a better superposition to
+the first structure. The sets of atoms that can
+be exchanged is listed in the file:
+<P>
+<PRE>
+    $MOLMOLHOME/setup/FlipAtoms
+</PRE>
+The specifications in this file list atoms that
+are part of one potential exchange operation on one
+line. Each set of (typically 2 or 3) atoms that will
+be permuted by this operation is inside a pair of
+parentheses.
+<P>
+The atoms that can be exchanged are normally the
+atoms of rings that do not have a fixed orientation
+in an NMR structure (PHE, TYR), and the protons of
+methyl groups.
+<P>
+This command is typcially used before calculating
+mean structures, or RMSDs that involve side chains.
+<P>
+The command will make a report listing the atoms
+that were exchanged.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+FlipAtom "PHE TYR"
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PathNames.html"><KBD>PathNames</KBD></A>, <A HREF="MeanMol.html"><KBD>MeanMol</KBD></A>, <A HREF="CalcRmsd.html"><KBD>CalcRmsd</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+950922
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

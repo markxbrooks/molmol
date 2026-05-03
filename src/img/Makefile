@@ -1,4 +1,5 @@
-SRCDIRS  = libjpeg libpng libtiff zlib
+# zlib must build before libpng; libtiff may use zlib/jpeg after those exist.
+SRCDIRS  = zlib libjpeg libpng libtiff
 SUBDIRS  = $(SRCDIRS) lib
 TARGETS  = default depend
 

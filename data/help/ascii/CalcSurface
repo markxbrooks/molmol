@@ -1,0 +1,40 @@
+NAME
+     CalcSurface - calculate solvent accessible surface
+
+SYNOPSIS
+     CalcSurface expr expr
+
+DESCRIPTION
+     Generate a report with solvent accessible surfaces
+     of each residue. The first argument gives the radius
+     of the solvent, the second the desired precision.
+     A reasonably good approximation will be obtained with
+     precisions of 2 or 3, higher values will lead to even
+     better results.
+
+     Only selected atoms are used for the calculation. The
+     first surface given for each residue is the accessible
+     surface in the context of the molecule, the second one
+     is the surface of the isolated residue.
+
+     The results are listed for each molecule separately,
+     a summary with average, minimal and maximal values is
+     given at the end. If not all molecules have the same
+     structure, or if not the same atoms are selected in
+     all molecules, these values will not make much sense.
+
+     The calculation will take some time, especially if a
+     high precision is desired. The time grows exponentially
+     with the precision, so values of more than 4 or 5 are
+     not recommended.
+
+     This command supports groups.
+
+EXAMPLE
+     CalcSurface 1.4 2
+
+SEE ALSO
+     SelectAtom, Group, AddSurface
+
+DATE
+     960317

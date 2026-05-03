@@ -1,0 +1,132 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Main Window Elements</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Main Window Elements</H1>
+
+The following image shows a screen dump of the MOLMOL main
+window, with annotations for its elements. Each of them
+will be briefly explained in the following sections.
+
+<CENTER><IMG SRC="images/mainwin.gif"></CENTER>
+
+When you start up MOLMOL for the first time, you will see
+two dialogs boxes in addition to the main window. If you
+prefer not to see them each time you start the program,
+you can disable them using the  <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A></KBD>
+command, and choose the option to save the program state
+when you quit the program. You can do the same if you
+do not want certain parts of the main window to appear.
+
+ <H2>Drawing Area</H2>
+
+All graphical display of molecules (and other items)
+will appear here. You also use this area for interactive
+ <A HREF=ui_mouse.html>mouse manipulations</A>, like zooming and
+rotating.
+
+ <H2>Menu</H2>
+
+The menu contains all MOLMOL commands, you use the common
+navigation methods known from other programs to access
+commands in the menu. The following is a short overview of
+which kinds of commands can be found in which pulldown menu:
+
+<DL>
+<DT><B>File</B>
+<DD>Input and output of files. This includes reading and
+    writing of molecules in many formats, output of plots,
+    execution of macros, and a variety of other commands.
+<DT><B>Edit</B>
+<DD>Commands that modify molecules. This includes
+    commands that change the covalent structure (adding
+    and removing atoms and bonds, building molecules
+    from residues, etc.) and commands that modify
+    coordinates (rotation, translation, changing dihedral
+    angles, superposition, etc.).
+<DT><B>View</B>
+<DD>Commands that change global viewing parameters.
+    This includes zooming, camera and light source
+    parameters, clipping planes and fog.
+<DT><B>Options</B>
+<DD>Commands that change various kinds of configuration
+    options and preferences. This includes the choice
+    whether certain dialogs are displayed, selection of
+    stereo and animation modes, rendering options,
+    display quality, plot parameters, and path names of
+    configuration files.
+<DT><B>Prop</B>
+<DD>Commands that change or list properties. Properties
+    are boolean values that can be set for various data
+    items, they are mainly used for
+     <A HREF=sel_idx.html>Selection</A>.
+<DT><B>Attr</B>
+<DD>Commands that change graphics attributes, like
+    colors, display styles, material properties, etc.
+<DT><B>Calc</B>
+<DD>Commands that perform calculations. A large
+    variety of calculation and analysis possibilites
+    for molecules can be found here.
+<DT><B>Prim</B>
+<DD>Commands that create and modify primitives.
+    Primitives are things that can be displayed, but
+    are not molecules. This includes annotations,
+    schematic displays (ribbons) and surfaces.
+<DT><B>Fig</B>
+<DD>Commands that draw figures used for the analysis
+    of molecules. This includes Ramachandran plots,
+    angle distribution plots, contact maps, etc.
+<DT><B>Opt</B>
+<DD>This menu appears when optional commands are defined
+    as part of the startup macros, and those commands are
+    not contained in any other menu. See the section on
+     <A HREF=config.html>configuration</A> for information on
+    how to extend the program with optional commands.
+<DT><B>Help</B>
+<DD>Commands for access to various forms of
+     <A HREF=ui_help.html>online help</A>.
+</DL>
+
+ <H2>Buttons</H2>
+
+The buttons give quick access to some frequently used
+(combinations of) commands. You can use the  <KBD><A HREF="../help/html/HelpButton.html">HelpButton</A></KBD>
+command to see how exactly the buttons are defined.
+
+ <H2>Command Line</H2>
+
+As well as selecting them from the menu, all commands can
+also be entered on the command line. Parts of commands that
+are unique are completed automatically while typing. You can
+also enter command arguments on the command line.
+
+ <H2>Status Line</H2>
+
+A short help message is displayed here while the mouse
+pointer is moved over menu entries or buttons, or when a
+command is entered on the command line. Some commands also
+display informative messages on the status line.
+
+ <H2>Break Button</H2>
+
+Most long running commands can be interrupted by clicking
+the mouse on this button. The button will be active while
+such a command is running, inactive (grayed out) otherwise.
+
+<HR>
+Last modified: Mon Jan 20 19:44:56 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

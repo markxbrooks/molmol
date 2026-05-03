@@ -1,0 +1,104 @@
+#!/bin/sh
+#
+# Start POV-Ray, reading a MOLMOL dump file, creating a series of
+# TIFF file for making a movie. Requires MOLMOL and pbmplus/netpbm.
+#
+# The first argument is the file name, without extension, the
+# second argument the desired horizontal resolution (width) of
+# the image. The height is determined to preserve the aspect ratio,
+# determined by the last "DrawSize save" command given before
+# saving the dump file.
+# The third argument gives the number of steps (frames) to render,
+# the remaining three arguments give the increments for rotation
+# around the x, y and z axes.
+#
+# If the option -n is given, text labels do not throw shadows.
+
+LIBDIR=/opt/group/lib/povray3
+
+no_shadow () {
+  if [ $shadow = "n" ]; then
+    awk '
+      BEGIN { inText = 0 }
+      /^text \{/ { inText = 1 }
+      /^\}$/ {
+	if (inText == 1) {
+	  print "no_shadow"
+	  inText = 0
+	}
+      }
+      { print }
+    ' $1.pov.tmp > $1.pov
+    rm $1.pov.tmp
+  fi
+}
+
+if [ $1 = "-n" ]; then
+  shadow=n
+  shift
+  povfile=$1.pov.tmp
+else
+  shadow=y
+  povfile=$1.pov
+fi
+
+molmol -t $1.mml << EOF
+DrawSize restore
+PlotPov $povfile
+Quit no
+EOF
+
+no_shadow
+
+width=$2
+height=`awk -F, '
+  BEGIN { u = 1.0 }
+  /^[ ]*up / {
+    u = $2 + 0.0
+    if (u < 0.0)
+      u = - u;
+  }
+  /^[ ]*right / {
+    i = index($0, "<")
+    j = index($0, ",")
+    r = substr($0, i + 1, j - i - 1) + 0.0
+    if (r < 0.0)
+      r = - r
+    print int(width * (u / r) + 0.5)
+    exit
+  }
+' width=$width $1.pov`
+
+povray $LIBDIR/povray.ini -i$1.pov -w$width -h$height
+rm $1.pov
+pnmtotiff $1.ppm > ${1}000.tif
+rm $1.ppm
+
+frame=0
+while true; do
+  frame=`expr $frame + 1`
+  if expr $frame \>= $3 >/dev/null; then
+    break
+  fi
+  frameName=`printf "%03s" $frame`
+
+  xAng=`expr $frame \* $4`
+  yAng=`expr $frame \* $5`
+  zAng=`expr $frame \* $6`
+
+  echo "DrawSize restore" > tmp.mac
+  echo "RotateX $xAng" >> tmp.mac
+  echo "RotateY $yAng" >> tmp.mac
+  echo "RotateZ $zAng" >> tmp.mac
+  echo "PlotPov $povfile" >> tmp.mac
+  echo "Quit no" >> tmp.mac
+  molmol -t -f tmp.mac $1.mml
+  rm tmp.mac
+
+  no_shadow
+
+  povray $LIBDIR/povray.ini -i$1.pov -w$width -h$height
+  rm $1.pov
+  pnmtotiff $1.ppm > ${1}${frameName}.tif
+  rm $1.ppm
+done

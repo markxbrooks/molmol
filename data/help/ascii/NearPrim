@@ -1,0 +1,28 @@
+NAME
+     NearPrim - set near clipping plane of primitives
+
+SYNOPSIS
+     NearPrim expr
+
+DESCRIPTION
+     Set the position of the near clipping plane of all
+     selected primitives. The position is given as distance
+     from the viewing point, the center of the display has
+     distance 10.0 from the viewing point. When a negative
+     value is given, the current value will be unchanged.
+     When 0.0 is given, no separate clipping will be done,
+     the global clipping planes set by ClipPos and ClipSize
+     are then used.
+
+     This command is mainly useful for surfaces, by
+     clipping away the front part it is possible to see
+     the inside.
+
+EXAMPLE
+     NearPrim 8.0
+
+SEE ALSO
+     SelectPrim, AddSurface, ClipPos, ClipSize, TrimSurface
+
+DATE
+     970718

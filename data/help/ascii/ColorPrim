@@ -1,0 +1,20 @@
+NAME
+     ColorPrim - change color of primitives
+
+SYNOPSIS
+     ColorPrim expr expr expr
+
+DESCRIPTION
+     Set the color of the selected circles, cylinders,
+     texts, ribbons, etc. The color is given by its Red,
+     Green and Blue components, all in the range between
+     0.0 and 1.0.
+
+EXAMPLE
+     ColorPrim 1.0 0.0 0.0
+
+SEE ALSO
+     SelectPrim, TintPrim, DialColor, ColorInit
+
+DATE
+     950407

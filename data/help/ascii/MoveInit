@@ -1,0 +1,18 @@
+NAME
+     MoveInit - undo all translations
+
+SYNOPSIS
+     MoveInit
+
+DESCRIPTION
+     Bring all movable (set with DialMol) molecules back
+     to their original position.
+
+EXAMPLE
+     MoveInit
+
+SEE ALSO
+     DialMol, MoveX, MoveY, MoveZ
+
+DATE
+     9991016

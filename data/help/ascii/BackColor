@@ -1,0 +1,16 @@
+NAME
+     BackColor - change background color
+
+SYNOPSIS
+     BackColor expr expr expr
+
+DESCRIPTION
+     Set the background color. The color is given by its
+     Red, Green and Blue component, all in the range
+     between 0.0 and 1.0.
+
+EXAMPLE
+     BackColor 1.0 0.2 0.7
+
+DATE
+     931126

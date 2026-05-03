@@ -1,0 +1,41 @@
+This directory contains auxiliary files not directly used
+by MOLMOL.
+
+    pov*:       Some shell scripts for more conveniently running
+                POV-Ray with files produced by MOLMOL. See the
+                comments in the files for details.
+                povray.ini is a suggested INI file for POV-Ray,
+                it is used by the shell scripts.
+
+    arial.ttf:  TrueType font definition, this font is used by
+                the POV-Ray files generated with the PlotPov
+                command of MOLMOL. It must be in the search path
+                of POV-Ray when the file is rendered, you would
+                typically copy it into the directory where the
+                POV-Ray include files reside (like e. g.
+                /usr/local/lib/povray3).
+
+    symbol.ttf: TrueType font definition, this font is used by
+                the POV-Ray files generated with the PlotPov
+                command of MOLMOL. It must be in the search path
+                of POV-Ray when the file is rendered, you would
+                typically copy it into the directory where the
+                POV-Ray include files reside (like e. g.
+                /usr/local/lib/povray3).
+
+    psgamma.c:  C program for doing gamma correction on PostScript
+                files. This can be compiled and used as filter
+                inside a print alias. A factor between 0.5 and
+                1.0 is necessary for most common printers.
+    
+    stereo:     Shell script to switch the stereo mode of the
+                monitor on an SGI system.
+
+    upl2mac:    Shell script to convert an upper limit file to a
+                MOLMOL macro.
+
+    ColorList:  Much longer list of colors than the one used
+                by default as setup/ColorList.
+    
+    mol.ico:    A Windows icon that can be used for MOLMOL dump
+		files.

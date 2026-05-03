@@ -1,0 +1,49 @@
+<HEAD>
+<TITLE>AddTitle</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>AddTitle</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+AddTitle - add 2D text annotation
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+AddTitle <coord> expr string
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Add a text annotation at a given screen position.
+The screen position must be entered by a mouse click
+or on the command line. The second argument is the
+size, the third the string to be displayed.
+<P>
+The origin of the screen coordinates is at the center
+of the window. The x-axis runs from left to right,
+the y-axis from bottom to top. The range for y is
+-1.0 to 1.0, the one for x depends on the aspect
+ratio, e. g. it would be -1.5 to 1.5 if the window
+width is 50% larger than the window height.
+<P>
+For an explanation on how to enter greek letters,
+sub- and superscript, see the manual page of the
+<A HREF="EditText.html"><KBD>EditText</KBD></A> command.
+<P>
+The created primitives have the properties "text"
+and "title".
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+AddTitle 0.5 0.3 0.15 "Label"
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="EditText.html"><KBD>EditText</KBD></A>, <A HREF="ColorPrim.html"><KBD>ColorPrim</KBD></A>, <A HREF="LinePrim.html"><KBD>LinePrim</KBD></A>, <A HREF="MovePrim.html"><KBD>MovePrim</KBD></A>, <A HREF="SizeText.html"><KBD>SizeText</KBD></A>,
+<A HREF="AddText.html"><KBD>AddText</KBD></A>, <A HREF="RemovePrim.html"><KBD>RemovePrim</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+970723
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

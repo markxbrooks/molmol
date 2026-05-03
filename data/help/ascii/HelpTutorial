@@ -1,0 +1,19 @@
+NAME
+     HelpTutorial - show tutorial in web browser
+
+SYNOPSIS
+     HelpTutorial
+
+DESCRIPTION
+     Show the MOLMOL tutorial in a web browser. The web
+     browser that should be used must be selected with
+     the HelpViewer command.
+
+EXAMPLE
+     HelpTutorial
+
+SEE ALSO
+     HelpViewer, HelpManual
+
+DATE
+     991031

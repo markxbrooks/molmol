@@ -1,0 +1,205 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>MOLMOL Tutorial - Example 1</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>MOLMOL Tutorial - Example 1</H1>
+
+ <H2>Image</H2>
+
+On this page, we will show how to create the following picture:
+<CENTER><IMG SRC="images/tutorial_ex1.gif"></CENTER>
+
+ <H2>Steps</H2>
+
+ <KBD><A HREF="../help/html/UserInterface.html">UserInterface</A> 0 0 1 1 1 1</KBD><BR>
+(<SAMP>Options->User Interface</SAMP>)<BR>
+Switch the Valuator Box and the Log Window off. We will not make use
+of these two here.
+<P>
+
+ <KBD><A HREF="../help/html/ReadPdb.html">ReadPdb</A> 1pit.pdb</KBD><BR>
+(<SAMP>File->Read Mol->PDB</SAMP>)<BR>
+Read the structures from the given file in PDB format.
+<P>
+
+ <KBD><A HREF="../help/html/DialStyle.html">DialStyle</A> on</KBD><BR>
+(<SAMP>Button:style</SAMP>)<BR>
+Open the style dialog.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> invisible</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+When you want to show only part of the bonds, it's often
+most convenient to make everything invisible first and
+then "build up" the visible parts piece by piece. Everything
+is selected by default, so this will make all bonds invisible.
+<P>
+
+ <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A> on</KBD><BR>
+(<SAMP>Button:selection</SAMP>)<BR>
+Open the selection dialog.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> 'bb'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+Now we select all bonds in the backbone. <KBD>bb</KBD> is a
+shortcut for that, a so called "predefined property".
+Activate the  <KBD><A HREF="../help/html/HelpProp.html">HelpProp</A></KBD> (<SAMP>Help->Prop</SAMP>)
+command for getting a list of all predefined properties.
+The definitons will also give you an impression of how
+the full MOLMOL expression syntax looks, in this tutorial
+we will mostly use shortcuts.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> line</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+Now we see only the backbone drawn with lines.
+<P>
+
+ <KBD><A HREF="../help/html/SelectAtom.html">SelectAtom</A> ':2-56 & bb'</KBD><BR>
+(<SAMP>Dialog:Selection</SAMP>)<BR>
+ <KBD><A HREF="../help/html/Fit.html">Fit</A> to_first</KBD><BR>
+(<SAMP>Edit->Fit</SAMP>)<BR>
+The structures in the example file were already superimposed, but
+for demonstration purposes we do it again. We just use the backbone
+atoms of residues 2 to 56 for superposition, </KBD>&</KBD> is
+short for <KBD>and</KBD>.
+<P>
+
+You can now also try to rotate and zoom the structure. See
+ <KBD><A HREF="../help/html/HelpMouse.html">HelpMouse</A></KBD> (<SAMP>Help->Mouse</SAMP>) for a description
+on how to use the mouse.
+<P>
+
+ <KBD><A HREF="../help/html/DefPropRes.html">DefPropRes</A> 'inter' ':2,4,6,8,9,11,16,18,19,21-25,27,30,32-35,38,40,43,45,47,48,51,54'</KBD><BR>
+(<SAMP>Prop->Define->Res</SAMP>)<BR>
+We will display the well-defined (interiour) sidechains different
+from the other ones. We could select them with the residue numbers
+each time, but we can also define our own shortcut (property) that
+we can use each time we want to select these.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> 'res.inter & heavysc'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+We now select the bonds to heavy atoms in the well-defined sidechains
+using the <KBD>inter</KBD> property that we just defined (since we
+defined it for residues, we have to write <KBD>res.inter</KBD> if we
+want to use if for bonds) and the predefined property <KBD>heavysc</KBD>
+(for heavy sidechain).
+<P>
+
+ <KBD><A HREF="../help/html/DialColor.html">DialColor</A> on</KBD><BR>
+(<SAMP>Button:color</SAMP>)<BR>
+Open the color dialog.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> line</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorBond.html">ColorBond</A> 1 0 0</KBD><BR>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Draw the selected bonds as red lines. The commands take
+colors as RGB (Red-Green-Blue) values, the color dialog
+allows you to choose the most common colors by name.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> '! res.inter & heavysc'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+Select the rest of the sidechains. <KBD>!</KBD> is short for
+<KBD>not</KBD>.
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> line</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+ <KBD><A HREF="../help/html/ColorBond.html">ColorBond</A> 0 1 0</KBD>
+(<SAMP>Dialog:Color</SAMP>)<BR>
+Draw the selected bonds as green lines.
+<P>
+
+ <KBD><A HREF="../help/html/SelectBond.html">SelectBond</A> 'visible'</KBD><BR>
+(<SAMP>Dialog:Select</SAMP>)<BR>
+So far we just displayed bonds as lines, mainly because it makes
+the display much faster. We now select all visible bonds...
+<P>
+
+ <KBD><A HREF="../help/html/StyleBond.html">StyleBond</A> neon</KBD><BR>
+(<SAMP>Dialog:Style</SAMP>)<BR>
+... and display them as neon (cylinder with round ends).
+<P>
+
+ <KBD><A HREF="../help/html/RadiusBond.html">RadiusBond</A> 0.15</KBD><BR>
+(<SAMP>Button:bond rad</SAMP>)<BR>
+Make the cylinders somewhat thinner.
+<P>
+
+ <KBD><A HREF="../help/html/PlotPar.html">PlotPar</A> 21 29.7 18 0 500 0 1 1 0 3 1.0 75</KBD><BR>
+(<SAMP>Options->Plot->Parameters</SAMP>)<BR>
+Adapt the plot paramters to our needs. Read the online manual
+page carefully, understanding these parameters is very important
+for using the program successfully!
+<P>
+
+ <KBD><A HREF="../help/html/PlotTiff.html">PlotTiff</A> example1.tif</KBD><BR>
+(<SAMP>File->Plot->TIFF</SAMP>)<BR>
+Create a TIFF plot. External tools were used for the conversion
+to GIF used for this page.
+<P>
+
+ <KBD><A HREF="../help/html/WriteDump.html">WriteDump</A> example1.mml</KBD><BR>
+(<SAMP>File->Write Dump</SAMP>)<BR>
+Save the current state for later use.
+<P>
+
+ <KBD><A HREF="../help/html/Quit.html">Quit</A> no</KBD><BR>
+(<SAMP>File->Quit</SAMP>)<BR>
+Quit the program. Because we already saved a dump file, there is
+no need for saving the program state again.
+
+ <H2>Macro</H2>
+
+The following is a summary of the executed commands, you can
+cut'n'paste it, edit it to your needs, and use it as macro:
+
+<PRE>
+UserInterface 0 0 1 1 1 1
+ReadPdb 1pit.pdb
+DialStyle on
+StyleBond invisible
+DialSelect on
+SelectBond 'bb'
+StyleBond line
+SelectAtom ':2-56 & bb'
+Fit to_first
+DefPropRes 'inter' ':2,4,6,8,9,11,16,18,19,21-25,27,30,32-35,38,40,43,45,47,48,51,54'
+SelectBond 'res.inter & heavysc'
+DialColor on
+StyleBond line
+ColorBond 1 0 0
+SelectBond '! res.inter & heavysc'
+StyleBond line
+ColorBond 0 1 0
+SelectBond 'visible'
+StyleBond neon
+RadiusBond 0.15
+PlotPar 21 29.7 18 0 500 0 1 1 0 3 1.0 75
+PlotTiff example1.tif
+WriteDump example1.mol
+Quit no
+</PRE>
+
+<HR>
+Last modified: Mon Jan 20 19:44:59 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

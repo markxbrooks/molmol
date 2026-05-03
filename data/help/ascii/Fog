@@ -1,0 +1,26 @@
+NAME
+     Fog - setup of fog (depth cueing)
+
+SYNOPSIS
+     Fog ( off | exp | exp2 | linear ) expr expr expr
+
+DESCRIPTION
+     Set fog mode and parameters. The first argument
+     selects the mode (off, exponential, squared
+     exponential, linear). The second argument selects the
+     density for both kinds of exponential fog. The third
+     and fourth argument give the start and end distance
+     for linear fog.
+
+     Negative values for any of the numerical arguments
+     will leave the value unchanged, this is useful for
+     changing only one value if the command is put on a
+     slider.
+
+     Not all fog modes are supported on all hardware.
+
+EXAMPLE
+     Fog linear 0.1 7.0 13.0
+
+DATE
+     960305

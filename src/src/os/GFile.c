@@ -30,16 +30,13 @@
 #include <string.h>
 #include <memory.h>
 #include <ctype.h>
+#include <errno.h>
 
 #include <linlist.h>
 
 #define MEM_BLOCK_SIZE 60000
 
 const INT32 GFMagic = 0x3b7a12f9;
-
-#ifndef __linux__
-#endif
-extern int errno;
 
 typedef struct MemBlockStruc *MemBlockP;
 
@@ -80,7 +77,7 @@ raiseError(char *fileName, char *msg)
 {
   if (msg == NULL) {
     if (NextMsg == NULL)
-      msg = sys_errlist[errno];
+      msg = strerror(errno);
     else
       msg = NextMsg;
   }

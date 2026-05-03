@@ -180,3 +180,40 @@ authors.
 
 Also send your makedef files after successful compilation, so that
 they can be supplied to other users in the future.
+
+
+---  Modern Linux (gcc, this tree)  ---
+
+The checked-in `src/makedef` is set up for a typical 64-bit Linux
+system (X11 + Motif, Xlib-only graphics, bundled zlib/jpeg/png/tiff).
+
+Install development packages first, for example on Debian/Ubuntu:
+
+    sudo apt install build-essential libmotif-dev libxt-dev libxmu-dev \
+      libxpm-dev libsm-dev libice-dev libx11-dev
+
+Then compile from the `src` directory:
+
+    cd src
+    make
+
+The binary is `src/src/main/molmol`. It must find `setup/`, `help/`,
+and other files from the distribution; that directory is pointed to by
+the environment variable **`MOLMOLHOME`** (or, if unset, the directory
+containing the executable).
+
+With the **`data/`** tree in this repository (setup, help, tips, …),
+from the project root after `make` either:
+
+- **`./molmol`** — shell script that sets `MOLMOLHOME` to `data/` and
+  runs the built binary; or
+- **`make install`** then **`./data/molmol`** — installs a symlink
+  `data/molmol` so the program lives next to `data/setup/` without an
+  environment variable; or
+- **`MOLMOLHOME=/path/to/project/data`** `src/src/main/molmol`
+
+Copying only the binary next to an unpacked doc tree matches the
+original `molmol-2k.2.0-doc` layout under a single install directory.
+
+The original `make depend` step is not required (and was problematic
+on old Linux; it is still optional for development).

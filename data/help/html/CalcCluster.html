@@ -1,0 +1,57 @@
+<HEAD>
+<TITLE>CalcCluster</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcCluster</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcCluster - reduce number of structures
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcCluster expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Takes a bundle of superimposed structures and
+determines a smaller number of structures that
+represent the same bundle as well as possible. This is
+done by clustering similar structures into groups, and
+taking the "central" structure of each group.
+<P>
+The command acts on all selected molecules and only
+considers the selected atoms of these molecules for
+the calculation.
+<P>
+The first argument gives the desired number of
+structures. The second argument gives the minimal RMSD
+between two resulting groups, where the RMSD between
+two groups is defined as the maximal RMSD between a
+member of one group and a member of the other group.
+The third argument gives the maximal RMSD of two
+members of a group. Due to these restrictions, the
+number of calculated clusters can be different from
+the one given as first argument.
+<P>
+The property "cluster" is set on all molecules that
+represent a group. From each group, the one with the
+smallest sum of RMSDs to all other members is chosen.
+A property (cluster1, cluster2, etc.) is also set for
+each member of every cluster.
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcCluster 5 0.02 1
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="Fit.html"><KBD>Fit</KBD></A>, <A HREF="MeanMol.html"><KBD>MeanMol</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+980817
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

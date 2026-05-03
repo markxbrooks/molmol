@@ -1,0 +1,22 @@
+NAME
+     AddHbond - add H-bond between two atoms
+
+SYNOPSIS
+     AddHbond
+
+DESCRIPTION
+     Add an H-bond between the two selected atoms. Exactly
+     two atoms must be selected before this command is
+     executed, an error message will be issued otherwise.
+
+     An H-bond is a special kind of distance and the
+     corresponding commands are used for manipulating it.
+
+EXAMPLE
+     AddHbond
+
+SEE ALSO
+     CalcHbond, RemoveDist
+
+DATE
+     950221

@@ -1,0 +1,34 @@
+NAME
+     DialMol - switch molecule dialog on and off
+
+SYNOPSIS
+     DialMol ( off | on )
+
+DESCRIPTION
+     Switch molecule dialog on and off. The molecule dialog
+     can be used to select molecules and for toggling their
+     displayed and movable states. It is a convenient
+     interface to the commands SelectMol and DefPropMol.
+
+     The radio buttons at the top of the dialog allow the
+     selection of the property that is displayed/modified.
+
+     The list contains all currently loaded molecules,
+     where the ones with the corresponding property are
+     highlighted. The property can be modified by
+     selecting and unselecting entries in the list. Note
+     that you can make multiple/extended selections by
+     holding down the Shift or Ctrl key while clicking on
+     entries in the list.
+
+     The OK button closes the dialog, the Help button shows
+     this help page.
+
+EXAMPLE
+     DialMol on
+
+SEE ALSO
+     SelectMol, DefPropMol
+
+DATE
+     980409

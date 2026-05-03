@@ -1,0 +1,19 @@
+NAME
+     AddLol - add lower limit between two atoms
+
+SYNOPSIS
+     AddLol expr
+
+DESCRIPTION
+     Add a lower limit between the two selected atoms.
+     Exactly two atoms must be selected before this command
+     is executed, an error message will be issued otherwise.
+
+EXAMPLE
+     AddLol 2.3
+
+SEE ALSO
+     SelectAtom, CheckLol, RemoveDist, AddUpl
+
+DATE
+     950221

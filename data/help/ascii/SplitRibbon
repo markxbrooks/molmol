@@ -1,0 +1,21 @@
+NAME
+     SplitRibbon - split ribbons
+
+SYNOPSIS
+     SplitRibbon
+
+DESCRIPTION
+     Split all selected ribbons into two pieces of
+     equal length. The length of the pieces can later
+     be adjusted with LengthPrim.
+
+     To get rid of a ribbon, use the RemovePrim command.
+
+EXAMPLE
+     SplitRibbon
+
+SEE ALSO
+     SelectPrim, LengthPrim, RemovePrim
+
+DATE
+     950523

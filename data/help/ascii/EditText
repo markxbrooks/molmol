@@ -1,0 +1,31 @@
+NAME
+     EditText - edit text annotation
+
+SYNOPSIS
+     EditText string
+
+DESCRIPTION
+     Change the text of all selected text annotations.
+
+     Besides the normal characters, greek letters can be
+     used by entering a \ (backslash)followed by the
+     corresponding latin character (e. g. \a for alpha).
+
+     Subscript is started with an _. If more than one
+     character should be displayed in subscript, they
+     have to be enclosed in braces.
+
+     Superscript is analogous to subscript, only that
+     the ^ character is used instead of _.
+
+EXAMPLES
+     EditText "New Text"
+     EditText "C_\a"
+     EditText "a^{2 * x}"
+
+SEE ALSO
+     AddTitle, AddText, ColorPrim, LinePrim, MovePrim,
+     SizeText, RemovePrim
+
+DATE
+     950407

@@ -1,0 +1,7 @@
+The Fig pulldown menu contains a number
+of commands for creating plots that help
+in the analysis of molecules. Some are
+general (FigRamach, FigContact), others
+are more targeted, like FigCircles and
+FigDist for molecular dynamics and
+FigAngles for NMR structure analysis.

@@ -4,7 +4,8 @@ include $(TOP)/makedef
 
 LIBDIR   = $(TOP)/lib
 INCLUDES = -I$(TOOLSDIR)/include -I$(SGDIR)/include -I$(TOP)/include
-CPPFLAGS = $(INCLUDES) $(MCPPFLAGS)
+# IODEVDEF so MolMol.c can pick a default IO device matching the linked libio.a
+CPPFLAGS = $(INCLUDES) $(MCPPFLAGS) $(IODEVDEF)
 CFLAGS   = $(CPPFLAGS) $(MCFLAGS)
 
 LIBS     = $(LIBDIR)/libcip.a $(LIBDIR)/libcmd.a \

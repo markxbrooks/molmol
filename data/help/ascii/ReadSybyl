@@ -1,0 +1,26 @@
+NAME
+     ReadSybyl - read SYBYL Mol2 file
+
+SYNOPSIS
+     ReadSybyl fileName
+
+DESCRIPTION
+     ReadSybyl reads a file in the Mol2 file format used by
+     the program SYBYL by Tripos. The entries MOLECULE,
+     ATOM, BOND, SUBSTRUCTURE and SET (STATIC) are
+     interpreted, everything else is ignored. Special
+     characters (like $) in set (i. e. property) names are
+     not allowed by MOLMOL, they are replaced with
+     underscores while reading.
+
+     When necessary, numbers are added to residue and atom
+     names to make them unique.
+
+EXAMPLE
+     ReadSybyl /home/sybyl/demo/vit_c.mol2
+
+SEE ALSO
+     PathNames, ReadDg, ReadAng, ReadPdb
+
+DATE
+     960312

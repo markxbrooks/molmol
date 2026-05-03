@@ -1,0 +1,4 @@
+You can set alternate path names for
+most of the setup files (like residue
+library, menu definitions) using the
+PathNames command.

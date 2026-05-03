@@ -1,0 +1,71 @@
+NAME
+     Rendering - set rendering options
+
+SYNOPSIS
+     Rendering ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+         ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+
+DESCRIPTION
+     Set some rendering options. Depending on the output
+     device, some options may always be enabled, no
+     matter whether they are switched on or off by this
+     command. Some of these options (like two-sided
+     lighting) are also used to generate plots, so the
+     appropriate options have to be set before giving the
+     plotting command.
+
+     The following options are supported:
+
+         Anti Aliasing: Draw smooth lines. This may not
+             be supported on all hardware.
+
+         Transparency: Use transparent drawing for objects
+             that are not completely opaque. This may not
+             be supported on all hardware.
+
+         Fast Spheres Drawing: Instead of approximating
+             spheres with many polygons, they are drawn
+             as circles. This makes shading impossible,
+             but can make the display much faster.
+
+         Backface Elimination: Eliminate polygons that
+             face away from the viewpoint at an early
+             display step. This has normally no visual
+             effect on the display, but can make it
+             faster.
+
+         Shading: Color polygons depending on the angle
+             from the light source and the view point.
+             This is also necessary for the support of
+             depth cueing on most devices, e. g. for
+             plotting.
+
+         Two-sided Lighting: Normally lighting calculations
+             are only done for the "outside" of an object.
+             This triggers lighting calculation to be done
+             for both sides. The effect is visible if
+             objects are cut, mostly by the front clipping
+             plane.  It is not switched on by default on
+             most devices because it can make all rendering
+             slower.
+
+         Depth Sorting: Sort all display elements by depth
+             before drawing. This gives a quick, but
+             sometimes unexact, method for hidden surface
+             elimination.
+
+         Hidden Surface Elimination: Eliminate display
+             elements that are hidden by other elements
+             closer to the viewpoint. If the hardware
+             supports this feature, it is enabled by
+             default. If it has to be emulated by the
+             program, the display can get very slow.
+
+EXAMPLE
+     Rendering 0 0 0 1 1 0 1 0
+
+SEE ALSO
+     PlotPar, PlotPs, PlotFm*, Fog
+
+DATE
+     960305

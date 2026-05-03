@@ -1,0 +1,21 @@
+NAME
+     StyleTrajec - set display style of trajectories
+
+SYNOPSIS
+     StyleTrajec ( invisible | line | neon | ellipsoid )
+
+DESCRIPTION
+     Set the display style of all selected trajectories.
+     The style 'neon' draws the trajectory using cylinders
+     with round ends. The style 'ellipsoid' draws an
+     ellipsoid for the principal axes of the atoms that
+     define the trajectory.
+
+EXAMPLE
+     StyleTrajec neon
+
+SEE ALSO
+     SelectPrim, AddTrajec, ColorPrim
+
+DATE
+     980324

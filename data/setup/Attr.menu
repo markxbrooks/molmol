@@ -1,0 +1,56 @@
+# used to build Attr pulldown menu
+
+pullright C "Color"
+  entry A "Atom..." "ColorAtom"
+  entry B "Bond..." "ColorBond"
+  entry D "Dist..." "ColorDist"
+  entry V "Viol..." "TintDist"
+  entry I "Initial..." "ColorInit"
+  entry T "Initial Tint..." "TintInit"
+end
+pullright S "Style"
+  entry A "Atom..." "StyleAtom"
+  entry B "Bond..." "StyleBond"
+  entry D "Dist..." "StyleDist"
+  entry I "Initial..." "StyleInit"
+end
+pullright L "Label"
+  entry A "Atom..." "LabelAtom"
+  entry D "Dist..." "LabelDist"
+  entry I "Initial..." "LabelInit"
+end
+pullright i "Line Style"
+  entry A "Atom..." "LineAtom"
+  entry B "Bond..." "LineBond"
+  entry D "Dist..." "LineDist"
+  entry I "Initial..." "LineInit"
+end
+pullright M "Material"
+  entry A "Atom..." "MaterialAtom"
+  entry B "Bond..." "MaterialBond"
+  entry D "Dist..." "MaterialDist"
+  entry I "Initial..." "MaterialInit"
+end
+pullright T "Texture"
+  entry A "Atom..." "TextureAtom"
+  entry B "Bond..." "TextureBond"
+  entry D "Dist..." "TextureDist"
+  entry I "Initial..." "TextureInit"
+end
+pullright h "Shade"
+  entry A "Atom..." "ShadeAtom"
+  entry B "Bond..." "ShadeBond"
+  entry D "Dist..." "ShadeDist"
+end
+pullright R "Radius"
+  entry A "Atom..." "RadiusAtom"
+  entry B "Bond..." "RadiusBond"
+  entry D "Dist..." "RadiusDist"
+  entry I "Initial..." "RadiusInit"
+end
+pullright s "List"
+  entry A "Atom" "AttrAtom"
+  entry B "Bond" "AttrBond"
+  entry D "Dist" "AttrDist"
+  entry I "Initial" "AttrInit"
+end

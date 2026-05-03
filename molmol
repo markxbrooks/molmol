@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+# Run MOLMOL from this repository: uses bundled data/ (setup, help, tips, …).
+# Build first: make -C src   or   make
+
+ROOT=$(cd "$(dirname "$0")" && pwd)
+EXE="$ROOT/src/src/main/molmol"
+
+if [ ! -x "$EXE" ]; then
+  echo "molmol: build the binary first (from repo root): make" >&2
+  exit 1
+fi
+
+export MOLMOLHOME="$ROOT/data"
+exec "$EXE" "$@"

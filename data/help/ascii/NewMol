@@ -1,0 +1,19 @@
+NAME
+     NewMol - create new molecule
+
+SYNOPSIS
+     NewMol name
+
+DESCRIPTION
+     Create a new molecule with the given name. The new
+     molecule will contain no residues, they must be
+     added by using the command AddRes.
+
+EXAMPLE
+     NewMol "My Molecule"
+
+SEE ALSO
+     AddRes, ChangeRes
+
+DATE
+     931129

@@ -1,0 +1,43 @@
+NAME
+     StyleRibbon - set display style of ribbons
+
+SYNOPSIS
+     StyleRibbon ( invisible | rect | round |
+	 rounded | ellip | lense | as_is )
+	 [ ( open | sharp | soft | as_is )
+	 [ ( open | sharp | soft | arrow | as_is )
+	 [ ( const | atom | as_is ) ] ] ]
+
+DESCRIPTION
+     Set the display style of all selected ribbons. The
+     first argument gives the profile of the middle part,
+     the optional second and third argument determine the
+     style of the start and the end.
+
+     The fourth argument only has an effect when the
+     profile is 'round'. With the value 'atom', the radius
+     is interpolated between the radii of the atoms used to
+     define the spline, normally the CA atom for proteins.
+     This can e. g. be used to show mobility by varying
+     radius of the spline if the radius of the atoms is set
+     to (a function of) the B-factor. For bundles of NMR
+     structures, the B-factors can be calculated by
+     MeanMol.
+
+     For all arguments, the value 'as_is' will leave the
+     style unchanged, this is useful when one wants to
+     change part of the values for multiple ribbons at
+     once.
+
+EXAMPLES
+     StyleRibbon rect
+     StyleRibbon rounded sharp arrow
+     StyleRibbon round open open atom
+
+SEE ALSO
+     AddRibbon, SelectPrim, LengthPrim,
+     TypeRibbon, SizeRibbon, PaintRibbon,
+     MeanMol, RadiusAtom
+
+DATE
+     950509

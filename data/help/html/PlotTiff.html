@@ -1,0 +1,43 @@
+<HEAD>
+<TITLE>PlotTiff</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>PlotTiff</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+PlotTiff - make a TIFF plot
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+PlotTiff fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Save the current screen contents as TIFF File. The
+horizontal resolution can be set with the <A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>
+command, the vertical resolution is calculated to
+maintain the aspect ratio of the screen.
+<P>
+This command is not supported on all machines and
+with all graphics systems. It will give an appropriate
+error message if it is not supported.
+<P>
+The freely available TIFF library written by
+Sam Leffler, Copyright (c) 1988-1995 Sam Leffler and
+Silicon Graphics, is used for writing the TIFF file.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+PlotTiff /home/joe/MyPlot.tif
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PlotPar.html"><KBD>PlotPar</KBD></A>, <A HREF="PlotJpeg.html"><KBD>PlotJpeg</KBD></A>, <A HREF="PlotPng.html"><KBD>PlotPng</KBD></A>,
+<A HREF="PlotFm3.html"><KBD>PlotFm3</KBD></A>, <A HREF="PlotFm4.html"><KBD>PlotFm4</KBD></A>, <A HREF="PlotPs.html"><KBD>PlotPs</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960625
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

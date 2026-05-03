@@ -1,0 +1,21 @@
+NAME
+     AddPlates - add plates for rings
+
+SYNOPSIS
+     AddPlates
+
+DESCRIPTION
+     Add plates for all rings consisting entirely of
+     selected atoms. Rings are only detected if all
+     atoms belong to the same residue.
+
+     The created primitives have the property "plate".
+
+EXAMPLES
+     AddPlates
+
+SEE ALSO
+     SelectAtom, ColorPrim, SizePlate, RemovePrim
+
+DATE
+     970723

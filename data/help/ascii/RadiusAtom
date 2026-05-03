@@ -1,0 +1,20 @@
+NAME
+     RadiusAtom - set radius of atoms
+
+SYNOPSIS
+     RadiusAtom expr
+
+DESCRIPTION
+     Set the radius of all selected atoms. The radius
+     is only visible if an atom is displayed as sphere
+     or as tetrahedron.
+
+EXAMPLES
+     RadiusAtom 1.0
+     RadiusAtom 0.5+bfactor
+
+SEE ALSO
+     SelectAtom, StyleAtom, RadiusInit
+
+DATE
+     940119

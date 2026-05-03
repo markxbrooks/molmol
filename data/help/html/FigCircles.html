@@ -1,0 +1,46 @@
+<HEAD>
+<TITLE>FigCircles</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>FigCircles</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+FigCircles - show angle distribution circles
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+FigCircles expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Create a figure showing the angle distributions as
+polylines inside circles. The first argument gives the
+number of rows over which the circles are distributed,
+the second argument is the font size relative to the
+radius of the circles.
+<P>
+The same number of angles has to be selected in all
+selected molecules, the corresponding angles from all
+molecules will be drawn in one circle, from the inside
+to the outside. 0 is at the top, 90 degrees at the
+right side of the circle.
+<P>
+This kind of figure is mainly used for analyzing
+results of MD runs.
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+FigCircles 4 0.3
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectMol.html"><KBD>SelectMol</KBD></A>, <A HREF="SelectAngle.html"><KBD>SelectAngle</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="FigOff.html"><KBD>FigOff</KBD></A>, <A HREF="FigAngles.html"><KBD>FigAngles</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960317
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

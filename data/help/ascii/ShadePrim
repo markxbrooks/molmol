@@ -1,0 +1,27 @@
+NAME
+     ShadePrim - set shading of primitives
+
+SYNOPSIS
+     ShadePrim ( none | flat | gouraud | phong |
+	 dots | lines )
+
+DESCRIPTION
+     Set the shading method for primitives.
+
+	 none:    no shading
+	 flat:    polygons shaded in uniform color
+	 gouraud: color interpolated between vertices
+	 phong:   normals interpolated, highest quality
+	 dots:    draw surface using dots
+	 lines:   draw surface using lines
+
+     Not all graphics devices support all shading methods.
+
+EXAMPLE
+     ShadePrim phong
+
+SEE ALSO
+     SelectPrim, StyleDrawobj, StyleTrajec, ColorPrim
+
+DATE
+     950309

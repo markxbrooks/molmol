@@ -1,0 +1,44 @@
+<HEAD>
+<TITLE>WriteSecondary</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>WriteSecondary</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+WriteSecondary - write macro with secondary structure
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+WriteSecondary
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Show a macro that describes the current definiton of
+secondary structure for all selected residues. Exactly
+one molecule must be selected. This macro can be
+edited and saved to a given file name. The macro can
+be executed with <A HREF="XMacUser.html"><KBD>XMacUser</KBD></A> to set the same (modified)
+secondary structure again.
+<P>
+The secondary structure can be read from a PDB file,
+calculated with <A HREF="CalcSecondary.html"><KBD>CalcSecondary</KBD></A>, or set manually with a
+set of <A HREF="DefPropRes.html"><KBD>DefPropRes</KBD></A> and <A HREF="SetNeigh.html"><KBD>SetNeigh</KBD></A> commands. The most
+convenient way is often to use <A HREF="CalcSecondary.html"><KBD>CalcSecondary</KBD></A> to get an
+intial definition, then use WriteSecondary to create a
+macro, edit it to the "correct" definitions, and then
+use <A HREF="XMacUser.html"><KBD>XMacUser</KBD></A> to set these.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+WriteSecondary
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A>, <A HREF="CalcSecondary.html"><KBD>CalcSecondary</KBD></A>, <A HREF="XMacUser.html"><KBD>XMacUser</KBD></A>, <A HREF="AddRibbon.html"><KBD>AddRibbon</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+951010
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

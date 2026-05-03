@@ -1,0 +1,6 @@
+You can build macromolecules from
+monomers in the residue library using
+the NewMol and AddRes commands. You
+can set/modify dihedral angles of new
+or existing molecules with the
+RotateAngle and SetAngle commands.

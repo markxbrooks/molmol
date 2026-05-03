@@ -1,0 +1,82 @@
+<HEAD>
+<TITLE>DialRmsd</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>DialRmsd</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+DialRmsd - switch RMSD dialog on and off
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+DialRmsd ( off | on ) [ expr ]
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Switch RMSD dialog on and off. The RMSD dialog is a
+convenient interface to the commands <A HREF="Fit.html"><KBD>Fit</KBD></A> and <A HREF="CalcRmsd.html"><KBD>CalcRmsd</KBD></A>,
+especially for comparisons of different molecules.
+<P>
+The optional second argument gives the number of
+groups of molecules for which residue ranges can be
+selected in the dialog. The default is the number of
+different molecules loaded.
+<P>
+The top two parts of the dialog allow selection of the
+two properties for which the global RMSDs are
+calculated. The common choices 'bb' (backbone) and
+'heavy' (all heavy atoms) can be selected directly.
+A different property can be selected by chosing the
+'other' button, and entering the name of the property
+in the corresponding text field on the right hand
+side.  If 'other' is selected, and the text field is
+left empty, no global RMSDs will be calculated.
+<P>
+The third part of the dialog is for entering residue
+ranges used for superposition. Different ranges can be
+used for different sets of molecules given by the
+range in the left side text field, this is useful for
+comparing different molecules. Both molecule ranges
+and residue ranges are given in the short selection
+syntax, e. g. 3-10,15,18-23. The number of lines for
+molecule ranges is chosen when opening the dialog, and
+can only be changed by closing the dialog and opening
+it again.
+<P>
+The check boxes in the fourth part of the dialog
+select the properties that global displacements, local
+RMSDs, and local displacements are calculated for.
+<P>
+The check boxes at the bottom of the dialog select
+some options. The first one has to be activated when a
+fit with segments in a different order than their
+residue numbering is desired, see the <A HREF="Fit.html"><KBD>Fit</KBD></A> help page
+for more details. The remaining options are used for
+RMSD calculation. They select whether each pair of
+molecules is fitted before calculating the RMSDs,
+whether local RMSDs and displacements should be
+reported relative to the mean structure or as average
+pairwise values, and whether RMSDs between groups of
+molecules (as defined by the molecule ranges in the
+third part of the dialog) should be calculated.
+<P>
+The buttons at the bottom right activate the <A HREF="Fit.html"><KBD>Fit</KBD></A> or
+<A HREF="CalcRmsd.html"><KBD>CalcRmsd</KBD></A> command with the selected options.
+<P>
+The OK button closes the dialog, the Help button shows
+this help page.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+DialRmsd on
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="Fit.html"><KBD>Fit</KBD></A>, <A HREF="CalcRmsd.html"><KBD>CalcRmsd</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+980409
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

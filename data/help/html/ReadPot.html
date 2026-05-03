@@ -1,0 +1,51 @@
+<HEAD>
+<TITLE>ReadPot</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ReadPot</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ReadPot - read potentials for surface coloring
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ReadPot fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Read a file with potentials, these are used for
+coloring surfaces. The file must contain values on a
+grid, the format is:
+<P>
+<PRE>
+    x0 xSize xInc
+    y0 ySize yInc
+    z0 zSize zInc
+    val val val ....
+</PRE>
+where x0, y0, z0 (float) are the coordinates of the
+grid origin, xSize, ySize and zSize (int) are the
+sizes of the grid in each dimension, and xInc, yInc
+and zInc (float) the spacing between two grid points
+in each dimention. This must be followed by
+xSize * ySize * zSize values (float), where the
+x-coordinate is the one that is running the fastest.
+<P>
+The potentials will be set for all selected surfaces,
+but the <A HREF="PaintSurface.html"><KBD>PaintSurface</KBD></A> command has to be given to update
+the colors.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+ReadPot /home/joe/struct/my_pot.dat
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="CalcPot.html"><KBD>CalcPot</KBD></A>, <A HREF="AddSurface.html"><KBD>AddSurface</KBD></A>, <A HREF="SelectPrim.html"><KBD>SelectPrim</KBD></A>, <A HREF="PaintSurface.html"><KBD>PaintSurface</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960509
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

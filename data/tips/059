@@ -1,0 +1,7 @@
+You can create a schematic display of a
+protein by clicking the ribbon button on
+the right side of the main window. This
+will determine the secondary structure
+first, if you want to skip this step,
+you have to execute the "ribbon.mac"
+standard macro directly (XMacStand).

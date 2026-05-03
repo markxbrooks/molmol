@@ -1,0 +1,17 @@
+NAME
+     RemoveAngle - remove angles
+
+SYNOPSIS
+     RemoveAngle
+
+DESCRIPTION
+     Remove all selected angles.
+
+EXAMPLE
+     RemoveAngle
+
+SEE ALSO
+     SelectAngle, AddAngle
+
+DATE
+     950131

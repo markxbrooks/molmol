@@ -1,0 +1,93 @@
+<HEAD>
+<TITLE>PlotPar</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>PlotPar</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+PlotPar - set plot parameters
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+PlotPar expr expr expr expr expr
+    ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+    expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set size and options for plots. The first argument
+gives the width of the paper, the second one the
+height. The third argument gives the width of the
+plot, the fourth one the height. If one of the plot
+sizes is 0, it is calculated to correspond to the
+dimensions (aspect ratio) of the window. The plot
+is centered on the paper.
+<P>
+The current unit for these sizes is shown in the
+prompt, it can be changed with the <A HREF="PlotUnit.html"><KBD>PlotUnit</KBD></A> command.
+The default paper size also depends on the current
+unit.
+<P>
+The fifth argument selects the horizontal resolution
+used for saving image (TIFF, JPEG, PNG) files.
+<P>
+The first option switches stereo plotting on or off.
+<P>
+The second option switches shading and hidden surface
+elimination for the plot. The third only has an
+influence if shading is switched on. If it is
+selected, a full hidden surface elimination is done.
+This can take a few minutes for complex plots, but it
+is necessary to produce perfect results as soon as the
+scene contains spheres, cylinders or primitives. If it
+is not selected, a simple depth sorting is used, which
+is much faster, but the result can contain slight
+errors. For important plots (publications), this
+option must always be switched on.
+<P>
+The fourth option selects whether the plot is
+rotated by 90 degrees to produce a landscape plot.
+Note that the size of the plot (arguments 3 and 4)
+is still given in the original orientation of the
+plot, before rotation. The size of the paper is
+given in the orientation used by the printer, which
+is normally portrait. So e. g. good size for a
+landscape plot on A3 format are 29.7 42 0 26.
+<P>
+The third but last parameter select the precision
+(resolution) of the plot. See <A HREF="DrawPrec.html"><KBD>DrawPrec</KBD></A> for an
+explanation of this parameter.
+<P>
+The second but last parameter selects a gamma correction
+parameter. 1.0 will leave the colors unchanged, values
+less than 1.0 will make the colors brighter, values
+greater than 1.0 will make the colors darker. Note
+that the "correct" gamma value depends on the output
+device used, so using gamma correction when producing
+the file is in principal not the right thing to do.
+We offer this possibilty for convenience sake, it is
+often difficult to do decent gamma correction on the
+output file (e. g. for PostScript) with other
+possibilities.
+<P>
+The last parameter selects the quality for JPEG plots.
+Recommended values are between 50 (strong compression
+with reasonable quality) and 95 (excellent quality).
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+PlotPar 21 29.7 18 0 1000 0 0 1 0 3 1.0 75
+PlotPar 21 29.7 0 18 2000 0 1 1 1 3 0.7 60
+PlotPar 29.7 42 0 26 1500 0 1 1 1 4 0.5 90
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PlotUnit.html"><KBD>PlotUnit</KBD></A>, <A HREF="PlotPs.html"><KBD>PlotPs</KBD></A>, <A HREF="PlotFm3.html"><KBD>PlotFm*</KBD></A>,
+<A HREF="PlotTiff.html"><KBD>PlotTiff</KBD></A>, <A HREF="PlotJpeg.html"><KBD>PlotJpeg</KBD></A>, <A HREF="PlotPng.html"><KBD>PlotPng</KBD></A>, <A HREF="DrawPrec.html"><KBD>DrawPrec</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960321
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

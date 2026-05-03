@@ -1,0 +1,9 @@
+# used to build Fig pulldown menu
+
+entry R "Ramachandran..." "FigRamach"
+entry A "Angle Bars..." "FigAngles"
+entry C "Angle Circles..." "FigCircles"
+entry D "Dist..." "FigDist"
+entry n "Contact..." "FigContact"
+entry i "Limit..." "FigLimit"
+entry O "Off" "FigOff"

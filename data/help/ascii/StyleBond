@@ -1,0 +1,26 @@
+NAME
+     StyleBond - set display style of bonds
+
+SYNOPSIS
+     StyleBond ( invisible | line | half_line |
+	 cylinder | half_cylinder | neon | half_neon |
+	 cone | half_cone )
+
+DESCRIPTION
+     Set the display style of all selected bonds. The
+     style 'cylinder' draws the bond as an open cylinder,
+     'neon' draws it as cylinder with round ends, 'cone'
+     as cone, taking the radii of the connected atoms.
+
+     The styles 'half_line', 'half_cylinder', 'half_neon'
+     and 'half_cone' draw the bonds in two parts, taking
+     the colors of the connected atoms.
+
+EXAMPLE
+     StyleBond cylinder
+
+SEE ALSO
+     StyleInit, SelectBond, DialStyle
+
+DATE
+     960606

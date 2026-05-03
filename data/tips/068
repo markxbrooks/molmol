@@ -1,0 +1,7 @@
+For removing any kind of primitive
+(annotation, ribbon, surface, etc.), use
+the RemovePrim command. Note that for
+example AddSurface does not replace
+existing surfaces, you explicitly have
+to remove existing surfaces if you want
+to replace them by new ones.

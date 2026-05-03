@@ -1,0 +1,18 @@
+NAME
+     WriteDg - write DG file
+
+SYNOPSIS
+     WriteDg fileName
+
+DESCRIPTION
+     Write a file in DG format. All selected molecules
+     are written to the file.
+
+EXAMPLE
+     WriteDg /home/joe/struct/my_prot.cor
+
+SEE ALSO
+     DialMol, WriteAng, WritePdb, ReadDg
+
+DATE
+     951116

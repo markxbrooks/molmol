@@ -1,0 +1,40 @@
+<HEAD>
+<TITLE>ReadSybyl</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ReadSybyl</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ReadSybyl - read SYBYL Mol2 file
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ReadSybyl fileName
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+ReadSybyl reads a file in the Mol2 file format used by
+the program SYBYL by Tripos. The entries MOLECULE,
+ATOM, BOND, SUBSTRUCTURE and SET (STATIC) are
+interpreted, everything else is ignored. Special
+characters (like $) in set (i. e. property) names are
+not allowed by MOLMOL, they are replaced with
+underscores while reading.
+<P>
+When necessary, numbers are added to residue and atom
+names to make them unique.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+ReadSybyl /home/sybyl/demo/vit_c.mol2
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="PathNames.html"><KBD>PathNames</KBD></A>, <A HREF="ReadDg.html"><KBD>ReadDg</KBD></A>, <A HREF="ReadAng.html"><KBD>ReadAng</KBD></A>, <A HREF="ReadPdb.html"><KBD>ReadPdb</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960312
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,19 @@
+NAME
+     SetAngle - rotate dihedral angles
+
+SYNOPSIS
+     SetAngle expr
+
+DESCRIPTION
+     Set all selected dihedral angles to the given value.
+     This command can be used to construct regular
+     secondary structures.
+
+EXAMPLE
+     SetAngle -57.0
+
+SEE ALSO
+     SelectAngle, RotateAngle
+
+DATE
+     940119

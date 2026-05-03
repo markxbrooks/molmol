@@ -1,0 +1,41 @@
+NAME
+     CalcVdw - find Van der Waals violations
+
+SYNOPSIS
+     CalcVdw expr expr ( 0 | 1 ) ( 0 | 1 ) ( 0 | 1 )
+
+DESCRIPTION
+     Find pairs of selected atoms with Van der Waals
+     violations larger than the cutoff given as first
+     argument.
+
+     The first option determines whether violations
+     within structures or violations between atoms of
+     different structures are desired.
+
+     Depending on the other two options, the command will
+     create a report with the violations, will add them
+     to the display as lower distance limits, or both.
+     Only violations that occur in a minimal number of
+     structures given as third argument appear in the
+     report.
+
+     In the report produced by this command, a table of
+     violations will be created for each set of molecules
+     with the same structure. A '+' sign indicates that
+     the violation is present in the molecule corresponding
+     to the column, a '*' marks the largest of these
+     violations. The '+' sign is replaced by a '5' for
+     molecules 5, 15, 25, ... and by a '0' for molecules
+     10, 20, 30, ...
+
+     This command supports groups.
+
+EXAMPLE
+     CalcVdw 0.3 1 0 1 0
+
+SEE ALSO
+     SelectAtom, Group, RemoveDist
+
+DATE
+     981101

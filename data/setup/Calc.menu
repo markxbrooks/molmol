@@ -1,0 +1,23 @@
+# used to build Calc pulldown menu
+
+entry S "Secondary" "CalcSecondary"
+entry R "RMSD..." "CalcRmsd"
+entry M "Match..." "CalcMatch"
+entry l "Cluster..." "CalcCluster"
+entry u "Surface..." "CalcSurface"
+entry P "Potential..." "CalcPot"
+entry h "Shift..." "CalcShift"
+entry A "Atom..." "CalcAtom"
+entry B "Bond..." "CalcBond"
+entry - "H-Bond..." "CalcHbond"
+entry V "Van der Waals..." "CalcVdw"
+entry D "Dist..." "CalcDist"
+entry n "Angle" "CalcAngle"
+entry e "Helix Angle" "CalcHelix"
+entry x "Axis..." "CalcAxis"
+pullright C "Check"
+  entry B "Bond" "CheckBond"
+  entry U "Upper Limit..." "CheckUpl"
+  entry L "Lower Limit..." "CheckLol"
+  entry A "Angle Constr..." "CheckAco"
+end

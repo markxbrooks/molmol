@@ -1,0 +1,17 @@
+NAME
+     RemoveDist - remove distances
+
+SYNOPSIS
+     RemoveDist
+
+DESCRIPTION
+     Remove all selected distances.
+
+EXAMPLE
+     RemoveDist
+
+SEE ALSO
+     SelectDist, AddDist, AddHbond, AddLol, AddUpl
+
+DATE
+     950221

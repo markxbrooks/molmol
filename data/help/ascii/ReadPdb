@@ -1,0 +1,41 @@
+NAME
+     ReadPdb - read PDB file
+     ReadListPdb - read list of PDB files
+
+SYNOPSIS
+     ReadPdb fileName
+     ReadListPdb fileName
+
+DESCRIPTION
+     Read a PDB file. The file can contain more than one
+     structure. If only one structure is stored in the file,
+     the file name is taken as name of the molecule. If
+     there are multiple structures, numbers are appended
+     to the file name for generating the molecule names.
+
+     ReadListPdb expects a file with one file name per line
+     (empty lines allowed), and reads all these files.
+
+     If residues appear in the residue library
+     ($MOLMOLHOME/setup/amber94.lib by default, can be
+     changed with the PathNames command), the covalent
+     structure is taken from there. If a residue is not
+     present in the library, just the atom coordianates are
+     read from the PDB file. The user can add bonds with
+     the command CalcBond later.
+
+     The command also reads secondary structure information
+     (HELIX and SHEET records) and sets the corresponding
+     properties on the residues. They are used by the
+     AddRibbon command to create schematic drawings.
+
+EXAMPLE
+     ReadPdb /home/joe/struct/my_prot.pdb
+     ReadListPdb /home/joe/struct/my_prot.nam
+
+SEE ALSO
+     PathNames, ReadAng, ReadDg, WritePdb,
+     CalcBond, AddRibbon
+
+DATE
+     950704

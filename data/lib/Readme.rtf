@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww27760\viewh16980\viewkind0
+\deftab720
+\pard\pardeftab720\ql\qnatural
+
+\f0\fs22 \cf0 Copy these dlls into MolMol package "lib" folder:\
+\
+Make sure you are in the molmol_exe_path folder and modify the dynamic linkage for the molmol exe:\
+\
+otool -L molmol\
+install_name_tool -change /sw/lib/libXm.4.dylib @executable_path/lib/libXm.4.dylib molmol\
+install_name_tool -change /sw/lib/libGLw-openmotif4.1.dylib @executable_path/lib/libGLw-openmotif4.1.0.dylib molmol\
+otool -L molmol\
+\
+cd lib\
+\
+cp /sw/lib/libXm.4.dylib libXm.4.dylib\
+otool -L libXm.4.dylib\
+install_name_tool -id @executable_path/lib/libXm.4.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/fontconfig2/lib/libfontconfig.1.dylib @executable_path/lib/libfontconfig.1.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/freetype219/lib/libfreetype.6.dylib @executable_path/lib/libfreetype.6.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/libiconv.2.dylib @executable_path/lib/libiconv.2.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/libjpeg.8.dylib @executable_path/lib/libjpeg.8.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/libjpeg.9.dylib @executable_path/lib/libjpeg.9.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/xft2/lib/libXft.2.dylib @executable_path/lib/libXft.2.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/libpng15.15.dylib @executable_path/lib/libpng15.15.dylib libXm.4.dylib\
+install_name_tool -change /sw/lib/libpng16.16.dylib @executable_path/lib/libpng16.16.dylib libXm.4.dylib\
+otool -L libXm.4.dylib\
+\
+cp /sw/lib/libGLw-openmotif4.1.0.dylib libGLw-openmotif4.1.0.dylib\
+otool -L libGLw-openmotif4.1.0.dylib\
+install_name_tool -id @executable_path/lib/libGLw-openmotif4.1.0.dylib libGLw-openmotif4.1.0.dylib\
+install_name_tool -change /sw/lib/libXm.4.dylib @executable_path/lib/libXm.4.dylib libGLw-openmotif4.1.0.dylib\
+otool -L libGLw-openmotif4.1.0.dylib\
+\
+\
+cp /sw/lib/fontconfig2/lib/libfontconfig.1.dylib libfontconfig.1.dylib\
+otool -L libfontconfig.1.dylib\
+install_name_tool -id @executable_path/lib/libfontconfig.1.dylib libfontconfig.1.dylib\
+install_name_tool -change /sw/lib/freetype219/lib/libfreetype.6.dylib @executable_path/lib/libfreetype.6.dylib libfontconfig.1.dylib\
+install_name_tool -change /sw/lib/libexpat.1.dylib @executable_path/lib/libexpat.1.dylib libfontconfig.1.dylib\
+install_name_tool -change /sw/lib/libiconv.2.dylib @executable_path/lib/libiconv.2.dylib libfontconfig.1.dylib\
+otool -L libfontconfig.1.dylib\
+\
+\
+cp /sw/lib/freetype219/lib/libfreetype.6.dylib libfreetype.6.dylib\
+otool -L libfreetype.6.dylib\
+install_name_tool -id @executable_path/lib/libfreetype.6.dylib libfreetype.6.dylib\
+install_name_tool -change /sw/lib/libbz2.1.dylib @executable_path/lib/libbz2.1.0.6.dylib libfreetype.6.dylib\
+otool -L libfreetype.6.dylib\
+\
+\
+cp /sw/lib/libiconv.2.dylib libiconv.2.dylib\
+otool -L libiconv.2.dylib\
+install_name_tool -id @executable_path/lib/libiconv.2.dylib libiconv.2.dylib\
+otool -L libiconv.2.dylib\
+\
+\
+cp /sw/lib/libbz2.1.0.6.dylib libbz2.1.0.6.dylib\
+otool -L libbz2.1.0.6.dylib\
+install_name_tool -id @executable_path/lib/libbz2.1.0.6.dylib libbz2.1.0.6.dylib\
+otool -L libbz2.1.0.6.dylib\
+\
+\
+cp /sw/lib/libexpat.1.dylib libexpat.1.dylib\
+otool -L libexpat.1.dylib\
+install_name_tool -id @executable_path/lib/libexpat.1.dylib libexpat.1.dylib\
+otool -L libexpat.1.dylib\
+\
+\
+cp /sw/lib/xft2/lib/libXft.2.dylib libXft.2.dylib\
+otool -L libXft.2.dylib\
+install_name_tool -id @executable_path/lib/libXft.2.dylib libXft.2.dylib\
+install_name_tool -change /sw/lib/fontconfig2/lib/libfontconfig.1.dylib @executable_path/lib/libfontconfig.1.dylib libXft.2.dylib\
+install_name_tool -change /sw/lib/freetype219/lib/libfreetype.6.dylib @executable_path/lib/libfreetype.6.dylib libXft.2.dylib\
+otool -L libXft.2.dylib\
+\
+cp /sw/lib/libjpeg.8.dylib libjpeg.8.dylib\
+otool -L libjpeg.8.dylib\
+install_name_tool -id @executable_path/lib/libjpeg.8.dylib libjpeg.8.dylib\
+otool -L libjpeg.8.dylib\
+\
+\
+cp /sw/lib/libjpeg.9.dylib libjpeg.9.dylib\
+otool -L libjpeg.9.dylib\
+install_name_tool -id @executable_path/lib/libjpeg.9.dylib libjpeg.9.dylib\
+otool -L libjpeg.9.dylib\
+\
+\
+cp /sw/lib/libpng15.15.dylib libpng15.15.dylib\
+otool -L libpng15.15.dylib\
+install_name_tool -id @executable_path/lib/libpng15.15.dylib libpng15.15.dylib\
+otool -L libpng15.15.dylib\
+\
+cp /sw/lib/libpng16.16.dylib libpng16.16.dylib\
+otool -L libpng16.16.dylib\
+install_name_tool -id @executable_path/lib/libpng16.16.dylib libpng16.16.dylib\
+otool -L libpng16.16.dylib\
+\
+\
+cp /sw/lib/libtiff.3.dylib libtiff.3.dylib\
+otool -L libtiff.3.dylib\
+install_name_tool -id @executable_path/lib/libtiff.3.dylib libtiff.3.dylib\
+install_name_tool -change /sw/lib/libjpeg.8.dylib @executable_path/lib/libjpeg.8.dylib libtiff.3.dylib\
+install_name_tool -change /sw/lib/libjpeg.8.dylib @executable_path/lib/libjpeg.8.dylib libtiff.3.dylib\
+otool -L libtiff.3.dylib\
+\
+# According to web research you should make sure you are in the molmol_exe_path/lib folder and modify the packaged dlls but note this appears to be unnecessary and has not been done.\
+# These command and here for future reference:\
+#\
+# install_name_tool -id @executable_path/lib/libtiff.3.dylib libtiff.3.dylib\
+# install_name_tool -id @executable_path/lib/libjpeg.dylib libjpeg.dylib\
+# install_name_tool -id @executable_path/lib/libpng.dylib libpng.dylib\
+#\
+#\
+# Command "otool -L molmol" shows what dynamic libraries are used.\
+#\
+# PA 2013-08-21\
+}

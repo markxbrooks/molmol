@@ -1,0 +1,76 @@
+<HEAD>
+<TITLE>MaterialInit</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>MaterialInit</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+MaterialAtom - set material properties of atoms
+MaterialBond - set material properties of bonds
+MaterialDist - set material properties of distances
+MaterialPrim - set material properties of primitives
+MaterialInit - set initial material properties
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+MaterialAtom expr expr expr expr expr expr expr
+MaterialBond expr expr expr expr expr expr expr
+MaterialDist expr expr expr expr expr expr expr
+MaterialPrim expr expr expr expr expr expr expr
+MaterialInit expr expr expr expr expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+The first four commands set the material properties
+of all selected atoms, bonds, distances or primitives.
+MaterialInit sets the initial material properties used
+for new objects.
+<P>
+The first three paramters give the coefficients for
+ambient, diffuse and specular reflection. These values
+should all be between 0 and 1, for good results the
+ambient and diffuse terms should sum up to around 1.
+<P>
+The fourth parameter gives the shininess, it only
+has an effect if the specular coefficient is not zero.
+Higher values for the shininess result in smaller
+specular highlights. Values can be from 1.0 (very
+dull) to 200 and more (highly polished metal).
+<P>
+The fifth parameter gives the reflection. 1.0 results
+in a complete reflection of other objects in the scene
+(mirror), 0.0 in no reflection.
+<P>
+The sixth parameter gives the opacity. 1.0 results
+in a completely opaque material, 0.0 in complete
+transparency.
+<P>
+The seventh parameter gives the index of refraction,
+it only has an influence for (partly) transparent
+materials. 1.0 gives no refraction, 1.5 is the value
+for glass, 2.4 for diamond.
+<P>
+Transparency is not supported on most hardware, and
+only to a limited amount on machines with high-end
+graphics. It is mainly useful for preparing files
+for ray tracing (<A HREF="PlotPov.html"><KBD>PlotPov</KBD></A>). Reflection is not supported
+on screen, it is only used for ray tracing.
+<P>
+Giving a value less than 0.0 for any value will not
+change it, this is useful for changing only part of
+the parameters.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+MaterialAtom 0.3 0.7 0.4 30 0.0 1.0 1.0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAngle.html"><KBD>Select*</KBD></A>, <A HREF="TextureAtom.html"><KBD>Texture*</KBD></A>, <A HREF="PlotPov.html"><KBD>PlotPov</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+991016
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

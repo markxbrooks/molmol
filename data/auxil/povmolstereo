@@ -1,0 +1,90 @@
+#!/bin/sh
+#
+# Start POV-Ray, reading a MOLMOL dump file, creating a
+# side-by-side stereo image in a TIFF file. Requires MOLMOL
+# and pbmplus/netpbm.
+#
+# The first argument is the file name, without extension, the
+# second argument the desired horizontal resolution (width) of
+# the complete stereo image. The height is determined to preserve
+# the aspect ratio, the aspect ratio of each individual part
+# (left and right) is determined by the last "DrawSize save"
+# command given before saving the dump file.
+#
+# If the option -n is given, text labels do not throw shadows.
+
+LIBDIR=/opt/group/lib/povray3
+
+if [ $1 = "-n" ]; then
+  shadow=n
+  shift
+  povext=.tmp
+else
+  shadow=y
+  povext=
+fi
+
+molmol -t $1.mml << EOF
+DrawSize restore
+Stereo left
+PlotPov $1_l.pov$povext
+Stereo right
+PlotPov $1_r.pov$povext
+Quit no
+EOF
+
+if [ $shadow = "n" ]; then
+  awk '
+    BEGIN { inText = 0 }
+    /^text \{/ { inText = 1 }
+    /^\}$/ {
+      if (inText == 1) {
+        print "no_shadow"
+        inText = 0
+      }
+    }
+    { print }
+  ' $1_l.pov.tmp > $1_l.pov
+  rm $1_l.pov.tmp
+  awk '
+    BEGIN { inText = 0 }
+    /^text \{/ { inText = 1 }
+    /^\}$/ {
+      if (inText == 1) {
+        print "no_shadow"
+        inText = 0
+      }
+    }
+    { print }
+  ' $1_r.pov.tmp > $1_r.pov
+  rm $1_r.pov.tmp
+fi
+
+width=`expr $2 / 2`
+height=`awk -F, '
+  BEGIN { u = 1.0 }
+  /^[ ]*up / {
+    u = $2 + 0.0
+    if (u < 0.0)
+      u = - u;
+  }
+  /^[ ]*right / {
+    i = index($0, "<")
+    j = index($0, ",")
+    r = substr($0, i + 1, j - i - 1) + 0.0
+    if (r < 0.0)
+      r = - r
+    print int(width * (u / r) + 0.5)
+    exit
+  }
+' width=$width $1_l.pov`
+
+povray $LIBDIR/povray.ini -i$1_l.pov -w$width -h$height
+rm $1_l.pov
+
+povray $LIBDIR/povray.ini -i$1_r.pov -w$width -h$height
+rm $1_r.pov
+
+pnmcat -lr $1_l.ppm $1_r.ppm | pnmtotiff > $1.tif
+
+rm $1_l.ppm $1_r.ppm

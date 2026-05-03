@@ -1,0 +1,17 @@
+NAME
+     StopRock - stop rock
+
+SYNOPSIS
+     StopRock
+
+DESCRIPTION
+     Stop automatic rotation started with StartRock.
+
+EXAMPLE
+     StopRock
+
+SEE ALSO
+     StartRock
+
+DATE
+     940331

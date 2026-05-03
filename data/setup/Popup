@@ -1,0 +1,26 @@
+# used to build  popup menu
+
+entry I "Zoom In" "ZoomRel 1.4"
+entry O "Zoom Out" "ZoomRel 1.0/1.4"
+pullright R "Rotate"
+  entry X "X-axis" "RotateX 10"
+  entry Y "Y-axis" "RotateY 10"
+  entry Z "Z-axis" "RotateZ 10"
+end
+pullright M "Move"
+  entry X "X-axis" "MoveX 1"
+  entry Y "Y-axis" "MoveY 1"
+  entry Z "Z-axis" "MoveZ 1"
+end
+pullright S "Stereo"
+  entry o "off" "Stereo off"
+  entry l "left" "Stereo left"
+  entry r "right" "Stereo right"
+  entry s "side_by_side" "Stereo side_by_side"
+  entry c "cross_eye" "Stereo cross_eye"
+  entry h "hardware" "Stereo hardware"
+end
+pullright F "Fullscreen"
+  entry o "on" "Fullscreen on"
+  entry f "off" "Fullscreen off"
+end

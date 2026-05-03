@@ -1,0 +1,45 @@
+NAME
+     MeanMol - create mean molecule
+
+SYNOPSIS
+     MeanMol name
+	 ( avg_bfactor | max_disp | rms_disp | x_ray )
+	 ( mean_only | set_all )
+
+DESCRIPTION
+     Create a new molecule with the given name. The new
+     molecule will be the mean structure of all selected
+     molecules. At least one molecule must be selected,
+     and all selected molecules must have the same
+     structure.
+
+     The second argument determines how the B-factors
+     of the new molecule are set:
+
+	 avg_bfactor: average value of all B-factors
+
+	 max_disp: maximal displacement from mean
+	     structure
+
+	 rms_disp: root mean square of all displacements
+
+	 x_ray: values corresponding to B-factors used
+	     for X-ray structures (mean square displacement
+	     multiplied by 8/3 * pi * pi)
+
+     If the third argument is mean_only, this B-factors
+     are only set in the new mean structure, if it is
+     set_all, the B-factors of all selected structures are
+     set to this value.
+
+     The newly created molecule will have the property
+     "mean".
+
+EXAMPLE
+     MeanMol "mean" rms_disp mean_only
+
+SEE ALSO
+     SelectMol, RemoveMol
+
+DATE
+     960314

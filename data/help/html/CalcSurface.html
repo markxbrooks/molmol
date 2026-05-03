@@ -1,0 +1,54 @@
+<HEAD>
+<TITLE>CalcSurface</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>CalcSurface</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+CalcSurface - calculate solvent accessible surface
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+CalcSurface expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Generate a report with solvent accessible surfaces
+of each residue. The first argument gives the radius
+of the solvent, the second the desired precision.
+A reasonably good approximation will be obtained with
+precisions of 2 or 3, higher values will lead to even
+better results.
+<P>
+Only selected atoms are used for the calculation. The
+first surface given for each residue is the accessible
+surface in the context of the molecule, the second one
+is the surface of the isolated residue.
+<P>
+The results are listed for each molecule separately,
+a summary with average, minimal and maximal values is
+given at the end. If not all molecules have the same
+structure, or if not the same atoms are selected in
+all molecules, these values will not make much sense.
+<P>
+The calculation will take some time, especially if a
+high precision is desired. The time grows exponentially
+with the precision, so values of more than 4 or 5 are
+not recommended.
+<P>
+This command supports groups.
+<P>
+<STRONG>EXAMPLE</STRONG><P>
+<PRE>
+CalcSurface 1.4 2
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="Group.html"><KBD>Group</KBD></A>, <A HREF="AddSurface.html"><KBD>AddSurface</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+960317
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

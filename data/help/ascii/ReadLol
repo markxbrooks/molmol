@@ -1,0 +1,21 @@
+NAME
+     ReadLol - read file with lower limits
+
+SYNOPSIS
+     ReadLol fileName
+
+DESCRIPTION
+     Read a file with lower distance limits. The format
+     is the one that DIANA/DYANA uses. The distance
+     constraints are added to all selected molecules.
+
+     This command supports groups.
+
+EXAMPLE
+     ReadLol /home/joe/struct/my_prot.lol
+
+SEE ALSO
+     SelectMol, Group, ReadUpl, AddLol, CheckLol
+
+DATE
+     960317

@@ -1,0 +1,44 @@
+<HEAD>
+<TITLE>sausage.mac</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+# Display bundle of structures as "sausage"
+# (spline with variable radius).
+
+# store current selection
+DefPropMol 'prev_sel' 'selected'
+DefPropRes 'prev_sel' 'selected'
+DefPropAtom 'prev_sel' 'selected'
+
+# calculate mean structure, setting B-factor of atoms in
+# mean structure to average displacement
+MeanMol "mean" avg_disp mean_only
+
+# unset helix and sheet properties for all residues in
+# mean structure, we want to add a simple spline, not a
+# schematic display of secondary structure
+SelectRes 'mol.name = "mean"'
+DefPropRes 'helix' '0'
+DefPropRes 'sheet' '0'
+
+# select CA atoms of mean structure
+SelectAtom 'mol.name = "mean" & name = "CA"'
+
+# set atom radius (which will be used as spline radius)
+# to the B-factor, which was calculated as average
+# displacement to the mean structure
+RadiusAtom bfactor
+
+# add the spline
+AddRibbon
+
+# use atom radius as spline radius
+StyleRibbon as_is as_is as_is atom
+
+# restore old selection, with newly created spline added
+SelectMol 'prev_sel | name = "mean"'
+SelectRes 'prev_sel | mol.name = "mean"'
+SelectAtom 'prev_sel | mol.name = "mean"'
+</PRE>
+</BODY>

@@ -1,0 +1,32 @@
+NAME
+     FigCircles - show angle distribution circles
+
+SYNOPSIS
+     FigCircles expr expr
+
+DESCRIPTION
+     Create a figure showing the angle distributions as
+     polylines inside circles. The first argument gives the
+     number of rows over which the circles are distributed,
+     the second argument is the font size relative to the
+     radius of the circles.
+
+     The same number of angles has to be selected in all
+     selected molecules, the corresponding angles from all
+     molecules will be drawn in one circle, from the inside
+     to the outside. 0 is at the top, 90 degrees at the
+     right side of the circle.
+
+     This kind of figure is mainly used for analyzing
+     results of MD runs.
+
+     This command supports groups.
+
+EXAMPLE
+     FigCircles 4 0.3
+
+SEE ALSO
+     SelectMol, SelectAngle, Group, FigOff, FigAngles
+
+DATE
+     960317

@@ -1,0 +1,21 @@
+NAME
+     MoveY - move molecule in Y direction
+
+SYNOPSIS
+     MoveY expr
+
+DESCRIPTION
+     Move all movable (set with DialMol) molecules by the
+     given amount in Y direction. Moving is normally done
+     interactively by pressing the middle mouse button.
+     This command is useful for being used in macros or
+     for setting up the slider box.
+
+EXAMPLE
+     MoveY 10
+
+SEE ALSO
+     DialMol, DefPropMol, MoveX, MoveZ, MoveInit
+
+DATE
+     931129

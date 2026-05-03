@@ -1,0 +1,22 @@
+NAME
+     StyleDist - set display style of distances
+
+SYNOPSIS
+     StyleDist ( invisible | line | viol | cylinder |
+	 neon | cone )
+
+DESCRIPTION
+     Set the display style of all selected distances.
+     'viol' is only meaningful for distance constraints,
+     it will display the constraint in two colors
+     showing both limit and actual distance.
+
+EXAMPLE
+     StyleDist invisible
+
+SEE ALSO
+     StyleInit, SelectDist, DialStyle,
+     ColorDist, TintDist
+
+DATE
+     960606

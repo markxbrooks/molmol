@@ -1,0 +1,36 @@
+<HEAD>
+<TITLE>ColorAtom</TITLE>
+<LINK REV="made" HREF="mailto:kor@mol.biol.ethz.ch">
+</HEAD>
+<BODY>
+<H1>ColorAtom</H1>
+<STRONG>NAME</STRONG><P>
+<PRE>
+ColorAtom - set color of atoms
+</PRE>
+<STRONG>SYNOPSIS</STRONG><P>
+<PRE>
+ColorAtom expr expr expr
+</PRE>
+<STRONG>DESCRIPTION</STRONG><P>
+Set the color of all selected atoms. The color is
+given by its Red, Green and Blue component, all in
+the range between 0.0 and 1.0. By using expressions,
+it is possible to give each atom a different color,
+depending e. g. on the B factor.
+<P>
+<STRONG>EXAMPLES</STRONG><P>
+<PRE>
+ColorAtom 1.0 0.0 0.0
+ColorAtom 0.5*bfactor 1.0-0.5*bfactor 0.0
+</PRE>
+<STRONG>SEE ALSO</STRONG><P>
+<A HREF="SelectAtom.html"><KBD>SelectAtom</KBD></A>, <A HREF="DialColor.html"><KBD>DialColor</KBD></A>, <A HREF="ColorInit.html"><KBD>ColorInit</KBD></A>
+<P>
+<STRONG>DATE</STRONG><P>
+940119
+<HR>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

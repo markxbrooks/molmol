@@ -1,0 +1,28 @@
+NAME
+     PaintRibbon - set coloring style of ribbons
+
+SYNOPSIS
+     PaintRibbon ( one_color | two_color |
+	 atom | atom_smooth | as_is )
+
+DESCRIPTION
+     Set the coloring style of all selected ribbons.
+     With the value one_color, the ribbon will be drawn
+     entirely in the color set with ColorPrim. With
+     two_color, one side will be drawn with the color
+     set by TintPrim. With the value atom, the color for
+     each section is taken from the color of the atom
+     that was used to define the ribbon, normally the
+     CA atom for proteins. atom_smooth will do the same,
+     only that the color change between the sections is
+     smooth. The value as_is will leave the value
+     unchanged.
+
+EXAMPLE
+     PaintRibbon one_color
+
+SEE ALSO
+     AddRibbon, SelectPrim, ColorPrim, TintPrim
+
+DATE
+     951210

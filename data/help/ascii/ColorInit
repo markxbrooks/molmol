@@ -1,0 +1,19 @@
+NAME
+     ColorInit - set initial color
+
+SYNOPSIS
+     ColorInit expr expr expr
+
+DESCRIPTION
+     Set the inital color of new objects.  The color is
+     given by its Red, Green and Blue components, all in
+     the range between 0.0 and 1.0.
+
+EXAMPLE
+     ColorInit 1.0 0.0 0.0
+
+SEE ALSO
+     ColorAtom, ColorBond, ColorDist, ColorPrim
+
+DATE
+     991016

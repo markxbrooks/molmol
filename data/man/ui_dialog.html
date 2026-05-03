@@ -1,0 +1,91 @@
+
+
+
+
+
+
+
+
+
+<HEAD>
+<TITLE>Dialog Boxes</TITLE>
+<LINK REV="made" HREF="mailto:molmol@mol.biol.ethz.ch">
+</HEAD>
+
+<BODY>
+ <H1>Dialog Boxes</H1>
+
+MOLMOL has two main kinds of dialog boxes, which are
+described in the following sections.
+
+ <H2>Command Arguments</H2>
+
+When a command requiring arguments is selected in
+the menu (or executed by other means, as described
+under  <A HREF=ui_cmd.html>Command Execution</A>), it prompts
+for the arguments with a dialog. These dialogs typically
+contain text fields for entering strings and numerical
+values, radio boxes for selecting between different
+values of an enumerated set, and check boxes for
+enabling options.
+<P>
+
+These dialogs always have three buttons:
+
+<DL>
+<DT>OK
+<DD>Closes the dialog, and executes the command with
+    the arguments entered.
+<DT>Cancel
+<DD>Closes the dialog without executing the command.
+<DT>Help
+<DD>Display help information for the command, leaving
+    the dialog open.
+</DL>
+
+ <H2>Convenience Dialogs</H2>
+
+There is a number of dialogs that give faster and more
+convenient access to frequently used operations that
+could also be executed by using normal commands. These
+dialogs are explicitly opened and closed by using a
+command starting with <KBD>Dial</KBD>:
+
+<UL>
+<LI>Selection Dialog for  <A HREF=sel_idx.html>selecting</A>
+    items by entering expressions ( <KBD><A HREF="../help/html/DialSelect.html">DialSelect</A></KBD>).
+<LI>Molecule Dialog for quickly choosing the molecules
+    that should be selected, displayed and/or movable
+    ( <KBD><A HREF="../help/html/DialMol.html">DialMol</A></KBD>).
+<LI>Color Dialog for choosing colors and applying them
+    to selected items ( <KBD><A HREF="../help/html/DialColor.html">DialColor</A></KBD>).
+<LI>Style Dialog for changing the display style of
+    selected items ( <KBD><A HREF="../help/html/DialStyle.html">DialStyle</A></KBD>).
+<LI>RMSD Dialog for calculating RMSD values between
+    molecules ( <KBD><A HREF="../help/html/DialRmsd.html">DialRmsd</A></KBD>).
+<LI>Measurement Dialog for measuring bond lengths,
+    angles, distances, etc. ( <KBD><A HREF="../help/html/DialMeasure.html">DialMeasure</A></KBD>).
+</UL>
+
+The first four dialogs in this list can be opened
+with one of the buttons on the right side of the
+ <A HREF=ui_mainwin.html>main window</A>.
+<P>
+
+These dialogs can remain open as long as you need them,
+commands are executed by clicking buttons within the
+dialog. They have two buttons at the bottom:
+
+<DL>
+<DT>Close
+<DD>Closes the dialog.
+<DT>Help
+<DD>Display help information for the dialog.
+</DL>
+
+<HR>
+Last modified: Mon Jan 20 19:44:56 CST 2003<P>
+<ADDRESS>
+Reto Koradi, <A HREF=mailto:kor@mol.biol.ethz.ch>kor@mol.biol.ethz.ch</A>
+</ADDRESS>
+</BODY>

@@ -1,0 +1,25 @@
+NAME
+     StyleInit - set initial display styles
+
+SYNOPSIS
+     StyleInit ( invisible | sphere | tetrahedron )
+         ( invisible | line | half_line |
+	 cylinder | half_cylinder | neon | half_neon |
+	 cone | half_cone )
+         ( invisible | line | viol | cylinder |
+	 neon | cone )
+
+DESCRIPTION
+     Set the initial display style of new atoms, bonds
+     and distances. See the help pages of the StyleAtom,
+     StyleBond and StyleDist commands for a description
+     of the argument values.
+
+EXAMPLE
+     StyleInit sphere cylinder invisible
+
+SEE ALSO
+     StyleAtom, StyleBond, StyleDist
+
+DATE
+     991016
